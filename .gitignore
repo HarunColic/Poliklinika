@@ -5,4 +5,4 @@ PoliklinikaAPI/obj/Debug/netcoreapp3.1/PoliklinikaAPI.csprojAssemblyReference.ca
 PoliklinikaDesktop/obj/Debug/netcoreapp3.1/PoliklinikaDesktop.csprojAssemblyReference.cache
 RazvojSoftvera2.sln
 UpgradeLog.htm
-Poliklinika.Model/obj/**
+Poliklinika.Model/**
