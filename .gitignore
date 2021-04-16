@@ -5,5 +5,11 @@ PoliklinikaAPI/obj/Debug/netcoreapp3.1/PoliklinikaAPI.csprojAssemblyReference.ca
 PoliklinikaDesktop/obj/Debug/netcoreapp3.1/PoliklinikaDesktop.csprojAssemblyReference.cache
 RazvojSoftvera2.sln
 UpgradeLog.htm
-Poliklinika.Model/obj/
-Poliklinika.Model/bin/
+Poliklinika.Model.deps.json
+Poliklinika.Model.dll
+Poliklinika.Model.pdb
+Poliklinika.Model.csproj.nuget.dgspec.json
+Poliklinika.Model.csproj.nuget.g.props
+Poliklinika.Model.csproj.nuget.g.targets
+project.assets.json
+project.nuget.cache
