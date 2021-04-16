@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliklinikaAPI", "PoliklinikaAPI\PoliklinikaAPI.csproj", "{03AA7E93-8673-4492-A4E3-B12435F660E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliklinikaAPI", "PoliklinikaAPI\PoliklinikaAPI.csproj", "{03AA7E93-8673-4492-A4E3-B12435F660E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliklinikaAndroid", "PoliklinikaAndroid\PoliklinikaAndroid.csproj", "{46F2EE8D-1E9E-4B08-86FF-966270F75E43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliklinikaDesktop", "PoliklinikaDesktop\PoliklinikaDesktop.csproj", "{92D20DD6-42DD-436A-882B-D8549D511E05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliklinikaDesktop", "PoliklinikaDesktop\PoliklinikaDesktop.csproj", "{92D20DD6-42DD-436A-882B-D8549D511E05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
