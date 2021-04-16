@@ -1,4 +1,4 @@
 .git
 UpgradeLog.htm
 appsettings.json
-Model/obj
+Model/obj/
