@@ -8,6 +8,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliklinikaAndroid", "PoliklinikaAndroid\PoliklinikaAndroid.csproj", "{46F2EE8D-1E9E-4B08-86FF-966270F75E43}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliklinikaDesktop", "PoliklinikaDesktop\PoliklinikaDesktop.csproj", "{92D20DD6-42DD-436A-882B-D8549D511E05}"
+<<<<<<< HEAD
+=======
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Model", "Poliklinika.Model\Poliklinika.Model.csproj", "{758F285B-8070-47AE-A395-22F598C64EC3}"
+>>>>>>> 9d3d9550954741d0b1ab78ac6f0c200358fb3844
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +34,10 @@ Global
 		{92D20DD6-42DD-436A-882B-D8549D511E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92D20DD6-42DD-436A-882B-D8549D511E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92D20DD6-42DD-436A-882B-D8549D511E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{758F285B-8070-47AE-A395-22F598C64EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758F285B-8070-47AE-A395-22F598C64EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758F285B-8070-47AE-A395-22F598C64EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758F285B-8070-47AE-A395-22F598C64EC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

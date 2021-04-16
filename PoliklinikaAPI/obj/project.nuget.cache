@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "Wq04m35D8XoniMaO9wms2zQPmBEzYDgIKUR2vpF5qUjaMC0OA8ZEtme3etDXpIAT9feY5Nz6JNeeZiUk5RsU5Q==",
+  "dgSpecHash": "Ez4LKKHxsnV798/3diIAVpnmT5z0+KJo6ws3Owmtt41i8FEaw0ot5Qey2AyCBry+BAv/WpCiX3wmnygeepz7IA==",
   "success": true,
-  "projectFilePath": "D:\\Razvoj Softvera II\\Projekat\\RazvojSoftvera2\\PoliklinikaAPI\\PoliklinikaAPI.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\PoliklinikaAPI\\PoliklinikaAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Dada\\.nuget\\packages\\swashbuckle.aspnetcore\\6.1.2\\swashbuckle.aspnetcore.6.1.2.nupkg.sha512",
+    "C:\\Users\\Dada\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.1.2\\swashbuckle.aspnetcore.swagger.6.1.2.nupkg.sha512",
+    "C:\\Users\\Dada\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.1.2\\swashbuckle.aspnetcore.swaggergen.6.1.2.nupkg.sha512",
+    "C:\\Users\\Dada\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.1.2\\swashbuckle.aspnetcore.swaggerui.6.1.2.nupkg.sha512"
+  ],
   "logs": []
 }

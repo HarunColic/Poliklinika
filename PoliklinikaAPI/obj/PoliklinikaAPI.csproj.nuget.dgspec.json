@@ -1,36 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Razvoj Softvera II\\Projekat\\RazvojSoftvera2\\PoliklinikaAPI\\PoliklinikaAPI.csproj": {}
+    "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\PoliklinikaAPI\\PoliklinikaAPI.csproj": {}
   },
   "projects": {
-    "D:\\Razvoj Softvera II\\Projekat\\RazvojSoftvera2\\PoliklinikaAPI\\PoliklinikaAPI.csproj": {
+    "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\Poliklinika.Model\\Poliklinika.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Razvoj Softvera II\\Projekat\\RazvojSoftvera2\\PoliklinikaAPI\\PoliklinikaAPI.csproj",
-        "projectName": "PoliklinikaAPI",
-        "projectPath": "D:\\Razvoj Softvera II\\Projekat\\RazvojSoftvera2\\PoliklinikaAPI\\PoliklinikaAPI.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Razvoj Softvera II\\Projekat\\RazvojSoftvera2\\PoliklinikaAPI\\obj\\",
+        "projectUniqueName": "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\Poliklinika.Model\\Poliklinika.Model.csproj",
+        "projectName": "Poliklinika.Model",
+        "projectPath": "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\Poliklinika.Model\\Poliklinika.Model.csproj",
+        "packagesPath": "C:\\Users\\Dada\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\Poliklinika.Model\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Dada\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "netstandard2.0": {
             "projectReferences": {}
           }
         },
@@ -41,7 +36,72 @@
         }
       },
       "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\PoliklinikaAPI\\PoliklinikaAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\PoliklinikaAPI\\PoliklinikaAPI.csproj",
+        "projectName": "PoliklinikaAPI",
+        "projectPath": "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\PoliklinikaAPI\\PoliklinikaAPI.csproj",
+        "packagesPath": "C:\\Users\\Dada\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\PoliklinikaAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Dada\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\Poliklinika.Model\\Poliklinika.Model.csproj": {
+                "projectPath": "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\Poliklinika.Model\\Poliklinika.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -60,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.408\\RuntimeIdentifierGraph.json"
         }
       }
     }
