@@ -1,0 +1,9 @@
+C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\bin\Debug\netstandard2.0\Poliklinika.Model.deps.json
+C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\bin\Debug\netstandard2.0\Poliklinika.Model.dll
+C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\bin\Debug\netstandard2.0\Poliklinika.Model.pdb
+C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.csprojAssemblyReference.cache
+C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.AssemblyInfoInputs.cache
+C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.AssemblyInfo.cs
+C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.csproj.CoreCompileInputs.cache
+C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.dll
+C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.pdb
