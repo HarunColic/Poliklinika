@@ -7,3 +7,12 @@ C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\obj\Debug\net
 C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.csproj.CoreCompileInputs.cache
 C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.dll
 C:\Users\Dada\Desktop\RS2-Seminarski\Poliklinika\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.pdb
+D:\Razvoj Softvera II\Projekat\RazvojSoftvera2\Poliklinika.Model\bin\Debug\netstandard2.0\Poliklinika.Model.deps.json
+D:\Razvoj Softvera II\Projekat\RazvojSoftvera2\Poliklinika.Model\bin\Debug\netstandard2.0\Poliklinika.Model.dll
+D:\Razvoj Softvera II\Projekat\RazvojSoftvera2\Poliklinika.Model\bin\Debug\netstandard2.0\Poliklinika.Model.pdb
+D:\Razvoj Softvera II\Projekat\RazvojSoftvera2\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.csprojAssemblyReference.cache
+D:\Razvoj Softvera II\Projekat\RazvojSoftvera2\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.AssemblyInfoInputs.cache
+D:\Razvoj Softvera II\Projekat\RazvojSoftvera2\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.AssemblyInfo.cs
+D:\Razvoj Softvera II\Projekat\RazvojSoftvera2\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.csproj.CoreCompileInputs.cache
+D:\Razvoj Softvera II\Projekat\RazvojSoftvera2\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.dll
+D:\Razvoj Softvera II\Projekat\RazvojSoftvera2\Poliklinika.Model\obj\Debug\netstandard2.0\Poliklinika.Model.pdb
