@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Poliklinika.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Poliklinika.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Poliklinika.Model.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Poliklinika.Model/1.0.0": {
+      "type": "project",
+      "path": "../Poliklinika.Model/Poliklinika.Model.csproj",
+      "msbuildProject": "../Poliklinika.Model/Poliklinika.Model.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Poliklinika.Model >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Dada\\.nuget\\packages\\": {}
@@ -32,7 +51,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\Poliklinika.Model\\Poliklinika.Model.csproj": {
+              "projectPath": "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\Poliklinika.Model\\Poliklinika.Model.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
