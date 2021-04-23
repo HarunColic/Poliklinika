@@ -1,3 +1,12 @@
 .git
+PoliklinikaAPI/appsettings.json
+.vs/**
+.vs/RazvojSoftvera2/v16/.suo
+PoliklinikaAPI/obj/Debug/netcoreapp3.1/PoliklinikaAPI.csprojAssemblyReference.cache
+PoliklinikaDesktop/obj/Debug/netcoreapp3.1/PoliklinikaDesktop.csprojAssemblyReference.cache
 UpgradeLog.htm
-appsettings.json
+Poliklinika.Model/obj/**
+Poliklinika.Model/bin/**
+PoliklinikaAPI/obj/**
+PoliklinikaAPI/bin/**
+PoliklinikaDesktop/obj/**
