@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "90TJx7Rn5aziNpMzpdCf0mSCnsK2ugGPg7eVclyBNoIsmwbUTJz1tBrK0/hHuMKLGC+U/YWVc/fOOj10yMWYeQ==",
+  "dgSpecHash": "FVFV9jA968GWkExhSjhuR0uit7P29Fw/B731+p6oh8TCz+k91il84RVokhIP2AMwokH8BYlYjeEpw4ME5vlh1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dada\\Desktop\\RS2-Seminarski\\Poliklinika\\PoliklinikaAPI\\PoliklinikaAPI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Dada\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
