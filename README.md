@@ -33,43 +33,43 @@ Aplikacija za polikliniku će svojim korisnicima osigurati sljedeće funkcionaln
 
 ### 1.)	Funkcionalnosti za klijenta
 
-a)	Prijava na sistem i registracija (IB150255 IB160127)
+- a)	Prijava na sistem i registracija (IB150255 IB160127)
 
-b)	Pregled i pretraga odjela i usluga (IB160127)
+- b)	Pregled i pretraga odjela i usluga (IB160127)
 
-c)	Online rezervacija termina (IB150255)
+- c)	Online rezervacija termina (IB150255)
 
-d)	Online savjetovanje (IB160127)
+- d)	Online savjetovanje (IB160127)
 
-e)	Online plaćanje (IB150255)
+- e)	Online plaćanje (IB150255)
 
 ### 2.) Funkcionalnosti za administratora
 
-a)	Prijava na sistem (IB160127)
+- a)	Prijava na sistem (IB160127)
 
-b)	Evidencija uposlenika (IB150255)
+- b)	Evidencija uposlenika (IB150255)
 
-c)	Evidencija odjela (IB160127)
+- c)	Evidencija odjela (IB160127)
 
-d)	Upravljanje poslovnim procesima (IB150255)
+- d)	Upravljanje poslovnim procesima (IB150255)
 
-e)	Pregled izvještaja (IB160127)
+- e)	Pregled izvještaja (IB160127)
 
 ### 3.)	Funkcionalnosti za doktora
 
-a)	Prijava na sistem (IB150255)
+- a)	Prijava na sistem (IB150255)
 
-b)	Pregled obaveza i smijena (IB160127)
+- b)	Pregled obaveza i smijena (IB160127)
 
-c)	Kreiranje izvještaja o pregledu (IB150255)
+- c)	Kreiranje izvještaja o pregledu (IB150255)
 
-d)	Izdavanje digitalnog recepta/nalaza (IB150255 IB160127)
+- d)	Izdavanje digitalnog recepta/nalaza (IB150255 IB160127)
 
 ### 4.)	Funkcionalnosti za medicinsku sestru/tehničara
 
-a)	Prijava na sistem (IB160127)
+- a)	Prijava na sistem (IB160127)
 
-b)	Pregled obaveza i smjene (IB150255)
+- b)	Pregled obaveza i smjene (IB150255)
 
 
 ### 3.1	a) Prijava na sistem i registracija
