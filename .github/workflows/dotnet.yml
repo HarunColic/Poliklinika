@@ -16,6 +16,10 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 5.0.x
+      - name: Setup Xamarin
+        uses: maxim-lobanov/setup-xamarin@v1
+        with:
+          xamarin-android-version: '1.5.3.2'
       - name: Install dependencies
         run: dotnet install
       - name: Restore dependencies
@@ -24,3 +28,4 @@ jobs:
         run: dotnet build --no-restore
       - name: Test
         run: dotnet test --no-build --verbosity normal
+        
