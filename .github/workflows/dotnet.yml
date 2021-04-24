@@ -2,12 +2,8 @@ name: .NET
 
 on:
   push:
-    paths-ignore:
-      - 'PoliklinikaAndroid/**'
     branches: [ '**' ]
   pull_request:
-    paths-ignore:
-      - 'PoliklinikaAndroid/**'
     branches: [ '**' ]
 
 jobs:
@@ -20,6 +16,8 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 5.0.x
+      - name: Install dependencies
+        run: dotnet install
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
