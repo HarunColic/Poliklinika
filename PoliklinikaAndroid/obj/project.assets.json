@@ -1490,11 +1490,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Razvoj Softvera II\\Projekat\\RazvojSoftvera2\\PoliklinikaAndroid\\PoliklinikaAndroid.csproj",
+      "projectUniqueName": "D:\\Razvoj Softvera II\\Projekat\\Poliklinika\\PoliklinikaAndroid\\PoliklinikaAndroid.csproj",
       "projectName": "PoliklinikaAndroid",
-      "projectPath": "D:\\Razvoj Softvera II\\Projekat\\RazvojSoftvera2\\PoliklinikaAndroid\\PoliklinikaAndroid.csproj",
+      "projectPath": "D:\\Razvoj Softvera II\\Projekat\\Poliklinika\\PoliklinikaAndroid\\PoliklinikaAndroid.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Razvoj Softvera II\\Projekat\\RazvojSoftvera2\\PoliklinikaAndroid\\obj\\",
+      "outputPath": "D:\\Razvoj Softvera II\\Projekat\\Poliklinika\\PoliklinikaAndroid\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
