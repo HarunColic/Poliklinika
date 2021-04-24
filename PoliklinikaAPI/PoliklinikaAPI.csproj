@@ -5,13 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.2" />
   </ItemGroup>
 
   <ItemGroup>
-=======
->>>>>>> 7e7e269772c1ecaa9223b19138c33396279f1878
     <ProjectReference Include="..\Poliklinika.Model\Poliklinika.Model.csproj" />
   </ItemGroup>
 
