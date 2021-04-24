@@ -16,11 +16,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 5.0.x
-      - name: Generate Xamarin Form Android APK
-        uses: fahimshahrierrasel/Xamarin-Droid-Builder@1.0.2
-        with:
-          SOLUTION_NAME: 'RazvojSoftvera2'
-          ANDROID_PROJECT_NAME: 'PoliklinikaAndroid'
+      - name: Build Android Project with msbuild
+        run: |
+          msbuild RazvojSoftvera2/PoliklinikaAndroid.csproj
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
