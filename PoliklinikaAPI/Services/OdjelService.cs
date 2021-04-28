@@ -31,7 +31,8 @@ namespace PoliklinikaAPI.Services
 
         public void Delete(int id)
         {
-            _db.Odjel.Remove(_db.Odjel.Find(id));
+            var o = _db.Odjel.Find(id);
+            _db.Odjel.Remove(o);
             _db.SaveChanges();
         }
 
@@ -49,6 +50,7 @@ namespace PoliklinikaAPI.Services
         {
             var entity = _db.Odjel.Find(id);
             _mapper.Map(odjel, entity);
+            _db.Odjel.Update(entity);
             _db.SaveChanges();
             return entity;
         }
