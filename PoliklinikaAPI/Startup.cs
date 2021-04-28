@@ -13,7 +13,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PoliklinikaAPI.Data;
+using PoliklinikaAPI.Interfaces;
 using PoliklinikaAPI.Mappers;
+using PoliklinikaAPI.Services;
 
 namespace PoliklinikaAPI
 {
@@ -41,6 +43,7 @@ namespace PoliklinikaAPI
             });
 
             IMapper mapper = mapperConfig.CreateMapper();
+            services.AddScoped<OdjelInterface, OdjelService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

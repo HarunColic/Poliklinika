@@ -12,7 +12,7 @@ namespace PoliklinikaAPI.Mappers
     {
         public MappingProfile()
         {
-            CreateMap<Odjel, OdjelVM>();
+            CreateMap<Odjel, OdjelVM>().ReverseMap();
 
         }
     }
