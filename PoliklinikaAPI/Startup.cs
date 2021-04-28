@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +13,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PoliklinikaAPI.Data;
+using PoliklinikaAPI.Interfaces;
+using PoliklinikaAPI.Mappers;
+using PoliklinikaAPI.Services;
 
 namespace PoliklinikaAPI
 {
@@ -28,9 +32,18 @@ namespace PoliklinikaAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen();
             services.AddDbContext<DBContext>(
-        options => options.UseSqlServer("name=cs1"));
+            options => options.UseSqlServer("name=cs1"));
+
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddScoped<OdjelInterface, OdjelService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
