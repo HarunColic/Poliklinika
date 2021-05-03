@@ -6,12 +6,14 @@ using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Poliklinika.Model;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.Interfaces;
 using PoliklinikaAPI.Mappers;
@@ -44,6 +46,11 @@ namespace PoliklinikaAPI
 
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddScoped<OdjelInterface, OdjelService>();
+            services.AddScoped<KorisnikInterface, KorisnikService>();
+
+            services.AddIdentity<User, Role>()
+                    .AddEntityFrameworkStores<DBContext>()
+                    .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
