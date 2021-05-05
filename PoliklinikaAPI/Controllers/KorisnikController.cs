@@ -35,7 +35,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
-        public KorisnikVM Insert(Korisnik korisnik)
+        public KorisnikVM Insert(SignUpKorisnikVM korisnik)
         {
             return _korisnikInterface.Insert(korisnik);
         }
