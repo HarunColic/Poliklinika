@@ -1,13 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Poliklinika.Model
 {
-    public class User
+    public class User : IdentityUser<int>
     {
-        [Key]
-        public int ID { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
     }
 }
