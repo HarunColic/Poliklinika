@@ -14,7 +14,7 @@ namespace PoliklinikaAPI.Mappers
         {
             CreateMap<Odjel, OdjelVM>().ReverseMap();
             CreateMap<Korisnik, KorisnikVM>().ReverseMap();
-            CreateMap<Korisnik, KorisnikVM>();
+            CreateMap<KorisnikVM, SignUpKorisnikVM>().ReverseMap();
             CreateMap<Korisnik, SignUpKorisnikVM>().ReverseMap();
 
         }

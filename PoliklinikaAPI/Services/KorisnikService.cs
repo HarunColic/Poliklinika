@@ -16,10 +16,10 @@ namespace PoliklinikaAPI.Services
     {
         private DBContext _db;
         private IMapper _mapper;
-        UserManager<Korisnik> _userManager;
+        UserManager<User> _userManager;
         RoleManager<Role> _roleManager;
 
-        public KorisnikService(DBContext db, IMapper mapper, UserManager<Korisnik> userManager, RoleManager<Role> roleManager)
+        public KorisnikService(DBContext db, IMapper mapper, UserManager<User> userManager, RoleManager<Role> roleManager)
         {
             _db = db;
             _mapper = mapper;
@@ -49,20 +49,27 @@ namespace PoliklinikaAPI.Services
         public KorisnikVM Insert(SignUpKorisnikVM korisnik)
         {
             var signupKorisnik = _mapper.Map<SignUpKorisnikVM, Korisnik>(korisnik);
+            signupKorisnik.UserName = korisnik.Email;
 
             var userCreateResult = _userManager.CreateAsync(signupKorisnik, korisnik.Password);
 
-            var role = new Role { Name = "Korisnik" };
-            var userRoleResult = _roleManager.CreateAsync(role);
+            var role = _roleManager.FindByNameAsync("Korisnik").Result.Name;
 
-            if (userCreateResult.Result.Succeeded && userRoleResult.Result.Succeeded)
+            if (userCreateResult.Result.Succeeded )
             {
                 var k = _db.Korisnik.Find(signupKorisnik.Id);
-                _userManager.AddToRoleAsync(k, role.Name);
-                return _mapper.Map<KorisnikVM>(korisnik);
+                _userManager.AddToRoleAsync(k, role);
+                return _mapper.Map<SignUpKorisnikVM, KorisnikVM>(korisnik);
             }
 
-            return null;
+            var errors = new List<Exception>();
+
+            foreach(var e in userCreateResult.Result.Errors)
+            {
+                errors.Add(new Exception(e.Description));
+            }
+
+            throw new AggregateException(errors);
         }
 
         public KorisnikVM Update(int id, KorisnikVM korisnik)

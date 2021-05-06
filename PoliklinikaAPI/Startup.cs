@@ -37,7 +37,8 @@ namespace PoliklinikaAPI
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen();
             services.AddDbContext<DBContext>(
-            options => options.UseSqlServer("name=cs1"));
+            options => options.UseSqlServer("name=cs1"),
+            ServiceLifetime.Transient);
 
             var mapperConfig = new MapperConfiguration(mc =>
             {
