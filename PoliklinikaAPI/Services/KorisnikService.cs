@@ -55,6 +55,13 @@ namespace PoliklinikaAPI.Services
 
             var role = _roleManager.FindByNameAsync("Korisnik").Result.Name;
 
+            if(role == null || role == "")
+            {
+                _roleManager.CreateAsync(new Role { Name = "Korisnik" });
+                role = _roleManager.FindByNameAsync("Korisnik").Result.Name;
+            }
+
+
             if (userCreateResult.Result.Succeeded )
             {
                 var k = _db.Korisnik.Find(signupKorisnik.Id);
