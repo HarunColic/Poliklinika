@@ -18,7 +18,7 @@ namespace PoliklinikaDesktop
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.frmLogin());
+            Application.Run(new Forms.Odjel.frmIndexOdjel());
         }
     }
 }

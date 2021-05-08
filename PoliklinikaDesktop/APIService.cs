@@ -15,7 +15,7 @@ namespace PoliklinikaDesktop
         }
         public T Get<T>()
         {
-            var result = $"(Properties.Settings.Default.APIurl)/{_route}".GetJsonAsync<T>();
+            var result = $"{Properties.Settings.Default.APIurl}/{_route}".GetJsonAsync<T>();
 
             return result.Result;
         }

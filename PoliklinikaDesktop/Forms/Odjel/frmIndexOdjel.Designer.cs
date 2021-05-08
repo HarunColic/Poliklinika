@@ -28,34 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIndexOdjel));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvOdjel = new System.Windows.Forms.DataGridView();
             this.btnPrikazi = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOdjel)).BeginInit();
+            this.ProbaNebitno = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProbaNebitno)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            // 
-            // dgvOdjel
-            // 
-            this.dgvOdjel.AllowUserToAddRows = false;
-            this.dgvOdjel.AllowUserToDeleteRows = false;
-            this.dgvOdjel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOdjel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.dgvOdjel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOdjel.Location = new System.Drawing.Point(3, 19);
-            this.dgvOdjel.Name = "dgvOdjel";
-            this.dgvOdjel.ReadOnly = true;
-            this.dgvOdjel.Size = new System.Drawing.Size(564, 266);
-            this.dgvOdjel.TabIndex = 0;
-            this.dgvOdjel.Text = "dataGridView1";
-            this.dgvOdjel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdjel_CellContentClick);
-            this.groupBox1.Controls.Add(this.dgvOdjel);
+            this.groupBox1.Controls.Add(this.ProbaNebitno);
             this.groupBox1.Location = new System.Drawing.Point(2, 161);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(570, 288);
@@ -73,13 +55,18 @@
             this.btnPrikazi.UseVisualStyleBackColor = true;
             this.btnPrikazi.Click += new System.EventHandler(this.btnPrikazi_Click);
             // 
-            // Column1
+            // ProbaNebitno
             // 
-            this.Column1.HeaderText = "detalji";
-            this.Column1.Image = ((System.Drawing.Image)(resources.GetObject("Column1.Image")));
-            this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.ProbaNebitno.AllowUserToAddRows = false;
+            this.ProbaNebitno.AllowUserToDeleteRows = false;
+            this.ProbaNebitno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProbaNebitno.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProbaNebitno.Location = new System.Drawing.Point(3, 19);
+            this.ProbaNebitno.Name = "ProbaNebitno";
+            this.ProbaNebitno.ReadOnly = true;
+            this.ProbaNebitno.Size = new System.Drawing.Size(564, 266);
+            this.ProbaNebitno.TabIndex = 0;
+            this.ProbaNebitno.Text = "dataGridView1";
             // 
             // frmIndexOdjel
             // 
@@ -90,8 +77,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmIndexOdjel";
             this.Text = "frmIndexOdjel";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOdjel)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ProbaNebitno)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -99,8 +86,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvOdjel;
         private System.Windows.Forms.Button btnPrikazi;
-        private System.Windows.Forms.DataGridViewImageColumn Column1;
+        private System.Windows.Forms.DataGridView ProbaNebitno;
     }
 }

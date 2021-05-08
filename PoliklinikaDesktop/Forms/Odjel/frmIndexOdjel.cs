@@ -14,7 +14,7 @@ namespace PoliklinikaDesktop.Forms.Odjel
    
     public partial class frmIndexOdjel : Form
     {
-        private readonly APIService _apiService = new APIService("odjel");
+        private readonly APIService _apiService = new APIService("Odjel");
         public frmIndexOdjel()
         {
             InitializeComponent();
@@ -27,9 +27,8 @@ namespace PoliklinikaDesktop.Forms.Odjel
 
         private void btnPrikazi_Click(object sender, EventArgs e)
         {
-            //
-            var result = _apiService.Get <List<OdjelVM>>();
-            dgvOdjel.DataSource=result;
+            var result = _apiService.Get<List<Poliklinika.Model.Odjel>>();
+            ProbaNebitno.DataSource=result;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
