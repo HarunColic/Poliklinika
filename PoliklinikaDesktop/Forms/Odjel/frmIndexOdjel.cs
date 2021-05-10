@@ -24,21 +24,17 @@ namespace PoliklinikaDesktop.Forms.Odjel
         {
 
         }
-
-        private void btnPrikazi_Click(object sender, EventArgs e)
+        private async void frmIndexOdjel_Load(object sender, EventArgs e)
         {
-            var result = _apiService.Get<List<Poliklinika.Model.Odjel>>();
-            ProbaNebitno.DataSource=result;
+            var result = await _apiService.Get<List<Poliklinika.Model.Odjel>>();
+            dgvOdjeli.AutoGenerateColumns = false;
+            dgvOdjeli.DataSource = result;
+            frmDetaljiOdjel detalji = new frmDetaljiOdjel();
+           
+
+
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvOdjel_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
     }
 }

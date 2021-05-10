@@ -28,65 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnPrikazi = new System.Windows.Forms.Button();
-            this.ProbaNebitno = new System.Windows.Forms.DataGridView();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProbaNebitno)).BeginInit();
+            this.Odjeli = new System.Windows.Forms.GroupBox();
+            this.dgvOdjeli = new System.Windows.Forms.DataGridView();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Izbrisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Odjeli.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOdjeli)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // Odjeli
             // 
-            this.groupBox1.Controls.Add(this.ProbaNebitno);
-            this.groupBox1.Location = new System.Drawing.Point(2, 161);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(570, 288);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.Odjeli.Controls.Add(this.dgvOdjeli);
+            this.Odjeli.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Odjeli.Location = new System.Drawing.Point(2, 161);
+            this.Odjeli.Name = "Odjeli";
+            this.Odjeli.Size = new System.Drawing.Size(799, 288);
+            this.Odjeli.TabIndex = 0;
+            this.Odjeli.TabStop = false;
+            this.Odjeli.Text = "Odjeli";
+            this.Odjeli.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // btnPrikazi
+            // dgvOdjeli
             // 
-            this.btnPrikazi.Location = new System.Drawing.Point(638, 264);
-            this.btnPrikazi.Name = "btnPrikazi";
-            this.btnPrikazi.Size = new System.Drawing.Size(122, 41);
-            this.btnPrikazi.TabIndex = 1;
-            this.btnPrikazi.Text = "Dodaj odjel";
-            this.btnPrikazi.UseVisualStyleBackColor = true;
-            this.btnPrikazi.Click += new System.EventHandler(this.btnPrikazi_Click);
+            this.dgvOdjeli.AllowUserToAddRows = false;
+            this.dgvOdjeli.AllowUserToDeleteRows = false;
+            this.dgvOdjeli.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvOdjeli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOdjeli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Naziv,
+            this.Detalji,
+            this.Izbrisi});
+            this.dgvOdjeli.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOdjeli.Location = new System.Drawing.Point(3, 25);
+            this.dgvOdjeli.Name = "dgvOdjeli";
+            this.dgvOdjeli.ReadOnly = true;
+            this.dgvOdjeli.Size = new System.Drawing.Size(793, 260);
+            this.dgvOdjeli.TabIndex = 0;
+            this.dgvOdjeli.Text = "dataGridView1";
+            
             // 
-            // ProbaNebitno
+            // Naziv
             // 
-            this.ProbaNebitno.AllowUserToAddRows = false;
-            this.ProbaNebitno.AllowUserToDeleteRows = false;
-            this.ProbaNebitno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProbaNebitno.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProbaNebitno.Location = new System.Drawing.Point(3, 19);
-            this.ProbaNebitno.Name = "ProbaNebitno";
-            this.ProbaNebitno.ReadOnly = true;
-            this.ProbaNebitno.Size = new System.Drawing.Size(564, 266);
-            this.ProbaNebitno.TabIndex = 0;
-            this.ProbaNebitno.Text = "dataGridView1";
+            this.Naziv.DataPropertyName = "Naziv";
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
+            // 
+            // Detalji
+            // 
+            this.Detalji.DataPropertyName = "Detalji";
+            this.Detalji.HeaderText = "Detalji";
+            this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
+            this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Detalji.Name = "Detalji";
+            this.Detalji.ReadOnly = true;
+            this.Detalji.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Detalji.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Izbrisi
+            // 
+            this.Izbrisi.HeaderText = "Izbrisi";
+            this.Izbrisi.Name = "Izbrisi";
+            this.Izbrisi.ReadOnly = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(282, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 30);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Pregled odjela";
             // 
             // frmIndexOdjel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnPrikazi);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.Odjeli);
             this.Name = "frmIndexOdjel";
             this.Text = "frmIndexOdjel";
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ProbaNebitno)).EndInit();
+            this.Load += new System.EventHandler(this.frmIndexOdjel_Load);
+            this.Odjeli.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOdjeli)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnPrikazi;
-        private System.Windows.Forms.DataGridView ProbaNebitno;
+        private System.Windows.Forms.GroupBox Odjeli;
+        private System.Windows.Forms.DataGridView dgvOdjeli;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
+        private System.Windows.Forms.DataGridViewImageColumn Detalji;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Izbrisi;
     }
 }

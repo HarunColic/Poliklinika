@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Flurl.Http;
 using Flurl;
+using System.Threading.Tasks;
 
 namespace PoliklinikaDesktop
 {
@@ -13,11 +14,11 @@ namespace PoliklinikaDesktop
         {
             _route = route;
         }
-        public T Get<T>()
+        public async Task<T>  Get<T>()
         {
-            var result = $"{Properties.Settings.Default.APIurl}/{_route}".GetJsonAsync<T>();
+            var result = await $"{Properties.Settings.Default.APIurl}/{_route}".GetJsonAsync<T>();
 
-            return result.Result;
+            return result;
         }
     }
 }
