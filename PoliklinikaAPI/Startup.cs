@@ -18,6 +18,7 @@ using PoliklinikaAPI.Data;
 using PoliklinikaAPI.Interfaces;
 using PoliklinikaAPI.Mappers;
 using PoliklinikaAPI.Services;
+using PoliklinikaAPI.ViewModels;
 
 namespace PoliklinikaAPI
 {
@@ -47,7 +48,9 @@ namespace PoliklinikaAPI
 
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddScoped<OdjelInterface, OdjelService>();
-            services.AddScoped<KorisnikInterface, KorisnikService>();
+            services.AddScoped<UserBaseInterface<Korisnik, KorisnikVM, SignUpKorisnikVM>, UserBaseService<Korisnik, KorisnikVM, SignUpKorisnikVM>>();
+            services.AddScoped<UserBaseInterface<Doktor, DoktorVM, CreateDoktorVM>, UserBaseService<Doktor, DoktorVM, CreateDoktorVM>>();
+            services.AddScoped<UserBaseInterface<Tehnicar, TehnicarVM, CreateTehnicarVM>, UserBaseService<Tehnicar, TehnicarVM, CreateTehnicarVM>>();
 
             services.AddIdentity<User, Role>()
                     .AddEntityFrameworkStores<DBContext>()

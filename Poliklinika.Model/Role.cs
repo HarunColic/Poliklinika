@@ -6,5 +6,6 @@ using System.Text;
 namespace Poliklinika.Model
 {
     public class Role : IdentityRole<int>
-    {}
+    {
+    }
 }

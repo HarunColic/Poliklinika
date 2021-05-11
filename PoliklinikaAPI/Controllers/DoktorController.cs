@@ -12,38 +12,37 @@ namespace PoliklinikaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class KorisnikController : ControllerBase
+    public class DoktorController : ControllerBase
     {
-        protected UserBaseInterface<Korisnik, KorisnikVM, SignUpKorisnikVM> _userInterface;
+        protected UserBaseInterface<Doktor, DoktorVM, CreateDoktorVM> _userInterface;
 
-        public KorisnikController(UserBaseInterface<Korisnik, KorisnikVM, SignUpKorisnikVM> userInterface)
+        public DoktorController(UserBaseInterface<Doktor, DoktorVM, CreateDoktorVM> userInterface)
         {
             _userInterface = userInterface;
         }
 
-
         [HttpGet]
-        public IList<KorisnikVM> GetAll()
+        public IList<DoktorVM> GetAll()
         {
             return _userInterface.GetAll();
         }
 
         [HttpGet("{id}")]
-        public KorisnikVM Get(int id)
+        public DoktorVM Get(int id)
         {
             return _userInterface.Get(id);
         }
 
         [HttpPost]
-        public KorisnikVM Insert(SignUpKorisnikVM korisnik)
+        public DoktorVM Insert(CreateDoktorVM doktor)
         {
-            return _userInterface.Insert(korisnik);
+            return _userInterface.Insert(doktor);
         }
 
         [HttpPut("{id}")]
-        public KorisnikVM Update(int id, KorisnikVM korisnik)
+        public DoktorVM Update(int id, DoktorVM doktor)
         {
-            return _userInterface.Update(id, korisnik);
+            return _userInterface.Update(id, doktor);
         }
         [HttpDelete("{id}")]
         public void Delete(int id)
@@ -52,3 +51,4 @@ namespace PoliklinikaAPI.Controllers
         }
     }
 }
+
