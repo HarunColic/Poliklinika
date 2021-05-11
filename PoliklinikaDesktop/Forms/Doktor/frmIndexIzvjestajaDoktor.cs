@@ -6,18 +6,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PoliklinikaDesktop.Forms
+namespace PoliklinikaDesktop.Forms.Doktor
 {
-    public partial class frmLogin : Form
+    public partial class frmIndexIzvjestajaDoktor : Form
     {
-        public frmLogin()
+        public frmIndexIzvjestajaDoktor()
         {
             InitializeComponent();
         }
-
-      
-       
-
-        
     }
 }
