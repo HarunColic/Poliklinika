@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PoliklinikaDesktop.Forms.Odjel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,12 @@ namespace PoliklinikaDesktop.Forms.Administrator
         public frmIndexAmin()
         {
             InitializeComponent();
+        }
+
+        private void picEvidOdjela_Click(object sender, EventArgs e)
+        {
+            frmIndexOdjel index = new frmIndexOdjel();
+            index.Show();
         }
     }
 }

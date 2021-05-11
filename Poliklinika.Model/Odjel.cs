@@ -11,7 +11,7 @@ namespace Poliklinika.Model
         public int ID { get; set; }
         public string Naziv { get; set; }
         public string Opis { get; set; }
-        public string Slika { get; set; }
+        public byte[] Slika { get; set; }
 
 
     }

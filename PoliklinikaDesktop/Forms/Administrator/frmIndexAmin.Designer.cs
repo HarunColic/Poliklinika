@@ -34,12 +34,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.picEvidOdjela = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEvidOdjela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
@@ -105,15 +105,16 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Evidencija odjela";
             // 
-            // pictureBox4
+            // picEvidOdjela
             // 
-            this.pictureBox4.Image = global::PoliklinikaDesktop.Properties.Resources.odjeli1;
-            this.pictureBox4.Location = new System.Drawing.Point(23, 214);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(210, 215);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.picEvidOdjela.Image = global::PoliklinikaDesktop.Properties.Resources.odjeli1;
+            this.picEvidOdjela.Location = new System.Drawing.Point(23, 214);
+            this.picEvidOdjela.Name = "picEvidOdjela";
+            this.picEvidOdjela.Size = new System.Drawing.Size(210, 215);
+            this.picEvidOdjela.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEvidOdjela.TabIndex = 0;
+            this.picEvidOdjela.TabStop = false;
+            this.picEvidOdjela.Click += new System.EventHandler(this.picEvidOdjela_Click);
             // 
             // pictureBox3
             // 
@@ -143,7 +144,7 @@
             this.ClientSize = new System.Drawing.Size(1054, 492);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.picEvidOdjela);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
@@ -154,7 +155,7 @@
             this.Text = "frmIndexAmin";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEvidOdjela)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
@@ -170,7 +171,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox picEvidOdjela;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
     }

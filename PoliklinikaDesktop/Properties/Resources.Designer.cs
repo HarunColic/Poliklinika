@@ -161,6 +161,15 @@ namespace PoliklinikaDesktop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Obavezno polje.
+        /// </summary>
+        public static string ValidacijaPolja {
+            get {
+                return ResourceManager.GetString("ValidacijaPolja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap ZAPOSLENICI {
