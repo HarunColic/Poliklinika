@@ -7,10 +7,25 @@
     <Compile Update="Forms\Administrator\frmIndexAmin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Administrator\frmOdabirZaposlenog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Doktor\frmDetaljiDoktor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Doktor\frmIndexDoktor.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Doktor\frmIndexIzvjestajaDoktor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Izvjestaj\frmDetaljiIzvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Izvjestaj\frmIndexIzvjestaj.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Odjel\frmDetaljiOdjel.cs">
