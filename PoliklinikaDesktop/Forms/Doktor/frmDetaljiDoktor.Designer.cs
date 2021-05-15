@@ -158,6 +158,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.cmbOdjel.Name = "cmbOdjel";
             this.cmbOdjel.Size = new System.Drawing.Size(334, 23);
             this.cmbOdjel.TabIndex = 13;
+            this.cmbOdjel.SelectedIndexChanged += new System.EventHandler(this.cmbOdjel_SelectedIndexChanged);
             // 
             // btnSacuvaj
             // 
@@ -167,6 +168,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.btnSacuvaj.TabIndex = 14;
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
             // frmDetaljiDoktor
             // 
@@ -190,6 +192,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmDetaljiDoktor";
             this.Text = "frmDetaljiDoktor";
+            this.Load += new System.EventHandler(this.frmDetaljiDoktor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

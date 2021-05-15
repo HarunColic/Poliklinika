@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PoliklinikaDesktop.Forms.Doktor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,12 @@ namespace PoliklinikaDesktop.Forms.Administrator
         public frmOdabirZaposlenog()
         {
             InitializeComponent();
+        }
+
+        private void picDodajDoktora_Click(object sender, EventArgs e)
+        {
+            frmDetaljiDoktor doktor = new frmDetaljiDoktor();
+            doktor.Show();
         }
     }
 }

@@ -30,13 +30,13 @@ namespace PoliklinikaDesktop.Forms.Administrator
         private void InitializeComponent()
         {
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picDodajDoktora = new System.Windows.Forms.PictureBox();
+            this.picDodajTehnicara = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDodajDoktora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDodajTehnicara)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox5
@@ -49,25 +49,26 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox1
+            // picDodajDoktora
             // 
-            this.pictureBox1.Image = global::PoliklinikaDesktop.Properties.Resources.doktor;
-            this.pictureBox1.Location = new System.Drawing.Point(135, 202);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 186);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.picDodajDoktora.Image = global::PoliklinikaDesktop.Properties.Resources.doktor;
+            this.picDodajDoktora.Location = new System.Drawing.Point(135, 202);
+            this.picDodajDoktora.Name = "picDodajDoktora";
+            this.picDodajDoktora.Size = new System.Drawing.Size(206, 186);
+            this.picDodajDoktora.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDodajDoktora.TabIndex = 6;
+            this.picDodajDoktora.TabStop = false;
+            this.picDodajDoktora.Click += new System.EventHandler(this.picDodajDoktora_Click);
             // 
-            // pictureBox2
+            // picDodajTehnicara
             // 
-            this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.sestrica1;
-            this.pictureBox2.Location = new System.Drawing.Point(471, 202);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(206, 186);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.picDodajTehnicara.Image = global::PoliklinikaDesktop.Properties.Resources.sestrica1;
+            this.picDodajTehnicara.Location = new System.Drawing.Point(471, 202);
+            this.picDodajTehnicara.Name = "picDodajTehnicara";
+            this.picDodajTehnicara.Size = new System.Drawing.Size(206, 186);
+            this.picDodajTehnicara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDodajTehnicara.TabIndex = 7;
+            this.picDodajTehnicara.TabStop = false;
             // 
             // label1
             // 
@@ -98,14 +99,14 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.ClientSize = new System.Drawing.Size(800, 477);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picDodajTehnicara);
+            this.Controls.Add(this.picDodajDoktora);
             this.Controls.Add(this.pictureBox5);
             this.Name = "frmOdabirZaposlenog";
             this.Text = "frmOdabirZaposlenog";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDodajDoktora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDodajTehnicara)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,8 +115,8 @@ namespace PoliklinikaDesktop.Forms.Administrator
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picDodajDoktora;
+        private System.Windows.Forms.PictureBox picDodajTehnicara;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
