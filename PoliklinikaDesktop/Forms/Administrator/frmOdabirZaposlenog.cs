@@ -1,4 +1,6 @@
-﻿using PoliklinikaDesktop.Forms.Doktor;
+﻿using Poliklinika.Model;
+using PoliklinikaAPI.ViewModels;
+using PoliklinikaDesktop.Forms.Doktor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +13,8 @@ namespace PoliklinikaDesktop.Forms.Administrator
 {
     public partial class frmOdabirZaposlenog : Form
     {
+        private readonly APIService _serviceDoktor = new APIService("Doktor");
+        private readonly APIService _serviceTehnicar = new APIService("Tehnicar");
         public frmOdabirZaposlenog()
         {
             InitializeComponent();
@@ -20,6 +24,12 @@ namespace PoliklinikaDesktop.Forms.Administrator
         {
             frmDetaljiDoktor doktor = new frmDetaljiDoktor();
             doktor.Show();
+        }
+
+        private void frmOdabirZaposlenog_Load(object sender, EventArgs e)
+        {
+           var zaposlenici = _serviceDoktor.Get<IList<DoktorVM>>()
+               + _serviceTehnicar.Get<IList<TehnicarVM>>();
         }
     }
 }

@@ -31,6 +31,8 @@ namespace PoliklinikaDesktop.Forms.Doktor
             request.Specijalizacija = txtSpecijal.Text;
             request.SubSpecijalizacija = txtSubSecijal.Text;
             request.BrojRadneKnjizice = txtBrRadneKnjiz.Text;
+            request.Email = txtEmail.Text;
+            request.Password = txtPassword.Text;
 
             if (_id.HasValue)
             {
