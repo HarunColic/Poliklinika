@@ -21,5 +21,11 @@ namespace PoliklinikaDesktop.Forms.Administrator
             frmIndexOdjel index = new frmIndexOdjel();
             index.Show();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            frmOdabirZaposlenog zaposleni = new frmOdabirZaposlenog();
+            zaposleni.Show();
+        }
     }
 }

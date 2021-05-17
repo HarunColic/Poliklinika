@@ -29,51 +29,49 @@ namespace PoliklinikaDesktop.Forms.Administrator
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picDodajDoktora = new System.Windows.Forms.PictureBox();
+            this.picDodajTehnicara = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvOsoblje = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picDodajDoktora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDodajTehnicara)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOsoblje)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox5
+            // picDodajDoktora
             // 
-            this.pictureBox5.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
-            this.pictureBox5.Location = new System.Drawing.Point(102, 36);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(605, 125);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
+            this.picDodajDoktora.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picDodajDoktora.Image = global::PoliklinikaDesktop.Properties.Resources.doktor;
+            this.picDodajDoktora.Location = new System.Drawing.Point(558, 10);
+            this.picDodajDoktora.Name = "picDodajDoktora";
+            this.picDodajDoktora.Size = new System.Drawing.Size(206, 186);
+            this.picDodajDoktora.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDodajDoktora.TabIndex = 6;
+            this.picDodajDoktora.TabStop = false;
+            this.picDodajDoktora.Click += new System.EventHandler(this.picDodajDoktora_Click);
             // 
-            // pictureBox1
+            // picDodajTehnicara
             // 
-            this.pictureBox1.Image = global::PoliklinikaDesktop.Properties.Resources.doktor;
-            this.pictureBox1.Location = new System.Drawing.Point(135, 202);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 186);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.sestrica1;
-            this.pictureBox2.Location = new System.Drawing.Point(471, 202);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(206, 186);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.picDodajTehnicara.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picDodajTehnicara.Image = global::PoliklinikaDesktop.Properties.Resources.sestrica1;
+            this.picDodajTehnicara.Location = new System.Drawing.Point(833, 10);
+            this.picDodajTehnicara.Name = "picDodajTehnicara";
+            this.picDodajTehnicara.Size = new System.Drawing.Size(206, 186);
+            this.picDodajTehnicara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDodajTehnicara.TabIndex = 7;
+            this.picDodajTehnicara.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(163, 401);
+            this.label1.Location = new System.Drawing.Point(590, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 30);
             this.label1.TabIndex = 8;
@@ -83,40 +81,90 @@ namespace PoliklinikaDesktop.Forms.Administrator
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(460, 401);
+            this.label2.Location = new System.Drawing.Point(792, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(247, 60);
             this.label2.TabIndex = 9;
             this.label2.Text = "Dodaj medicinsku sestru/\r\ntehničara\r\n";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(329, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvOsoblje);
+            this.groupBox1.Location = new System.Drawing.Point(12, 199);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(542, 266);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            // 
+            // dgvOsoblje
+            // 
+            this.dgvOsoblje.AllowUserToAddRows = false;
+            this.dgvOsoblje.AllowUserToDeleteRows = false;
+            this.dgvOsoblje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOsoblje.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOsoblje.Location = new System.Drawing.Point(3, 19);
+            this.dgvOsoblje.Name = "dgvOsoblje";
+            this.dgvOsoblje.ReadOnly = true;
+            this.dgvOsoblje.RowTemplate.Height = 25;
+            this.dgvOsoblje.Size = new System.Drawing.Size(536, 244);
+            this.dgvOsoblje.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(15, 144);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 30);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Zaposlenici";
+            // 
             // frmOdabirZaposlenog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(800, 477);
+            this.ClientSize = new System.Drawing.Size(1071, 477);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.picDodajTehnicara);
+            this.Controls.Add(this.picDodajDoktora);
             this.Name = "frmOdabirZaposlenog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmOdabirZaposlenog";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.Load += new System.EventHandler(this.frmOdabirZaposlenog_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picDodajDoktora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDodajTehnicara)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOsoblje)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picDodajDoktora;
+        private System.Windows.Forms.PictureBox picDodajTehnicara;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvOsoblje;
+        private System.Windows.Forms.Label label4;
     }
 }
