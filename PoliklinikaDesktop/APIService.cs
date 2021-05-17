@@ -14,11 +14,21 @@ namespace PoliklinikaDesktop
         {
             _route = route;
         }
-        public async Task<T>  Get<T>()
+        public async Task<T> Get<T>()
         {
-            var result = await $"{Properties.Settings.Default.APIurl}/{_route}".GetJsonAsync<T>();
 
-            return result;
+            var result = $"{Properties.Settings.Default.APIurl}/{_route}";
+             
+            return await result.GetJsonAsync<T>();
+
+
+            //if (search != null)
+            //{
+            //    result += "?";
+            //    result += await search.ToString();
+            //}
+
+            
         }
         public async Task<T> GetById<T>(object id)
         {

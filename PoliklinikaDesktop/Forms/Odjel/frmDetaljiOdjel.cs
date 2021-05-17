@@ -86,7 +86,7 @@ namespace PoliklinikaDesktop.Forms.Odjel
             {
                 var fileName = openFileDialog.FileName;
                 var file = File.ReadAllBytes(fileName);
-                //request.Slika = file;
+                request.Slika = file;
                 txtSlikaInput.Text = fileName;
 
                 Image image = Image.FromFile(fileName);

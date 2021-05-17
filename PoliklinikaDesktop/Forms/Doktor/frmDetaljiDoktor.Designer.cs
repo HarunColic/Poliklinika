@@ -43,6 +43,10 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtBrRadneKnjiz = new System.Windows.Forms.TextBox();
             this.cmbOdjel = new System.Windows.Forms.ComboBox();
             this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,22 +162,62 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.cmbOdjel.Name = "cmbOdjel";
             this.cmbOdjel.Size = new System.Drawing.Size(334, 23);
             this.cmbOdjel.TabIndex = 13;
+            this.cmbOdjel.SelectedIndexChanged += new System.EventHandler(this.cmbOdjel_SelectedIndexChanged);
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(442, 238);
+            this.btnSacuvaj.Location = new System.Drawing.Point(691, 263);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(124, 42);
             this.btnSacuvaj.TabIndex = 14;
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(481, 98);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 20);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(481, 121);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(334, 23);
+            this.txtEmail.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(481, 158);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 20);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Password";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(481, 181);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(334, 23);
+            this.txtPassword.TabIndex = 18;
             // 
             // frmDetaljiDoktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(595, 450);
+            this.ClientSize = new System.Drawing.Size(959, 450);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.cmbOdjel);
             this.Controls.Add(this.label4);
@@ -190,6 +234,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmDetaljiDoktor";
             this.Text = "frmDetaljiDoktor";
+            this.Load += new System.EventHandler(this.frmDetaljiDoktor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,5 +257,9 @@ namespace PoliklinikaDesktop.Forms.Doktor
         private System.Windows.Forms.TextBox txtBrRadneKnjiz;
         private System.Windows.Forms.ComboBox cmbOdjel;
         private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }
