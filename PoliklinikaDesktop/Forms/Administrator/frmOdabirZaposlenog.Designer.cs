@@ -37,6 +37,8 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvOsoblje = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Izbrisi = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picDodajDoktora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDodajTehnicara)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +68,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.picDodajTehnicara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDodajTehnicara.TabIndex = 7;
             this.picDodajTehnicara.TabStop = false;
+            this.picDodajTehnicara.Click += new System.EventHandler(this.picDodajTehnicara_Click);
             // 
             // label1
             // 
@@ -112,6 +115,9 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.dgvOsoblje.AllowUserToAddRows = false;
             this.dgvOsoblje.AllowUserToDeleteRows = false;
             this.dgvOsoblje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOsoblje.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Detalji,
+            this.Izbrisi});
             this.dgvOsoblje.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOsoblje.Location = new System.Drawing.Point(3, 19);
             this.dgvOsoblje.Name = "dgvOsoblje";
@@ -129,6 +135,22 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.label4.Size = new System.Drawing.Size(117, 30);
             this.label4.TabIndex = 13;
             this.label4.Text = "Zaposlenici";
+            // 
+            // Detalji
+            // 
+            this.Detalji.DataPropertyName = "Detalji";
+            this.Detalji.HeaderText = "Detalji";
+            this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
+            this.Detalji.Name = "Detalji";
+            this.Detalji.ReadOnly = true;
+            // 
+            // Izbrisi
+            // 
+            this.Izbrisi.DataPropertyName = "Izbrisi";
+            this.Izbrisi.HeaderText = "Izbrisi";
+            this.Izbrisi.Image = global::PoliklinikaDesktop.Properties.Resources.izbrisi;
+            this.Izbrisi.Name = "Izbrisi";
+            this.Izbrisi.ReadOnly = true;
             // 
             // frmOdabirZaposlenog
             // 
@@ -166,5 +188,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvOsoblje;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewImageColumn Detalji;
+        private System.Windows.Forms.DataGridViewImageColumn Izbrisi;
     }
 }

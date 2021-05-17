@@ -1,6 +1,7 @@
 ﻿using Poliklinika.Model;
 using PoliklinikaAPI.ViewModels;
 using PoliklinikaDesktop.Forms.Doktor;
+using PoliklinikaDesktop.Forms.Tehnicar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,8 +29,13 @@ namespace PoliklinikaDesktop.Forms.Administrator
 
         private void frmOdabirZaposlenog_Load(object sender, EventArgs e)
         {
-           var zaposlenici = _serviceDoktor.Get<IList<DoktorVM>>()
-               + _serviceTehnicar.Get<IList<TehnicarVM>>();
+           
+        }
+
+        private void picDodajTehnicara_Click(object sender, EventArgs e)
+        {
+            frmDetaljiTehnicar doktor = new frmDetaljiTehnicar();
+            doktor.Show();
         }
     }
 }
