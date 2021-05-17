@@ -43,9 +43,9 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtBrRadneKnjiz = new System.Windows.Forms.TextBox();
             this.cmbOdjel = new System.Windows.Forms.ComboBox();
             this.btnSacuvaj = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -174,15 +174,15 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.btnSacuvaj.UseVisualStyleBackColor = true;
             this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
-            // label6
+            // lblEmail
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(481, 98);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 20);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Email";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEmail.Location = new System.Drawing.Point(481, 98);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(46, 20);
+            this.lblEmail.TabIndex = 15;
+            this.lblEmail.Text = "Email";
             // 
             // txtEmail
             // 
@@ -191,15 +191,15 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtEmail.Size = new System.Drawing.Size(334, 23);
             this.txtEmail.TabIndex = 16;
             // 
-            // label7
+            // lblPassword
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(481, 158);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 20);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Password";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPassword.Location = new System.Drawing.Point(481, 158);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(70, 20);
+            this.lblPassword.TabIndex = 17;
+            this.lblPassword.Text = "Password";
             // 
             // txtPassword
             // 
@@ -213,11 +213,11 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(959, 450);
+            this.ClientSize = new System.Drawing.Size(844, 450);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.cmbOdjel);
             this.Controls.Add(this.label4);
@@ -257,9 +257,10 @@ namespace PoliklinikaDesktop.Forms.Doktor
         private System.Windows.Forms.TextBox txtBrRadneKnjiz;
         private System.Windows.Forms.ComboBox cmbOdjel;
         private System.Windows.Forms.Button btnSacuvaj;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lblPassword;
     }
 }

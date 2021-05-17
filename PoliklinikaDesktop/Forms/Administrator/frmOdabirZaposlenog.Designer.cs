@@ -36,6 +36,8 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvOsoblje = new System.Windows.Forms.DataGridView();
+            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Izbrisi = new System.Windows.Forms.DataGridViewImageColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
             this.Izbrisi = new System.Windows.Forms.DataGridViewImageColumn();
@@ -84,7 +86,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(792, 199);
+            this.label2.Location = new System.Drawing.Point(812, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(247, 60);
             this.label2.TabIndex = 9;
@@ -125,6 +127,20 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.dgvOsoblje.RowTemplate.Height = 25;
             this.dgvOsoblje.Size = new System.Drawing.Size(536, 244);
             this.dgvOsoblje.TabIndex = 0;
+            // 
+            // Detalji
+            // 
+            this.Detalji.HeaderText = "Detalji";
+            this.Detalji.Name = "Detalji";
+            this.Detalji.ReadOnly = true;
+            // 
+            // Izbrisi
+            // 
+            this.Izbrisi.DataPropertyName = "Izbrisi";
+            this.Izbrisi.HeaderText = "Izbrisi";
+            this.Izbrisi.Image = global::PoliklinikaDesktop.Properties.Resources.izbrisi;
+            this.Izbrisi.Name = "Izbrisi";
+            this.Izbrisi.ReadOnly = true;
             // 
             // label4
             // 

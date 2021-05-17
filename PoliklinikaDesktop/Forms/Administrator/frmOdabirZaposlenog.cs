@@ -27,15 +27,16 @@ namespace PoliklinikaDesktop.Forms.Administrator
             doktor.Show();
         }
 
-        private void frmOdabirZaposlenog_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void picDodajTehnicara_Click(object sender, EventArgs e)
         {
             frmDetaljiTehnicar doktor = new frmDetaljiTehnicar();
             doktor.Show();
         }
+        private void frmOdabirZaposlenog_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+       
     }
 }

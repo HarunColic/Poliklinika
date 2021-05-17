@@ -31,8 +31,8 @@ namespace PoliklinikaDesktop.Forms.Doktor
             request.Specijalizacija = txtSpecijal.Text;
             request.SubSpecijalizacija = txtSubSecijal.Text;
             request.BrojRadneKnjizice = txtBrRadneKnjiz.Text;
-            request.Email = txtEmail.Text;
-            request.Password = txtPassword.Text;
+            
+           
 
             if (_id.HasValue)
             {
@@ -41,6 +41,8 @@ namespace PoliklinikaDesktop.Forms.Doktor
             }
             else
             {
+                request.Email = txtEmail.Text;
+                request.Password = txtPassword.Text;
                 await _service.Insert<DoktorVM>(request);
             }
            
@@ -58,6 +60,14 @@ namespace PoliklinikaDesktop.Forms.Doktor
         private async void frmDetaljiDoktor_Load(object sender, EventArgs e)
         {
             await LoadOdjel();
+            if (_id.HasValue)
+            {
+                txtEmail.Hide();
+                txtPassword.Hide();
+                lblEmail.Hide();
+                lblPassword.Hide();
+            }
+           
         }
 
         private void cmbOdjel_SelectedIndexChanged(object sender, EventArgs e)
