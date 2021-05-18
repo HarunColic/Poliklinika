@@ -5,14 +5,12 @@ using System.Threading.Tasks;
 
 namespace PoliklinikaAPI.ViewModels
 {
-    public class CreateTehnicarVM
+    public class OsobljeVM
     {
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string Spol { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
         public string BrojRadneKnjizice { get; set; }
-        public string StrucnaSprema { get; set; }
+        public string Zanimanje { get; set; }
     }
 }
