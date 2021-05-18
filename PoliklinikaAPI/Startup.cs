@@ -55,6 +55,7 @@ namespace PoliklinikaAPI
             services.AddScoped<UserBaseInterface<Doktor, DoktorVM, CreateDoktorVM>, UserBaseService<Doktor, DoktorVM, CreateDoktorVM>>();
             services.AddScoped<UserBaseInterface<Tehnicar, TehnicarVM, CreateTehnicarVM>, UserBaseService<Tehnicar, TehnicarVM, CreateTehnicarVM>>();
             services.AddScoped<AuthenticationInterface, AuthenticationService>();
+            services.AddScoped<BaseInterface<Osoblje, OsobljeVM>, BaseService<Osoblje, OsobljeVM>>();
 
             services.AddIdentity<User, Role>()
                     .AddEntityFrameworkStores<DBContext>()

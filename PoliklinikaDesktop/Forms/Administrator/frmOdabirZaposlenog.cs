@@ -14,8 +14,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
 {
     public partial class frmOdabirZaposlenog : Form
     {
-        private readonly APIService _serviceDoktor = new APIService("Doktor");
-        private readonly APIService _serviceTehnicar = new APIService("Tehnicar");
+        private readonly APIService _service = new APIService("Osoblje");
         public frmOdabirZaposlenog()
         {
             InitializeComponent();
@@ -34,7 +33,11 @@ namespace PoliklinikaDesktop.Forms.Administrator
         }
         private void frmOdabirZaposlenog_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            var zaposlenici = _service.Get<List<OsobljeVM>>();
+=======
            
+>>>>>>> master
         }
 
        
