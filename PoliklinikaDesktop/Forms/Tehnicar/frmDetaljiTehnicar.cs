@@ -23,7 +23,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
         {
             request.Ime = txtIme.Text;
             request.Prezime = txtPrezime.Text;
-            request.StrucnaSprema = txtStrucnaSprema.Text;
+            request.StrucnaSprema = txtstrucna.Text;
             
 
             if (_id.HasValue)
@@ -39,13 +39,8 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
         }
 
         private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var spol = cmbSpol.SelectedValue;
-
-            if (int.TryParse(spol.ToString(), out int idodjel))
-            {
-                //request.spol = idodjel;
-            }
+        {  
+            request.Spol = (string)cmbSpol.SelectedValue;
         }
 
         private void frmDetaljiTehnicar_Load(object sender, EventArgs e)

@@ -79,5 +79,10 @@ namespace PoliklinikaDesktop.Forms.Doktor
                 request.OdjelID = idodjel;
             }
         }
+
+        private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            request.Spol = (string)cmbSpol.SelectedValue;
+        }
     }
 }
