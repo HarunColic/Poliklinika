@@ -186,15 +186,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             // lblEmail
             // 
-<<<<<<< HEAD
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(550, 131);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 25);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Email";
-=======
+
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblEmail.Location = new System.Drawing.Point(481, 98);
@@ -202,7 +194,6 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.lblEmail.Size = new System.Drawing.Size(46, 20);
             this.lblEmail.TabIndex = 15;
             this.lblEmail.Text = "Email";
->>>>>>> master
             // 
             // txtEmail
             // 
@@ -214,15 +205,6 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             // lblPassword
             // 
-<<<<<<< HEAD
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(550, 211);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 25);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Password";
-=======
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblPassword.Location = new System.Drawing.Point(481, 158);
@@ -230,7 +212,6 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.lblPassword.Size = new System.Drawing.Size(70, 20);
             this.lblPassword.TabIndex = 17;
             this.lblPassword.Text = "Password";
->>>>>>> master
             // 
             // txtPassword
             // 
@@ -267,13 +248,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1096, 600);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label8);
-=======
             this.ClientSize = new System.Drawing.Size(844, 450);
->>>>>>> master
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtEmail);
@@ -322,11 +297,6 @@ namespace PoliklinikaDesktop.Forms.Doktor
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPassword;
-<<<<<<< HEAD
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label8;
-=======
         private System.Windows.Forms.Label lblPassword;
->>>>>>> master
     }
 }
