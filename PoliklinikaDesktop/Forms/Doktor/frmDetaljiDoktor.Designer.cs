@@ -47,33 +47,37 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 16);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(322, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(26, 121);
+            this.txtIme.Location = new System.Drawing.Point(30, 161);
+            this.txtIme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(334, 23);
+            this.txtIme.Size = new System.Drawing.Size(381, 27);
             this.txtIme.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(26, 98);
+            this.label1.Location = new System.Drawing.Point(30, 131);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 20);
+            this.label1.Size = new System.Drawing.Size(43, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ime";
             // 
@@ -81,60 +85,63 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             this.Prezime.AutoSize = true;
             this.Prezime.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Prezime.Location = new System.Drawing.Point(26, 158);
+            this.Prezime.Location = new System.Drawing.Point(30, 211);
             this.Prezime.Name = "Prezime";
-            this.Prezime.Size = new System.Drawing.Size(62, 20);
+            this.Prezime.Size = new System.Drawing.Size(80, 25);
             this.Prezime.TabIndex = 4;
             this.Prezime.Text = "Prezime";
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(26, 181);
+            this.txtPrezime.Location = new System.Drawing.Point(30, 241);
+            this.txtPrezime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(334, 23);
+            this.txtPrezime.Size = new System.Drawing.Size(381, 27);
             this.txtPrezime.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(26, 273);
+            this.label2.Location = new System.Drawing.Point(30, 364);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 20);
+            this.label2.Size = new System.Drawing.Size(162, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "SubSpecijalizacija";
             // 
             // txtSubSecijal
             // 
-            this.txtSubSecijal.Location = new System.Drawing.Point(26, 296);
+            this.txtSubSecijal.Location = new System.Drawing.Point(30, 395);
+            this.txtSubSecijal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSubSecijal.Name = "txtSubSecijal";
-            this.txtSubSecijal.Size = new System.Drawing.Size(334, 23);
+            this.txtSubSecijal.Size = new System.Drawing.Size(381, 27);
             this.txtSubSecijal.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(26, 215);
+            this.label3.Location = new System.Drawing.Point(30, 287);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 20);
+            this.label3.Size = new System.Drawing.Size(130, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Specijalizacija";
             // 
             // txtSpecijal
             // 
-            this.txtSpecijal.Location = new System.Drawing.Point(26, 238);
+            this.txtSpecijal.Location = new System.Drawing.Point(30, 317);
+            this.txtSpecijal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSpecijal.Name = "txtSpecijal";
-            this.txtSpecijal.Size = new System.Drawing.Size(334, 23);
+            this.txtSpecijal.Size = new System.Drawing.Size(381, 27);
             this.txtSpecijal.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(26, 379);
+            this.label4.Location = new System.Drawing.Point(30, 505);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 20);
+            this.label4.Size = new System.Drawing.Size(57, 25);
             this.label4.TabIndex = 12;
             this.label4.Text = "Odjel";
             // 
@@ -142,33 +149,36 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(26, 329);
+            this.label5.Location = new System.Drawing.Point(30, 439);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 20);
+            this.label5.Size = new System.Drawing.Size(168, 25);
             this.label5.TabIndex = 10;
             this.label5.Text = "Broj radne knjižice";
             // 
             // txtBrRadneKnjiz
             // 
-            this.txtBrRadneKnjiz.Location = new System.Drawing.Point(26, 351);
+            this.txtBrRadneKnjiz.Location = new System.Drawing.Point(30, 468);
+            this.txtBrRadneKnjiz.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBrRadneKnjiz.Name = "txtBrRadneKnjiz";
-            this.txtBrRadneKnjiz.Size = new System.Drawing.Size(334, 23);
+            this.txtBrRadneKnjiz.Size = new System.Drawing.Size(381, 27);
             this.txtBrRadneKnjiz.TabIndex = 9;
             // 
             // cmbOdjel
             // 
             this.cmbOdjel.FormattingEnabled = true;
-            this.cmbOdjel.Location = new System.Drawing.Point(26, 402);
+            this.cmbOdjel.Location = new System.Drawing.Point(30, 536);
+            this.cmbOdjel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbOdjel.Name = "cmbOdjel";
-            this.cmbOdjel.Size = new System.Drawing.Size(334, 23);
+            this.cmbOdjel.Size = new System.Drawing.Size(381, 28);
             this.cmbOdjel.TabIndex = 13;
             this.cmbOdjel.SelectedIndexChanged += new System.EventHandler(this.cmbOdjel_SelectedIndexChanged);
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(691, 263);
+            this.btnSacuvaj.Location = new System.Drawing.Point(659, 425);
+            this.btnSacuvaj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSacuvaj.Name = "btnSacuvaj";
-            this.btnSacuvaj.Size = new System.Drawing.Size(124, 42);
+            this.btnSacuvaj.Size = new System.Drawing.Size(142, 56);
             this.btnSacuvaj.TabIndex = 14;
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
@@ -176,6 +186,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             // lblEmail
             // 
+
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblEmail.Location = new System.Drawing.Point(481, 98);
@@ -186,9 +197,10 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(481, 121);
+            this.txtEmail.Location = new System.Drawing.Point(550, 161);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(334, 23);
+            this.txtEmail.Size = new System.Drawing.Size(381, 27);
             this.txtEmail.TabIndex = 16;
             // 
             // lblPassword
@@ -203,14 +215,37 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(481, 181);
+            this.txtPassword.Location = new System.Drawing.Point(550, 241);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(334, 23);
+            this.txtPassword.Size = new System.Drawing.Size(381, 27);
             this.txtPassword.TabIndex = 18;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "M",
+            "Z"});
+            this.comboBox1.Location = new System.Drawing.Point(550, 315);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(381, 28);
+            this.comboBox1.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(550, 284);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(49, 25);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Spol";
             // 
             // frmDetaljiDoktor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(844, 450);
@@ -232,6 +267,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIme);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmDetaljiDoktor";
             this.Text = "frmDetaljiDoktor";
             this.Load += new System.EventHandler(this.frmDetaljiDoktor_Load);

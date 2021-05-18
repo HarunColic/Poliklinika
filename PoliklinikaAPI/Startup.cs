@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Poliklinika.Model;
 using PoliklinikaAPI.Data;
+using PoliklinikaAPI.Helpers;
 using PoliklinikaAPI.Interfaces;
 using PoliklinikaAPI.Mappers;
 using PoliklinikaAPI.Services;
@@ -34,6 +35,8 @@ namespace PoliklinikaAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen();
@@ -51,10 +54,14 @@ namespace PoliklinikaAPI
             services.AddScoped<UserBaseInterface<Korisnik, KorisnikVM, SignUpKorisnikVM>, UserBaseService<Korisnik, KorisnikVM, SignUpKorisnikVM>>();
             services.AddScoped<UserBaseInterface<Doktor, DoktorVM, CreateDoktorVM>, UserBaseService<Doktor, DoktorVM, CreateDoktorVM>>();
             services.AddScoped<UserBaseInterface<Tehnicar, TehnicarVM, CreateTehnicarVM>, UserBaseService<Tehnicar, TehnicarVM, CreateTehnicarVM>>();
+            services.AddScoped<AuthenticationInterface, AuthenticationService>();
+            services.AddScoped<BaseInterface<Osoblje, OsobljeVM>, BaseService<Osoblje, OsobljeVM>>();
 
             services.AddIdentity<User, Role>()
                     .AddEntityFrameworkStores<DBContext>()
                     .AddDefaultTokenProviders();
+
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,6 +88,14 @@ namespace PoliklinikaAPI
 
             app.UseAuthorization();
 
+
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            app.UseMiddleware<JwtMiddleware>();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

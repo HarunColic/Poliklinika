@@ -37,7 +37,9 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIme = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtStrucnaSprema = new System.Windows.Forms.TextBox();
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbSpol = new System.Windows.Forms.ComboBox();
@@ -116,6 +118,16 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.txtIme.Size = new System.Drawing.Size(334, 23);
             this.txtIme.TabIndex = 13;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(282, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -125,6 +137,13 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.label2.Size = new System.Drawing.Size(111, 20);
             this.label2.TabIndex = 23;
             this.label2.Text = "Stručna sprema";
+            // 
+            // txtStrucnaSprema
+            // 
+            this.txtStrucnaSprema.Location = new System.Drawing.Point(35, 305);
+            this.txtStrucnaSprema.Name = "txtStrucnaSprema";
+            this.txtStrucnaSprema.Size = new System.Drawing.Size(334, 23);
+            this.txtStrucnaSprema.TabIndex = 27;
             // 
             // btnSacuvaj
             // 
@@ -203,6 +222,8 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtStrucnaSprema);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtStrucnaSprema);
             this.Controls.Add(this.txtBrRadneKnjizice);
@@ -230,7 +251,9 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
         private System.Windows.Forms.TextBox txtPrezime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIme;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtStrucnaSprema;
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbSpol;
