@@ -38,6 +38,8 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.cmbOdjel = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvIzvjestaj = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIzvjestaj)).BeginInit();
@@ -100,6 +102,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.cmbZaposlenik.Name = "cmbZaposlenik";
             this.cmbZaposlenik.Size = new System.Drawing.Size(169, 23);
             this.cmbZaposlenik.TabIndex = 6;
+            this.cmbZaposlenik.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbZaposlenik_Format);
             // 
             // cmbOdjel
             // 
@@ -124,6 +127,9 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.dgvIzvjestaj.AllowUserToAddRows = false;
             this.dgvIzvjestaj.AllowUserToDeleteRows = false;
             this.dgvIzvjestaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIzvjestaj.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Detalji});
             this.dgvIzvjestaj.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvIzvjestaj.Location = new System.Drawing.Point(3, 19);
             this.dgvIzvjestaj.Name = "dgvIzvjestaj";
@@ -131,6 +137,23 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.dgvIzvjestaj.RowTemplate.Height = 25;
             this.dgvIzvjestaj.Size = new System.Drawing.Size(795, 211);
             this.dgvIzvjestaj.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Detalji
+            // 
+            this.Detalji.DataPropertyName = "Detalji";
+            this.Detalji.HeaderText = "Detalji";
+            this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
+            this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Detalji.Name = "Detalji";
+            this.Detalji.ReadOnly = true;
             // 
             // frmIndexIzvjestaj
             // 
@@ -148,6 +171,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.Controls.Add(this.pictureBox2);
             this.Name = "frmIndexIzvjestaj";
             this.Text = "frmIndexIzvjestaj";
+            this.Load += new System.EventHandler(this.frmIndexIzvjestaj_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIzvjestaj)).EndInit();
@@ -167,5 +191,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         private System.Windows.Forms.ComboBox cmbOdjel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvIzvjestaj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewImageColumn Detalji;
     }
 }

@@ -39,6 +39,8 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
             this.Izbrisi = new System.Windows.Forms.DataGridViewImageColumn();
             this.label4 = new System.Windows.Forms.Label();
+            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Izbrisi = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picDodajDoktora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDodajTehnicara)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -149,6 +151,22 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.label4.Size = new System.Drawing.Size(117, 30);
             this.label4.TabIndex = 13;
             this.label4.Text = "Zaposlenici";
+            // 
+            // Detalji
+            // 
+            this.Detalji.DataPropertyName = "Detalji";
+            this.Detalji.HeaderText = "Detalji";
+            this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
+            this.Detalji.Name = "Detalji";
+            this.Detalji.ReadOnly = true;
+            // 
+            // Izbrisi
+            // 
+            this.Izbrisi.DataPropertyName = "Izbrisi";
+            this.Izbrisi.HeaderText = "Izbrisi";
+            this.Izbrisi.Image = global::PoliklinikaDesktop.Properties.Resources.izbrisi;
+            this.Izbrisi.Name = "Izbrisi";
+            this.Izbrisi.ReadOnly = true;
             // 
             // frmOdabirZaposlenog
             // 

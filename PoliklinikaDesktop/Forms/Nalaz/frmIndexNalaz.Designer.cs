@@ -1,7 +1,7 @@
 ﻿
-namespace PoliklinikaDesktop.Forms.Doktor
+namespace PoliklinikaDesktop.Forms.Nalaz
 {
-    partial class frmIndexIzvjestajaDoktor
+    partial class frmIndexNalaz
     {
         /// <summary>
         /// Required designer variable.
@@ -30,19 +30,18 @@ namespace PoliklinikaDesktop.Forms.Doktor
         private void InitializeComponent()
         {
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvPregled = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvIzvjestaj = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dgvNalaz = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPregled)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIzvjestaj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNalaz)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -52,28 +51,29 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(282, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 30);
-            this.label1.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 30);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Kreiranje nalaza";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvPregled);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(2, 141);
+            this.groupBox1.Location = new System.Drawing.Point(1, 141);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(798, 188);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pregledi za koje je potrebno kreirati izvještaj";
+            this.groupBox1.Text = "Pregledi za koje je potrebno kreirati nalaz";
             // 
             // dgvPregled
             // 
@@ -90,40 +90,30 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dgvIzvjestaj);
+            this.groupBox2.Controls.Add(this.dgvNalaz);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(2, 359);
+            this.groupBox2.Location = new System.Drawing.Point(4, 385);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(798, 188);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.Size = new System.Drawing.Size(798, 238);
+            this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Kreirani izvještaji";
+            this.groupBox2.Text = "Kreirani nalazi";
             // 
-            // dgvIzvjestaj
+            // dgvNalaz
             // 
-            this.dgvIzvjestaj.AllowUserToAddRows = false;
-            this.dgvIzvjestaj.AllowUserToDeleteRows = false;
-            this.dgvIzvjestaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIzvjestaj.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvNalaz.AllowUserToAddRows = false;
+            this.dgvNalaz.AllowUserToDeleteRows = false;
+            this.dgvNalaz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNalaz.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Detalji});
-            this.dgvIzvjestaj.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvIzvjestaj.Location = new System.Drawing.Point(3, 31);
-            this.dgvIzvjestaj.Name = "dgvIzvjestaj";
-            this.dgvIzvjestaj.ReadOnly = true;
-            this.dgvIzvjestaj.RowTemplate.Height = 25;
-            this.dgvIzvjestaj.Size = new System.Drawing.Size(792, 154);
-            this.dgvIzvjestaj.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(5, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 30);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Pregled izvještaja";
+            this.dgvNalaz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNalaz.Location = new System.Drawing.Point(3, 31);
+            this.dgvNalaz.Name = "dgvNalaz";
+            this.dgvNalaz.ReadOnly = true;
+            this.dgvNalaz.RowTemplate.Height = 25;
+            this.dgvNalaz.Size = new System.Drawing.Size(792, 204);
+            this.dgvNalaz.TabIndex = 0;
             // 
             // ID
             // 
@@ -137,27 +127,29 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             this.Detalji.DataPropertyName = "Detalji";
             this.Detalji.HeaderText = "Detalji";
+            this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
+            this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Detalji.Name = "Detalji";
             this.Detalji.ReadOnly = true;
             // 
-            // frmIndexIzvjestajaDoktor
+            // frmIndexNalaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(800, 545);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(800, 635);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
-            this.Name = "frmIndexIzvjestajaDoktor";
-            this.Text = "frmIndexIzvjestajaDoktor";
+            this.Name = "frmIndexNalaz";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frmIndexNalaz";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPregled)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIzvjestaj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNalaz)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,12 +158,11 @@ namespace PoliklinikaDesktop.Forms.Doktor
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvPregled;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvIzvjestaj;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvNalaz;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewImageColumn Detalji;
     }

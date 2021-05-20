@@ -28,6 +28,12 @@
     <Compile Update="Forms\Izvjestaj\frmIndexIzvjestaj.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Nalaz\frmDetaljiNalaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Nalaz\frmIndexNalaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Odjel\frmDetaljiOdjel.cs">
       <SubType>Form</SubType>
     </Compile>

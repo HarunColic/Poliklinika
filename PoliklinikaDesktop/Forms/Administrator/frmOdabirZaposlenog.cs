@@ -33,11 +33,9 @@ namespace PoliklinikaDesktop.Forms.Administrator
         }
         private void frmOdabirZaposlenog_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             var zaposlenici = _service.Get<List<OsobljeVM>>();
-=======
-           
->>>>>>> master
+
         }
 
        

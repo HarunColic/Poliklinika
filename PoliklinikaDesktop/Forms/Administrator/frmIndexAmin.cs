@@ -1,4 +1,5 @@
-﻿using PoliklinikaDesktop.Forms.Odjel;
+﻿using PoliklinikaDesktop.Forms.Izvjestaj;
+using PoliklinikaDesktop.Forms.Odjel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,10 +23,20 @@ namespace PoliklinikaDesktop.Forms.Administrator
             index.Show();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void picPregledIzvjestaja_Click(object sender, EventArgs e)
+        {
+            frmIndexIzvjestaj zaposleni = new frmIndexIzvjestaj();
+            zaposleni.Show();
+        }
+
+        private void picEvidencijaZaposlenika_Click(object sender, EventArgs e)
         {
             frmOdabirZaposlenog zaposleni = new frmOdabirZaposlenog();
             zaposleni.Show();
         }
+
+        
+
+
     }
 }

@@ -31,12 +31,12 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtStrucnaSprema = new System.Windows.Forms.TextBox();
             this.txtBrRadneKnjizice = new System.Windows.Forms.TextBox();
             this.Prezime = new System.Windows.Forms.Label();
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIme = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +45,9 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.txtstrucna = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -67,13 +69,6 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.label5.Size = new System.Drawing.Size(131, 20);
             this.label5.TabIndex = 22;
             this.label5.Text = "Broj radne knjižice";
-            // 
-            // txtStrucnaSprema
-            // 
-            this.txtStrucnaSprema.Location = new System.Drawing.Point(30, 307);
-            this.txtStrucnaSprema.Name = "txtStrucnaSprema";
-            this.txtStrucnaSprema.Size = new System.Drawing.Size(334, 23);
-            this.txtStrucnaSprema.TabIndex = 19;
             // 
             // txtBrRadneKnjizice
             // 
@@ -116,6 +111,16 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.txtIme.Size = new System.Drawing.Size(334, 23);
             this.txtIme.TabIndex = 13;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(282, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -149,6 +154,9 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             // cmbSpol
             // 
             this.cmbSpol.FormattingEnabled = true;
+            this.cmbSpol.Items.AddRange(new object[] {
+            "M",
+            "Ž"});
             this.cmbSpol.Location = new System.Drawing.Point(30, 362);
             this.cmbSpol.Name = "cmbSpol";
             this.cmbSpol.Size = new System.Drawing.Size(334, 23);
@@ -189,12 +197,20 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.lblEmail.TabIndex = 36;
             this.lblEmail.Text = "Email";
             // 
+            // txtstrucna
+            // 
+            this.txtstrucna.Location = new System.Drawing.Point(30, 308);
+            this.txtstrucna.Name = "txtstrucna";
+            this.txtstrucna.Size = new System.Drawing.Size(334, 23);
+            this.txtstrucna.TabIndex = 40;
+            // 
             // frmDetaljiTehnicar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(793, 409);
+            this.Controls.Add(this.txtstrucna);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtEmail);
@@ -203,8 +219,8 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtStrucnaSprema);
             this.Controls.Add(this.txtBrRadneKnjizice);
             this.Controls.Add(this.Prezime);
             this.Controls.Add(this.txtPrezime);
@@ -215,6 +231,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.Text = "frmDetaljiTehnicar";
             this.Load += new System.EventHandler(this.frmDetaljiTehnicar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +247,9 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
         private System.Windows.Forms.TextBox txtPrezime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIme;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbSpol;
@@ -238,5 +257,6 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TextBox txtstrucna;
     }
 }
