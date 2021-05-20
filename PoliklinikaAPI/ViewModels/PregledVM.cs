@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PoliklinikaAPI.Interfaces
+namespace PoliklinikaAPI.ViewModels
 {
-    interface OsobljeInterface
+    public class PregledVM
     {
     }
 }

@@ -35,14 +35,24 @@ namespace PoliklinikaAPI.Services
             return _mapper.Map<TVM>(_db.Set<T>().Find(id));
         }
 
-        public TVM insert(TVM model)
+        public TVM Insert(TVM model)
         {
-            throw new NotImplementedException();
+            var m = _mapper.Map<T>(model);
+
+            _db.Set<T>().Add(m);
+            _db.SaveChanges();
+
+            return model;
         }
 
-        public TVM update(TVM model)
+        public TVM Update(TVM model)
         {
-            throw new NotImplementedException();
+            var m = _mapper.Map<T>(model);
+
+            _db.Set<T>().Update(m);
+            _db.SaveChanges();
+
+            return model;
         }
     }
 }

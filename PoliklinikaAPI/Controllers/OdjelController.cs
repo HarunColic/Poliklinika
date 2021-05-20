@@ -15,35 +15,35 @@ namespace PoliklinikaAPI.Controllers
     [ApiController]
     public class OdjelController : ControllerBase
     {
-        protected OdjelInterface _odjelInterface;
+        protected BaseInterface<Odjel, OdjelVM> _odjelInterface;
 
-        public OdjelController(OdjelInterface odjelInterface)
+        public OdjelController(BaseInterface<Odjel, OdjelVM> odjelInterface)
         {
             _odjelInterface = odjelInterface;
         }
 
         [HttpGet]
-        public List<Odjel> GetAll()
+        public List<OdjelVM> GetAll()
         {
             return _odjelInterface.GetAll();
         }
 
         [HttpGet("{id}")]
-        public Odjel Get(int id)
+        public OdjelVM Get(int id)
         {
-            return _odjelInterface.Get(id);
+            return _odjelInterface.GetById(id);
         }
 
         [HttpPost]
-        public Odjel Insert(OdjelVM odjel)
+        public OdjelVM Insert(OdjelVM odjel)
         {
             return _odjelInterface.Insert(odjel);
         }
 
         [HttpPut("{id}")]
-        public Odjel Update(int id, OdjelVM odjel)
+        public OdjelVM Update(OdjelVM odjel)
         {
-            return _odjelInterface.Update(id, odjel);
+            return _odjelInterface.Update(odjel);
         }
         [HttpDelete("{id}")]
         public void Delete(int id)

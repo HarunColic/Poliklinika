@@ -11,34 +11,34 @@ namespace PoliklinikaAPI.Controllers
 {
     public class NalazController : Controller
     {
-        private readonly NalazInterface _nalazInterface;
-        public NalazController(NalazInterface nalazInterface)
+        private readonly BaseInterface<Nalaz, NalazVM> _nalazInterface;
+        public NalazController(BaseInterface<Nalaz, NalazVM> nalazInterface)
         {
             _nalazInterface = nalazInterface;
         }
 
         [HttpGet]
-        public List<Nalaz> GetAll()
+        public List<NalazVM> GetAll()
         {
             return _nalazInterface.GetAll();
         }
 
         [HttpGet("{id}")]
-        public Nalaz Get(int id)
+        public NalazVM Get(int id)
         {
-            return _nalazInterface.Get(id);
+            return _nalazInterface.GetById(id);
         }
 
         [HttpPost]
-        public Nalaz Insert(NalazVM nalaz)
+        public NalazVM Insert(NalazVM nalaz)
         {
             return _nalazInterface.Insert(nalaz);
         }
 
         [HttpPut("{id}")]
-        public Nalaz Update(int id, NalazVM nalaz)
+        public NalazVM Update(NalazVM nalaz)
         {
-            return _nalazInterface.Update(id, nalaz);
+            return _nalazInterface.Update(nalaz);
         }
         [HttpDelete("{id}")]
         public void Delete(int id)
