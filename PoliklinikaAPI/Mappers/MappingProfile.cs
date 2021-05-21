@@ -27,6 +27,7 @@ namespace PoliklinikaAPI.Mappers
             CreateMap<TehnicarVM, CreateTehnicarVM>().ReverseMap();
 
             CreateMap<Osoblje, OsobljeVM>().ReverseMap();
+            CreateMap<Pregled, PregledVM>().ReverseMap();
         }
     }
 }

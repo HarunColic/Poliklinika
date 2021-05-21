@@ -7,5 +7,10 @@ namespace PoliklinikaAPI.ViewModels
 {
     public class PregledVM
     {
+        public int ID { get; set; }
+        public int DoktorID { get; set; }
+        public int KorisnikID { get; set; }
+        public DateTime Datum { get; set; }
+        public string Opis { get; set; }
     }
 }

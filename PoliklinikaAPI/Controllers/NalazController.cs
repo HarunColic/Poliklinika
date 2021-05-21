@@ -9,12 +9,20 @@ using System.Threading.Tasks;
 
 namespace PoliklinikaAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class NalazController : Controller
     {
         private readonly BaseInterface<Nalaz, NalazVM> _nalazInterface;
         public NalazController(BaseInterface<Nalaz, NalazVM> nalazInterface)
         {
             _nalazInterface = nalazInterface;
+        }
+
+        [HttpPost]
+        public NalazVM Insert(NalazVM nalaz)
+        {
+            return _nalazInterface.Insert(nalaz);
         }
 
         [HttpGet]
@@ -27,12 +35,6 @@ namespace PoliklinikaAPI.Controllers
         public NalazVM Get(int id)
         {
             return _nalazInterface.GetById(id);
-        }
-
-        [HttpPost]
-        public NalazVM Insert(NalazVM nalaz)
-        {
-            return _nalazInterface.Insert(nalaz);
         }
 
         [HttpPut("{id}")]
