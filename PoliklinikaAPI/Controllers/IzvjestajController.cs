@@ -19,7 +19,8 @@ namespace PoliklinikaAPI.Controllers
         {
             _baseInterface = baseInterface;
         }
-
+        
+        [HttpGet]
         public List<IzvjestajVM> GetAll()
         {
             return _baseInterface.GetAll();
