@@ -82,7 +82,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
 
         private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)
         {
-            request.Spol = (string)cmbSpol.SelectedValue;
+            request.Spol = cmbSpol.SelectedItem.ToString();
         }
     }
 }

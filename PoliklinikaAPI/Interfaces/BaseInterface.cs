@@ -9,8 +9,8 @@ namespace PoliklinikaAPI.Interfaces
     {
         public List<TVM> GetAll();
         public TVM GetById(int id);
-        public TVM insert(TVM model);
-        public TVM update(TVM model);
+        public TVM Insert(TVM model);
+        public TVM Update(TVM model);
         public void Delete(int id);
     }
 }

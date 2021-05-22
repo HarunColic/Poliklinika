@@ -40,7 +40,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
 
         private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)
         {  
-            request.Spol = (string)cmbSpol.SelectedValue;
+            request.Spol = (string)cmbSpol.SelectedItem;
         }
 
         private void frmDetaljiTehnicar_Load(object sender, EventArgs e)

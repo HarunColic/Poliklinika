@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace PoliklinikaAPI.ViewModels
 {
-    public class OdjelVM
+    public class PregledVM
     {
-        public int Id { get; set; }
-        public string Naziv { get; set; }
+        public int ID { get; set; }
+        public int DoktorID { get; set; }
+        public int KorisnikID { get; set; }
+        public DateTime Datum { get; set; }
         public string Opis { get; set; }
-        public byte[] Slika { get; set; }
     }
 }

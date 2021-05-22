@@ -59,21 +59,11 @@ namespace PoliklinikaAPI.Services
             {
                 signupUser = _mapper.Map<TCreateVM, Doktor>(user);
                 roleName = nameof(Doktor);
-                
-                if(signupUser.Spol == "M")
-                    user.GetType().GetProperty("Zanimanje").SetValue(signupUser, "Doktor");
-                else
-                    user.GetType().GetProperty("Zanimanje").SetValue(signupUser, "Doktorica");
             }
             else
             {
                 signupUser = _mapper.Map<TCreateVM, Tehnicar>(user);
                 roleName = nameof(Tehnicar);
-
-                if (signupUser.Spol == "M")
-                    user.GetType().GetProperty("Zanimanje").SetValue(signupUser, "Tehnicar");
-                else
-                    user.GetType().GetProperty("Zanimanje").SetValue(signupUser, "Medicinska Sestra");
             }
 
             var mail = user.GetType().GetProperty("Email").GetValue(user, null);

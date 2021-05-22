@@ -50,12 +50,15 @@ namespace PoliklinikaAPI
             });
 
             IMapper mapper = mapperConfig.CreateMapper();
-            services.AddScoped<OdjelInterface, OdjelService>();
             services.AddScoped<UserBaseInterface<Korisnik, KorisnikVM, SignUpKorisnikVM>, UserBaseService<Korisnik, KorisnikVM, SignUpKorisnikVM>>();
             services.AddScoped<UserBaseInterface<Doktor, DoktorVM, CreateDoktorVM>, UserBaseService<Doktor, DoktorVM, CreateDoktorVM>>();
             services.AddScoped<UserBaseInterface<Tehnicar, TehnicarVM, CreateTehnicarVM>, UserBaseService<Tehnicar, TehnicarVM, CreateTehnicarVM>>();
             services.AddScoped<AuthenticationInterface, AuthenticationService>();
             services.AddScoped<BaseInterface<Osoblje, OsobljeVM>, BaseService<Osoblje, OsobljeVM>>();
+            services.AddScoped<BaseInterface<Nalaz, NalazVM>, BaseService<Nalaz, NalazVM>>();
+            services.AddScoped<BaseInterface<Odjel, OdjelVM>, BaseService<Odjel, OdjelVM>>();
+            services.AddScoped<BaseInterface<Pregled, PregledVM>, BaseService<Pregled, PregledVM>>();
+
 
             services.AddIdentity<User, Role>()
                     .AddEntityFrameworkStores<DBContext>()
