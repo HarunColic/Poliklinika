@@ -35,9 +35,10 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.dgvOdgObaveze = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvObaveze = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdgObaveze)).BeginInit();
@@ -107,6 +108,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.dgvObaveze.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvObaveze.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.Datum,
             this.Detalji});
             this.dgvObaveze.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvObaveze.Location = new System.Drawing.Point(3, 31);
@@ -116,21 +118,6 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.dgvObaveze.Size = new System.Drawing.Size(792, 164);
             this.dgvObaveze.TabIndex = 0;
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Detalji
-            // 
-            this.Detalji.DataPropertyName = "Detalji";
-            this.Detalji.HeaderText = "Detalji";
-            this.Detalji.Name = "Detalji";
-            this.Detalji.ReadOnly = true;
-            // 
             // btnDodaj
             // 
             this.btnDodaj.Location = new System.Drawing.Point(622, 61);
@@ -139,6 +126,28 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.btnDodaj.TabIndex = 10;
             this.btnDodaj.Text = "Dodaj novu obavezu";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Datum
+            // 
+            this.Datum.DataPropertyName = "Datum";
+            this.Datum.HeaderText = "Datum";
+            this.Datum.Name = "Datum";
+            this.Datum.ReadOnly = true;
+            // 
+            // Detalji
+            // 
+            this.Detalji.DataPropertyName = "Detalji";
+            this.Detalji.HeaderText = "Detalji";
+            this.Detalji.Name = "Detalji";
+            this.Detalji.ReadOnly = true;
             // 
             // frmIndexObaveza
             // 
@@ -153,6 +162,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.Controls.Add(this.pictureBox2);
             this.Name = "frmIndexObaveza";
             this.Text = "frmIndexObaveza";
+            this.Load += new System.EventHandler(this.frmIndexObaveza_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdgObaveze)).EndInit();
@@ -171,8 +181,9 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         private System.Windows.Forms.DataGridView dgvOdgObaveze;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvObaveze;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewImageColumn Detalji;
         private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
+        private System.Windows.Forms.DataGridViewImageColumn Detalji;
     }
 }

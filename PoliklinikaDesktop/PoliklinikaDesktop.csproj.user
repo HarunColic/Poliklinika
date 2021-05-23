@@ -34,10 +34,19 @@
     <Compile Update="Forms\Nalaz\frmIndexNalaz.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Obaveza\frmDetaljiObaveza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Obaveza\frmIndexObaveza.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Odjel\frmDetaljiOdjel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Odjel\frmIndexOdjel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Smjena\frmIndexSmjena.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Tehnicar\frmDetaljiTehnicar.cs">

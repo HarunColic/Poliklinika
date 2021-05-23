@@ -35,9 +35,9 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.dgvPregled = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvIzvjestaj = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPregled)).BeginInit();
@@ -115,16 +115,6 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.dgvIzvjestaj.Size = new System.Drawing.Size(792, 154);
             this.dgvIzvjestaj.TabIndex = 0;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(5, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 30);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Pregled izvještaja";
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
@@ -139,6 +129,16 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.Detalji.HeaderText = "Detalji";
             this.Detalji.Name = "Detalji";
             this.Detalji.ReadOnly = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(5, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(173, 30);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Pregled izvještaja";
             // 
             // frmIndexIzvjestajaDoktor
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PoliklinikaDesktop.Forms.Nalaz;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,12 @@ namespace PoliklinikaDesktop.Forms.Doktor
         public frmIndexDoktor()
         {
             InitializeComponent();
+        }
+
+        private void picNalaz_Click(object sender, EventArgs e)
+        {
+            frmIndexNalaz nalaz = new frmIndexNalaz();
+            nalaz.Show();
         }
     }
 }

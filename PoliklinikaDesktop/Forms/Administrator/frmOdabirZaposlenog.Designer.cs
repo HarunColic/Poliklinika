@@ -36,9 +36,10 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvOsoblje = new System.Windows.Forms.DataGridView();
-            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Izbrisi = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label4 = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
             this.Izbrisi = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picDodajDoktora)).BeginInit();
@@ -106,9 +107,9 @@ namespace PoliklinikaDesktop.Forms.Administrator
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvOsoblje);
-            this.groupBox1.Location = new System.Drawing.Point(12, 199);
+            this.groupBox1.Location = new System.Drawing.Point(12, 240);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(542, 266);
+            this.groupBox1.Size = new System.Drawing.Size(547, 225);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
@@ -116,8 +117,13 @@ namespace PoliklinikaDesktop.Forms.Administrator
             // 
             this.dgvOsoblje.AllowUserToAddRows = false;
             this.dgvOsoblje.AllowUserToDeleteRows = false;
+            this.dgvOsoblje.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.dgvOsoblje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOsoblje.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Ime,
+            this.Prezime,
+            this.Role,
             this.Detalji,
             this.Izbrisi});
             this.dgvOsoblje.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -125,38 +131,45 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.dgvOsoblje.Name = "dgvOsoblje";
             this.dgvOsoblje.ReadOnly = true;
             this.dgvOsoblje.RowTemplate.Height = 25;
-            this.dgvOsoblje.Size = new System.Drawing.Size(536, 244);
+            this.dgvOsoblje.Size = new System.Drawing.Size(541, 203);
             this.dgvOsoblje.TabIndex = 0;
+            this.dgvOsoblje.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOsoblje_CellClick);
             // 
-            // Detalji
+            // ID
             // 
-            this.Detalji.HeaderText = "Detalji";
-            this.Detalji.Name = "Detalji";
-            this.Detalji.ReadOnly = true;
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
             // 
-            // Izbrisi
+            // Ime
             // 
-            this.Izbrisi.DataPropertyName = "Izbrisi";
-            this.Izbrisi.HeaderText = "Izbrisi";
-            this.Izbrisi.Image = global::PoliklinikaDesktop.Properties.Resources.izbrisi;
-            this.Izbrisi.Name = "Izbrisi";
-            this.Izbrisi.ReadOnly = true;
+            this.Ime.DataPropertyName = "Ime";
+            this.Ime.HeaderText = "Ime ";
+            this.Ime.Name = "Ime";
+            this.Ime.ReadOnly = true;
             // 
-            // label4
+            // Prezime
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(15, 144);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 30);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Zaposlenici";
+            this.Prezime.DataPropertyName = "Prezime";
+            this.Prezime.HeaderText = "Prezime";
+            this.Prezime.Name = "Prezime";
+            this.Prezime.ReadOnly = true;
+            // 
+            // Role
+            // 
+            this.Role.DataPropertyName = "Role";
+            this.Role.HeaderText = "Zanimanje";
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
             // 
             // Detalji
             // 
             this.Detalji.DataPropertyName = "Detalji";
             this.Detalji.HeaderText = "Detalji";
             this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
+            this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Detalji.Name = "Detalji";
             this.Detalji.ReadOnly = true;
             // 
@@ -165,6 +178,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.Izbrisi.DataPropertyName = "Izbrisi";
             this.Izbrisi.HeaderText = "Izbrisi";
             this.Izbrisi.Image = global::PoliklinikaDesktop.Properties.Resources.izbrisi;
+            this.Izbrisi.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Izbrisi.Name = "Izbrisi";
             this.Izbrisi.ReadOnly = true;
             // 
@@ -174,7 +188,6 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1071, 477);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -203,7 +216,10 @@ namespace PoliklinikaDesktop.Forms.Administrator
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvOsoblje;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
         private System.Windows.Forms.DataGridViewImageColumn Detalji;
         private System.Windows.Forms.DataGridViewImageColumn Izbrisi;
     }

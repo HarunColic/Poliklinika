@@ -14,6 +14,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
     {
         private readonly APIService _zaposleni = new APIService("Doktor");
         private readonly APIService _odjel = new APIService("Odjel");
+        private readonly APIService _izvjestaj = new APIService("Izvjestaj");
         public frmIndexIzvjestaj()
         {
             InitializeComponent();
@@ -50,5 +51,14 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             e.Value = ime + " " + prezime;
 
         }
+
+        private void cmbZaposlenik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var idObj = cmbZaposlenik.SelectedValue;
+        }
+        //private Task LoadIzvjestaj(int zaposlenikID)
+        //{
+        //    var result = _izvjestaj.Get<List<IzvjestajVM>);
+        //}
     }
 }

@@ -102,6 +102,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.cmbZaposlenik.Name = "cmbZaposlenik";
             this.cmbZaposlenik.Size = new System.Drawing.Size(169, 23);
             this.cmbZaposlenik.TabIndex = 6;
+            this.cmbZaposlenik.SelectedIndexChanged += new System.EventHandler(this.cmbZaposlenik_SelectedIndexChanged);
             this.cmbZaposlenik.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbZaposlenik_Format);
             // 
             // cmbOdjel
