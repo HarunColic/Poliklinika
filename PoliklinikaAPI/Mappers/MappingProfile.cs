@@ -12,11 +12,11 @@ namespace PoliklinikaAPI.Mappers
     {
         public MappingProfile()
         {
-            CreateMap<Odjel, OdjelVM>().ReverseMap();
+            CreateMap<Admin, SignupAdminVM>().ReverseMap();
+
             CreateMap<Korisnik, KorisnikVM>().ReverseMap();
             CreateMap<Korisnik, SignUpKorisnikVM>().ReverseMap();
             CreateMap<KorisnikVM, SignUpKorisnikVM>().ReverseMap();
-            CreateMap<Nalaz, NalazVM>().ReverseMap();
 
             CreateMap<Doktor, DoktorVM>().ReverseMap();
             CreateMap<Doktor, CreateDoktorVM>().ReverseMap();
@@ -28,6 +28,10 @@ namespace PoliklinikaAPI.Mappers
 
             CreateMap<Osoblje, OsobljeVM>().ReverseMap();
             CreateMap<Pregled, PregledVM>().ReverseMap();
+            CreateMap<Uplata, UplataVM>().ReverseMap();
+            CreateMap<Odjel, OdjelVM>().ReverseMap();
+            CreateMap<Nalaz, NalazVM>().ReverseMap();
+            CreateMap<Obaveza, ObavezaVM>().ReverseMap();
         }
     }
 }

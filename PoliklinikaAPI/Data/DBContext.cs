@@ -12,6 +12,7 @@ namespace PoliklinikaAPI.Data
     {
 
         public DbSet<Odjel> Odjel { get; set; }
+        public DbSet<Obaveza> Obaveza { get; set; }
         public DbSet<Doktor> Doktor { get; set; }
         public DbSet<Izvjestaj> Izvjestaj { get; set; }
         public DbSet<Korisnik> Korisnik { get; set; }
@@ -26,6 +27,7 @@ namespace PoliklinikaAPI.Data
         public DbSet<Uplata> Uplata { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Role> Role { get; set; }
+        public DbSet<Admin> Admin { get; set; }
 
 
         public DBContext(DbContextOptions<DBContext> options) : base(options)

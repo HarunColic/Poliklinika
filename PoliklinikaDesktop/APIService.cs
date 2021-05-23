@@ -4,6 +4,7 @@ using System.Text;
 using Flurl.Http;
 using Flurl;
 using System.Threading.Tasks;
+using PoliklinikaAPI.ViewModels;
 
 namespace PoliklinikaDesktop
 {

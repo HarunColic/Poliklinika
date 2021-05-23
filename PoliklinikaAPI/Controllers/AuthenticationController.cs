@@ -21,15 +21,15 @@ namespace PoliklinikaAPI.Controllers
             _userService = userService;
         }
 
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate(AuthenticateRequest model)
+        [HttpPost]
+        public AuthenticateResponse Authenticate(AuthenticateRequest model)
         {
             var response = _userService.Authenticate(model);
 
             if (response == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
+                throw new Exception("Username or password is incorrect");
 
-            return Ok(response);
+            return response;
         }
     }
 }
