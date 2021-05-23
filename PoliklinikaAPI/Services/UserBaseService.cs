@@ -60,15 +60,21 @@ namespace PoliklinikaAPI.Services
                 signupUser = _mapper.Map<TCreateVM, Doktor>(user);
                 roleName = nameof(Doktor);
             }
-            else
+            else if (typeof(T) == typeof(Tehnicar))
             {
                 signupUser = _mapper.Map<TCreateVM, Tehnicar>(user);
                 roleName = nameof(Tehnicar);
             }
+            else
+            {
+                signupUser = _mapper.Map<TCreateVM, Admin>(user);
+                roleName = nameof(Admin);
+            }
 
             var mail = user.GetType().GetProperty("Email").GetValue(user, null);
             signupUser.GetType().GetProperty("UserName").SetValue(signupUser, mail);
-            signupUser.Spol = user.GetType().GetProperty("Spol").GetValue(user, null).ToString();
+            if(typeof(TCreateVM) != typeof(SignupAdminVM))
+                signupUser.Spol = user.GetType().GetProperty("Spol").GetValue(user, null).ToString();
 
             var userCreateResult = _userManager.CreateAsync(signupUser, user.GetType().GetProperty("Password").GetValue(user, null).ToString());
             userCreateResult.Wait();
@@ -98,8 +104,10 @@ namespace PoliklinikaAPI.Services
                     k = _db.Korisnik.Find(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
                 else if (typeof(T) == typeof(Doktor))
                     k = _db.Doktor.Find(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
-                else
+                else if (typeof(T) == typeof(Tehnicar))
                     k = _db.Tehnicar.Find(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
+                else
+                    k = _db.Admin.Find(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
 
                 _userManager.AddToRoleAsync(k, role);
                 return _mapper.Map<TCreateVM, TVM>(user);

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Poliklinika.Model;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.Interfaces;
@@ -34,9 +35,9 @@ namespace PoliklinikaAPI.Services
         {
             var Lista = _mapper.Map<List<TVM>>(_db.Set<T>().ToList());
 
-            if(typeof(List<TVM>) == typeof(List<OsobljeVM>))
+            if (typeof(List<TVM>) == typeof(List<OsobljeVM>))
             {
-                foreach(var i in Lista)
+                foreach (var i in Lista)
                 {
                     var id = int.Parse(i.GetType().GetProperty("Id").GetValue(i, null).ToString());
                     var usr = _db.User.Find(id);
