@@ -28,36 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
+            this.textPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPrijava = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(240, 237);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 23);
-            this.textBox1.TabIndex = 0;
+            this.textEmail.Location = new System.Drawing.Point(274, 316);
+            this.textEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(260, 27);
+            this.textEmail.TabIndex = 0;
             // 
-            // textBox2
+            // textPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(240, 313);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 23);
-            this.textBox2.TabIndex = 1;
+            this.textPassword.Location = new System.Drawing.Point(274, 417);
+            this.textPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textPassword.Name = "textPassword";
+            this.textPassword.Size = new System.Drawing.Size(260, 27);
+            this.textPassword.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(240, 213);
+            this.label1.Location = new System.Drawing.Point(274, 284);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 21);
+            this.label1.Size = new System.Drawing.Size(59, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Email";
             // 
@@ -65,44 +67,48 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(240, 289);
+            this.label2.Location = new System.Drawing.Point(274, 385);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 21);
+            this.label2.Size = new System.Drawing.Size(51, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "Šifra";
             // 
-            // button1
+            // btnPrijava
             // 
-            this.button1.BackColor = System.Drawing.Color.Plum;
-            this.button1.Location = new System.Drawing.Point(299, 379);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 34);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Prijavi se";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnPrijava.BackColor = System.Drawing.Color.Plum;
+            this.btnPrijava.Location = new System.Drawing.Point(342, 505);
+            this.btnPrijava.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPrijava.Name = "btnPrijava";
+            this.btnPrijava.Size = new System.Drawing.Size(126, 45);
+            this.btnPrijava.TabIndex = 3;
+            this.btnPrijava.Text = "Prijavi se";
+            this.btnPrijava.UseVisualStyleBackColor = false;
+            this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(102, 50);
+            this.pictureBox2.Location = new System.Drawing.Point(117, 67);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(555, 126);
+            this.pictureBox2.Size = new System.Drawing.Size(634, 168);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(744, 450);
+            this.ClientSize = new System.Drawing.Size(850, 600);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPrijava);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textPassword);
+            this.Controls.Add(this.textEmail);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
@@ -114,11 +120,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textEmail;
+        private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnPrijava;
     }
 }
