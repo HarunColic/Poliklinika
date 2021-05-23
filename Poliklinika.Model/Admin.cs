@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Poliklinika.Model
 {
-    public class Admin : User
+    public class Admin : Osoblje
     {
 
     }
