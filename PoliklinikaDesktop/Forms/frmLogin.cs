@@ -1,5 +1,8 @@
 ﻿using Poliklinika.Model;
 using PoliklinikaAPI.ViewModels;
+using PoliklinikaDesktop.Forms.Administrator;
+using PoliklinikaDesktop.Forms.Doktor;
+using PoliklinikaDesktop.Forms.Tehnicar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +16,7 @@ namespace PoliklinikaDesktop.Forms
     public partial class frmLogin : Form
     {
         private readonly APIService _service = new APIService("Authentication");
-        private readonly APIService _userService = new APIService("Osoblje");
+        //private readonly APIService _userService = new APIService("Osoblje");
 
         public frmLogin()
         {
@@ -32,20 +35,40 @@ namespace PoliklinikaDesktop.Forms
             var user = new User();
 
             if (result.Role == "Doktor")
+            {
+                APIService _userService = new APIService("Doktor");
                 user = await _userService.GetById<Poliklinika.Model.Doktor>(result.Id);
+                SetUser(result, user);
+                frmIndexDoktor forma = new frmIndexDoktor();
+                forma.Show();
+            }
             else if (result.Role == "Tehnicar")
+            {
+                APIService _userService = new APIService("Tehnicar");
                 user = await _userService.GetById<Poliklinika.Model.Tehnicar>(result.Id);
+                SetUser(result, user);
+                frmIndexTehnicar forma = new frmIndexTehnicar();
+                forma.Show();
+            }
             else if (result.Role == "Admin")
+            {
+                APIService _userService = new APIService("Admin");
                 user = await _userService.GetById<Poliklinika.Model.Admin>(result.Id);
+                SetUser(result, user);
+                frmIndexAmin forma = new frmIndexAmin();
+                forma.Show();
+            }
             else
                 throw new Exception("Korisnika nije moguce ulogovati");
+
+        }
+
+        private void SetUser(AuthenticateResponse result, User user)
+        {
 
             CurrentUser.Role = result.Role;
             CurrentUser.JWT = result.Token;
             CurrentUser.User = user;
-
-            var test = "TEST";
         }
-
     }
 }

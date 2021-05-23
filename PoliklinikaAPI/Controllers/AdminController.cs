@@ -26,5 +26,11 @@ namespace PoliklinikaAPI.Controllers
         {
             return _userInterface.Insert(korisnik);
         }
+
+        [HttpGet("{id}")]
+        public SignupAdminVM Get(int id)
+        {
+            return _userInterface.Get(id);
+        }
     }
 }

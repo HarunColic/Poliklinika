@@ -10,6 +10,10 @@ using System.Text;
 using PoliklinikaAPI.Services;
 using PoliklinikaAPI.Interfaces;
 using Poliklinika.Model;
+using PoliklinikaAPI.ViewModels;
+using System.IO;
+using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace PoliklinikaAPI.Helpers
 {
