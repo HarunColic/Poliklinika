@@ -37,14 +37,10 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             int columnIndex = dgvObaveze.CurrentCell.ColumnIndex;
             if (columnIndex == 2)
             {
-                var id = dgvObaveze.SelectedRows[0].Cells[0].Value;
+                var id = dgvObaveze.CurrentRow.Cells[0].Value;
                 frmDetaljiObaveza detalji = new frmDetaljiObaveza(int.Parse(id.ToString()));
                 detalji.Show();
             }
         }
-
-        
-
-        
     }
 }
