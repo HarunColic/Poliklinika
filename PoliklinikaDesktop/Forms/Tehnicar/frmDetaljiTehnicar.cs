@@ -24,7 +24,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             request.Ime = txtIme.Text;
             request.Prezime = txtPrezime.Text;
             request.StrucnaSprema = txtstrucna.Text;
-            
+            request.BrojRadneKnjizice = txtBrRadneKnjizice.Text;
 
             if (_id.HasValue)
             {
@@ -40,13 +40,19 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
 
         private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)
         {  
-            request.Spol = (string)cmbSpol.SelectedItem;
+            request.Spol = cmbSpol.SelectedItem.ToString();
         }
 
-        private void frmDetaljiTehnicar_Load(object sender, EventArgs e)
+        private async void frmDetaljiTehnicar_Load(object sender, EventArgs e)
         {
             if (_id.HasValue)
             {
+                var teh = await _service.GetById<TehnicarVM>(_id);
+                txtIme.Text = teh.Ime;
+                txtPrezime.Text = teh.Prezime;
+                txtstrucna.Text = teh.StrucnaSprema;
+                txtBrRadneKnjizice.Text = teh.BrojRadneKnjizice;
+                cmbSpol.SelectedText = teh.Spol;
                 txtEmail.Hide();
                 txtPassword.Hide();
                 lblEmail.Hide();

@@ -43,13 +43,17 @@ namespace PoliklinikaDesktop.Forms.Administrator
 
         private void dgvOsoblje_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var id = dgvOsoblje.SelectedRows[2].Cells[2].Value;
             
-            int rowindex = dgvOsoblje.CurrentCell.RowIndex;
+           
             int columnindex = dgvOsoblje.CurrentCell.ColumnIndex;
+
             if (columnindex == 4)
             {
-                var zanimanje =dgvOsoblje.Rows[rowindex].Cells[columnindex].Value.ToString();
+                var id = dgvOsoblje.CurrentRow.Cells[0].Value;
+
+                var zanimanje = dgvOsoblje.CurrentRow.Cells[3]
+                    .Value.ToString();
+               
                 if (zanimanje == "Doktor")
                 {
 

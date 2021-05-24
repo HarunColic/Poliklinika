@@ -27,6 +27,8 @@ namespace PoliklinikaDesktop.Forms.Odjel
                 var odjel = await _service.GetById<Poliklinika.Model.Odjel>(_id);
                 txtNaziv.Text = odjel.Naziv;
                 txtOpis.Text = odjel.Opis;
+                var result = openFileDialog.ShowDialog();
+               
 
             }
         }
@@ -38,6 +40,7 @@ namespace PoliklinikaDesktop.Forms.Odjel
             {
                 request.Naziv = txtNaziv.Text;
                 request.Opis = txtOpis.Text;
+                
               
                 if (_id.HasValue)
                 {
@@ -88,7 +91,6 @@ namespace PoliklinikaDesktop.Forms.Odjel
                 var file = File.ReadAllBytes(fileName);
                 request.Slika = file;
                 txtSlikaInput.Text = fileName;
-
                 Image image = Image.FromFile(fileName);
                 picSlika.Image = image;
             }

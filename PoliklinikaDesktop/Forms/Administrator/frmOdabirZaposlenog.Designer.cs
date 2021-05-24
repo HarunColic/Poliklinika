@@ -107,9 +107,9 @@ namespace PoliklinikaDesktop.Forms.Administrator
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvOsoblje);
-            this.groupBox1.Location = new System.Drawing.Point(12, 240);
+            this.groupBox1.Location = new System.Drawing.Point(12, 202);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(547, 225);
+            this.groupBox1.Size = new System.Drawing.Size(547, 263);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
@@ -131,7 +131,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.dgvOsoblje.Name = "dgvOsoblje";
             this.dgvOsoblje.ReadOnly = true;
             this.dgvOsoblje.RowTemplate.Height = 25;
-            this.dgvOsoblje.Size = new System.Drawing.Size(541, 203);
+            this.dgvOsoblje.Size = new System.Drawing.Size(541, 241);
             this.dgvOsoblje.TabIndex = 0;
             this.dgvOsoblje.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOsoblje_CellClick);
             // 

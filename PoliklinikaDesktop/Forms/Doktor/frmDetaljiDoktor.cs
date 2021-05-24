@@ -62,6 +62,13 @@ namespace PoliklinikaDesktop.Forms.Doktor
             await LoadOdjel();
             if (_id.HasValue)
             {
+                var doc = await _service.GetById<DoktorVM>(_id);
+                txtIme.Text = doc.Ime;
+                txtPrezime.Text = doc.Prezime;
+                txtSpecijal.Text = doc.Specijalizacija;
+                txtSubSecijal.Text = doc.SubSpecijalizacija;
+                txtBrRadneKnjiz.Text = doc.BrojRadneKnjizice;
+                cmbSpol.SelectedText = doc.Spol;
                 txtEmail.Hide();
                 txtPassword.Hide();
                 lblEmail.Hide();
