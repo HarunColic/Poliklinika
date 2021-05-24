@@ -34,7 +34,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.cmbZaposlenik = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtOpis = new System.Windows.Forms.TextBox();
@@ -59,6 +59,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.cmbOdjel.Name = "cmbOdjel";
             this.cmbOdjel.Size = new System.Drawing.Size(252, 23);
             this.cmbOdjel.TabIndex = 12;
+            this.cmbOdjel.SelectedIndexChanged += new System.EventHandler(this.cmbOdjel_SelectedIndexChanged);
             // 
             // cmbZaposlenik
             // 
@@ -67,6 +68,8 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.cmbZaposlenik.Name = "cmbZaposlenik";
             this.cmbZaposlenik.Size = new System.Drawing.Size(252, 23);
             this.cmbZaposlenik.TabIndex = 11;
+            this.cmbZaposlenik.SelectedIndexChanged += new System.EventHandler(this.cmbZaposlenik_SelectedIndexChanged);
+            this.cmbZaposlenik.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbZaposlenik_Format);
             // 
             // label3
             // 
@@ -87,14 +90,14 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.label2.Size = new System.Drawing.Size(112, 30);
             this.label2.TabIndex = 8;
             this.label2.Text = "Zaposlenik";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
-            // dateTimePicker1
+            // dtpDatum
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(42, 320);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(252, 23);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dtpDatum.Location = new System.Drawing.Point(42, 320);
+            this.dtpDatum.Name = "dtpDatum";
+            this.dtpDatum.Size = new System.Drawing.Size(252, 23);
+            this.dtpDatum.TabIndex = 13;
             // 
             // label1
             // 
@@ -132,6 +135,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.btnSacuvaj.TabIndex = 17;
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
             // frmDetaljiObaveza
             // 
@@ -143,7 +147,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpDatum);
             this.Controls.Add(this.cmbOdjel);
             this.Controls.Add(this.cmbZaposlenik);
             this.Controls.Add(this.label3);
@@ -151,6 +155,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.Controls.Add(this.pictureBox2);
             this.Name = "frmDetaljiObaveza";
             this.Text = "frmDetaljiObaveza";
+            this.Load += new System.EventHandler(this.frmDetaljiObaveza_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -164,7 +169,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         private System.Windows.Forms.ComboBox cmbZaposlenik;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDatum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtOpis;

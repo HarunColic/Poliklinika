@@ -286,7 +286,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label7;
+        
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label label6;

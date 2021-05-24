@@ -112,6 +112,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.cmbOdjel.Name = "cmbOdjel";
             this.cmbOdjel.Size = new System.Drawing.Size(169, 23);
             this.cmbOdjel.TabIndex = 7;
+            this.cmbOdjel.SelectedIndexChanged += new System.EventHandler(this.cmbOdjel_SelectedIndexChanged);
             // 
             // groupBox1
             // 

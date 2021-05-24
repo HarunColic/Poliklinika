@@ -56,7 +56,12 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         {
             var idObj = cmbZaposlenik.SelectedValue;
         }
-        //private Task LoadIzvjestaj(int zaposlenikID)
+
+        private void cmbOdjel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var idodj = cmbOdjel.SelectedValue;
+        }
+        //private Task LoadIzvjestaj(int odjelID)
         //{
         //    var result = _izvjestaj.Get<List<IzvjestajVM>);
         //}

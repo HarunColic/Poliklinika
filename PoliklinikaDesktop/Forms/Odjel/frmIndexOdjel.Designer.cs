@@ -52,7 +52,7 @@
             this.Odjeli.TabIndex = 0;
             this.Odjeli.TabStop = false;
             this.Odjeli.Text = "Odjeli";
-            this.Odjeli.Enter += new System.EventHandler(this.groupBox1_Enter);
+        
             // 
             // dgvOdjeli
             // 

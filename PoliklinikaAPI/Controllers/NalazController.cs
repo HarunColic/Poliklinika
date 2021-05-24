@@ -28,7 +28,7 @@ namespace PoliklinikaAPI.Controllers
         [HttpGet]
         public List<NalazVM> GetAll()
         {
-            return _nalazInterface.GetAll();
+            return _nalazInterface.GetAll(null);
         }
 
         [HttpGet("{id}")]

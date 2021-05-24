@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PoliklinikaAPI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,9 +17,34 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             InitializeComponent();
         }
 
-        private void frmIndexObaveza_Load(object sender, EventArgs e)
+        private async void frmIndexObaveza_Load(object sender, EventArgs e)
         {
-            
+            var request = await _service.Get<List<ObavezaVM>>();
+            dgvObaveze.AutoGenerateColumns = false;
+            dgvObaveze.DataSource = request;
         }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            frmDetaljiObaveza obaveza = new frmDetaljiObaveza();
+            obaveza.Show();
+        }
+
+       
+
+        private void dgvObaveze_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int columnIndex = dgvObaveze.CurrentCell.ColumnIndex;
+            if (columnIndex == 2)
+            {
+                var id = dgvObaveze.SelectedRows[0].Cells[0].Value;
+                frmDetaljiObaveza detalji = new frmDetaljiObaveza(int.Parse(id.ToString()));
+                detalji.Show();
+            }
+        }
+
+        
+
+        
     }
 }

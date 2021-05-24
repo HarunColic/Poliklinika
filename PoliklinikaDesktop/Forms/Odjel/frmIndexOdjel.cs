@@ -20,10 +20,7 @@ namespace PoliklinikaDesktop.Forms.Odjel
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+   
         private async void frmIndexOdjel_Load(object sender, EventArgs e)
         {
             var result = await _apiService.Get<List<Poliklinika.Model.Odjel>>();

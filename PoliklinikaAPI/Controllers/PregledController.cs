@@ -24,7 +24,7 @@ namespace PoliklinikaAPI.Controllers
         [HttpGet]
         public List<PregledVM> GetAll()
         {
-            return _baseInterface.GetAll();
+            return _baseInterface.GetAll(null);
         }
 
         [HttpGet("{id}")]

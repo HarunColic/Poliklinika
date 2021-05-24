@@ -23,7 +23,7 @@ namespace PoliklinikaAPI.Controllers
         [HttpGet]
         public List<ObavezaVM> GetAll()
         {
-            return _baseInterface.GetAll();
+            return _baseInterface.GetAll(null);
         }
 
         [HttpGet("{id}")]

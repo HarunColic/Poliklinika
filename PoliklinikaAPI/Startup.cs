@@ -61,6 +61,7 @@ namespace PoliklinikaAPI
             services.AddScoped<BaseInterface<Pregled, PregledVM>, BaseService<Pregled, PregledVM>>();
             services.AddScoped<BaseInterface<Uplata, UplataVM>, BaseService<Uplata, UplataVM>>();
             services.AddScoped<BaseInterface<Obaveza, ObavezaVM>, BaseService<Obaveza, ObavezaVM>>();
+            services.AddScoped<BaseInterface<Izvjestaj, IzvjestajVM>, IzvjestajService>();
 
 
             services.AddIdentity<User, Role>()

@@ -241,7 +241,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtStrucnaSprema;
+      
         private System.Windows.Forms.TextBox txtBrRadneKnjizice;
         private System.Windows.Forms.Label Prezime;
         private System.Windows.Forms.TextBox txtPrezime;

@@ -13,21 +13,23 @@ namespace PoliklinikaAPI.Services
     {
         public IzvjestajService(DBContext db, IMapper mapper) : base(db, mapper)
         {
-
         }
-        //public override List<IzvjestajVM> GetAll()
-        //{
-        //    var query = _db.Set<Izvjestaj>().AsQueryable();
 
-        //    if (search?.VrstaId.HasValue == true)
-        //    {
-        //        query = query.Where(x => x.VrstaId == search.VrstaId);
-        //    }
+        public override List<IzvjestajVM> GetAll(IzvjestajVM search)
+        {
+            var query = _db.Set<Izvjestaj>().AsQueryable();
 
-        //    query = query.OrderBy(x => x.Naziv);
+            if (search?.OdjelID!=null)
+            {
+                query = query.Where(x => x.Pregled.Doktor.OdjelID == search.OdjelID);
+            }
 
-        //    var list = query.ToList();
-        //    return base.GetAll();
-        //}
+            query = query.OrderBy(x => x.PregledID);
+
+            var list = query.ToList();
+
+            return _mapper.Map<List<IzvjestajVM>>(list);
+        }
+
     }
 }
