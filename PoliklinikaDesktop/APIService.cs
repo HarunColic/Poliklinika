@@ -27,11 +27,6 @@ namespace PoliklinikaDesktop
             }
 
             return await result.GetJsonAsync<T>();
-
-
-           
-
-
         }
         public async Task<T> GetById<T>(object id)
         {

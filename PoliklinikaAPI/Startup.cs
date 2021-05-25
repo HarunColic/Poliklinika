@@ -56,9 +56,9 @@ namespace PoliklinikaAPI
             services.AddScoped<UserBaseInterface<Admin, SignupAdminVM, SignupAdminVM>, UserBaseService<Admin, SignupAdminVM, SignupAdminVM>>();
             services.AddScoped<AuthenticationInterface, AuthenticationService>();
             services.AddScoped<BaseInterface<Osoblje, OsobljeVM>, BaseService<Osoblje, OsobljeVM>>();
-            services.AddScoped<BaseInterface<Nalaz, NalazVM>, BaseService<Nalaz, NalazVM>>();
+            services.AddScoped<BaseInterface<Nalaz, NalazVM>, NalazService>();
             services.AddScoped<BaseInterface<Odjel, OdjelVM>, BaseService<Odjel, OdjelVM>>();
-            services.AddScoped<BaseInterface<Pregled, PregledVM>, BaseService<Pregled, PregledVM>>();
+            services.AddScoped<BaseInterface<Pregled, PregledVM>, PregledService>();
             services.AddScoped<BaseInterface<Uplata, UplataVM>, BaseService<Uplata, UplataVM>>();
             services.AddScoped<BaseInterface<Obaveza, ObavezaVM>, BaseService<Obaveza, ObavezaVM>>();
             services.AddScoped<BaseInterface<Izvjestaj, IzvjestajVM>, IzvjestajService>();
