@@ -12,13 +12,17 @@ namespace PoliklinikaAPI.Services
 {
     public class IzvjestajService : BaseService<Izvjestaj, IzvjestajVM>
     {
+        public readonly DBContext _contex;
+        public readonly IMapper _Mapper;
         public IzvjestajService(DBContext db, IMapper mapper) : base(db, mapper)
         {
+            _contex = db;
+            _Mapper = mapper;
         }
 
         public override List<IzvjestajVM> GetAll(IzvjestajVM search)
         {
-            var query = _db.Set<Izvjestaj>().AsQueryable();
+            var query = _contex.Set<Izvjestaj>().AsQueryable();
 
             if (search?.OdjelID!=null)
             {
@@ -30,7 +34,7 @@ namespace PoliklinikaAPI.Services
 
             var list = query.ToList();
 
-            return _mapper.Map<List<IzvjestajVM>>(list);
+            return _Mapper.Map<List<IzvjestajVM>>(list);
         }
 
     }

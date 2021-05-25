@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PoliklinikaAPI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,24 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             InitializeComponent();
         }
 
-        private void frmIndexNalaz_Load(object sender, EventArgs e)
+        private async void frmIndexNalaz_Load(object sender, EventArgs e)
         {
             var id=CurrentUser.User.Id;
+
+            var result = await _pregled.Get<List<PregledVM>>(new PregledVM()
+            {
+                DoktorID = id
+            });
+
+            dgvPregled.DataSource = result;
+
+            var result2 = await _service.Get<List<NalazVM>>(new PregledVM()
+            {
+                DoktorID = id
+            });
+
+            dgvNalaz.DataSource = result2;
+
         }
     }
 }
