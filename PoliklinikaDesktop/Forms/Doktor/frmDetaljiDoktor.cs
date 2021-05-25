@@ -50,7 +50,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
         }
         private async Task LoadOdjel()
         {
-            var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>();
+            var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>(null);
             result.Insert(0, new Poliklinika.Model.Odjel());
             cmbOdjel.DisplayMember = "Naziv";
             cmbOdjel.ValueMember = "ID";

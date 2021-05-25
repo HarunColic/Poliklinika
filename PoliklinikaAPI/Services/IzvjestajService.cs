@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Poliklinika.Model;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.ViewModels;
@@ -21,10 +22,11 @@ namespace PoliklinikaAPI.Services
 
             if (search?.OdjelID!=null)
             {
-                query = query.Where(x => x.Pregled.Doktor.OdjelID == search.OdjelID);
+                query = query.Include(x=>x.Pregled.Doktor)
+                    .Where(x=>x.Pregled.Doktor.OdjelID==search.OdjelID);
             }
 
-            query = query.OrderBy(x => x.PregledID);
+            query = query.Include(x=>x.Pregled.Doktor).OrderBy(x=>x.Pregled.Doktor.Prezime);
 
             var list = query.ToList();
 

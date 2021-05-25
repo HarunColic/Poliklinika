@@ -23,7 +23,7 @@ namespace PoliklinikaDesktop.Forms.Odjel
    
         private async void frmIndexOdjel_Load(object sender, EventArgs e)
         {
-            var result = await _apiService.Get<List<Poliklinika.Model.Odjel>>();
+            var result = await _apiService.Get<List<Poliklinika.Model.Odjel>>(null);
             dgvOdjeli.AutoGenerateColumns = false;
             dgvOdjeli.DataSource = result;
         }

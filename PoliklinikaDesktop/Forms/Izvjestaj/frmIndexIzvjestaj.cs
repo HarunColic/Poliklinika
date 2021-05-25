@@ -21,7 +21,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         }
         private async Task LoadZaposleni()
         {
-            var result = await _zaposleni.Get<IList<DoktorVM>>();
+            var result = await _zaposleni.Get<IList<DoktorVM>>(null);
             result.Insert(0, new DoktorVM());
             cmbZaposlenik.DisplayMember = "Ime";
             cmbZaposlenik.ValueMember = "ID";
@@ -29,7 +29,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         }
         private async Task LoadOdjel()
         {
-            var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>();
+            var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>(null);
             result.Insert(0, new Poliklinika.Model.Odjel());
             cmbOdjel.DisplayMember = "Naziv";
             cmbOdjel.ValueMember = "ID";
@@ -57,13 +57,23 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             var idObj = cmbZaposlenik.SelectedValue;
         }
 
-        private void cmbOdjel_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cmbOdjel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var idodj = cmbOdjel.SelectedValue;
+            var idObj = cmbOdjel.SelectedValue;
+
+            if (int.TryParse(idObj.ToString(), out int id))
+            {
+                await LoadIzvjestaj(id);
+            }
         }
-        //private Task LoadIzvjestaj(int odjelID)
-        //{
-        //    var result = _izvjestaj.Get<List<IzvjestajVM>);
-        //}
+        private async Task LoadIzvjestaj(int odjelID)
+        {
+            var result = await _izvjestaj.Get<List<IzvjestajVM>>(new IzvjestajVM()
+            {
+                OdjelID = odjelID
+            });
+
+            dgvIzvjestaj.DataSource = result;
+        }
     }
 }

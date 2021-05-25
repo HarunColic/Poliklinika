@@ -19,7 +19,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
 
         private async void frmIndexObaveza_Load(object sender, EventArgs e)
         {
-            var request = await _service.Get<List<ObavezaVM>>();
+            var request = await _service.Get<List<ObavezaVM>>(null);
             dgvObaveze.AutoGenerateColumns = false;
             dgvObaveze.DataSource = request;
         }

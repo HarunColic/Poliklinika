@@ -46,7 +46,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         }
         private async Task LoadOdjel()
         {
-            var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>();
+            var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>(null);
             result.Insert(0, new Poliklinika.Model.Odjel());
             cmbOdjel.DisplayMember = "Naziv";
             cmbOdjel.ValueMember = "ID";
@@ -55,7 +55,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         }
         private async Task LoadZaposleni()
         {
-            var result = await _osoblje.Get<List<OsobljeVM>>();
+            var result = await _osoblje.Get<List<OsobljeVM>>(null);
             result.Insert(0, new OsobljeVM());
             cmbZaposlenik.DisplayMember = "Ime";
             cmbZaposlenik.ValueMember = "ID";

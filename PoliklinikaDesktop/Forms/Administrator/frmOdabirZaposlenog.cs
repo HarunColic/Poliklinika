@@ -34,7 +34,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
         private async void frmOdabirZaposlenog_Load(object sender, EventArgs e)
         {
 
-            var result = await _osoblje.Get<List<OsobljeVM>>();
+            var result = await _osoblje.Get<List<OsobljeVM>>(null);
             dgvOsoblje.AutoGenerateColumns = false;
             dgvOsoblje.DataSource = result;
 

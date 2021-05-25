@@ -32,6 +32,7 @@ namespace PoliklinikaAPI.Mappers
             CreateMap<Odjel, OdjelVM>().ReverseMap();
             CreateMap<Nalaz, NalazVM>().ReverseMap();
             CreateMap<Obaveza, ObavezaVM>().ReverseMap();
+            CreateMap<Izvjestaj, IzvjestajVM>().ReverseMap();
         }
     }
 }
