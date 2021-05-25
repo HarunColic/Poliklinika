@@ -23,14 +23,10 @@ namespace PoliklinikaDesktop
             if (search != null)
             {
                 result += "?";
-                result += search.ToString();
+                result += search.GetType().GetProperty("OdjelID").GetValue(search, null).ToString();
             }
 
             return await result.GetJsonAsync<T>();
-
-
-           
-
 
         }
         public async Task<T> GetById<T>(object id)

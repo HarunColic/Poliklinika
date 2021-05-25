@@ -63,7 +63,8 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
 
             if (int.TryParse(idObj.ToString(), out int id))
             {
-                await LoadIzvjestaj(id);
+                if(int.Parse(idObj.ToString()) != 0)
+                    await LoadIzvjestaj(id);
             }
         }
         private async Task LoadIzvjestaj(int odjelID)
