@@ -145,6 +145,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.Name = "frmIndexNalaz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmIndexNalaz";
+            this.Load += new System.EventHandler(this.frmIndexNalaz_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPregled)).EndInit();

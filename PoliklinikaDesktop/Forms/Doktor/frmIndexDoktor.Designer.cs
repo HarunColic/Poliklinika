@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picNalaz = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,22 +37,23 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNalaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picNalaz
             // 
-            this.pictureBox1.Image = global::PoliklinikaDesktop.Properties.Resources.nalaz;
-            this.pictureBox1.Location = new System.Drawing.Point(34, 215);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 215);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picNalaz.Image = global::PoliklinikaDesktop.Properties.Resources.nalaz;
+            this.picNalaz.Location = new System.Drawing.Point(34, 215);
+            this.picNalaz.Name = "picNalaz";
+            this.picNalaz.Size = new System.Drawing.Size(210, 215);
+            this.picNalaz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picNalaz.TabIndex = 0;
+            this.picNalaz.TabStop = false;
+            this.picNalaz.Click += new System.EventHandler(this.picNalaz_Click);
             // 
             // label1
             // 
@@ -148,10 +149,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picNalaz);
             this.Name = "frmIndexDoktor";
             this.Text = "frmIndexDoktor";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNalaz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -163,7 +164,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picNalaz;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;

@@ -168,7 +168,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(577, 319);
+            this.btnSacuvaj.Location = new System.Drawing.Point(691, 307);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(124, 42);
             this.btnSacuvaj.TabIndex = 14;
@@ -180,7 +180,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEmail.Location = new System.Drawing.Point(481, 98);
+            this.lblEmail.Location = new System.Drawing.Point(481, 158);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(46, 20);
             this.lblEmail.TabIndex = 15;
@@ -188,7 +188,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(481, 121);
+            this.txtEmail.Location = new System.Drawing.Point(481, 181);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(334, 23);
             this.txtEmail.TabIndex = 16;
@@ -197,7 +197,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPassword.Location = new System.Drawing.Point(481, 158);
+            this.lblPassword.Location = new System.Drawing.Point(481, 218);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(70, 20);
             this.lblPassword.TabIndex = 17;
@@ -205,7 +205,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(481, 181);
+            this.txtPassword.Location = new System.Drawing.Point(481, 241);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(334, 23);
             this.txtPassword.TabIndex = 18;
@@ -214,7 +214,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(481, 215);
+            this.label6.Location = new System.Drawing.Point(481, 97);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 21);
             this.label6.TabIndex = 19;
@@ -225,9 +225,8 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.cmbSpol.FormattingEnabled = true;
             this.cmbSpol.Items.AddRange(new object[] {
             "M",
-            "Đ",
             "Ž"});
-            this.cmbSpol.Location = new System.Drawing.Point(481, 239);
+            this.cmbSpol.Location = new System.Drawing.Point(481, 121);
             this.cmbSpol.Name = "cmbSpol";
             this.cmbSpol.Size = new System.Drawing.Size(334, 23);
             this.cmbSpol.TabIndex = 20;
@@ -286,7 +285,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label7;
+        
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label label6;

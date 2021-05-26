@@ -14,7 +14,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
 {
     public partial class frmOdabirZaposlenog : Form
     {
-        private readonly APIService _service = new APIService("Osoblje");
+        private readonly APIService _osoblje = new APIService("Osoblje");
         public frmOdabirZaposlenog()
         {
             InitializeComponent();
@@ -31,13 +31,43 @@ namespace PoliklinikaDesktop.Forms.Administrator
             frmDetaljiTehnicar doktor = new frmDetaljiTehnicar();
             doktor.Show();
         }
-        private void frmOdabirZaposlenog_Load(object sender, EventArgs e)
+        private async void frmOdabirZaposlenog_Load(object sender, EventArgs e)
         {
 
-            var zaposlenici = _service.Get<List<OsobljeVM>>();
+            var result = await _osoblje.Get<List<OsobljeVM>>(null);
+            dgvOsoblje.AutoGenerateColumns = false;
+            dgvOsoblje.DataSource = result;
+
 
         }
 
-       
+        private void dgvOsoblje_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+           
+            int columnindex = dgvOsoblje.CurrentCell.ColumnIndex;
+
+            if (columnindex == 4)
+            {
+                var id = dgvOsoblje.CurrentRow.Cells[0].Value;
+
+                var zanimanje = dgvOsoblje.CurrentRow.Cells[3]
+                    .Value.ToString();
+               
+                if (zanimanje == "Doktor")
+                {
+
+                    frmDetaljiDoktor doktor = new frmDetaljiDoktor(int.Parse(id.ToString()));
+                    doktor.Show();
+
+                }
+                if (zanimanje == "Tehnicar")
+                {
+                    frmDetaljiTehnicar tehnicar = new frmDetaljiTehnicar(int.Parse(id.ToString()));
+                    tehnicar.Show();
+                }
+                
+            }
+        }
     }
 }

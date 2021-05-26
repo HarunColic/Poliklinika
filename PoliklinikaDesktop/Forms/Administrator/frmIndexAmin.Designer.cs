@@ -37,11 +37,14 @@
             this.picEvidOdjela = new System.Windows.Forms.PictureBox();
             this.picEvidencijaZaposlenika = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictObaveze = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPregledIzvjestaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEvidOdjela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEvidencijaZaposlenika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictObaveze)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -138,12 +141,35 @@
             this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
             // 
+            // pictObaveze
+            // 
+            this.pictObaveze.Image = global::PoliklinikaDesktop.Properties.Resources.obaveze;
+            this.pictObaveze.Location = new System.Drawing.Point(388, 513);
+            this.pictObaveze.Name = "pictObaveze";
+            this.pictObaveze.Size = new System.Drawing.Size(210, 215);
+            this.pictObaveze.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictObaveze.TabIndex = 4;
+            this.pictObaveze.TabStop = false;
+            this.pictObaveze.Click += new System.EventHandler(this.pictObaveze_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(401, 731);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(188, 30);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Evidencija obaveza\r\n";
+            // 
             // frmIndexAmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(1054, 492);
+            this.ClientSize = new System.Drawing.Size(1054, 774);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictObaveze);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.picEvidencijaZaposlenika);
             this.Controls.Add(this.picEvidOdjela);
@@ -160,6 +186,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEvidOdjela)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEvidencijaZaposlenika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictObaveze)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +203,7 @@
         private System.Windows.Forms.PictureBox picEvidOdjela;
         private System.Windows.Forms.PictureBox picEvidencijaZaposlenika;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictObaveze;
+        private System.Windows.Forms.Label label5;
     }
 }

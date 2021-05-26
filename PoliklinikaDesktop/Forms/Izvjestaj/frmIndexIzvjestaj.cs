@@ -14,13 +14,14 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
     {
         private readonly APIService _zaposleni = new APIService("Doktor");
         private readonly APIService _odjel = new APIService("Odjel");
+        private readonly APIService _izvjestaj = new APIService("Izvjestaj");
         public frmIndexIzvjestaj()
         {
             InitializeComponent();
         }
         private async Task LoadZaposleni()
         {
-            var result = await _zaposleni.Get<IList<DoktorVM>>();
+            var result = await _zaposleni.Get<IList<DoktorVM>>(null);
             result.Insert(0, new DoktorVM());
             cmbZaposlenik.DisplayMember = "Ime";
             cmbZaposlenik.ValueMember = "ID";
@@ -28,7 +29,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         }
         private async Task LoadOdjel()
         {
-            var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>();
+            var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>(null);
             result.Insert(0, new Poliklinika.Model.Odjel());
             cmbOdjel.DisplayMember = "Naziv";
             cmbOdjel.ValueMember = "ID";
@@ -49,6 +50,31 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             string prezime = ((DoktorVM)e.ListItem).Prezime;
             e.Value = ime + " " + prezime;
 
+        }
+
+        private void cmbZaposlenik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var idObj = cmbZaposlenik.SelectedValue;
+        }
+
+        private async void cmbOdjel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var idObj = cmbOdjel.SelectedValue;
+
+            if (int.TryParse(idObj.ToString(), out int id))
+            {
+                if(int.Parse(idObj.ToString()) != 0)
+                    await LoadIzvjestaj(id);
+            }
+        }
+        private async Task LoadIzvjestaj(int PregledID)
+        {
+            var result = await _izvjestaj.Get<List<IzvjestajVM>>(new IzvjestajVM()
+            {
+                PregledID = PregledID
+            });
+
+            dgvIzvjestaj.DataSource = result;
         }
     }
 }

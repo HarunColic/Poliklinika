@@ -1,4 +1,5 @@
 ﻿using PoliklinikaDesktop.Forms.Izvjestaj;
+using PoliklinikaDesktop.Forms.Obaveza;
 using PoliklinikaDesktop.Forms.Odjel;
 using System;
 using System.Collections.Generic;
@@ -35,8 +36,11 @@ namespace PoliklinikaDesktop.Forms.Administrator
             zaposleni.Show();
         }
 
-        
+        private void pictObaveze_Click(object sender, EventArgs e)
+        {
+            frmIndexObaveza obaveza = new frmIndexObaveza();
+            obaveza.Show();
 
-
+        }
     }
 }

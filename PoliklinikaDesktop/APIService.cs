@@ -5,6 +5,7 @@ using Flurl.Http;
 using Flurl;
 using System.Threading.Tasks;
 using PoliklinikaAPI.ViewModels;
+using PoliklinikaAPI.Helpers;
 
 namespace PoliklinikaDesktop
 {
@@ -15,21 +16,19 @@ namespace PoliklinikaDesktop
         {
             _route = route;
         }
-        public async Task<T> Get<T>()
+        public async Task<T> Get<T>(object search)
         {
 
             var result = $"{Properties.Settings.Default.APIurl}/{_route}";
-             
+
+            if (search != null)
+            {
+                result += "?";
+                result += await search.ToQueryString();
+            }
+
             return await result.GetJsonAsync<T>();
 
-
-            //if (search != null)
-            //{
-            //    result += "?";
-            //    result += await search.ToString();
-            //}
-
-            
         }
         public async Task<T> GetById<T>(object id)
         {

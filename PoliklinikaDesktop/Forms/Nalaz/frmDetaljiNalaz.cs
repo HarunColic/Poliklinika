@@ -10,9 +10,12 @@ namespace PoliklinikaDesktop.Forms.Nalaz
 {
     public partial class frmDetaljiNalaz : Form
     {
-        public frmDetaljiNalaz()
+        private readonly APIService _service = new APIService("Nalaz");
+        private int? _id = null;
+        public frmDetaljiNalaz(int? nalazid = null)
         {
             InitializeComponent();
+            _id = nalazid;
         }
 
         private void frmDetaljiNalaz_Load(object sender, EventArgs e)
@@ -20,8 +23,9 @@ namespace PoliklinikaDesktop.Forms.Nalaz
 
         }
 
-      
+        private void btnSacuvaj_Click(object sender, EventArgs e)
+        {
 
-       
+        }
     }
 }

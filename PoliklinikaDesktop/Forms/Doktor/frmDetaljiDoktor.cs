@@ -50,7 +50,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
         }
         private async Task LoadOdjel()
         {
-            var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>();
+            var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>(null);
             result.Insert(0, new Poliklinika.Model.Odjel());
             cmbOdjel.DisplayMember = "Naziv";
             cmbOdjel.ValueMember = "ID";
@@ -62,6 +62,13 @@ namespace PoliklinikaDesktop.Forms.Doktor
             await LoadOdjel();
             if (_id.HasValue)
             {
+                var doc = await _service.GetById<DoktorVM>(_id);
+                txtIme.Text = doc.Ime;
+                txtPrezime.Text = doc.Prezime;
+                txtSpecijal.Text = doc.Specijalizacija;
+                txtSubSecijal.Text = doc.SubSpecijalizacija;
+                txtBrRadneKnjiz.Text = doc.BrojRadneKnjizice;
+                cmbSpol.SelectedText = doc.Spol;
                 txtEmail.Hide();
                 txtPassword.Hide();
                 lblEmail.Hide();

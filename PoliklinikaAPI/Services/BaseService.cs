@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace PoliklinikaAPI.Services
 {
-    public class BaseService<T, TVM> : BaseInterface<T, TVM> where T : class
+    public class BaseService<T, TVM> : BaseInterface<T,TVM> where T : class
     {
         public readonly DBContext _db;
         public readonly IMapper _mapper;
@@ -24,14 +24,8 @@ namespace PoliklinikaAPI.Services
             _db = db;
             _UsrManger = UsrManger;
         }
-        public void Delete(int id)
-        {
-            var t = _db.Set<T>().Find(id);
-            _db.Set<T>().Remove(t);
-            _db.SaveChanges();
-        }
 
-        public List<TVM> GetAll()
+        public virtual List<TVM> GetAll()
         {
             var Lista = _mapper.Map<List<TVM>>(_db.Set<T>().ToList());
 
@@ -78,6 +72,12 @@ namespace PoliklinikaAPI.Services
             _db.SaveChanges();
 
             return model;
+        }
+        public void Delete(int id)
+        {
+            var t = _db.Set<T>().Find(id);
+            _db.Set<T>().Remove(t);
+            _db.SaveChanges();
         }
     }
 }

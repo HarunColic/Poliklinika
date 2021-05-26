@@ -130,6 +130,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.btnSacuvaj.TabIndex = 13;
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
             // frmDetaljiNalaz
             // 
@@ -160,7 +161,6 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtKlijent;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtOdjel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
