@@ -18,9 +18,7 @@ namespace PoliklinikaAPI.Services
         public readonly IMapper _mapper;
         private readonly UserManager<User> _UsrManger;
 
-        public BaseService(DBContext db, IMapper mapper)
-        {
-        }
+       
 
         public BaseService(DBContext db, IMapper mapper, UserManager<User> UsrManger)
         {

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Poliklinika.Model;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.ViewModels;
@@ -11,22 +12,18 @@ namespace PoliklinikaAPI.Services
 {
     public class NalazService : BaseService<Nalaz, NalazVM>
     {
-        public readonly DBContext _contex;
-        public readonly IMapper _Mapper;
-        public NalazService(DBContext db, IMapper mapper) : base(db, mapper)
+        public NalazService(DBContext db, IMapper mapper, UserManager<User> UsrManger) : base(db, mapper, UsrManger)
         {
-            _contex = db;
-            _Mapper = mapper;
         }
 
         public override List<NalazVM> GetAll(NalazVM search)
         {
             List<Nalaz> list = new List<Nalaz>();
-            var nalazLista = _contex.Nalaz.ToList();
+            var nalazLista = _db.Nalaz.ToList();
 
             if (search == null)
             {
-                return _Mapper.Map<List<NalazVM>>(nalazLista);
+                return _mapper.Map<List<NalazVM>>(nalazLista);
             }
             //else
             //{

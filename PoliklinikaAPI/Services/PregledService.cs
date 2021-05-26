@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Poliklinika.Model;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.ViewModels;
@@ -11,23 +12,19 @@ namespace PoliklinikaAPI.Services
 {
     public class PregledService : BaseService<Pregled, PregledVM>
     {
-        public readonly DBContext _contex;
-        public readonly IMapper _Mapper;
-        public PregledService(DBContext db, IMapper mapper) : base(db, mapper)
+        public PregledService(DBContext db, IMapper mapper, UserManager<User> UsrManger) : base(db, mapper, UsrManger)
         {
-            _contex = db;
-            _Mapper = mapper;
         }
 
         public override List<PregledVM> GetAll(PregledVM search)
         {
             List<Pregled> list = new List<Pregled>();
-            var preglediLista = _contex.Pregled.ToList();
-            var nalazLista = _contex.Nalaz.ToList();
+            var preglediLista = _db.Pregled.ToList();
+            var nalazLista = _db.Nalaz.ToList();
             
             if (search == null)
             {
-                return _Mapper.Map<List<PregledVM>>(preglediLista);
+                return _mapper.Map<List<PregledVM>>(preglediLista);
             }
             else
             {
@@ -50,7 +47,7 @@ namespace PoliklinikaAPI.Services
                         }
                     }
                 }
-                return _Mapper.Map<List<PregledVM>>(list);
+                return _mapper.Map<List<PregledVM>>(list);
             }   
         }
     }
