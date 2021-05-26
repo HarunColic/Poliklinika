@@ -40,7 +40,7 @@ namespace PoliklinikaAPI.Controllers
             return _odjelInterface.Insert(odjel);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public OdjelVM Update(OdjelVM odjel)
         {
             return _odjelInterface.Update(odjel);
