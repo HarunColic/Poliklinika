@@ -23,7 +23,7 @@ namespace PoliklinikaAPI.Controllers
         [HttpGet]
         public List<IzvjestajVM> GetAll()
         {
-            return _baseInterface.GetAll(null);
+            return _baseInterface.GetAll();
         }
 
         [HttpGet("{id}")]

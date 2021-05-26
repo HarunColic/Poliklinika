@@ -5,6 +5,7 @@ using Flurl.Http;
 using Flurl;
 using System.Threading.Tasks;
 using PoliklinikaAPI.ViewModels;
+using PoliklinikaAPI.Helpers;
 
 namespace PoliklinikaDesktop
 {
@@ -23,7 +24,7 @@ namespace PoliklinikaDesktop
             if (search != null)
             {
                 result += "?";
-                result += search.GetType().GetProperty("OdjelID").GetValue(search, null).ToString();
+                result += await search.ToQueryString();
             }
 
             return await result.GetJsonAsync<T>();

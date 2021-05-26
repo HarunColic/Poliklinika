@@ -18,8 +18,6 @@ namespace PoliklinikaAPI.Services
         public readonly IMapper _mapper;
         private readonly UserManager<User> _UsrManger;
 
-       
-
         public BaseService(DBContext db, IMapper mapper, UserManager<User> UsrManger)
         {
             _mapper = mapper;
@@ -27,7 +25,7 @@ namespace PoliklinikaAPI.Services
             _UsrManger = UsrManger;
         }
 
-        public virtual List<TVM> GetAll(TVM search)
+        public virtual List<TVM> GetAll()
         {
             var Lista = _mapper.Map<List<TVM>>(_db.Set<T>().ToList());
 

@@ -14,21 +14,21 @@ namespace PoliklinikaAPI.Controllers
     [ApiController]
     public class AdminController : ControllerBase
     {
-        protected UserBaseInterface<Admin, SignupAdminVM, SignupAdminVM> _userInterface;
+        protected UserBaseInterface<Admin, Admin, SignupAdminVM> _userInterface;
 
-        public AdminController(UserBaseInterface<Admin, SignupAdminVM, SignupAdminVM> userInterface)
+        public AdminController(UserBaseInterface<Admin, Admin, SignupAdminVM> userInterface)
         {
             _userInterface = userInterface;
         }
 
         [HttpPost]
-        public SignupAdminVM Insert(SignupAdminVM korisnik)
+        public Admin Insert(SignupAdminVM korisnik)
         {
             return _userInterface.Insert(korisnik);
         }
 
         [HttpGet("{id}")]
-        public SignupAdminVM Get(int id)
+        public Admin Get(int id)
         {
             return _userInterface.Get(id);
         }

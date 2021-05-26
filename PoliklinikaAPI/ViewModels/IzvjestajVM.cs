@@ -8,7 +8,7 @@ namespace PoliklinikaAPI.ViewModels
     public class IzvjestajVM
     {
         public int Id { get; set; }
-        public int OdjelID { get; set; }
+        public int PregledID { get; set; }
         public string Opis { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Poliklinika.Model;
+﻿using AutoMapper;
+using Poliklinika.Model;
 using PoliklinikaAPI.ViewModels;
 using PoliklinikaDesktop.Forms.Administrator;
 using PoliklinikaDesktop.Forms.Doktor;
@@ -17,10 +18,12 @@ namespace PoliklinikaDesktop.Forms
     {
         private readonly APIService _service = new APIService("Authentication");
         //private readonly APIService _userService = new APIService("Osoblje");
+        private readonly IMapper _mapper;
 
-        public frmLogin()
+        public frmLogin(IMapper mapper)
         {
             InitializeComponent();
+            _mapper = mapper;
         }
 
         AuthenticateRequest request = new AuthenticateRequest();
@@ -37,7 +40,7 @@ namespace PoliklinikaDesktop.Forms
             if (result.Role == "Doktor")
             {
                 APIService _userService = new APIService("Doktor");
-                user = await _userService.GetById<Poliklinika.Model.Doktor>(result.Id);
+                user = _mapper.Map<Poliklinika.Model.Doktor>(await _userService.GetById<DoktorVM>(result.Id));
                 SetUser(result, user);
                 frmIndexDoktor forma = new frmIndexDoktor();
                 forma.Show();
@@ -45,7 +48,7 @@ namespace PoliklinikaDesktop.Forms
             else if (result.Role == "Tehnicar")
             {
                 APIService _userService = new APIService("Tehnicar");
-                user = await _userService.GetById<Poliklinika.Model.Tehnicar>(result.Id);
+                user = _mapper.Map<Poliklinika.Model.Tehnicar>(await _userService.GetById<TehnicarVM>(result.Id));
                 SetUser(result, user);
                 frmIndexTehnicar forma = new frmIndexTehnicar();
                 forma.Show();
@@ -53,7 +56,7 @@ namespace PoliklinikaDesktop.Forms
             else if (result.Role == "Admin")
             {
                 APIService _userService = new APIService("Admin");
-                user = await _userService.GetById<Poliklinika.Model.Admin>(result.Id);
+                user = await _userService.GetById<User>(result.Id);
                 SetUser(result, user);
                 frmIndexAmin forma = new frmIndexAmin();
                 forma.Show();

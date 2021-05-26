@@ -7,9 +7,11 @@ namespace PoliklinikaAPI.ViewModels
 {
     public class DoktorVM
     {
+        public int Id { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string Spol { get; set; }
+        public int OdjelID { get; set; }
         public string Email { get; set; }
         public string BrojRadneKnjizice { get; set; }
         public string Specijalizacija { get; set; }

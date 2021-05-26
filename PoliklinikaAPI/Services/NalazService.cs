@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Poliklinika.Model;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.ViewModels;
@@ -7,34 +9,32 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace PoliklinikaAPI.Services
 {
     public class NalazService : BaseService<Nalaz, NalazVM>
     {
+        HttpContextAccessor _context = new HttpContextAccessor();
+        QueryString _parametri;
+
         public NalazService(DBContext db, IMapper mapper, UserManager<User> UsrManger) : base(db, mapper, UsrManger)
         {
+            _parametri = _context.HttpContext.Request.QueryString;
         }
 
-        public override List<NalazVM> GetAll(NalazVM search)
+        public override List<NalazVM> GetAll()
         {
-            List<Nalaz> list = new List<Nalaz>();
-            var nalazLista = _db.Nalaz.ToList();
+            var nalazLista = _db.Nalaz.Include(x => x.Pregled).ToList();
 
-            if (search == null)
+            if (_context.HttpContext.Request.QueryString.HasValue)
             {
-                return _mapper.Map<List<NalazVM>>(nalazLista);
+                var DoktorID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("DoktorID");
+
+                nalazLista = nalazLista.Where(x => x.Pregled.DoktorID == int.Parse(DoktorID)).ToList();
             }
-            //else
-            //{
-            //    foreach (var i in nalazLista)
-            //    {
-            //        if(i.Pregled.DoktorID==search.PregledID)
-            //    }
-            //}
 
-
-            return base.GetAll(search);
+            return _mapper.Map<List<NalazVM>>(nalazLista);
         }
     }
 }

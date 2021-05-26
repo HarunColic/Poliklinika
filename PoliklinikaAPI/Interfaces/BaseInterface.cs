@@ -8,7 +8,7 @@ namespace PoliklinikaAPI.Interfaces
 {
     public interface BaseInterface<T, TVM>
     {
-        public List<TVM> GetAll(TVM search);
+        public List<TVM> GetAll();
         public TVM GetById(int id);
         public TVM Insert(TVM model);
         public TVM Update(TVM model);

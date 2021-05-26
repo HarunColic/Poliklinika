@@ -67,11 +67,11 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
                     await LoadIzvjestaj(id);
             }
         }
-        private async Task LoadIzvjestaj(int odjelID)
+        private async Task LoadIzvjestaj(int PregledID)
         {
             var result = await _izvjestaj.Get<List<IzvjestajVM>>(new IzvjestajVM()
             {
-                OdjelID = odjelID
+                PregledID = PregledID
             });
 
             dgvIzvjestaj.DataSource = result;

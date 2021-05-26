@@ -37,6 +37,7 @@ namespace PoliklinikaAPI
         {
             services.AddCors();
 
+            services.AddHttpContextAccessor();
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen();
@@ -53,7 +54,7 @@ namespace PoliklinikaAPI
             services.AddScoped<UserBaseInterface<Korisnik, KorisnikVM, SignUpKorisnikVM>, UserBaseService<Korisnik, KorisnikVM, SignUpKorisnikVM>>();
             services.AddScoped<UserBaseInterface<Doktor, DoktorVM, CreateDoktorVM>, UserBaseService<Doktor, DoktorVM, CreateDoktorVM>>();
             services.AddScoped<UserBaseInterface<Tehnicar, TehnicarVM, CreateTehnicarVM>, UserBaseService<Tehnicar, TehnicarVM, CreateTehnicarVM>>();
-            services.AddScoped<UserBaseInterface<Admin, SignupAdminVM, SignupAdminVM>, UserBaseService<Admin, SignupAdminVM, SignupAdminVM>>();
+            services.AddScoped<UserBaseInterface<Admin, Admin, SignupAdminVM>, UserBaseService<Admin, Admin, SignupAdminVM>>();
             services.AddScoped<AuthenticationInterface, AuthenticationService>();
             services.AddScoped<BaseInterface<Osoblje, OsobljeVM>, BaseService<Osoblje, OsobljeVM>>();
             services.AddScoped<BaseInterface<Nalaz, NalazVM>, NalazService>();

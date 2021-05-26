@@ -11,7 +11,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
 {
     public partial class frmIndexNalaz : Form
     {
-        private readonly  APIService _service = new APIService("Nalaz");
+        private readonly APIService _service = new APIService("Nalaz");
         private readonly APIService _pregled = new APIService("Pregled");
         public frmIndexNalaz()
         {
@@ -20,11 +20,12 @@ namespace PoliklinikaDesktop.Forms.Nalaz
 
         private async void frmIndexNalaz_Load(object sender, EventArgs e)
         {
-            var id=CurrentUser.User.Id;
+            var id = CurrentUser.User.Id;
 
             var result = await _pregled.Get<List<PregledVM>>(new PregledVM()
             {
-                DoktorID = id
+                DoktorID = id,
+                Opis = "Nalaz"
             });
 
             dgvPregled.DataSource = result;
