@@ -38,5 +38,18 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             dgvNalaz.DataSource = result2;
 
         }
+
+        private void dgvPregled_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int columnIndex = dgvPregled.CurrentCell.ColumnIndex;
+            if (columnIndex == 3)
+            {
+                var id = dgvPregled.CurrentRow.Cells[0].Value;
+                frmDetaljiNalaz detalji = new frmDetaljiNalaz(int.Parse(id.ToString()));
+                detalji.Show();
+            }
+        }
+
+       
     }
 }

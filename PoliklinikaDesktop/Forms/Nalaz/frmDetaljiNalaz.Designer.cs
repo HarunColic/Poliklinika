@@ -31,14 +31,15 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         {
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtKlijent = new System.Windows.Forms.TextBox();
-            this.txtOdjel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtOpis = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.lblImeKosrisnik = new System.Windows.Forms.Label();
+            this.lblOdjel = new System.Windows.Forms.Label();
+            this.lblDatum = new System.Windows.Forms.Label();
+            this.txtpregledID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,20 +63,6 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.label1.TabIndex = 3;
             this.label1.Text = "Klijent";
             // 
-            // txtKlijent
-            // 
-            this.txtKlijent.Location = new System.Drawing.Point(54, 141);
-            this.txtKlijent.Name = "txtKlijent";
-            this.txtKlijent.Size = new System.Drawing.Size(232, 23);
-            this.txtKlijent.TabIndex = 4;
-            // 
-            // txtOdjel
-            // 
-            this.txtOdjel.Location = new System.Drawing.Point(54, 214);
-            this.txtOdjel.Name = "txtOdjel";
-            this.txtOdjel.Size = new System.Drawing.Size(232, 23);
-            this.txtOdjel.TabIndex = 6;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -95,14 +82,6 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.label2.Size = new System.Drawing.Size(163, 30);
             this.label2.TabIndex = 9;
             this.label2.Text = "Datum pregleda";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(54, 304);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(232, 23);
-            this.dateTimePicker1.TabIndex = 10;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 5, 12, 0, 0, 0, 0);
             // 
             // txtOpis
             // 
@@ -132,20 +111,59 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.btnSacuvaj.UseVisualStyleBackColor = true;
             this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
+            // lblImeKosrisnik
+            // 
+            this.lblImeKosrisnik.AutoSize = true;
+            this.lblImeKosrisnik.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblImeKosrisnik.Location = new System.Drawing.Point(56, 141);
+            this.lblImeKosrisnik.Name = "lblImeKosrisnik";
+            this.lblImeKosrisnik.Size = new System.Drawing.Size(68, 30);
+            this.lblImeKosrisnik.TabIndex = 14;
+            this.lblImeKosrisnik.Text = "label5";
+            // 
+            // lblOdjel
+            // 
+            this.lblOdjel.AutoSize = true;
+            this.lblOdjel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOdjel.Location = new System.Drawing.Point(56, 211);
+            this.lblOdjel.Name = "lblOdjel";
+            this.lblOdjel.Size = new System.Drawing.Size(68, 30);
+            this.lblOdjel.TabIndex = 15;
+            this.lblOdjel.Text = "label5";
+            // 
+            // lblDatum
+            // 
+            this.lblDatum.AutoSize = true;
+            this.lblDatum.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDatum.Location = new System.Drawing.Point(56, 301);
+            this.lblDatum.Name = "lblDatum";
+            this.lblDatum.Size = new System.Drawing.Size(68, 30);
+            this.lblDatum.TabIndex = 16;
+            this.lblDatum.Text = "label5";
+            // 
+            // txtpregledID
+            // 
+            this.txtpregledID.Location = new System.Drawing.Point(475, 39);
+            this.txtpregledID.Name = "txtpregledID";
+            this.txtpregledID.Size = new System.Drawing.Size(206, 23);
+            this.txtpregledID.TabIndex = 17;
+            this.txtpregledID.Visible = false;
+            // 
             // frmDetaljiNalaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtpregledID);
+            this.Controls.Add(this.lblDatum);
+            this.Controls.Add(this.lblOdjel);
+            this.Controls.Add(this.lblImeKosrisnik);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtOdjel);
-            this.Controls.Add(this.txtKlijent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "frmDetaljiNalaz";
@@ -160,13 +178,14 @@ namespace PoliklinikaDesktop.Forms.Nalaz
 
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtKlijent;
-        private System.Windows.Forms.TextBox txtOdjel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.Label lblImeKosrisnik;
+        private System.Windows.Forms.Label lblOdjel;
+        private System.Windows.Forms.Label lblDatum;
+        private System.Windows.Forms.TextBox txtpregledID;
     }
 }
