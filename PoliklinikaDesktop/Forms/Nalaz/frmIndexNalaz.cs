@@ -28,6 +28,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
                 Opis = "Nalaz"
             });
 
+            dgvPregled.AutoGenerateColumns = false;
             dgvPregled.DataSource = result;
 
             var result2 = await _service.Get<List<NalazVM>>(new PregledVM()

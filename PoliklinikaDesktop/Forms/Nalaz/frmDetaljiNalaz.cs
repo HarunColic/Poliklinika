@@ -62,17 +62,17 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         {
             request.Opis = txtOpis.Text;
 
-            if (_id.HasValue)
-            {
-                await _service.Update<NalazVM>(_id, request);
-            }
-            else
+            var prid = await _pregled.GetById<PregledVM>(_id);
+            if (prid != null)
             {
                 request.PregledID = int.Parse(txtpregledID.Text);
                 await _service.Insert<NalazVM>(request);
             }
-        }
+            else
+            {
+                await _service.Update<NalazVM>(_id, request);
+            }
 
-       
+        }
     }
 }
