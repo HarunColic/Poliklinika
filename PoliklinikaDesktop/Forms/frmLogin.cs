@@ -62,8 +62,10 @@ namespace PoliklinikaDesktop.Forms
                 forma.Show();
             }
             else
-                throw new Exception("Korisnika nije moguce ulogovati");
-
+            {
+                MessageBox.Show("Korisnika nije moguce ulogovati", "Neuspjesan login",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void SetUser(AuthenticateResponse result, User user)
