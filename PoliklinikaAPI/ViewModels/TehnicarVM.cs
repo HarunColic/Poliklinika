@@ -7,6 +7,7 @@ namespace PoliklinikaAPI.ViewModels
 {
     public class TehnicarVM
     {
+        public int Id { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string Spol { get; set; }

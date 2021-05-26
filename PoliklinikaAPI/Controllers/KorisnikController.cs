@@ -40,10 +40,10 @@ namespace PoliklinikaAPI.Controllers
             return _userInterface.Insert(korisnik);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public KorisnikVM Update(int id, KorisnikVM korisnik)
         {
-            return _userInterface.Update(id, korisnik);
+            return _userInterface.Update(korisnik);
         }
         [HttpDelete("{id}")]
         public void Delete(int id)
