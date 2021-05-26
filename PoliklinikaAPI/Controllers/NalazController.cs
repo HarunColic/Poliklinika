@@ -37,7 +37,7 @@ namespace PoliklinikaAPI.Controllers
             return _nalazInterface.GetById(id);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public NalazVM Update(NalazVM nalaz)
         {
             return _nalazInterface.Update(nalaz);

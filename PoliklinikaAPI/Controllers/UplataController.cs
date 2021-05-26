@@ -39,7 +39,7 @@ namespace PoliklinikaAPI.Controllers
             return _baseInterface.Insert(model);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public UplataVM Update(UplataVM model)
         {
             return _baseInterface.Update(model);

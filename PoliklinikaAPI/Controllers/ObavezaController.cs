@@ -38,7 +38,7 @@ namespace PoliklinikaAPI.Controllers
             return _baseInterface.Insert(model);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public ObavezaVM Update(ObavezaVM model)
         {
             return _baseInterface.Update(model);
