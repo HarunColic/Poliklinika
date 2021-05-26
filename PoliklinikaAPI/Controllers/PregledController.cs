@@ -39,7 +39,7 @@ namespace PoliklinikaAPI.Controllers
             return _baseInterface.Insert(model);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public PregledVM Update(PregledVM model)
         {
             return _baseInterface.Update(model);

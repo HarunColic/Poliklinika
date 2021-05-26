@@ -123,12 +123,12 @@ namespace PoliklinikaAPI.Services
             throw new AggregateException(errors);
         }
 
-        public TVM Update(int id, TVM user)
+        public TVM Update(TVM user)
         {
-            var entity = _db.Set<T>().Find(id);
-            var map = _mapper.Map<TVM>(entity);
+            var entity = _db.Set<T>().Find(int.Parse(user.GetType().GetProperty("Id").GetValue(user, null).ToString()));
+            var map = _mapper.Map(user, entity);
             _db.SaveChanges();
-            return map;
+            return _mapper.Map<TVM>(map);
         }
     }
 }
