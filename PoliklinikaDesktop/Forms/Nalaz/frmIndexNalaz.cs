@@ -13,6 +13,8 @@ namespace PoliklinikaDesktop.Forms.Nalaz
     {
         private readonly APIService _service = new APIService("Nalaz");
         private readonly APIService _pregled = new APIService("Pregled");
+        private readonly APIService _korisnik = new APIService("Korisnik");
+
         public frmIndexNalaz()
         {
             InitializeComponent();
@@ -27,10 +29,23 @@ namespace PoliklinikaDesktop.Forms.Nalaz
                 DoktorID = id,
                 Opis = "Nalaz"
             });
-
             dgvPregled.AutoGenerateColumns = false;
             dgvPregled.DataSource = result;
+            if (result != null)
+            {
 
+                //for (int i = 0; i < dgvPregled.RowCount - 1; i++)
+                foreach(DataGridViewRow i in dgvPregled.Rows)
+                {
+                    var prid = await _pregled.GetById<PregledVM>(result[i.Index].ID);
+                    var korisnik = await _korisnik.GetById<KorisnikVM>(prid.KorisnikID);
+                    i.Cells[1].Value = korisnik.Prezime;
+                    i.Cells[2].Value = korisnik.Ime;
+
+                    //dgvPregled.Rows[i].Cells[1].Value = korisnik.Prezime;
+                    //dgvPregled.Rows[i].Cells[2].Value = korisnik.Ime;
+                } 
+            }
             var result2 = await _service.Get<List<NalazVM>>(new PregledVM()
             {
                 DoktorID = id
@@ -49,7 +64,5 @@ namespace PoliklinikaDesktop.Forms.Nalaz
                 detalji.Show();
             }
         }
-
-       
     }
 }
