@@ -33,8 +33,21 @@ namespace PoliklinikaDesktop.Forms
             request.Email = textEmail.Text;
             request.Password = textPassword.Text;
 
-            var result = await _service.Insert<AuthenticateResponse>(request);
+            AuthenticateResponse result = null;
 
+            try
+            {
+                result = await _service.Insert<AuthenticateResponse>(request);
+
+                if (result == null)
+                    throw new Exception("Netacan Email ili sifra");
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Neuspjesan login",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var user = new User();
 
             if (result.Role == "Doktor")
