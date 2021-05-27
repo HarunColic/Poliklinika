@@ -46,9 +46,6 @@ namespace PoliklinikaAPI.Services
                 {
                     var nalazLista = _db.Nalaz.ToList();
 
-                    if (nalazLista.Count() == 0)
-                        nova = preglediLista;
-
                     foreach (var i in nalazLista)
                     {
                         foreach (var j in preglediLista)
@@ -63,9 +60,6 @@ namespace PoliklinikaAPI.Services
                 else
                 {
                     var izvjestajLista = _db.Izvjestaj.ToList();
-
-                    if (izvjestajLista.Count() == 0)
-                        nova = preglediLista;
 
                     foreach (var i in izvjestajLista)
                     {

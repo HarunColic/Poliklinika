@@ -37,7 +37,6 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             });
 
             dgvNalaz.DataSource = result2;
-
         }
 
         private void dgvPregled_CellClick(object sender, DataGridViewCellEventArgs e)
