@@ -28,6 +28,9 @@ namespace PoliklinikaAPI.Data
         public DbSet<User> User { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<Admin> Admin { get; set; }
+        public DbSet<ChatObaveza> ChatObaveza { get; set; }
+        public DbSet<ChatPoruka> ChatPoruka { get; set; }
+
 
 
         public DBContext(DbContextOptions<DBContext> options) : base(options)

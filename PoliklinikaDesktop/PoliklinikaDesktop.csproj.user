@@ -34,6 +34,9 @@
     <Compile Update="Forms\Nalaz\frmIndexNalaz.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Obaveza\Chat\frmIndexChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Obaveza\frmDetaljiObaveza.cs">
       <SubType>Form</SubType>
     </Compile>
