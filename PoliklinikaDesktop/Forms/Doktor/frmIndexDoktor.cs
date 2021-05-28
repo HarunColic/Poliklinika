@@ -32,5 +32,11 @@ namespace PoliklinikaDesktop.Forms.Doktor
         {
             lblTrenutniUser.Text = $"{ CurrentUser.User.Ime} {CurrentUser.User.Prezime}";
         }
+
+        private void picIzvjestaj_Click(object sender, EventArgs e)
+        {
+            frmIndexIzvjestajaDoktor izv = new frmIndexIzvjestajaDoktor();
+            izv.Show();
+        }
     }
 }
