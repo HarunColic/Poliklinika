@@ -56,7 +56,6 @@ namespace PoliklinikaDesktop.Forms.Odjel
                 }
                 MessageBox.Show("Operacija uspješna");
             }
-           
         }
 
         private void txtNaziv_Validating(object sender, CancelEventArgs e)

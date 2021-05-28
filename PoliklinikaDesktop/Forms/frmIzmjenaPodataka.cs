@@ -10,11 +10,9 @@ namespace PoliklinikaDesktop.Forms
 {
     public partial class frmIzmjenaPodataka : Form
     {
-        private int? _id = null;
-        public frmIzmjenaPodataka(int id)
+        public frmIzmjenaPodataka()
         {
             InitializeComponent();
-            _id = id;
         }
 
         private void button1_Click(object sender, EventArgs e)
