@@ -27,7 +27,9 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         NalazVM request = new NalazVM();
         private async void frmDetaljiNalaz_Load(object sender, EventArgs e)
         {
+
             var prid = await _pregled.GetById<PregledVM>(_id);
+
             if (prid != null)
             {
                 var korisnik = await _korisnik.GetById<KorisnikVM>(prid.KorisnikID);
@@ -35,7 +37,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
                 var odjel = await _odjel.GetById<OdjelVM>(doktor.OdjelID);
 
                 lblDatum.Text = prid.Datum.ToString();
-                lblImeKosrisnik.Text= $"{korisnik.Ime} { korisnik.Prezime}";
+                lblImeKosrisnik.Text = $"{korisnik.Ime} { korisnik.Prezime}";
                 lblOdjel.Text = odjel.Naziv;
                 txtpregledID.Text = prid.ID.ToString();
 

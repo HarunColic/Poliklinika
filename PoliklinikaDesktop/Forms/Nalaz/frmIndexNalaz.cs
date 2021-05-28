@@ -29,21 +29,18 @@ namespace PoliklinikaDesktop.Forms.Nalaz
                 DoktorID = id,
                 Opis = "Nalaz"
             });
+
             dgvPregled.AutoGenerateColumns = false;
             dgvPregled.DataSource = result;
+
             if (result != null)
             {
-
-                //for (int i = 0; i < dgvPregled.RowCount - 1; i++)
                 foreach(DataGridViewRow i in dgvPregled.Rows)
                 {
                     var prid = await _pregled.GetById<PregledVM>(result[i.Index].ID);
                     var korisnik = await _korisnik.GetById<KorisnikVM>(prid.KorisnikID);
                     i.Cells[1].Value = korisnik.Prezime;
                     i.Cells[2].Value = korisnik.Ime;
-
-                    //dgvPregled.Rows[i].Cells[1].Value = korisnik.Prezime;
-                    //dgvPregled.Rows[i].Cells[2].Value = korisnik.Ime;
                 } 
             }
             var result2 = await _service.Get<List<NalazVM>>(new PregledVM()
@@ -51,7 +48,19 @@ namespace PoliklinikaDesktop.Forms.Nalaz
                 DoktorID = id
             });
 
+            dgvNalaz.AutoGenerateColumns = false;
             dgvNalaz.DataSource = result2;
+
+            if (result2 != null)
+            {
+                foreach (DataGridViewRow i in dgvNalaz.Rows)
+                {
+                    var prid = await _pregled.GetById<PregledVM>(result2[i.Index].PregledID);
+                    var korisnik = await _korisnik.GetById<KorisnikVM>(prid.KorisnikID);
+                    i.Cells[1].Value = korisnik.Prezime;
+                    i.Cells[2].Value = korisnik.Ime;
+                }
+            }
         }
 
         private void dgvPregled_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -60,6 +69,17 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             if (columnIndex == 3)
             {
                 var id = dgvPregled.CurrentRow.Cells[0].Value;
+                frmDetaljiNalaz detalji = new frmDetaljiNalaz(int.Parse(id.ToString()));
+                detalji.Show();
+            }
+        }
+
+        private void dgvNalaz_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int columnIndex = dgvNalaz.CurrentCell.ColumnIndex;
+            if (columnIndex == 3)
+            {
+                var id = dgvNalaz.CurrentRow.Cells[0].Value;
                 frmDetaljiNalaz detalji = new frmDetaljiNalaz(int.Parse(id.ToString()));
                 detalji.Show();
             }

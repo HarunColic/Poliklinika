@@ -36,6 +36,7 @@ namespace PoliklinikaDesktop
 
             return await result.GetJsonAsync<T>();
         }
+        
         public async Task<T> Insert<T>(object request)
         {
             var result = $"{Properties.Settings.Default.APIurl}/{_route}";

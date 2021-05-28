@@ -13,5 +13,6 @@ namespace PoliklinikaAPI.Interfaces
         public TVM Insert(TVM model);
         public TVM Update(TVM model);
         public void Delete(int id);
+        public bool RightID(int id);
     }
 }

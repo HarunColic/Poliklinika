@@ -35,12 +35,14 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.dgvPregled = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvNalaz = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prezimee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Imee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPregled)).BeginInit();
@@ -83,6 +85,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             // 
             this.dgvPregled.AllowUserToAddRows = false;
             this.dgvPregled.AllowUserToDeleteRows = false;
+            this.dgvPregled.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvPregled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPregled.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -113,9 +116,12 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             // 
             this.dgvNalaz.AllowUserToAddRows = false;
             this.dgvNalaz.AllowUserToDeleteRows = false;
+            this.dgvNalaz.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvNalaz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNalaz.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.Prezimee,
+            this.Imee,
             this.Detalji});
             this.dgvNalaz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNalaz.Location = new System.Drawing.Point(3, 31);
@@ -124,23 +130,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.dgvNalaz.RowTemplate.Height = 25;
             this.dgvNalaz.Size = new System.Drawing.Size(792, 204);
             this.dgvNalaz.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Detalji
-            // 
-            this.Detalji.DataPropertyName = "Detalji";
-            this.Detalji.HeaderText = "Detalji";
-            this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
-            this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Detalji.Name = "Detalji";
-            this.Detalji.ReadOnly = true;
+            this.dgvNalaz.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNalaz_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -172,6 +162,37 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Prezimee
+            // 
+            this.Prezimee.DataPropertyName = "Prezime";
+            this.Prezimee.HeaderText = "Prezime";
+            this.Prezimee.Name = "Prezimee";
+            this.Prezimee.ReadOnly = true;
+            // 
+            // Imee
+            // 
+            this.Imee.DataPropertyName = "Ime";
+            this.Imee.HeaderText = "Ime";
+            this.Imee.Name = "Imee";
+            this.Imee.ReadOnly = true;
+            // 
+            // Detalji
+            // 
+            this.Detalji.DataPropertyName = "Detalji";
+            this.Detalji.HeaderText = "Detalji";
+            this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
+            this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Detalji.Name = "Detalji";
+            this.Detalji.ReadOnly = true;
             // 
             // frmIndexNalaz
             // 
@@ -205,11 +226,13 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         private System.Windows.Forms.DataGridView dgvPregled;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvNalaz;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewImageColumn Detalji;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prezimee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Imee;
+        private System.Windows.Forms.DataGridViewImageColumn Detalji;
     }
 }
