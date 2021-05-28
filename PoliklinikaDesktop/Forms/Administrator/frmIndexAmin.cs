@@ -42,5 +42,16 @@ namespace PoliklinikaDesktop.Forms.Administrator
             obaveza.Show();
 
         }
+
+        private void lblTrenutniUser_Click(object sender, EventArgs e)
+        {
+            frmIzmjenaPodataka profil = new frmIzmjenaPodataka();
+            profil.Show();
+        }
+
+        private void frmIndexAmin_Load(object sender, EventArgs e)
+        {
+            lblTrenutniUser.Text = $"{ CurrentUser.User.Ime} {CurrentUser.User.Prezime}";
+        }
     }
 }

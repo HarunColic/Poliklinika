@@ -39,6 +39,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictObaveze = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblTrenutniUser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPregledIzvjestaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEvidOdjela)).BeginInit();
@@ -162,12 +163,25 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Evidencija obaveza\r\n";
             // 
+            // lblTrenutniUser
+            // 
+            this.lblTrenutniUser.AutoSize = true;
+            this.lblTrenutniUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTrenutniUser.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblTrenutniUser.Location = new System.Drawing.Point(922, 9);
+            this.lblTrenutniUser.Name = "lblTrenutniUser";
+            this.lblTrenutniUser.Size = new System.Drawing.Size(52, 21);
+            this.lblTrenutniUser.TabIndex = 6;
+            this.lblTrenutniUser.Text = "label5";
+            this.lblTrenutniUser.Click += new System.EventHandler(this.lblTrenutniUser_Click);
+            // 
             // frmIndexAmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(1054, 774);
+            this.Controls.Add(this.lblTrenutniUser);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictObaveze);
             this.Controls.Add(this.pictureBox5);
@@ -181,6 +195,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmIndexAmin";
             this.Text = "frmIndexAmin";
+            this.Load += new System.EventHandler(this.frmIndexAmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPregledIzvjestaja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEvidOdjela)).EndInit();
@@ -205,5 +220,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictObaveze;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTrenutniUser;
     }
 }
