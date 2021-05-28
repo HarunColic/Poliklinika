@@ -44,11 +44,15 @@ namespace PoliklinikaDesktop.Forms.Odjel
               
                 if (_id.HasValue)
                 {
-                    await _service.Update<Poliklinika.Model.Odjel>(_id, request);
+                    var odjel = await _service.GetById<OdjelVM>(_id);
+                    odjel.Naziv = txtNaziv.Text;
+                    odjel.Opis = txtOpis.Text;
+
+                    await _service.Update<OdjelVM>(odjel);
                 }
                 else
                 {
-                    await _service.Insert<Poliklinika.Model.Odjel>(request);
+                    await _service.Insert<OdjelVM>(request);
                 }
                 MessageBox.Show("Operacija uspješna");
             }

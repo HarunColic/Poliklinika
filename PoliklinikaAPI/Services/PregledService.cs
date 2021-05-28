@@ -75,16 +75,5 @@ namespace PoliklinikaAPI.Services
                 return _mapper.Map<List<PregledVM>>(preglediLista.Except(nova));
             }   
         }
-
-        public override bool RightID(int id)
-        {
-            var NalaziLista = _db.Nalaz.ToList();
-            foreach (var i in NalaziLista)
-            {
-                if (i.PregledID == id)
-                    return false;
-            }
-            return true;
-        }
     }
 }

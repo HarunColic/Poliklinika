@@ -43,9 +43,9 @@ namespace PoliklinikaDesktop
 
             return await result.PostJsonAsync(request).ReceiveJson<T>();
         }
-        public async Task<T> Update<T>(object id,object request)
+        public async Task<T> Update<T>(object request)
         {
-            var result = $"{Properties.Settings.Default.APIurl}/{_route}/{id}";
+            var result = $"{Properties.Settings.Default.APIurl}/{_route}";
 
             return await result.PutJsonAsync(request).ReceiveJson<T>();
         }

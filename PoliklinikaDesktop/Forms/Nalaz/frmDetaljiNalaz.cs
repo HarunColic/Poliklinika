@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PoliklinikaDesktop.Forms.Nalaz
@@ -27,17 +28,17 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         NalazVM request = new NalazVM();
         private async void frmDetaljiNalaz_Load(object sender, EventArgs e)
         {
+            var check = await isPregled(_id);
 
-            var prid = await _pregled.GetById<PregledVM>(_id);
+            if (check) { 
+                var prid = await _pregled.GetById<PregledVM>(_id);
 
-            if (prid != null)
-            {
                 var korisnik = await _korisnik.GetById<KorisnikVM>(prid.KorisnikID);
                 var doktor = await _doktor.GetById<DoktorVM>(prid.DoktorID);
                 var odjel = await _odjel.GetById<OdjelVM>(doktor.OdjelID);
 
                 lblDatum.Text = prid.Datum.ToString();
-                lblImeKosrisnik.Text = $"{korisnik.Ime} { korisnik.Prezime}";
+                lblImeKosrisnik.Text = $"{korisnik.Ime} {korisnik.Prezime}";
                 lblOdjel.Text = odjel.Naziv;
                 txtpregledID.Text = prid.ID.ToString();
 
@@ -64,17 +65,32 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         {
             request.Opis = txtOpis.Text;
 
-            var prid = await _pregled.GetById<PregledVM>(_id);
-            if (prid != null)
+            var check = await isPregled(_id);
+
+            if (check)
             {
                 request.PregledID = int.Parse(txtpregledID.Text);
                 await _service.Insert<NalazVM>(request);
             }
             else
             {
-                await _service.Update<NalazVM>(_id, request);
+                var nalaz = await _service.GetById<NalazVM>(_id);
+                nalaz.Opis = txtOpis.Text;
+
+                await _service.Update<NalazVM>(nalaz);
             }
 
+        }
+        private async Task<bool> isPregled(int? id)
+        {
+            var NalaziLista = await _service.Get<List<NalazVM>>(null);
+            
+            foreach (var i in NalaziLista)
+            {
+                if (i.PregledID == id)
+                    return false;
+            }
+            return true;
         }
     }
 }
