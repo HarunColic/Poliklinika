@@ -26,9 +26,6 @@ namespace PoliklinikaAPI.Controllers
         {
             var response = _userService.Authenticate(model);
 
-            if (response == null)
-                throw new Exception("Username or password is incorrect");
-
             return response;
         }
     }

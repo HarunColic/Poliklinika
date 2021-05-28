@@ -46,14 +46,11 @@ namespace PoliklinikaAPI.Services
                 {
                     var nalazLista = _db.Nalaz.ToList();
 
-                    if (nalazLista.Count() == 0)
-                        nova = preglediLista;
-
                     foreach (var i in nalazLista)
                     {
                         foreach (var j in preglediLista)
                         {
-                            if (i.PregledID != j.ID)
+                            if (i.PregledID == j.ID)
                             {
                                 nova.Add(j);
                             }
@@ -64,21 +61,18 @@ namespace PoliklinikaAPI.Services
                 {
                     var izvjestajLista = _db.Izvjestaj.ToList();
 
-                    if (izvjestajLista.Count() == 0)
-                        nova = preglediLista;
-
                     foreach (var i in izvjestajLista)
                     {
                         foreach (var j in preglediLista)
                         {
-                            if (i.PregledID != j.ID)
+                            if (i.PregledID == j.ID)
                             {
                                 nova.Add(j);
                             }
                         }
                     }
                 }
-                return _mapper.Map<List<PregledVM>>(nova);
+                return _mapper.Map<List<PregledVM>>(preglediLista.Except(nova));
             }   
         }
     }
