@@ -66,13 +66,16 @@ namespace PoliklinikaAPI.Services
 
         public TVM Update(TVM model)
         {
-            var entity = _db.Set<T>().Find(int.Parse(model.GetType().GetProperty("Id").GetValue(model, null).ToString()));
+            var id = int.Parse(model.GetType().GetProperty("ID").GetValue(model, null).ToString());
+
+            var entity = _db.Set<T>().Find(id);
             var m = _mapper.Map(model, entity);
 
             _db.SaveChanges();
-
+ 
             return _mapper.Map<TVM>(m);
         }
+
         public void Delete(int id)
         {
             var t = _db.Set<T>().Find(id);

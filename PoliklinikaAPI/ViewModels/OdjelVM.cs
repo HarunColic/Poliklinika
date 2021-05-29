@@ -7,7 +7,7 @@ namespace PoliklinikaAPI.ViewModels
 {
     public class OdjelVM
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Naziv { get; set; }
         public string Opis { get; set; }
         public byte[] Slika { get; set; }

@@ -21,5 +21,22 @@ namespace PoliklinikaDesktop.Forms.Doktor
             frmIndexNalaz nalaz = new frmIndexNalaz();
             nalaz.Show();
         }
+
+        private void TrenutniUser_Click(object sender, EventArgs e)
+        {
+            frmIzmjenaPodataka profil = new frmIzmjenaPodataka();
+            profil.Show();
+        }
+
+        private void frmIndexDoktor_Load(object sender, EventArgs e)
+        {
+            lblTrenutniUser.Text = $"{ CurrentUser.User.Ime} {CurrentUser.User.Prezime}";
+        }
+
+        private void picIzvjestaj_Click(object sender, EventArgs e)
+        {
+            frmIndexIzvjestajaDoktor izv = new frmIndexIzvjestajaDoktor();
+            izv.Show();
+        }
     }
 }

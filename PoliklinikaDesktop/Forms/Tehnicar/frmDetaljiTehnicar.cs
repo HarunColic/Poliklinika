@@ -28,7 +28,14 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
 
             if (_id.HasValue)
             {
-                await _service.Update<TehnicarVM>(_id, request);
+                var tehnicar = await _service.GetById<TehnicarVM>(_id);
+
+                tehnicar.Ime = txtIme.Text;
+                tehnicar.Prezime = txtPrezime.Text;
+                tehnicar.BrojRadneKnjizice = txtBrRadneKnjizice.Text;
+                tehnicar.StrucnaSprema = txtstrucna.Text;
+
+                await _service.Update<TehnicarVM>(request);
             }
             else
             {
