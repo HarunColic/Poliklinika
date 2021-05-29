@@ -42,7 +42,13 @@ namespace PoliklinikaDesktop.Forms.Obaveza
 
         private void dgvAktivne_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int columnIndex = dgvPregled.CurrentCell.ColumnIndex;
+            if (columnIndex == 3)
+            {
+                var id = dgvAktivne.CurrentRow.Cells[0].Value;
+                frmDetaljiOsobljeObaveza detalji = new frmDetaljiOsobljeObaveza(int.Parse(id.ToString()));
+                detalji.Show();
+            }
         }
     }
 }
