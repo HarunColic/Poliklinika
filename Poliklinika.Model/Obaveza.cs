@@ -9,7 +9,7 @@ namespace Poliklinika.Model
     public class Obaveza
     {
         [Key]
-        public int Id { get; set; }
+        public int ID { get; set; }
         public int OsobljeID { get; set; }
         [ForeignKey("OsobljeID")]
         public Osoblje Osoblje { get; set; }

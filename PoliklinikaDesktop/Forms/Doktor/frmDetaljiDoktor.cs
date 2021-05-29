@@ -36,8 +36,15 @@ namespace PoliklinikaDesktop.Forms.Doktor
 
             if (_id.HasValue)
             {
-                
-                await _service.Update<DoktorVM>(_id, request);
+                var doktor = await _service.GetById<DoktorVM>(_id);
+
+                doktor.Ime = txtIme.Text;
+                doktor.Prezime = txtPrezime.Text;
+                doktor.Specijalizacija = txtSpecijal.Text;
+                doktor.SubSpecijalizacija = txtSubSecijal.Text;
+                doktor.BrojRadneKnjizice = txtBrRadneKnjiz.Text;
+
+                await _service.Update<DoktorVM>(doktor);
             }
             else
             {

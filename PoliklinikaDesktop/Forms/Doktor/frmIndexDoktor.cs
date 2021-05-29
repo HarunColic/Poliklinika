@@ -23,10 +23,28 @@ namespace PoliklinikaDesktop.Forms.Doktor
             nalaz.Show();
         }
 
+
         private void picObaveza_Click(object sender, EventArgs e)
         {
             frmIndexOsobljeObaveza obaveza = new frmIndexOsobljeObaveza();
             obaveza.Show();
+
+        private void TrenutniUser_Click(object sender, EventArgs e)
+        {
+            frmIzmjenaPodataka profil = new frmIzmjenaPodataka();
+            profil.Show();
+        }
+
+        private void frmIndexDoktor_Load(object sender, EventArgs e)
+        {
+            lblTrenutniUser.Text = $"{ CurrentUser.User.Ime} {CurrentUser.User.Prezime}";
+        }
+
+        private void picIzvjestaj_Click(object sender, EventArgs e)
+        {
+            frmIndexIzvjestajaDoktor izv = new frmIndexIzvjestajaDoktor();
+            izv.Show();
+
         }
     }
 }

@@ -19,6 +19,9 @@
     <Compile Update="Forms\Doktor\frmIndexIzvjestajaDoktor.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\frmIzmjenaPodataka.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>

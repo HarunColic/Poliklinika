@@ -41,7 +41,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPut]
-        public KorisnikVM Update(int id, KorisnikVM korisnik)
+        public KorisnikVM Update(KorisnikVM korisnik)
         {
             return _userInterface.Update(korisnik);
         }

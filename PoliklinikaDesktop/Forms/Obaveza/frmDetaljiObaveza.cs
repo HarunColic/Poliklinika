@@ -34,9 +34,16 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         {
             request.Opis = txtOpis.Text;
             request.Datum = dtpDatum.Value;
+
             if (_id.HasValue)
             {
-                await _service.Update<ObavezaVM>(_id, request);
+                var obaveza = await _service.GetById<ObavezaVM>(_id);
+
+                obaveza.Opis = txtOpis.Text;
+                obaveza.Datum = dtpDatum.Value;
+
+
+                await _service.Update<ObavezaVM>(request);
             }
             else
             {

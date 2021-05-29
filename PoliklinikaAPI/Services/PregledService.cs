@@ -50,7 +50,7 @@ namespace PoliklinikaAPI.Services
                     {
                         foreach (var j in preglediLista)
                         {
-                            if (i.PregledID != j.ID)
+                            if (i.PregledID == j.ID)
                             {
                                 nova.Add(j);
                             }
@@ -65,14 +65,14 @@ namespace PoliklinikaAPI.Services
                     {
                         foreach (var j in preglediLista)
                         {
-                            if (i.PregledID != j.ID)
+                            if (i.PregledID == j.ID)
                             {
                                 nova.Add(j);
                             }
                         }
                     }
                 }
-                return _mapper.Map<List<PregledVM>>(nova);
+                return _mapper.Map<List<PregledVM>>(preglediLista.Except(nova));
             }   
         }
     }
