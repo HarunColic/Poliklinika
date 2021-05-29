@@ -30,13 +30,13 @@
         {
             this.Odjeli = new System.Windows.Forms.GroupBox();
             this.dgvOdjeli = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnDodaj = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
             this.Izbrisi = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnDodaj = new System.Windows.Forms.Button();
             this.Odjeli.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdjeli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -52,7 +52,6 @@
             this.Odjeli.TabIndex = 0;
             this.Odjeli.TabStop = false;
             this.Odjeli.Text = "Odjeli";
-        
             // 
             // dgvOdjeli
             // 
@@ -74,41 +73,6 @@
             this.dgvOdjeli.TabIndex = 0;
             this.dgvOdjeli.Text = "dataGridView1";
             this.dgvOdjeli.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdjeli_CellClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Naziv
-            // 
-            this.Naziv.DataPropertyName = "Naziv";
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
-            this.Naziv.ReadOnly = true;
-            // 
-            // Detalji
-            // 
-            this.Detalji.DataPropertyName = "Detalji";
-            this.Detalji.HeaderText = "Detalji";
-            this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
-            this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Detalji.Name = "Detalji";
-            this.Detalji.ReadOnly = true;
-            this.Detalji.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Detalji.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Izbrisi
-            // 
-            this.Izbrisi.DataPropertyName = "Izbrisi";
-            this.Izbrisi.HeaderText = "Izbrisi";
-            this.Izbrisi.Name = "Izbrisi";
-            this.Izbrisi.ReadOnly = true;
-            this.Izbrisi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Izbrisi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // pictureBox2
             // 
@@ -140,6 +104,43 @@
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Naziv
+            // 
+            this.Naziv.DataPropertyName = "Naziv";
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
+            // 
+            // Detalji
+            // 
+            this.Detalji.DataPropertyName = "Detalji";
+            this.Detalji.HeaderText = "Detalji";
+            this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
+            this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Detalji.Name = "Detalji";
+            this.Detalji.ReadOnly = true;
+            this.Detalji.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Detalji.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Izbrisi
+            // 
+            this.Izbrisi.DataPropertyName = "Izbrisi";
+            this.Izbrisi.HeaderText = "Izbrisi";
+            this.Izbrisi.Image = global::PoliklinikaDesktop.Properties.Resources.izbrisi;
+            this.Izbrisi.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Izbrisi.Name = "Izbrisi";
+            this.Izbrisi.ReadOnly = true;
+            this.Izbrisi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Izbrisi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // frmIndexOdjel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -167,10 +168,10 @@
         private System.Windows.Forms.DataGridView dgvOdjeli;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewImageColumn Detalji;
         private System.Windows.Forms.DataGridViewImageColumn Izbrisi;
-        private System.Windows.Forms.Button btnDodaj;
     }
 }

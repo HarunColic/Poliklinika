@@ -29,7 +29,7 @@ namespace PoliklinikaDesktop.Forms.Odjel
         }
 
      
-        private void dgvOdjeli_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvOdjeli_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int columnIndex = dgvOdjeli.CurrentCell.ColumnIndex;
             if (columnIndex == 2)
@@ -37,6 +37,11 @@ namespace PoliklinikaDesktop.Forms.Odjel
                 var id = dgvOdjeli.SelectedRows[0].Cells[0].Value;
                 frmDetaljiOdjel detalji = new frmDetaljiOdjel(int.Parse(id.ToString()));
                 detalji.Show();
+            }
+            else if (columnIndex == 3)
+            {
+                var id = dgvOdjeli.SelectedRows[0].Cells[0].Value;
+                await _apiService.Delete<object>(id);
             }
            
         }
