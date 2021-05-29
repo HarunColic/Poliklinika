@@ -18,5 +18,6 @@ namespace Poliklinika.Model
         public Odjel Odjel { get; set; }
         public DateTime Datum { get; set; }
         public string Opis { get; set; }
+        public bool Aktivna { get; set; }
     }
 }

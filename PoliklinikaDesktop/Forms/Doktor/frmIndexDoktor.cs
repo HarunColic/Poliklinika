@@ -1,4 +1,5 @@
 ﻿using PoliklinikaDesktop.Forms.Nalaz;
+using PoliklinikaDesktop.Forms.Obaveza;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,12 @@ namespace PoliklinikaDesktop.Forms.Doktor
         {
             frmIndexNalaz nalaz = new frmIndexNalaz();
             nalaz.Show();
+        }
+
+        private void picObaveza_Click(object sender, EventArgs e)
+        {
+            frmIndexOsobljeObaveza obaveza = new frmIndexOsobljeObaveza();
+            obaveza.Show();
         }
     }
 }
