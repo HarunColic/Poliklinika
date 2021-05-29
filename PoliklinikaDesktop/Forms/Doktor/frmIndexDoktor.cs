@@ -28,7 +28,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
         {
             frmIndexOsobljeObaveza obaveza = new frmIndexOsobljeObaveza();
             obaveza.Show();
-
+        }
         private void TrenutniUser_Click(object sender, EventArgs e)
         {
             frmIzmjenaPodataka profil = new frmIzmjenaPodataka();

@@ -43,6 +43,9 @@
     <Compile Update="Forms\Obaveza\frmDetaljiObaveza.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Obaveza\frmDetaljiOsobljeObaveza.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Obaveza\frmIndexObaveza.cs">
       <SubType>Form</SubType>
     </Compile>
