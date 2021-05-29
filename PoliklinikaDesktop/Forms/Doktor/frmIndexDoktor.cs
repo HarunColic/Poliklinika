@@ -1,4 +1,5 @@
 ﻿using PoliklinikaDesktop.Forms.Nalaz;
+using PoliklinikaDesktop.Forms.Obaveza;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,12 @@ namespace PoliklinikaDesktop.Forms.Doktor
             nalaz.Show();
         }
 
+
+        private void picObaveza_Click(object sender, EventArgs e)
+        {
+            frmIndexOsobljeObaveza obaveza = new frmIndexOsobljeObaveza();
+            obaveza.Show();
+
         private void TrenutniUser_Click(object sender, EventArgs e)
         {
             frmIzmjenaPodataka profil = new frmIzmjenaPodataka();
@@ -37,6 +44,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
         {
             frmIndexIzvjestajaDoktor izv = new frmIndexIzvjestajaDoktor();
             izv.Show();
+
         }
     }
 }

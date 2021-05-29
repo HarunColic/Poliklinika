@@ -34,7 +34,7 @@ namespace PoliklinikaAPI.Services
 
                 if(OdjelID != null && OdjelID != "")
                     query = query.Where(x => x.Pregled.Doktor.OdjelID == int.Parse(OdjelID));
-                if(DoktorID != null && OdjelID != "")
+                if(DoktorID != null && DoktorID != "")
                     query = query.Where(x => x.Pregled.DoktorID == int.Parse(DoktorID));
             }
             

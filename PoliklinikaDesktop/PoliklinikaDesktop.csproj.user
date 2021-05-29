@@ -37,10 +37,16 @@
     <Compile Update="Forms\Nalaz\frmIndexNalaz.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Obaveza\Chat\frmIndexChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Obaveza\frmDetaljiObaveza.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Obaveza\frmIndexObaveza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Obaveza\frmIndexOsobljeObaveza.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Odjel\frmDetaljiOdjel.cs">

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PoliklinikaAPI.Data;
 
 namespace PoliklinikaAPI.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20210528223607_chat")]
+    partial class chat
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,9 +156,6 @@ namespace PoliklinikaAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ChatObavezaID")
-                        .HasColumnType("int");
-
                     b.Property<int>("OsobljeID")
                         .HasColumnType("int");
 
@@ -164,8 +163,6 @@ namespace PoliklinikaAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("ChatObavezaID");
 
                     b.HasIndex("OsobljeID");
 
@@ -218,9 +215,6 @@ namespace PoliklinikaAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Aktivna")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("Datum")
                         .HasColumnType("datetime2");
@@ -652,19 +646,11 @@ namespace PoliklinikaAPI.Migrations
 
             modelBuilder.Entity("Poliklinika.Model.ChatPoruka", b =>
                 {
-                    b.HasOne("Poliklinika.Model.ChatObaveza", "ChatObaveza")
-                        .WithMany()
-                        .HasForeignKey("ChatObavezaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Poliklinika.Model.Osoblje", "Osoblje")
                         .WithMany()
                         .HasForeignKey("OsobljeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("ChatObaveza");
 
                     b.Navigation("Osoblje");
                 });

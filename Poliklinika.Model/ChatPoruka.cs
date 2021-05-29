@@ -6,18 +6,16 @@ using System.Text;
 
 namespace Poliklinika.Model
 {
-    public class Obaveza
+    public class ChatPoruka
     {
         [Key]
         public int ID { get; set; }
+        public int ChatObavezaID { get; set; }
+        [ForeignKey(nameof(ChatObavezaID))]
+        public ChatObaveza ChatObaveza { get; set; }
         public int OsobljeID { get; set; }
-        [ForeignKey("OsobljeID")]
+        [ForeignKey(nameof(OsobljeID))]
         public Osoblje Osoblje { get; set; }
-        public int OdjelID { get; set; }
-        [ForeignKey("OdjelID")]
-        public Odjel Odjel { get; set; }
-        public DateTime Datum { get; set; }
-        public string Opis { get; set; }
-        public bool Aktivna { get; set; }
+        public string Poruka { get; set; }   
     }
 }
