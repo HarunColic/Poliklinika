@@ -19,18 +19,20 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         private readonly APIService _odjel = new APIService("Odjel");
 
         private int? _id = null;
-        public frmDetaljiNalaz(int? nalazid = null)
+        private string _opis;
+        public frmDetaljiNalaz(string opis, int? nalazid = null)
         {
             InitializeComponent();
             _id = nalazid;
+            _opis = opis;
         }
 
         NalazVM request = new NalazVM();
         private async void frmDetaljiNalaz_Load(object sender, EventArgs e)
         {
-            var check = await isPregled(_id);
+            
 
-            if (check) { 
+            if (_opis== "pregled") { 
                 var prid = await _pregled.GetById<PregledVM>(_id);
 
                 var korisnik = await _korisnik.GetById<KorisnikVM>(prid.KorisnikID);
@@ -44,7 +46,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
 
 
             }
-            else if (_id.HasValue)
+            else if (_opis == "nalaz")
             {
                 var nalaz = await _service.GetById<NalazVM>(_id);
                 var Prid = await _pregled.GetById<PregledVM>(nalaz.PregledID);
@@ -65,9 +67,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         {
             request.Opis = txtOpis.Text;
 
-            var check = await isPregled(_id);
-
-            if (check)
+            if (_opis == "pregled")
             {
                 request.PregledID = int.Parse(txtpregledID.Text);
                 await _service.Insert<NalazVM>(request);
@@ -81,16 +81,6 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             }
 
         }
-        private async Task<bool> isPregled(int? id)
-        {
-            var NalaziLista = await _service.Get<List<NalazVM>>(null);
-            
-            foreach (var i in NalaziLista)
-            {
-                if (i.PregledID == id)
-                    return false;
-            }
-            return true;
-        }
+        
     }
 }

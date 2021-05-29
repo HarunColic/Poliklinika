@@ -69,7 +69,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             if (columnIndex == 3)
             {
                 var id = dgvPregled.CurrentRow.Cells[0].Value;
-                frmDetaljiNalaz detalji = new frmDetaljiNalaz(int.Parse(id.ToString()));
+                frmDetaljiNalaz detalji = new frmDetaljiNalaz("pregled", int.Parse(id.ToString()));
                 detalji.Show();
             }
         }
@@ -80,7 +80,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             if (columnIndex == 3)
             {
                 var id = dgvNalaz.CurrentRow.Cells[0].Value;
-                frmDetaljiNalaz detalji = new frmDetaljiNalaz(int.Parse(id.ToString()));
+                frmDetaljiNalaz detalji = new frmDetaljiNalaz("nalaz",int.Parse(id.ToString()));
                 detalji.Show();
             }
         }

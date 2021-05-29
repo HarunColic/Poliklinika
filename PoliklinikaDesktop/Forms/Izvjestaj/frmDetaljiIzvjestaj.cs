@@ -18,16 +18,18 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         private readonly APIService _doktor = new APIService("Doktor");
         private readonly APIService _odjel = new APIService("Odjel");
         private readonly int? _id;
-        public frmDetaljiIzvjestaj(int izvjestajid)
+        private readonly string _opis;
+        public frmDetaljiIzvjestaj(string opis,int? izvjestajid=null)
         {
             InitializeComponent();
             _id = izvjestajid;
+            _opis = opis;
         }
         IzvjestajVM request = new IzvjestajVM();
         private async void frmDetaljiIzvjestaj_Load(object sender, EventArgs e)
         {
-            var check = await isPregled(_id);
-            if (check)
+           
+            if (_opis=="pregled")
             {
                 var prid = await _pregled.GetById<PregledVM>(_id);
                 var korisnik = await _korisnik.GetById<KorisnikVM>(prid.KorisnikID);
@@ -43,7 +45,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
 
 
             }
-            else if (_id.HasValue)
+            else if (_opis == "izvjestaj")
             {
                 var izvjestaj = await _service.GetById<IzvjestajVM>(_id);
                 var Prid = await _pregled.GetById<PregledVM>(izvjestaj.PregledID);
@@ -57,30 +59,13 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
                 lblOdjel.Text = odjel.Naziv;
                 lblOpisPregled.Text = Prid.Opis;
                 txtOpisIzvjestaja.Text = izvjestaj.Opis;
-
-
             }
         }
-
-        private async Task<bool> isPregled(int? id)
-        {
-            var IzvLista = await _service.Get<List<IzvjestajVM>>(null);
-
-            foreach (var i in IzvLista)
-            {
-                if (i.PregledID == id)
-                    return false;
-            }
-            return true;
-        }
-
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
             request.Opis = txtOpisIzvjestaja.Text;
 
-            var check = await isPregled(_id);
-
-            if (check)
+            if (_opis == "pregled")
             {
                 request.PregledID = int.Parse(txtpregledID.Text);
                 await _service.Insert<IzvjestajVM>(request);
@@ -89,10 +74,12 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             {
                 var izv = await _service.GetById<IzvjestajVM>(_id);
                 izv.Opis = txtOpisIzvjestaja.Text;
+              
 
                 await _service.Update<IzvjestajVM>(izv);
             }
 
         }
+        
     }
 }

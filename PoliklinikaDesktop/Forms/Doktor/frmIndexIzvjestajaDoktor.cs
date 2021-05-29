@@ -68,7 +68,8 @@ namespace PoliklinikaDesktop.Forms.Doktor
             if (columnIndex == 3)
             {
                 var id = dgvPregled.CurrentRow.Cells[0].Value;
-                frmDetaljiIzvjestaj detalji = new frmDetaljiIzvjestaj(int.Parse(id.ToString()));
+                frmDetaljiIzvjestaj detalji =
+                    new frmDetaljiIzvjestaj("pregled", int.Parse(id.ToString()));
                 detalji.Show();
             }
         }
@@ -79,7 +80,8 @@ namespace PoliklinikaDesktop.Forms.Doktor
             if (columnIndex == 3)
             {
                 var id = dgvIzvjestaj.CurrentRow.Cells[0].Value;
-                frmDetaljiIzvjestaj detalji = new frmDetaljiIzvjestaj(int.Parse(id.ToString()));
+                frmDetaljiIzvjestaj detalji = 
+                    new frmDetaljiIzvjestaj("izvjestaj",int.Parse(id.ToString()));
                 detalji.Show();
             }
         }
