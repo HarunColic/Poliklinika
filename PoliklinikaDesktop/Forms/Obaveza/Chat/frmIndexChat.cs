@@ -12,11 +12,12 @@ namespace PoliklinikaDesktop.Forms.Obaveza.Chat
     public partial class frmIndexChat : Form
     {
         private readonly APIService _service = new APIService("ChatPoruka");
-        private int? _id = null;
+        private int _id;
 
-        public frmIndexChat()
+        public frmIndexChat(int id)
         {
             InitializeComponent();
+            _id = id;
         }
 
         private async void frmIndexChat_Load(object sender, EventArgs e)
@@ -26,8 +27,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza.Chat
             tblLayout.HorizontalScroll.Visible = false;
             tblLayout.AutoScroll = true;
 
-            //var chatObaveza = new ChatObavezaVM { ID = int.Parse(_id.ToString()) };
-            var chatObaveza = new ChatObavezaVM { ID = 1 };
+            var chatObaveza = new ChatObavezaVM { ID = int.Parse(_id.ToString()) };
             var poruke = await _service.Get<List<ChatPorukaVM>>(chatObaveza);
 
             foreach (var i in poruke)
@@ -38,8 +38,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza.Chat
                 lbl.AutoSize = true;
                 lbl.BorderStyle = BorderStyle.FixedSingle;
 
-                //if(CurrentUser.User.Id == i.OsobljeID)
-                if (i.OsobljeID == 16)
+                if(CurrentUser.User.Id == i.OsobljeID)
                 {
                     lbl.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
                     lbl.Padding = new Padding { Right = 50 };
@@ -51,6 +50,18 @@ namespace PoliklinikaDesktop.Forms.Obaveza.Chat
                 }
                 tblLayout.Controls.Add(lbl);
             }
+        }
+
+        private async void btnPosalji_Click(object sender, EventArgs e)
+        {
+            
+            var poruka = await _service.Insert<ChatPorukaVM>(new ChatPorukaVM { 
+                Poruka = txtPoruka.Text,
+                OsobljeID = CurrentUser.User.Id,
+                ChatObavezaID = _id
+            });
+
+            Refresh();
         }
     }
 }

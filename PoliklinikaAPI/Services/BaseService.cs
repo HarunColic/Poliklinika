@@ -49,8 +49,11 @@ namespace PoliklinikaAPI.Services
             return Lista;
         }
 
-        public TVM GetById(int id)
+        public virtual TVM GetById(int id)
         {
+            if (typeof(TVM) == typeof(ObavezaVM))
+                return GetObaveza(id);
+
             return _mapper.Map<TVM>(_db.Set<T>().Find(id));
         }
 
@@ -81,6 +84,20 @@ namespace PoliklinikaAPI.Services
             var t = _db.Set<T>().Find(id);
             _db.Set<T>().Remove(t);
             _db.SaveChanges();
+        }
+
+        private TVM GetObaveza(int id)
+        {
+            var obaveza = _db.Obaveza.Find(id);
+            var chat = _db.ChatObaveza.FirstOrDefault(x => x.ObavezaID == obaveza.ID);
+            var obavezaVM = _mapper.Map<TVM>(obaveza);
+
+            if (chat != null)
+                obavezaVM.GetType().GetProperty("ChatID").SetValue(obavezaVM, chat.ID);
+            else
+                obavezaVM.GetType().GetProperty("ChatID").SetValue(obavezaVM, 0);
+
+            return _mapper.Map(obaveza, obavezaVM);
         }
     }
 }

@@ -35,9 +35,9 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
-        public KorisnikVM Insert(SignUpKorisnikVM korisnik)
+        public async Task<KorisnikVM> Insert(SignUpKorisnikVM korisnik)
         {
-            return _userInterface.Insert(korisnik);
+            return await _userInterface.Insert(korisnik);
         }
 
         [HttpPut]

@@ -13,5 +13,6 @@ namespace PoliklinikaAPI.ViewModels
         public DateTime Datum { get; set; }
         public string Opis { get; set; }
         public bool Aktivna { get; set; }
+        public int ChatID { get; set; }
     }
 }

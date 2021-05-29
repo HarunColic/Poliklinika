@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Poliklinika.Model;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.Interfaces;
@@ -45,7 +46,7 @@ namespace PoliklinikaAPI.Services
             return _mapper.Map<IList<TVM>>(_db.Set<T>().ToList());
         }
 
-        public TVM Insert(TCreateVM user)
+        public async Task<TVM> Insert(TCreateVM user)
         {
             User signupUser;
             string roleName = "";
@@ -76,46 +77,54 @@ namespace PoliklinikaAPI.Services
             if(typeof(TCreateVM) != typeof(SignupAdminVM))
                 signupUser.Spol = user.GetType().GetProperty("Spol").GetValue(user, null).ToString();
 
-            var userCreateResult = _userManager.CreateAsync(signupUser, user.GetType().GetProperty("Password").GetValue(user, null).ToString());
-            userCreateResult.Wait();
+            var userCreateResult = await _userManager.CreateAsync(signupUser, user.GetType().GetProperty("Password").GetValue(user, null).ToString());
 
             string role = null;
 
             try
             {
-                role = _roleManager.FindByNameAsync(roleName).Result.Name;
+                var rlResult = await _roleManager.FindByNameAsync(roleName);
+                role = rlResult.Name;
             }
             catch (Exception)
             {
                 if (role == null || role == "")
                 {
                     var createRole = new Role { Name = roleName };
-                    var result = _roleManager.CreateAsync(createRole);
-                    result.Wait();
-                    role = _roleManager.FindByNameAsync(roleName).Result.Name;
+                    var result = await _roleManager.CreateAsync(createRole);
+                    var roleResult = await _roleManager.FindByNameAsync(roleName);
+                    role = roleResult.Name;
                 }
             }
 
-            if (userCreateResult.Result.Succeeded)
+            if (userCreateResult.Succeeded)
             {
                 User k;
 
                 if (typeof(T) == typeof(Korisnik))
-                    k = _db.Korisnik.Find(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
+                    k = await _db.Korisnik.FindAsync(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
                 else if (typeof(T) == typeof(Doktor))
-                    k = _db.Doktor.Find(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
+                    k = await _db.Doktor.FindAsync(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
                 else if (typeof(T) == typeof(Tehnicar))
-                    k = _db.Tehnicar.Find(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
+                    k = await _db.Tehnicar.FindAsync(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
                 else
                     k = _db.Admin.Find(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
 
-                _userManager.AddToRoleAsync(k, role);
+                foreach (var i in this._db.ChangeTracker.Entries())
+                {
+                    if (i.Entity != null)
+                    {
+                        _db.Entry(i).State = EntityState.Detached;
+                    }
+                }
+
+                await _userManager.AddToRoleAsync(k, role);
                 return _mapper.Map<TCreateVM, TVM>(user);
             }
 
             var errors = new List<Exception>();
 
-            foreach (var e in userCreateResult.Result.Errors)
+            foreach (var e in userCreateResult.Errors)
             {
                 errors.Add(new Exception(e.Description));
             }

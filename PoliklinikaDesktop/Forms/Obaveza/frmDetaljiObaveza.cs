@@ -34,6 +34,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         {
             request.Opis = txtOpis.Text;
             request.Datum = dtpDatum.Value;
+            request.Aktivna = true;
 
             if (_id.HasValue)
             {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Poliklinika.Model;
+using PoliklinikaAPI.Data;
 using PoliklinikaAPI.Interfaces;
 using PoliklinikaAPI.ViewModels;
 using System;
@@ -15,16 +16,23 @@ namespace PoliklinikaAPI.Controllers
     public class AdminController : ControllerBase
     {
         protected UserBaseInterface<Admin, Admin, SignupAdminVM> _userInterface;
-
-        public AdminController(UserBaseInterface<Admin, Admin, SignupAdminVM> userInterface)
+        private DBContext _db;
+        public AdminController(UserBaseInterface<Admin, Admin, SignupAdminVM> userInterface, DBContext db)
         {
             _userInterface = userInterface;
+            _db = db;
+        }
+
+        [HttpGet]
+        public Admin Index()
+        {
+            return _db.Admin.FirstOrDefault();
         }
 
         [HttpPost]
-        public Admin Insert(SignupAdminVM korisnik)
+        public async Task<Admin> Insert(SignupAdminVM korisnik)
         {
-            return _userInterface.Insert(korisnik);
+            return await _userInterface.Insert(korisnik);
         }
 
         [HttpGet("{id}")]

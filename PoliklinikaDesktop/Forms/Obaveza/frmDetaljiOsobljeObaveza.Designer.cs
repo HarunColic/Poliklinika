@@ -49,6 +49,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.btnChat.TabIndex = 27;
             this.btnChat.Text = "Pošalji Poruku";
             this.btnChat.UseVisualStyleBackColor = true;
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // label4
             // 

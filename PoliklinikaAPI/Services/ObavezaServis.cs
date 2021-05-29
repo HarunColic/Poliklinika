@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Poliklinika.Model;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.ViewModels;
@@ -27,10 +28,10 @@ namespace PoliklinikaAPI.Services
             if (_parametri.HasValue)
             {
                 var OsobljeID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("OsobljeID");
-                
+
                 var lista = _mapper.Map<List<ObavezaVM>>(_db.Obaveza.Where(x => x.OsobljeID == int.Parse(OsobljeID)).ToList());
 
-                if(HttpUtility.ParseQueryString(_parametri.ToString()).Get("Aktivna") == "True")
+                if (HttpUtility.ParseQueryString(_parametri.ToString()).Get("Aktivna") == "True")
                     return _mapper.Map<List<ObavezaVM>>(lista.Where(x => x.Aktivna).ToList());
                 else
                     return _mapper.Map<List<ObavezaVM>>(lista.Where(x => !x.Aktivna).ToList());
