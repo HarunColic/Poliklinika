@@ -36,7 +36,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza.Chat
             // 
             // txtPoruka
             // 
-            this.txtPoruka.Location = new System.Drawing.Point(12, 361);
+            this.txtPoruka.Location = new System.Drawing.Point(12, 492);
             this.txtPoruka.Name = "txtPoruka";
             this.txtPoruka.Size = new System.Drawing.Size(751, 62);
             this.txtPoruka.TabIndex = 0;
@@ -44,12 +44,14 @@ namespace PoliklinikaDesktop.Forms.Obaveza.Chat
             // 
             // btnPosalji
             // 
-            this.btnPosalji.Location = new System.Drawing.Point(799, 375);
+            this.btnPosalji.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPosalji.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPosalji.Location = new System.Drawing.Point(792, 500);
             this.btnPosalji.Name = "btnPosalji";
-            this.btnPosalji.Size = new System.Drawing.Size(94, 29);
+            this.btnPosalji.Size = new System.Drawing.Size(101, 40);
             this.btnPosalji.TabIndex = 1;
             this.btnPosalji.Text = "Pošalji";
-            this.btnPosalji.UseVisualStyleBackColor = true;
+            this.btnPosalji.UseVisualStyleBackColor = false;
             // 
             // tblLayout
             // 
@@ -60,7 +62,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza.Chat
             this.tblLayout.Name = "tblLayout";
             this.tblLayout.RowCount = 1;
             this.tblLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblLayout.Size = new System.Drawing.Size(881, 332);
+            this.tblLayout.Size = new System.Drawing.Size(881, 456);
             this.tblLayout.TabIndex = 3;
             // 
             // frmIndexChat
@@ -68,7 +70,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza.Chat
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(924, 450);
+            this.ClientSize = new System.Drawing.Size(924, 567);
             this.Controls.Add(this.tblLayout);
             this.Controls.Add(this.btnPosalji);
             this.Controls.Add(this.txtPoruka);
