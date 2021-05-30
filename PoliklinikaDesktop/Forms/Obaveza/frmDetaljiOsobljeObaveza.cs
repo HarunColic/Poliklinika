@@ -16,6 +16,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         private readonly APIService _odjel = new APIService("Odjel");
         private readonly APIService _chat = new APIService("ChatObaveza");
         private readonly APIService _admin = new APIService("Admin");
+        private readonly APIService _osoblje = new APIService("Osoblje");
 
         private int _id;
 
@@ -29,12 +30,14 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         {
             var Obaveza = await _service.GetById<ObavezaVM>(_id);
             var Odjel = await _odjel.GetById<OdjelVM>(Obaveza.OdjelID);
+            var osoblje=await _osoblje.GetById<OsobljeVM>(Obaveza.OsobljeID);
 
             lblOpis.MaximumSize = new Size(400, 1000);
 
             lblOpis.Text = Obaveza.Opis;
             lblDatum.Text = Obaveza.Datum.ToString();
             lblOdjel.Text = Odjel.Naziv;
+            lblZaposlenik.Text = $"{osoblje.Ime} { osoblje.Prezime}";
 
             if (!Obaveza.Aktivna)
                 btnChat.Visible = false;

@@ -49,5 +49,11 @@ namespace PoliklinikaDesktop
 
             return await result.PutJsonAsync(request).ReceiveJson<T>();
         }
+        public async Task<T> Delete<T>(object id)
+        {
+            var result = $"{Properties.Settings.Default.APIurl}/{_route}/{id}";
+
+            return await result.DeleteAsync().ReceiveJson<T>();
+        }
     }
 }

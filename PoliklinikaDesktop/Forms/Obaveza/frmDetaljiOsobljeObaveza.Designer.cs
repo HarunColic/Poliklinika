@@ -38,6 +38,9 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.lblDatum = new System.Windows.Forms.Label();
             this.lblOpis = new System.Windows.Forms.Label();
             this.btnZavrsi = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblZaposlenik = new System.Windows.Forms.Label();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +49,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.btnChat.Location = new System.Drawing.Point(90, 504);
             this.btnChat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(142, 56);
+            this.btnChat.Size = new System.Drawing.Size(124, 42);
             this.btnChat.TabIndex = 27;
             this.btnChat.Text = "Pošalji Poruku";
             this.btnChat.UseVisualStyleBackColor = true;
@@ -56,9 +59,9 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(542, 164);
+            this.label4.Location = new System.Drawing.Point(465, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 37);
+            this.label4.Size = new System.Drawing.Size(138, 30);
             this.label4.TabIndex = 25;
             this.label4.Text = "Opis obaveze";
             // 
@@ -66,9 +69,9 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(90, 325);
+            this.label1.Location = new System.Drawing.Point(79, 209);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 37);
+            this.label1.Size = new System.Drawing.Size(76, 30);
             this.label1.TabIndex = 24;
             this.label1.Text = "Datum";
             // 
@@ -76,19 +79,18 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(90, 164);
+            this.label3.Location = new System.Drawing.Point(79, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 37);
+            this.label3.Size = new System.Drawing.Size(62, 30);
             this.label3.TabIndex = 20;
             this.label3.Text = "Odjel";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(56, -3);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(49, -2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(322, 67);
+            this.pictureBox2.Size = new System.Drawing.Size(282, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
@@ -97,9 +99,10 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             this.lblOdjel.AutoSize = true;
             this.lblOdjel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOdjel.Location = new System.Drawing.Point(90, 221);
+            this.lblOdjel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblOdjel.Location = new System.Drawing.Point(79, 153);
             this.lblOdjel.Name = "lblOdjel";
-            this.lblOdjel.Size = new System.Drawing.Size(81, 37);
+            this.lblOdjel.Size = new System.Drawing.Size(62, 30);
             this.lblOdjel.TabIndex = 29;
             this.lblOdjel.Text = "Odjel";
             // 
@@ -107,9 +110,10 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             this.lblDatum.AutoSize = true;
             this.lblDatum.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDatum.Location = new System.Drawing.Point(90, 377);
+            this.lblDatum.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblDatum.Location = new System.Drawing.Point(79, 239);
             this.lblDatum.Name = "lblDatum";
-            this.lblDatum.Size = new System.Drawing.Size(97, 37);
+            this.lblDatum.Size = new System.Drawing.Size(76, 30);
             this.lblDatum.TabIndex = 30;
             this.lblDatum.Text = "Datum";
             // 
@@ -117,9 +121,10 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             this.lblOpis.AutoSize = true;
             this.lblOpis.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOpis.Location = new System.Drawing.Point(542, 221);
+            this.lblOpis.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblOpis.Location = new System.Drawing.Point(465, 163);
             this.lblOpis.Name = "lblOpis";
-            this.lblOpis.Size = new System.Drawing.Size(177, 37);
+            this.lblOpis.Size = new System.Drawing.Size(138, 30);
             this.lblOpis.TabIndex = 31;
             this.lblOpis.Text = "Opis obaveze";
             // 
@@ -132,13 +137,36 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.btnZavrsi.Text = "Završi obavezu";
             this.btnZavrsi.UseVisualStyleBackColor = true;
             this.btnZavrsi.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnZavrsi_MouseClick);
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(79, 292);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 30);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Zaposlenik";
+            // 
+            // lblZaposlenik
+            // 
+            this.lblZaposlenik.AutoSize = true;
+            this.lblZaposlenik.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblZaposlenik.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblZaposlenik.Location = new System.Drawing.Point(79, 322);
+            this.lblZaposlenik.Name = "lblZaposlenik";
+            this.lblZaposlenik.Size = new System.Drawing.Size(48, 30);
+            this.lblZaposlenik.TabIndex = 33;
+            this.lblZaposlenik.Text = "Ime";
             // 
             // frmDetaljiOsobljeObaveza
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 573);
             this.Controls.Add(this.btnZavrsi);
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.Controls.Add(this.lblZaposlenik);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblOpis);
             this.Controls.Add(this.lblDatum);
             this.Controls.Add(this.lblOdjel);
@@ -147,6 +175,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDetaljiOsobljeObaveza";
             this.Text = "frmDetaljiOsobljeObaveza";
             this.Load += new System.EventHandler(this.frmDetaljiOsobljeObaveza_Load);
@@ -169,5 +198,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         private System.Windows.Forms.Label lblDatum;
         private System.Windows.Forms.Label lblOpis;
         private System.Windows.Forms.Button btnZavrsi;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblZaposlenik;
     }
 }

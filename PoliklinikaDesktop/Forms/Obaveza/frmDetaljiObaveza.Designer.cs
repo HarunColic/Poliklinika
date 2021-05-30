@@ -29,6 +29,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cmbOdjel = new System.Windows.Forms.ComboBox();
             this.cmbZaposlenik = new System.Windows.Forms.ComboBox();
@@ -39,7 +40,9 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.label4 = new System.Windows.Forms.Label();
             this.txtOpis = new System.Windows.Forms.TextBox();
             this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -60,6 +63,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.cmbOdjel.Size = new System.Drawing.Size(252, 23);
             this.cmbOdjel.TabIndex = 12;
             this.cmbOdjel.SelectedIndexChanged += new System.EventHandler(this.cmbOdjel_SelectedIndexChanged);
+            this.cmbOdjel.Validating += new System.ComponentModel.CancelEventHandler(this.cmbOdjel_Validating);
             // 
             // cmbZaposlenik
             // 
@@ -70,6 +74,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.cmbZaposlenik.TabIndex = 11;
             this.cmbZaposlenik.SelectedIndexChanged += new System.EventHandler(this.cmbZaposlenik_SelectedIndexChanged);
             this.cmbZaposlenik.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbZaposlenik_Format);
+            this.cmbZaposlenik.Validating += new System.ComponentModel.CancelEventHandler(this.cmbZaposlenik_Validating);
             // 
             // label3
             // 
@@ -90,7 +95,6 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.label2.Size = new System.Drawing.Size(112, 30);
             this.label2.TabIndex = 8;
             this.label2.Text = "Zaposlenik";
-            
             // 
             // dtpDatum
             // 
@@ -98,6 +102,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(252, 23);
             this.dtpDatum.TabIndex = 13;
+           
             // 
             // label1
             // 
@@ -126,6 +131,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.txtOpis.Name = "txtOpis";
             this.txtOpis.Size = new System.Drawing.Size(333, 173);
             this.txtOpis.TabIndex = 16;
+            this.txtOpis.Validating += new System.ComponentModel.CancelEventHandler(this.txtOpis_Validating);
             // 
             // btnSacuvaj
             // 
@@ -136,6 +142,10 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
             this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // frmDetaljiObaveza
             // 
@@ -157,6 +167,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.Text = "frmDetaljiObaveza";
             this.Load += new System.EventHandler(this.frmDetaljiObaveza_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +185,6 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

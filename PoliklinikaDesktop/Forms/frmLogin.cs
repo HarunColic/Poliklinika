@@ -30,54 +30,58 @@ namespace PoliklinikaDesktop.Forms
 
         private async void btnPrijava_Click(object sender, EventArgs e)
         {
-            request.Email = textEmail.Text;
-            request.Password = textPassword.Text;
+            if(this.ValidateChildren())
+            {
 
-            AuthenticateResponse result = null;
+                request.Email = textEmail.Text;
+                request.Password = textPassword.Text;
 
-            try
-            {
-                result = await _service.Insert<AuthenticateResponse>(request);
+                AuthenticateResponse result = null;
 
-                if (result == null)
-                    throw new Exception("Netacan Email ili sifra");
-            }
-            catch(Exception exc)
-            {
-                MessageBox.Show(exc.Message, "Neuspjesan login",
-                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            var user = new User();
+                try
+                {
+                    result = await _service.Insert<AuthenticateResponse>(request);
 
-            if (result.Role == "Doktor")
-            {
-                APIService _userService = new APIService("Doktor");
-                user = _mapper.Map<Poliklinika.Model.Doktor>(await _userService.GetById<DoktorVM>(result.Id));
-                SetUser(result, user);
-                frmIndexDoktor forma = new frmIndexDoktor();
-                forma.Show();
-            }
-            else if (result.Role == "Tehnicar")
-            {
-                APIService _userService = new APIService("Tehnicar");
-                user = _mapper.Map<Poliklinika.Model.Tehnicar>(await _userService.GetById<TehnicarVM>(result.Id));
-                SetUser(result, user);
-                frmIndexTehnicar forma = new frmIndexTehnicar();
-                forma.Show();
-            }
-            else if (result.Role == "Admin")
-            {
-                APIService _userService = new APIService("Admin");
-                user = await _userService.GetById<User>(result.Id);
-                SetUser(result, user);
-                frmIndexAmin forma = new frmIndexAmin();
-                forma.Show();
-            }
-            else
-            {
-                MessageBox.Show("Korisnika nije moguce ulogovati", "Neuspjesan login",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (result == null)
+                        throw new Exception("Netacan Email ili sifra");
+                }
+                catch(Exception exc)
+                {
+                    MessageBox.Show(exc.Message, "Neuspjesan login",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                var user = new User();
+
+                if (result.Role == "Doktor")
+                {
+                    APIService _userService = new APIService("Doktor");
+                    user = _mapper.Map<Poliklinika.Model.Doktor>(await _userService.GetById<DoktorVM>(result.Id));
+                    SetUser(result, user);
+                    frmIndexDoktor forma = new frmIndexDoktor();
+                    forma.Show();
+                }
+                else if (result.Role == "Tehnicar")
+                {
+                    APIService _userService = new APIService("Tehnicar");
+                    user = _mapper.Map<Poliklinika.Model.Tehnicar>(await _userService.GetById<TehnicarVM>(result.Id));
+                    SetUser(result, user);
+                    frmIndexTehnicar forma = new frmIndexTehnicar();
+                    forma.Show();
+                }
+                else if (result.Role == "Admin")
+                {
+                    APIService _userService = new APIService("Admin");
+                    user = await _userService.GetById<User>(result.Id);
+                    SetUser(result, user);
+                    frmIndexAmin forma = new frmIndexAmin();
+                    forma.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Korisnika nije moguce ulogovati", "Neuspjesan login",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -87,6 +91,18 @@ namespace PoliklinikaDesktop.Forms
             CurrentUser.Role = result.Role;
             CurrentUser.JWT = result.Token;
             CurrentUser.User = user;
+        }
+
+        private void textEmail_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(textEmail);
+        }
+
+        private void textPassword_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(textPassword);
         }
     }
 }

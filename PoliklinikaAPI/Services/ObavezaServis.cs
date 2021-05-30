@@ -25,11 +25,22 @@ namespace PoliklinikaAPI.Services
 
         public override List<ObavezaVM> GetAll()
         {
+            List<ObavezaVM> lista = new List<ObavezaVM>();
             if (_parametri.HasValue)
             {
                 var OsobljeID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("OsobljeID");
 
-                var lista = _mapper.Map<List<ObavezaVM>>(_db.Obaveza.Where(x => x.OsobljeID == int.Parse(OsobljeID)).ToList());
+                if (OsobljeID == null || OsobljeID == "" || OsobljeID =="0")
+                {
+                     lista = _mapper.Map<List<ObavezaVM>>
+                        (_db.Obaveza)
+                        .ToList();
+                }
+                else
+                {
+
+                    lista = _mapper.Map<List<ObavezaVM>>(_db.Obaveza.Where(x => x.OsobljeID == int.Parse(OsobljeID)).ToList());
+                }
 
                 if (HttpUtility.ParseQueryString(_parametri.ToString()).Get("Aktivna") == "True")
                     return _mapper.Map<List<ObavezaVM>>(lista.Where(x => x.Aktivna).ToList());

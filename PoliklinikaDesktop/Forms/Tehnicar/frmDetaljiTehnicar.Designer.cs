@@ -29,6 +29,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBrRadneKnjizice = new System.Windows.Forms.TextBox();
@@ -46,8 +47,10 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtstrucna = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -76,6 +79,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.txtBrRadneKnjizice.Name = "txtBrRadneKnjizice";
             this.txtBrRadneKnjizice.Size = new System.Drawing.Size(334, 23);
             this.txtBrRadneKnjizice.TabIndex = 17;
+            this.txtBrRadneKnjizice.Validating += new System.ComponentModel.CancelEventHandler(this.txtBrRadneKnjizice_Validating);
             // 
             // Prezime
             // 
@@ -93,6 +97,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(334, 23);
             this.txtPrezime.TabIndex = 15;
+            this.txtPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrezime_Validating);
             // 
             // label1
             // 
@@ -110,6 +115,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(334, 23);
             this.txtIme.TabIndex = 13;
+            this.txtIme.Validating += new System.ComponentModel.CancelEventHandler(this.txtIme_Validating);
             // 
             // pictureBox2
             // 
@@ -162,6 +168,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.cmbSpol.Size = new System.Drawing.Size(334, 23);
             this.cmbSpol.TabIndex = 35;
             this.cmbSpol.SelectedIndexChanged += new System.EventHandler(this.cmbSpol_SelectedIndexChanged);
+            this.cmbSpol.Validating += new System.ComponentModel.CancelEventHandler(this.cmbSpol_Validating);
             // 
             // txtPassword
             // 
@@ -169,6 +176,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(334, 23);
             this.txtPassword.TabIndex = 39;
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // lblPassword
             // 
@@ -186,6 +194,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(334, 23);
             this.txtEmail.TabIndex = 37;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // lblEmail
             // 
@@ -203,6 +212,11 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.txtstrucna.Name = "txtstrucna";
             this.txtstrucna.Size = new System.Drawing.Size(334, 23);
             this.txtstrucna.TabIndex = 40;
+            this.txtstrucna.Validating += new System.ComponentModel.CancelEventHandler(this.txtstrucna_Validating);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // frmDetaljiTehnicar
             // 
@@ -232,6 +246,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             this.Load += new System.EventHandler(this.frmDetaljiTehnicar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +273,6 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtstrucna;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
