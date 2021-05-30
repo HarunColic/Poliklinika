@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PoliklinikaDesktop.Forms.Obaveza;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,10 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void picObaveze_MouseClick(object sender, MouseEventArgs e)
         {
-
+            var frmObaveze = new frmIndexOsobljeObaveza();
+            frmObaveze.Show();
         }
     }
 }

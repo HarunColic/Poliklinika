@@ -37,19 +37,23 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.lblOdjel = new System.Windows.Forms.Label();
             this.lblDatum = new System.Windows.Forms.Label();
             this.lblOpis = new System.Windows.Forms.Label();
+            this.btnZavrsi = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblZaposlenik = new System.Windows.Forms.Label();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnChat
             // 
-            this.btnChat.Location = new System.Drawing.Point(576, 357);
+            this.btnChat.Location = new System.Drawing.Point(90, 504);
+            this.btnChat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnChat.Name = "btnChat";
             this.btnChat.Size = new System.Drawing.Size(124, 42);
             this.btnChat.TabIndex = 27;
             this.btnChat.Text = "Pošalji Poruku";
             this.btnChat.UseVisualStyleBackColor = true;
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // label4
             // 
@@ -124,6 +128,15 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.lblOpis.TabIndex = 31;
             this.lblOpis.Text = "Opis obaveze";
             // 
+            // btnZavrsi
+            // 
+            this.btnZavrsi.Location = new System.Drawing.Point(281, 505);
+            this.btnZavrsi.Name = "btnZavrsi";
+            this.btnZavrsi.Size = new System.Drawing.Size(139, 56);
+            this.btnZavrsi.TabIndex = 32;
+            this.btnZavrsi.Text = "Završi obavezu";
+            this.btnZavrsi.UseVisualStyleBackColor = true;
+            this.btnZavrsi.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnZavrsi_MouseClick);
             // label2
             // 
             this.label2.AutoSize = true;
@@ -149,8 +162,9 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(949, 573);
+            this.Controls.Add(this.btnZavrsi);
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(830, 430);
             this.Controls.Add(this.lblZaposlenik);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblOpis);
@@ -183,6 +197,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblDatum;
         private System.Windows.Forms.Label lblOpis;
+        private System.Windows.Forms.Button btnZavrsi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblZaposlenik;
     }

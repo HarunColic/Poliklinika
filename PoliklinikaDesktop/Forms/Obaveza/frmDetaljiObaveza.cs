@@ -28,6 +28,15 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             await LoadOdjel();
             await LoadZaposleni();
 
+        }
+
+        ObavezaVM request = new ObavezaVM();
+        private async void btnSacuvaj_Click(object sender, EventArgs e)
+        {
+            request.Opis = txtOpis.Text;
+            request.Datum = dtpDatum.Value;
+            request.Aktivna = true;
+
             if (_id.HasValue)
             {
                 cmbOdjel.Enabled = false;

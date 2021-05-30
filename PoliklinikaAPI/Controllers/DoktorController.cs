@@ -34,7 +34,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
-        public DoktorVM Insert(CreateDoktorVM doktor)
+        public Task<DoktorVM> Insert(CreateDoktorVM doktor)
         {
             return _userInterface.Insert(doktor);
         }

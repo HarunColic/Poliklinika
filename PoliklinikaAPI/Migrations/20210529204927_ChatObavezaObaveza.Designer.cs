@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PoliklinikaAPI.Data;
 
 namespace PoliklinikaAPI.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20210529204927_ChatObavezaObaveza")]
+    partial class ChatObavezaObaveza
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -222,6 +224,9 @@ namespace PoliklinikaAPI.Migrations
                     b.Property<bool>("Aktivna")
                         .HasColumnType("bit");
 
+                    b.Property<int>("ChatObavezaID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Datum")
                         .HasColumnType("datetime2");
 
@@ -235,6 +240,8 @@ namespace PoliklinikaAPI.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("ChatObavezaID");
 
                     b.HasIndex("OdjelID");
 
@@ -693,6 +700,12 @@ namespace PoliklinikaAPI.Migrations
 
             modelBuilder.Entity("Poliklinika.Model.Obaveza", b =>
                 {
+                    b.HasOne("Poliklinika.Model.ChatObaveza", "ChatObaveza")
+                        .WithMany()
+                        .HasForeignKey("ChatObavezaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Poliklinika.Model.Odjel", "Odjel")
                         .WithMany()
                         .HasForeignKey("OdjelID")
@@ -704,6 +717,8 @@ namespace PoliklinikaAPI.Migrations
                         .HasForeignKey("OsobljeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ChatObaveza");
 
                     b.Navigation("Odjel");
 

@@ -52,6 +52,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza.Chat
             this.btnPosalji.TabIndex = 1;
             this.btnPosalji.Text = "Pošalji";
             this.btnPosalji.UseVisualStyleBackColor = false;
+            this.btnPosalji.Click += new System.EventHandler(this.btnPosalji_Click);
             // 
             // tblLayout
             // 

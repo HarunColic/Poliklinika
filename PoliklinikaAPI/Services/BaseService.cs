@@ -49,7 +49,7 @@ namespace PoliklinikaAPI.Services
             return Lista;
         }
 
-        public TVM GetById(int id)
+        public virtual TVM GetById(int id)
         {
             return _mapper.Map<TVM>(_db.Set<T>().Find(id));
         }

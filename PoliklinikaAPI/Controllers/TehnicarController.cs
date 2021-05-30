@@ -33,9 +33,9 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
-        public TehnicarVM Insert(CreateTehnicarVM tehnicar)
+        public async Task<TehnicarVM> Insert(CreateTehnicarVM tehnicar)
         {
-            return _userInterface.Insert(tehnicar);
+            return await _userInterface.Insert(tehnicar);
         }
 
         [HttpPut]

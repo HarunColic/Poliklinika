@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Poliklinika.Model;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.ViewModels;
@@ -28,6 +29,7 @@ namespace PoliklinikaAPI.Services
             if (_parametri.HasValue)
             {
                 var OsobljeID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("OsobljeID");
+
                 if (OsobljeID == null || OsobljeID == "" || OsobljeID =="0")
                 {
                      lista = _mapper.Map<List<ObavezaVM>>
@@ -40,7 +42,7 @@ namespace PoliklinikaAPI.Services
                     lista = _mapper.Map<List<ObavezaVM>>(_db.Obaveza.Where(x => x.OsobljeID == int.Parse(OsobljeID)).ToList());
                 }
 
-                if(HttpUtility.ParseQueryString(_parametri.ToString()).Get("Aktivna") == "True")
+                if (HttpUtility.ParseQueryString(_parametri.ToString()).Get("Aktivna") == "True")
                     return _mapper.Map<List<ObavezaVM>>(lista.Where(x => x.Aktivna).ToList());
                 else
                     return _mapper.Map<List<ObavezaVM>>(lista.Where(x => !x.Aktivna).ToList());
@@ -48,6 +50,17 @@ namespace PoliklinikaAPI.Services
             }
 
             return _mapper.Map<List<ObavezaVM>>(_db.Obaveza.ToList());
+        }
+
+        public override ObavezaVM GetById(int id)
+        {
+            var chat = _db.ChatObaveza.FirstOrDefault(x => x.ObavezaID == id);
+            var obavezaVM = _mapper.Map<ObavezaVM>(_db.Obaveza.Find(id));
+
+            if (chat != null)
+                obavezaVM.ChatID = chat.ID;
+
+            return obavezaVM;
         }
     }
 }
