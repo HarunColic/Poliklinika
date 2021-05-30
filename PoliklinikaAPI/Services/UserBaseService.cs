@@ -81,44 +81,20 @@ namespace PoliklinikaAPI.Services
 
             string role = null;
 
-            try
+            var rlResult = await _roleManager.FindByNameAsync(roleName);
+            role = rlResult.Name;
+
+            if (role == null || role == "")
             {
-                var rlResult = await _roleManager.FindByNameAsync(roleName);
-                role = rlResult.Name;
-            }
-            catch (Exception)
-            {
-                if (role == null || role == "")
-                {
-                    var createRole = new Role { Name = roleName };
-                    var result = await _roleManager.CreateAsync(createRole);
-                    var roleResult = await _roleManager.FindByNameAsync(roleName);
-                    role = roleResult.Name;
-                }
+                var createRole = new Role { Name = roleName };
+                var result = await _roleManager.CreateAsync(createRole);
+                var roleResult = await _roleManager.FindByNameAsync(roleName);
+                role = roleResult.Name;
             }
 
             if (userCreateResult.Succeeded)
             {
-                User k;
-
-                if (typeof(T) == typeof(Korisnik))
-                    k = await _db.Korisnik.FindAsync(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
-                else if (typeof(T) == typeof(Doktor))
-                    k = await _db.Doktor.FindAsync(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
-                else if (typeof(T) == typeof(Tehnicar))
-                    k = await _db.Tehnicar.FindAsync(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
-                else
-                    k = _db.Admin.Find(signupUser.GetType().GetProperty("Id").GetValue(signupUser, null));
-
-                foreach (var i in this._db.ChangeTracker.Entries())
-                {
-                    if (i.Entity != null)
-                    {
-                        _db.Entry(i).State = EntityState.Detached;
-                    }
-                }
-
-                await _userManager.AddToRoleAsync(k, role);
+                await _userManager.AddToRoleAsync(signupUser, role);
                 return _mapper.Map<TCreateVM, TVM>(user);
             }
 
