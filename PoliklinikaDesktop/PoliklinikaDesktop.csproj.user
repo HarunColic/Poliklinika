@@ -58,7 +58,7 @@
     <Compile Update="Forms\Odjel\frmIndexOdjel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Smjena\frmIndexSmjena.cs">
+    <Compile Update="Forms\Raspored\frmIndexSmjena.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Tehnicar\frmDetaljiTehnicar.cs">

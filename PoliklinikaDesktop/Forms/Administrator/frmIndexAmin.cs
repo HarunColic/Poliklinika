@@ -53,5 +53,11 @@ namespace PoliklinikaDesktop.Forms.Administrator
         {
             lblTrenutniUser.Text = $"{ CurrentUser.User.Ime} {CurrentUser.User.Prezime}";
         }
+
+        private void picDodajRaspored_Click(object sender, EventArgs e)
+        {
+            frmOdabirTerminaAdmin raspored = new frmOdabirTerminaAdmin();
+            raspored.Show();
+        }
     }
 }
