@@ -32,16 +32,22 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvOdgObaveze = new System.Windows.Forms.DataGridView();
+            this.dgvAktivne = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvObaveze = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Odjel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalj = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Datumm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Odjell = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detaljii = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Izbrisi = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOdgObaveze)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAktivne)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObaveze)).BeginInit();
             this.SuspendLayout();
@@ -68,27 +74,35 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvOdgObaveze);
+            this.groupBox1.Controls.Add(this.dgvAktivne);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(1, 131);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(811, 188);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Obaveze na koje je potrebno odgovoriti";
+            this.groupBox1.Text = "Aktivne obaveze";
             // 
-            // dgvOdgObaveze
+            // dgvAktivne
             // 
-            this.dgvOdgObaveze.AllowUserToAddRows = false;
-            this.dgvOdgObaveze.AllowUserToDeleteRows = false;
-            this.dgvOdgObaveze.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOdgObaveze.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOdgObaveze.Location = new System.Drawing.Point(3, 31);
-            this.dgvOdgObaveze.Name = "dgvOdgObaveze";
-            this.dgvOdgObaveze.ReadOnly = true;
-            this.dgvOdgObaveze.RowTemplate.Height = 25;
-            this.dgvOdgObaveze.Size = new System.Drawing.Size(805, 154);
-            this.dgvOdgObaveze.TabIndex = 0;
+            this.dgvAktivne.AllowUserToAddRows = false;
+            this.dgvAktivne.AllowUserToDeleteRows = false;
+            this.dgvAktivne.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvAktivne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAktivne.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Datumm,
+            this.Odjell,
+            this.Detaljii,
+            this.Izbrisi});
+            this.dgvAktivne.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAktivne.Location = new System.Drawing.Point(3, 31);
+            this.dgvAktivne.Name = "dgvAktivne";
+            this.dgvAktivne.ReadOnly = true;
+            this.dgvAktivne.RowTemplate.Height = 25;
+            this.dgvAktivne.Size = new System.Drawing.Size(805, 154);
+            this.dgvAktivne.TabIndex = 0;
+            this.dgvAktivne.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAktivne_CellClick);
             // 
             // groupBox2
             // 
@@ -108,9 +122,10 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.dgvObaveze.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvObaveze.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvObaveze.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
+            this.IDd,
             this.Datum,
-            this.Detalji});
+            this.Odjel,
+            this.Detalj});
             this.dgvObaveze.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvObaveze.Location = new System.Drawing.Point(3, 31);
             this.dgvObaveze.Name = "dgvObaveze";
@@ -120,13 +135,13 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.dgvObaveze.TabIndex = 0;
             this.dgvObaveze.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObaveze_CellClick);
             // 
-            // Id
+            // IDd
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
+            this.IDd.DataPropertyName = "ID";
+            this.IDd.HeaderText = "Id";
+            this.IDd.Name = "IDd";
+            this.IDd.ReadOnly = true;
+            this.IDd.Visible = false;
             // 
             // Datum
             // 
@@ -135,14 +150,21 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.Datum.Name = "Datum";
             this.Datum.ReadOnly = true;
             // 
-            // Detalji
+            // Odjel
             // 
-            this.Detalji.DataPropertyName = "Detalji";
-            this.Detalji.HeaderText = "Detalji";
-            this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
-            this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Detalji.Name = "Detalji";
-            this.Detalji.ReadOnly = true;
+            this.Odjel.DataPropertyName = "Odjel";
+            this.Odjel.HeaderText = "Odjel";
+            this.Odjel.Name = "Odjel";
+            this.Odjel.ReadOnly = true;
+            // 
+            // Detalj
+            // 
+            this.Detalj.DataPropertyName = "Detalji";
+            this.Detalj.HeaderText = "Detalji";
+            this.Detalj.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
+            this.Detalj.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Detalj.Name = "Detalj";
+            this.Detalj.ReadOnly = true;
             // 
             // btnDodaj
             // 
@@ -153,6 +175,48 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.btnDodaj.Text = "Dodaj novu obavezu";
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Datumm
+            // 
+            this.Datumm.DataPropertyName = "Datum";
+            this.Datumm.HeaderText = "Datum";
+            this.Datumm.Name = "Datumm";
+            this.Datumm.ReadOnly = true;
+            // 
+            // Odjell
+            // 
+            this.Odjell.DataPropertyName = "Odjel";
+            this.Odjell.HeaderText = "Odjel";
+            this.Odjell.Name = "Odjell";
+            this.Odjell.ReadOnly = true;
+            // 
+            // Detaljii
+            // 
+            this.Detaljii.DataPropertyName = "Detalji";
+            this.Detaljii.HeaderText = "Detalji";
+            this.Detaljii.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
+            this.Detaljii.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Detaljii.Name = "Detaljii";
+            this.Detaljii.ReadOnly = true;
+            // 
+            // Izbrisi
+            // 
+            this.Izbrisi.DataPropertyName = "Izbrisi";
+            this.Izbrisi.HeaderText = "Izbrisi";
+            this.Izbrisi.Image = global::PoliklinikaDesktop.Properties.Resources.izbrisi;
+            this.Izbrisi.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Izbrisi.Name = "Izbrisi";
+            this.Izbrisi.ReadOnly = true;
+            this.Izbrisi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Izbrisi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frmIndexObaveza
             // 
@@ -170,7 +234,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.Load += new System.EventHandler(this.frmIndexObaveza_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOdgObaveze)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAktivne)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvObaveze)).EndInit();
             this.ResumeLayout(false);
@@ -187,8 +251,15 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvObaveze;
         private System.Windows.Forms.Button btnDodaj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridView dgvAktivne;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
-        private System.Windows.Forms.DataGridViewImageColumn Detalji;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Odjel;
+        private System.Windows.Forms.DataGridViewImageColumn Detalj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Datumm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Odjell;
+        private System.Windows.Forms.DataGridViewImageColumn Detaljii;
+        private System.Windows.Forms.DataGridViewImageColumn Izbrisi;
     }
 }

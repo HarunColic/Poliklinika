@@ -41,7 +41,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
 
         }
 
-        private void dgvOsoblje_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvOsoblje_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
            
@@ -67,6 +67,11 @@ namespace PoliklinikaDesktop.Forms.Administrator
                     tehnicar.Show();
                 }
                 
+            }
+            else if(columnindex == 5)
+            {
+                var id = dgvOsoblje.CurrentRow.Cells[0].Value;
+                await _osoblje.Delete<object>(id);
             }
         }
     }

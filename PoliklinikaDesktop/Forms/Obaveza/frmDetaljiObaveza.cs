@@ -22,32 +22,46 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             _id = odjelid;
         }
 
-
+        ObavezaVM request = new ObavezaVM();
         private async void frmDetaljiObaveza_Load(object sender, EventArgs e)
         {
             await LoadOdjel();
             await LoadZaposleni();
-        }
-
-        ObavezaVM request = new ObavezaVM();
-        private async void btnSacuvaj_Click(object sender, EventArgs e)
-        {
-            request.Opis = txtOpis.Text;
-            request.Datum = dtpDatum.Value;
 
             if (_id.HasValue)
             {
+                cmbOdjel.Enabled = false;
+                cmbZaposlenik.Enabled = false;
+
                 var obaveza = await _service.GetById<ObavezaVM>(_id);
 
-                obaveza.Opis = txtOpis.Text;
-                obaveza.Datum = dtpDatum.Value;
-
-
-                await _service.Update<ObavezaVM>(request);
+                txtOpis.Text = obaveza.Opis;
+                dtpDatum.Value = obaveza.Datum;
             }
-            else
+        }
+
+
+        private async void btnSacuvaj_Click(object sender, EventArgs e)
+        {
+            if (this.ValidateChildren())
             {
-                await _service.Insert<ObavezaVM>(request);
+
+                request.Opis = txtOpis.Text;
+                request.Datum = dtpDatum.Value;
+
+                if (_id.HasValue)
+                {
+                    var obaveza = await _service.GetById<ObavezaVM>(_id);
+
+                    obaveza.Opis = txtOpis.Text;
+                    obaveza.Datum = dtpDatum.Value;
+                    await _service.Update<ObavezaVM>(request);
+                }
+                else
+                {
+                    await _service.Insert<ObavezaVM>(request);
+                }
+                MessageBox.Show("Operacija uspješna");
             }
 
         }
@@ -94,6 +108,25 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             {
                 request.OdjelID = odjelID;
             }
+        }
+
+        private void cmbZaposlenik_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringacmb(cmbZaposlenik);
+        }
+
+        private void cmbOdjel_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringacmb(cmbOdjel);
+        }
+
+
+        private void txtOpis_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtOpis);
         }
     }
 }

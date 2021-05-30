@@ -26,5 +26,10 @@ namespace PoliklinikaAPI.Controllers
         {
             return _baseInterface.GetAll();
         }
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            _baseInterface.Delete(id);
+        }
     }
 }

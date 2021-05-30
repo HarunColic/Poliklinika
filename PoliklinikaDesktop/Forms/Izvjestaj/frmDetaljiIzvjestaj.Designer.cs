@@ -29,6 +29,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,7 +45,9 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.lblOpisPregled = new System.Windows.Forms.Label();
             this.txtpregledID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -94,6 +97,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.txtOpisIzvjestaja.Name = "txtOpisIzvjestaja";
             this.txtOpisIzvjestaja.Size = new System.Drawing.Size(334, 87);
             this.txtOpisIzvjestaja.TabIndex = 21;
+            this.txtOpisIzvjestaja.Validating += new System.ComponentModel.CancelEventHandler(this.txtOpisIzvjestaja_Validating);
             // 
             // label3
             // 
@@ -198,6 +202,10 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.label6.TabIndex = 38;
             this.label6.Text = "Pacijent";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmDetaljiIzvjestaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -223,6 +231,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.Text = "frmDetaljiIzvjestaj";
             this.Load += new System.EventHandler(this.frmDetaljiIzvjestaj_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +255,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         private System.Windows.Forms.Label lblOpisPregled;
         private System.Windows.Forms.TextBox txtpregledID;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
