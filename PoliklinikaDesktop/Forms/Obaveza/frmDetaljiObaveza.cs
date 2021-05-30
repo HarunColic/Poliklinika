@@ -30,26 +30,6 @@ namespace PoliklinikaDesktop.Forms.Obaveza
 
         }
 
-        ObavezaVM request = new ObavezaVM();
-        private async void btnSacuvaj_Click(object sender, EventArgs e)
-        {
-            request.Opis = txtOpis.Text;
-            request.Datum = dtpDatum.Value;
-            request.Aktivna = true;
-
-            if (_id.HasValue)
-            {
-                cmbOdjel.Enabled = false;
-                cmbZaposlenik.Enabled = false;
-
-                var obaveza = await _service.GetById<ObavezaVM>(_id);
-
-                txtOpis.Text = obaveza.Opis;
-                dtpDatum.Value = obaveza.Datum;
-            }
-        }
-
-
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
             if (this.ValidateChildren())
