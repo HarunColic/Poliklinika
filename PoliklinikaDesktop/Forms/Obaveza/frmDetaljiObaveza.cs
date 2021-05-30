@@ -22,12 +22,26 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             _id = odjelid;
         }
 
+        ObavezaVM obaveza = new ObavezaVM();
         ObavezaVM request = new ObavezaVM();
         private async void frmDetaljiObaveza_Load(object sender, EventArgs e)
         {
             await LoadOdjel();
             await LoadZaposleni();
 
+            if (_id.HasValue)
+            {
+                obaveza = await _service.GetById<ObavezaVM>(_id);
+
+                cmbOdjel.SelectedValue = obaveza.ID;
+                cmbOdjel.Enabled = false;
+
+                cmbZaposlenik.SelectedValue = obaveza.OsobljeID;
+                cmbZaposlenik.Enabled = false;
+
+                dtpDatum.Value = obaveza.Datum;
+                txtOpis.Text = obaveza.Opis;
+            }
         }
 
         private async void btnSacuvaj_Click(object sender, EventArgs e)
@@ -40,8 +54,6 @@ namespace PoliklinikaDesktop.Forms.Obaveza
 
                 if (_id.HasValue)
                 {
-                    var obaveza = await _service.GetById<ObavezaVM>(_id);
-
                     obaveza.Opis = txtOpis.Text;
                     obaveza.Datum = dtpDatum.Value;
                     await _service.Update<ObavezaVM>(request);

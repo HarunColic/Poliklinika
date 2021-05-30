@@ -24,6 +24,8 @@ namespace PoliklinikaDesktop.Forms.Doktor
         }
 
          CreateDoktorVM request = new CreateDoktorVM();
+         DoktorVM doc = new DoktorVM();
+
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
 
@@ -37,15 +39,14 @@ namespace PoliklinikaDesktop.Forms.Doktor
 
                 if (_id.HasValue)
                 {
-                    var doktor = await _service.GetById<DoktorVM>(_id);
 
-                    doktor.Ime = txtIme.Text;
-                    doktor.Prezime = txtPrezime.Text;
-                    doktor.Specijalizacija = txtSpecijal.Text;
-                    doktor.SubSpecijalizacija = txtSubSecijal.Text;
-                    doktor.BrojRadneKnjizice = txtBrRadneKnjiz.Text;
+                    doc.Ime = txtIme.Text;
+                    doc.Prezime = txtPrezime.Text;
+                    doc.Specijalizacija = txtSpecijal.Text;
+                    doc.SubSpecijalizacija = txtSubSecijal.Text;
+                    doc.BrojRadneKnjizice = txtBrRadneKnjiz.Text;
 
-                    await _service.Update<DoktorVM>(doktor);
+                    await _service.Update<DoktorVM>(doc);
                 }
                 else
                 {
@@ -71,17 +72,19 @@ namespace PoliklinikaDesktop.Forms.Doktor
 
         private async void frmDetaljiDoktor_Load(object sender, EventArgs e)
         {
+
             await LoadOdjel();
             if (_id.HasValue)
             {
-                var doc = await _service.GetById<DoktorVM>(_id);
+                doc = await _service.GetById<DoktorVM>(_id);
                 txtIme.Text = doc.Ime;
                 txtPrezime.Text = doc.Prezime;
                 txtSpecijal.Text = doc.Specijalizacija;
                 txtSubSecijal.Text = doc.SubSpecijalizacija;
                 txtBrRadneKnjiz.Text = doc.BrojRadneKnjizice;
-                cmbSpol.SelectedText = doc.Spol;
+                cmbSpol.SelectedItem = doc.Spol;
                 cmbOdjel.SelectedValue = doc.OdjelID;
+                cmbOdjel.Enabled = false;
                 txtEmail.Hide();
                 txtPassword.Hide();
                 lblEmail.Hide();
@@ -102,7 +105,9 @@ namespace PoliklinikaDesktop.Forms.Doktor
 
         private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)
         {
-            request.Spol = cmbSpol.SelectedText;
+            request.Spol = cmbSpol.SelectedItem.ToString();
+            if(_id.HasValue)
+                doc.Spol = cmbSpol.SelectedItem.ToString();
         }
 
         private void txtIme_Validating(object sender, CancelEventArgs e)
@@ -123,12 +128,6 @@ namespace PoliklinikaDesktop.Forms.Doktor
             _validator.ValidacijaPraznogStringa(txtSpecijal);
         }
 
-        private void txtSubSecijal_Validating(object sender, CancelEventArgs e)
-        {
-            var _validator = new Validatori(sender, e, errorProvider);
-            _validator.ValidacijaPraznogStringa(txtSubSecijal);
-        }
-
         private void txtBrRadneKnjiz_Validating(object sender, CancelEventArgs e)
         {
             var _validator = new Validatori(sender, e, errorProvider);
@@ -137,9 +136,11 @@ namespace PoliklinikaDesktop.Forms.Doktor
 
         private void cmbOdjel_Validating(object sender, CancelEventArgs e)
         {
-            var _validator = new Validatori(sender, e, errorProvider);
-            _validator.ValidacijaPraznogStringacmb(cmbOdjel);
-           
+            if (!_id.HasValue)
+            {
+                var _validator = new Validatori(sender, e, errorProvider);
+                _validator.ValidacijaPraznogStringacmb(cmbOdjel);
+            }
         }
 
         private void cmbSpol_Validating(object sender, CancelEventArgs e)
@@ -152,7 +153,6 @@ namespace PoliklinikaDesktop.Forms.Doktor
         {
             if (_id == null)
             {
-
                 var _validator = new Validatori(sender, e, errorProvider);
                 _validator.ValidacijaPraznogStringa(txtEmail);
             }
@@ -162,7 +162,6 @@ namespace PoliklinikaDesktop.Forms.Doktor
         {
             if (_id == null)
             {
-
                 var _validator = new Validatori(sender, e, errorProvider);
                 _validator.ValidacijaPraznogStringa(txtPassword);
             }
