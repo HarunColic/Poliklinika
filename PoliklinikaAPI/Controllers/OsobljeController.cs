@@ -21,6 +21,12 @@ namespace PoliklinikaAPI.Controllers
             _baseInterface = baseInterface;
         }
 
+        [HttpGet("{id}")]
+        public OsobljeVM GetById(int id)
+        {
+            return _baseInterface.GetById(id);
+        }
+
         [HttpGet]
         public List<OsobljeVM> GetAll()
         {

@@ -30,7 +30,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         {
             var Obaveza = await _service.GetById<ObavezaVM>(_id);
             var Odjel = await _odjel.GetById<OdjelVM>(Obaveza.OdjelID);
-            var osoblje=await _osoblje.GetById<OsobljeVM>(Obaveza.OsobljeID);
+            var osoblje = await _osoblje.GetById<OsobljeVM>(Obaveza.OsobljeID);
 
             lblOpis.MaximumSize = new Size(400, 1000);
 
