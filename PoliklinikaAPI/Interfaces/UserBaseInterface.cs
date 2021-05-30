@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PoliklinikaAPI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,5 +13,6 @@ namespace PoliklinikaAPI.Interfaces
         public Task<TVM> Insert(TCreateVM user);
         public TVM Update(TVM user);
         public void Delete(int id);
+        public void UpdatePassword(UpdatePasswordVM update);
     }
 }

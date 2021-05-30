@@ -112,8 +112,21 @@ namespace PoliklinikaAPI.Services
         {
             var entity = _db.Set<T>().Find(int.Parse(user.GetType().GetProperty("Id").GetValue(user, null).ToString()));
             var map = _mapper.Map(user, entity);
+            map.GetType().GetProperty("UserName").SetValue(map, user.GetType().GetProperty("Email").GetValue(user, null).ToString());
             _db.SaveChanges();
             return _mapper.Map<TVM>(map);
+        }
+
+        public void UpdatePassword(UpdatePasswordVM update)
+        {
+            var User = _db.User.FindAsync(update.UserId).Result;
+
+
+            var token = _userManager.GeneratePasswordResetTokenAsync(User).Result;
+
+            _db.Entry(User).State = EntityState.Detached;
+
+            _userManager.ResetPasswordAsync(User, token, update.password).Wait();
         }
     }
 }

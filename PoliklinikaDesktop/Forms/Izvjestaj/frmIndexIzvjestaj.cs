@@ -19,14 +19,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         {
             InitializeComponent();
         }
-        private async Task LoadZaposleni()
-        {
-            var result = await _zaposleni.Get<IList<DoktorVM>>(null);
-            result.Insert(0, new DoktorVM());
-            cmbZaposlenik.DisplayMember = "Ime";
-            cmbZaposlenik.ValueMember = "ID";
-            cmbZaposlenik.DataSource = result;
-        }
+
         private async Task LoadOdjel()
         {
             var result = await _odjel.Get<List<Poliklinika.Model.Odjel>>(null);
@@ -39,7 +32,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
 
         private async void frmIndexIzvjestaj_Load(object sender, EventArgs e)
         {
-            await LoadZaposleni();
             await LoadOdjel();
         }
 
@@ -50,11 +42,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             string prezime = ((DoktorVM)e.ListItem).Prezime;
             e.Value = ime + " " + prezime;
 
-        }
-
-        private void cmbZaposlenik_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var idObj = cmbZaposlenik.SelectedValue;
         }
 
         private async void cmbOdjel_SelectedIndexChanged(object sender, EventArgs e)

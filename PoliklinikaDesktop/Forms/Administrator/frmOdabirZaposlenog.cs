@@ -1,4 +1,5 @@
-﻿using Poliklinika.Model;
+﻿using Microsoft.AspNetCore.Identity;
+using Poliklinika.Model;
 using PoliklinikaAPI.ViewModels;
 using PoliklinikaDesktop.Forms.Doktor;
 using PoliklinikaDesktop.Forms.Tehnicar;
@@ -33,18 +34,14 @@ namespace PoliklinikaDesktop.Forms.Administrator
         }
         private async void frmOdabirZaposlenog_Load(object sender, EventArgs e)
         {
-
             var result = await _osoblje.Get<List<OsobljeVM>>(null);
+
             dgvOsoblje.AutoGenerateColumns = false;
             dgvOsoblje.DataSource = result;
-
-
         }
 
         private async void dgvOsoblje_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-           
             int columnindex = dgvOsoblje.CurrentCell.ColumnIndex;
 
             if (columnindex == 4)

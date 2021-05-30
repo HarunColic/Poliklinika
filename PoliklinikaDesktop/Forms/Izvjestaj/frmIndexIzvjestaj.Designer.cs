@@ -31,10 +31,8 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         {
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbZaposlenik = new System.Windows.Forms.ComboBox();
             this.cmbOdjel = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvIzvjestaj = new System.Windows.Forms.DataGridView();
@@ -48,9 +46,10 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(14, 16);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(282, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(322, 67);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -59,29 +58,19 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 82);
+            this.label1.Location = new System.Drawing.Point(14, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 30);
+            this.label1.Size = new System.Drawing.Size(223, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "Pregled izvještaja";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(104, 181);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 30);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Zaposlenik:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(471, 181);
+            this.label3.Location = new System.Drawing.Point(538, 241);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 30);
+            this.label3.Size = new System.Drawing.Size(87, 37);
             this.label3.TabIndex = 4;
             this.label3.Text = "Odjel:";
             // 
@@ -89,37 +78,30 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(334, 129);
+            this.label4.Location = new System.Drawing.Point(388, 241);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 30);
+            this.label4.Size = new System.Drawing.Size(144, 37);
             this.label4.TabIndex = 5;
             this.label4.Text = "Filtriraj po:";
-            // 
-            // cmbZaposlenik
-            // 
-            this.cmbZaposlenik.FormattingEnabled = true;
-            this.cmbZaposlenik.Location = new System.Drawing.Point(243, 188);
-            this.cmbZaposlenik.Name = "cmbZaposlenik";
-            this.cmbZaposlenik.Size = new System.Drawing.Size(169, 23);
-            this.cmbZaposlenik.TabIndex = 6;
-            this.cmbZaposlenik.SelectedIndexChanged += new System.EventHandler(this.cmbZaposlenik_SelectedIndexChanged);
-            this.cmbZaposlenik.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbZaposlenik_Format);
             // 
             // cmbOdjel
             // 
             this.cmbOdjel.FormattingEnabled = true;
-            this.cmbOdjel.Location = new System.Drawing.Point(559, 188);
+            this.cmbOdjel.Location = new System.Drawing.Point(639, 251);
+            this.cmbOdjel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbOdjel.Name = "cmbOdjel";
-            this.cmbOdjel.Size = new System.Drawing.Size(169, 23);
+            this.cmbOdjel.Size = new System.Drawing.Size(193, 28);
             this.cmbOdjel.TabIndex = 7;
             this.cmbOdjel.SelectedIndexChanged += new System.EventHandler(this.cmbOdjel_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvIzvjestaj);
-            this.groupBox1.Location = new System.Drawing.Point(-1, 217);
+            this.groupBox1.Location = new System.Drawing.Point(-1, 289);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(801, 233);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(915, 311);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Izvještaji";
@@ -133,20 +115,24 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.ID,
             this.Detalji});
             this.dgvIzvjestaj.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvIzvjestaj.Location = new System.Drawing.Point(3, 19);
+            this.dgvIzvjestaj.Location = new System.Drawing.Point(3, 24);
+            this.dgvIzvjestaj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvIzvjestaj.Name = "dgvIzvjestaj";
             this.dgvIzvjestaj.ReadOnly = true;
+            this.dgvIzvjestaj.RowHeadersWidth = 51;
             this.dgvIzvjestaj.RowTemplate.Height = 25;
-            this.dgvIzvjestaj.Size = new System.Drawing.Size(795, 211);
+            this.dgvIzvjestaj.Size = new System.Drawing.Size(909, 283);
             this.dgvIzvjestaj.TabIndex = 0;
             // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
+            this.ID.Width = 125;
             // 
             // Detalji
             // 
@@ -154,23 +140,24 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.Detalji.HeaderText = "Detalji";
             this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
             this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Detalji.MinimumWidth = 6;
             this.Detalji.Name = "Detalji";
             this.Detalji.ReadOnly = true;
+            this.Detalji.Width = 125;
             // 
             // frmIndexIzvjestaj
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbOdjel);
-            this.Controls.Add(this.cmbZaposlenik);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmIndexIzvjestaj";
             this.Text = "frmIndexIzvjestaj";
             this.Load += new System.EventHandler(this.frmIndexIzvjestaj_Load);
@@ -186,10 +173,8 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
 
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbZaposlenik;
         private System.Windows.Forms.ComboBox cmbOdjel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvIzvjestaj;

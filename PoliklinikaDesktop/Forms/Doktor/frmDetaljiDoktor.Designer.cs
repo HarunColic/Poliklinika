@@ -117,7 +117,6 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtSubSecijal.Name = "txtSubSecijal";
             this.txtSubSecijal.Size = new System.Drawing.Size(334, 23);
             this.txtSubSecijal.TabIndex = 7;
-            this.txtSubSecijal.Validating += new System.ComponentModel.CancelEventHandler(this.txtSubSecijal_Validating);
             // 
             // label3
             // 

@@ -19,6 +19,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
             _id = tehnicarid;
         }
         CreateTehnicarVM request = new CreateTehnicarVM();
+        TehnicarVM tehnicar = new TehnicarVM();
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
             if (this.ValidateChildren())
@@ -31,7 +32,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
 
                 if (_id.HasValue)
                 {
-                    var tehnicar = await _service.GetById<TehnicarVM>(_id);
+                    tehnicar = await _service.GetById<TehnicarVM>(_id);
 
                     tehnicar.Ime = txtIme.Text;
                     tehnicar.Prezime = txtPrezime.Text;
@@ -54,6 +55,8 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
         private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)
         {  
             request.Spol = cmbSpol.SelectedItem.ToString();
+            if (_id.HasValue)
+                tehnicar.Spol = cmbSpol.SelectedItem.ToString();
         }
 
         private async void frmDetaljiTehnicar_Load(object sender, EventArgs e)
@@ -65,7 +68,7 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
                 txtPrezime.Text = teh.Prezime;
                 txtstrucna.Text = teh.StrucnaSprema;
                 txtBrRadneKnjizice.Text = teh.BrojRadneKnjizice;
-                cmbSpol.SelectedText = teh.Spol;
+                cmbSpol.SelectedItem = teh.Spol;
                 txtEmail.Hide();
                 txtPassword.Hide();
                 lblEmail.Hide();

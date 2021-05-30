@@ -49,6 +49,12 @@ namespace PoliklinikaAPI.Controllers
         {
             _userInterface.Delete(id);
         }
+
+        [HttpPost("update-password")]
+        public void UpdatePassword(UpdatePasswordVM update)
+        {
+            _userInterface.UpdatePassword(update);
+        }
     }
 }
 
