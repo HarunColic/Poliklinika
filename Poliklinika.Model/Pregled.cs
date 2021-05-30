@@ -18,5 +18,11 @@ namespace Poliklinika.Model
         public Korisnik Korisnik { get; set; }
         public DateTime Datum { get; set; }
         public string Opis { get; set; }
+        [ForeignKey("Odjel")]
+        public int OdjelID { get; set; }
+        public Odjel Odjel { get; set; }
+        [ForeignKey("Tehnicar")]
+        public int TehnicarID { get; set; }
+        public Tehnicar Tehnicar { get; set; }
     }
 }

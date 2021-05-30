@@ -63,5 +63,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
 
             dgvIzvjestaj.DataSource = result;
         }
+
+       
     }
 }
