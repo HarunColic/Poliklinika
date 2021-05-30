@@ -65,22 +65,32 @@ namespace PoliklinikaDesktop.Forms.Nalaz
 
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            request.Opis = txtOpis.Text;
-
-            if (_opis == "pregled")
+            if (this.ValidateChildren())
             {
-                request.PregledID = int.Parse(txtpregledID.Text);
-                await _service.Insert<NalazVM>(request);
-            }
-            else
-            {
-                var nalaz = await _service.GetById<NalazVM>(_id);
-                nalaz.Opis = txtOpis.Text;
 
-                await _service.Update<NalazVM>(nalaz);
+                request.Opis = txtOpis.Text;
+
+                if (_opis == "pregled")
+                {
+                    request.PregledID = int.Parse(txtpregledID.Text);
+                    await _service.Insert<NalazVM>(request);
+                }
+                else
+                {
+                    var nalaz = await _service.GetById<NalazVM>(_id);
+                    nalaz.Opis = txtOpis.Text;
+
+                    await _service.Update<NalazVM>(nalaz);
+                }
+                MessageBox.Show("Operacija uspješna");
             }
 
         }
-        
+
+        private void txtOpis_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtOpis);
+        }
     }
 }

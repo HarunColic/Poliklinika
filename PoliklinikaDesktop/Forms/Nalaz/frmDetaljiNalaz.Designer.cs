@@ -29,6 +29,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +41,9 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.lblOdjel = new System.Windows.Forms.Label();
             this.lblDatum = new System.Windows.Forms.Label();
             this.txtpregledID = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -90,6 +93,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.txtOpis.Name = "txtOpis";
             this.txtOpis.Size = new System.Drawing.Size(358, 186);
             this.txtOpis.TabIndex = 12;
+            this.txtOpis.Validating += new System.ComponentModel.CancelEventHandler(this.txtOpis_Validating);
             // 
             // label4
             // 
@@ -152,6 +156,10 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.txtpregledID.TabIndex = 17;
             this.txtpregledID.Visible = false;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmDetaljiNalaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -173,6 +181,7 @@ namespace PoliklinikaDesktop.Forms.Nalaz
             this.Text = "frmDetaljiNalaz";
             this.Load += new System.EventHandler(this.frmDetaljiNalaz_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +200,6 @@ namespace PoliklinikaDesktop.Forms.Nalaz
         private System.Windows.Forms.Label lblOdjel;
         private System.Windows.Forms.Label lblDatum;
         private System.Windows.Forms.TextBox txtpregledID;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

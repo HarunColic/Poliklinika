@@ -21,28 +21,34 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
         CreateTehnicarVM request = new CreateTehnicarVM();
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            request.Ime = txtIme.Text;
-            request.Prezime = txtPrezime.Text;
-            request.StrucnaSprema = txtstrucna.Text;
-            request.BrojRadneKnjizice = txtBrRadneKnjizice.Text;
-
-            if (_id.HasValue)
+            if (this.ValidateChildren())
             {
-                var tehnicar = await _service.GetById<TehnicarVM>(_id);
 
-                tehnicar.Ime = txtIme.Text;
-                tehnicar.Prezime = txtPrezime.Text;
-                tehnicar.BrojRadneKnjizice = txtBrRadneKnjizice.Text;
-                tehnicar.StrucnaSprema = txtstrucna.Text;
+                request.Ime = txtIme.Text;
+                request.Prezime = txtPrezime.Text;
+                request.StrucnaSprema = txtstrucna.Text;
+                request.BrojRadneKnjizice = txtBrRadneKnjizice.Text;
 
-                await _service.Update<TehnicarVM>(request);
+                if (_id.HasValue)
+                {
+                    var tehnicar = await _service.GetById<TehnicarVM>(_id);
+
+                    tehnicar.Ime = txtIme.Text;
+                    tehnicar.Prezime = txtPrezime.Text;
+                    tehnicar.BrojRadneKnjizice = txtBrRadneKnjizice.Text;
+                    tehnicar.StrucnaSprema = txtstrucna.Text;
+
+                    await _service.Update<TehnicarVM>(request);
+                }
+                else
+                {
+                    request.Password = txtPassword.Text;
+                    request.Email = txtEmail.Text;
+                    await _service.Insert<TehnicarVM>( request);
+                }
+                MessageBox.Show("Operacija uspješna");
             }
-            else
-            {
-                request.Password = txtPassword.Text;
-                request.Email = txtEmail.Text;
-                await _service.Insert<TehnicarVM>( request);
-            }
+
         }
 
         private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,6 +71,48 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
                 lblEmail.Hide();
                 lblPassword.Hide();
             }
+        }
+
+        private void txtIme_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtIme);
+        }
+
+        private void txtPrezime_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtPrezime);
+        }
+
+        private void txtBrRadneKnjizice_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtBrRadneKnjizice);
+        }
+
+        private void txtstrucna_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtstrucna);
+        }
+
+        private void cmbSpol_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringacmb(cmbSpol);
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtEmail);
+        }
+
+        private void txtPassword_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtPassword);
         }
     }
 }

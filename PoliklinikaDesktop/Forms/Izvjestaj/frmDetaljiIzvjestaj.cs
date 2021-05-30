@@ -63,23 +63,33 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         }
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            request.Opis = txtOpisIzvjestaja.Text;
+            if (this.ValidateChildren())
+            {
 
-            if (_opis == "pregled")
-            {
-                request.PregledID = int.Parse(txtpregledID.Text);
-                await _service.Insert<IzvjestajVM>(request);
-            }
-            else
-            {
-                var izv = await _service.GetById<IzvjestajVM>(_id);
-                izv.Opis = txtOpisIzvjestaja.Text;
+                request.Opis = txtOpisIzvjestaja.Text;
+
+                if (_opis == "pregled")
+                {
+                    request.PregledID = int.Parse(txtpregledID.Text);
+                    await _service.Insert<IzvjestajVM>(request);
+                }
+                else
+                {
+                    var izv = await _service.GetById<IzvjestajVM>(_id);
+                    izv.Opis = txtOpisIzvjestaja.Text;
               
 
-                await _service.Update<IzvjestajVM>(izv);
+                    await _service.Update<IzvjestajVM>(izv);
+                }
+                MessageBox.Show("Operacija uspješna");
             }
 
         }
-        
+
+        private void txtOpisIzvjestaja_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtOpisIzvjestaja);
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace PoliklinikaDesktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Forms.frmLogin(mapper));
-            Application.Run(new Forms.Odjel.frmIndexOdjel());
+            Application.Run(new Forms.Administrator.frmOdabirZaposlenog());
         }
     }
 }

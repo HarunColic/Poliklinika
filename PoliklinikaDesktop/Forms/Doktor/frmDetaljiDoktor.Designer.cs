@@ -29,6 +29,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +50,9 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbSpol = new System.Windows.Forms.ComboBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -68,6 +71,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(334, 23);
             this.txtIme.TabIndex = 1;
+            this.txtIme.Validating += new System.ComponentModel.CancelEventHandler(this.txtIme_Validating);
             // 
             // label1
             // 
@@ -95,6 +99,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(334, 23);
             this.txtPrezime.TabIndex = 3;
+            this.txtPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrezime_Validating);
             // 
             // label2
             // 
@@ -112,6 +117,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtSubSecijal.Name = "txtSubSecijal";
             this.txtSubSecijal.Size = new System.Drawing.Size(334, 23);
             this.txtSubSecijal.TabIndex = 7;
+            this.txtSubSecijal.Validating += new System.ComponentModel.CancelEventHandler(this.txtSubSecijal_Validating);
             // 
             // label3
             // 
@@ -129,6 +135,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtSpecijal.Name = "txtSpecijal";
             this.txtSpecijal.Size = new System.Drawing.Size(334, 23);
             this.txtSpecijal.TabIndex = 5;
+            this.txtSpecijal.Validating += new System.ComponentModel.CancelEventHandler(this.txtSpecijal_Validating);
             // 
             // label4
             // 
@@ -156,6 +163,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtBrRadneKnjiz.Name = "txtBrRadneKnjiz";
             this.txtBrRadneKnjiz.Size = new System.Drawing.Size(334, 23);
             this.txtBrRadneKnjiz.TabIndex = 9;
+            this.txtBrRadneKnjiz.Validating += new System.ComponentModel.CancelEventHandler(this.txtBrRadneKnjiz_Validating);
             // 
             // cmbOdjel
             // 
@@ -165,6 +173,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.cmbOdjel.Size = new System.Drawing.Size(334, 23);
             this.cmbOdjel.TabIndex = 13;
             this.cmbOdjel.SelectedIndexChanged += new System.EventHandler(this.cmbOdjel_SelectedIndexChanged);
+            this.cmbOdjel.Validating += new System.ComponentModel.CancelEventHandler(this.cmbOdjel_Validating);
             // 
             // btnSacuvaj
             // 
@@ -192,6 +201,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(334, 23);
             this.txtEmail.TabIndex = 16;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // lblPassword
             // 
@@ -209,6 +219,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(334, 23);
             this.txtPassword.TabIndex = 18;
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // label6
             // 
@@ -231,6 +242,11 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.cmbSpol.Size = new System.Drawing.Size(334, 23);
             this.cmbSpol.TabIndex = 20;
             this.cmbSpol.SelectedIndexChanged += new System.EventHandler(this.cmbSpol_SelectedIndexChanged);
+            this.cmbSpol.Validating += new System.ComponentModel.CancelEventHandler(this.cmbSpol_Validating);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // frmDetaljiDoktor
             // 
@@ -262,6 +278,7 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.Text = "frmDetaljiDoktor";
             this.Load += new System.EventHandler(this.frmDetaljiDoktor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +307,6 @@ namespace PoliklinikaDesktop.Forms.Doktor
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbSpol;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

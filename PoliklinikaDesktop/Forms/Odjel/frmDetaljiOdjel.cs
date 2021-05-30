@@ -60,29 +60,13 @@ namespace PoliklinikaDesktop.Forms.Odjel
 
         private void txtNaziv_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNaziv.Text))
-            {
-                errorProvider.SetError(txtNaziv, Properties.Resources.ValidacijaPolja);
-                e.Cancel = true;
-            }
-            else
-            {
-                errorProvider.SetError(txtNaziv, null);
-
-            }
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtNaziv);
         }
         private void txtOpis_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtOpis.Text))
-            {
-                errorProvider.SetError(txtOpis, Properties.Resources.ValidacijaPolja);
-                e.Cancel = true;
-            }
-            else
-            {
-                errorProvider.SetError(txtNaziv, null);
-
-            }
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringa(txtOpis);
         }
 
         private void btnDodajSliku_Click(object sender, EventArgs e)
