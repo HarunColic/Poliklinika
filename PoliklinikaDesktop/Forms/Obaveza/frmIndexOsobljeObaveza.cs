@@ -49,22 +49,8 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             if (columnIndex == 3)
             {
                 var id = int.Parse(dgvAktivne.CurrentRow.Cells[0].Value.ToString());
-                var obaveza = await _service.GetById<ObavezaVM>(id);
-                var chat = await _chatObaveza.GetById<ChatObavezaVM>(obaveza.ChatID);
-
-                if(chat == null)
-                {
-                    var admin = await _admin.Get<Poliklinika.Model.Admin>(null);
-
-                    chat = await _chatObaveza.Insert<ChatObavezaVM>(new ChatObavezaVM
-                    {
-                        ObavezaID = int.Parse(id.ToString()),
-                        AdminID = admin.Id,
-                        OsobljeID = CurrentUser.User.Id
-                    });
-                }
                 
-                frmDetaljiOsobljeObaveza detalji = new frmDetaljiOsobljeObaveza(chat.ID);
+                frmDetaljiOsobljeObaveza detalji = new frmDetaljiOsobljeObaveza(id);
                 detalji.Show();
             }
         }

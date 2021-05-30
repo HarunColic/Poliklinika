@@ -37,12 +37,13 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.lblOdjel = new System.Windows.Forms.Label();
             this.lblDatum = new System.Windows.Forms.Label();
             this.lblOpis = new System.Windows.Forms.Label();
+            this.btnZavrsi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnChat
             // 
-            this.btnChat.Location = new System.Drawing.Point(292, 473);
+            this.btnChat.Location = new System.Drawing.Point(90, 504);
             this.btnChat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnChat.Name = "btnChat";
             this.btnChat.Size = new System.Drawing.Size(142, 56);
@@ -122,11 +123,22 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.lblOpis.TabIndex = 31;
             this.lblOpis.Text = "Opis obaveze";
             // 
+            // btnZavrsi
+            // 
+            this.btnZavrsi.Location = new System.Drawing.Point(281, 505);
+            this.btnZavrsi.Name = "btnZavrsi";
+            this.btnZavrsi.Size = new System.Drawing.Size(139, 56);
+            this.btnZavrsi.TabIndex = 32;
+            this.btnZavrsi.Text = "Završi obavezu";
+            this.btnZavrsi.UseVisualStyleBackColor = true;
+            this.btnZavrsi.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnZavrsi_MouseClick);
+            // 
             // frmDetaljiOsobljeObaveza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 573);
+            this.Controls.Add(this.btnZavrsi);
             this.Controls.Add(this.lblOpis);
             this.Controls.Add(this.lblDatum);
             this.Controls.Add(this.lblOdjel);
@@ -156,5 +168,6 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblDatum;
         private System.Windows.Forms.Label lblOpis;
+        private System.Windows.Forms.Button btnZavrsi;
     }
 }

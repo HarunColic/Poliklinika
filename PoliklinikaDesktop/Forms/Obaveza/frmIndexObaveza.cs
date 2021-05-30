@@ -30,8 +30,6 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             obaveza.Show();
         }
 
-       
-
         private void dgvObaveze_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int columnIndex = dgvObaveze.CurrentCell.ColumnIndex;

@@ -43,15 +43,31 @@ namespace PoliklinikaDesktop.Forms.Obaveza
         private async void btnChat_Click(object sender, EventArgs e)
         {
             var admin = await _admin.Get<Poliklinika.Model.Admin>(null);
-            var chat = await _chat.Insert<ChatObavezaVM>(new ChatObavezaVM
+            var obaveza = await _service.GetById<ObavezaVM>(_id);
+            var chat = await _chat.GetById<ChatObavezaVM>(obaveza.ChatID);
+
+            if (chat == null)
             {
-                OsobljeID = CurrentUser.User.Id,
-                ObavezaID = _id,
-                AdminID = admin.Id
-            });
+                chat = await _chat.Insert<ChatObavezaVM>(new ChatObavezaVM
+                {
+                    OsobljeID = CurrentUser.User.Id,
+                    ObavezaID = _id,
+                    AdminID = admin.Id
+                });
+            }
 
             var frmChat = new frmIndexChat(chat.ID);
             frmChat.Show();
+        }
+
+        private async void btnZavrsi_MouseClick(object sender, MouseEventArgs e)
+        {
+            var obaveza = await _service.GetById<ObavezaVM>(_id);
+
+            obaveza.Aktivna = false;
+
+            await _service.Update<ObavezaVM>(obaveza);
+            MessageBox.Show("Operacija uspješna");
         }
     }
 }

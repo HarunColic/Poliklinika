@@ -40,5 +40,16 @@ namespace PoliklinikaAPI.Services
 
             return _mapper.Map<List<ObavezaVM>>(_db.Obaveza.ToList());
         }
+
+        public override ObavezaVM GetById(int id)
+        {
+            var chat = _db.ChatObaveza.FirstOrDefault(x => x.ObavezaID == id);
+            var obavezaVM = _mapper.Map<ObavezaVM>(_db.Obaveza.Find(id));
+
+            if (chat != null)
+                obavezaVM.ChatID = chat.ID;
+
+            return obavezaVM;
+        }
     }
 }

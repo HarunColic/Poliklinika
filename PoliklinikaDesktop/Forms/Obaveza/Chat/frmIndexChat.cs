@@ -61,7 +61,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza.Chat
                 ChatObavezaID = _id
             });
 
-            Refresh();
+            this.Refresh();
         }
     }
 }
