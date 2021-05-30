@@ -8,6 +8,7 @@ using PoliklinikaAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace PoliklinikaAPI.Services
@@ -117,16 +118,12 @@ namespace PoliklinikaAPI.Services
             return _mapper.Map<TVM>(map);
         }
 
-        public void UpdatePassword(UpdatePasswordVM update)
+        public async void UpdatePassword(UpdatePasswordVM update)
         {
-            var User = _db.User.FindAsync(update.UserId).Result;
+            var user = await _userManager.FindByIdAsync(update.UserId.ToString());
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
 
-
-            var token = _userManager.GeneratePasswordResetTokenAsync(User).Result;
-
-            _db.Entry(User).State = EntityState.Detached;
-
-            _userManager.ResetPasswordAsync(User, token, update.password).Wait();
+            await _userManager.ResetPasswordAsync(user, token, update.password);
         }
     }
 }
