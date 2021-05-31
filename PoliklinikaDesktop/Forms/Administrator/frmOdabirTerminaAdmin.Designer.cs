@@ -73,6 +73,8 @@ namespace PoliklinikaDesktop.Forms.Administrator
             // 
             // dgvPregledi
             // 
+            this.dgvPregledi.AllowUserToAddRows = false;
+            this.dgvPregledi.AllowUserToDeleteRows = false;
             this.dgvPregledi.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvPregledi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPregledi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -83,6 +85,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.dgvPregledi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPregledi.Location = new System.Drawing.Point(3, 19);
             this.dgvPregledi.Name = "dgvPregledi";
+            this.dgvPregledi.ReadOnly = true;
             this.dgvPregledi.RowTemplate.Height = 25;
             this.dgvPregledi.Size = new System.Drawing.Size(630, 224);
             this.dgvPregledi.TabIndex = 0;
@@ -93,6 +96,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
             // Datum
@@ -100,12 +104,14 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.Datum.DataPropertyName = "Datum";
             this.Datum.HeaderText = "Datum";
             this.Datum.Name = "Datum";
+            this.Datum.ReadOnly = true;
             // 
             // Odjel
             // 
             this.Odjel.DataPropertyName = "Odjel";
             this.Odjel.HeaderText = "Odjel";
             this.Odjel.Name = "Odjel";
+            this.Odjel.ReadOnly = true;
             // 
             // Detalji
             // 
@@ -114,6 +120,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
             this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Detalji.Name = "Detalji";
+            this.Detalji.ReadOnly = true;
             // 
             // frmOdabirTerminaAdmin
             // 
@@ -126,6 +133,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
             this.Controls.Add(this.pictureBox2);
             this.Name = "frmOdabirTerminaAdmin";
             this.Text = "frmOdabirTerminaAdmin";
+            this.Load += new System.EventHandler(this.frmOdabirTerminaAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPregledi)).EndInit();
