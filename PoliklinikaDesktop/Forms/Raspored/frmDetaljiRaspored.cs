@@ -21,7 +21,7 @@ namespace PoliklinikaDesktop.Forms.Raspored
             _id = rasporedid;
         }
         PregledVM pregled = new PregledVM();
-        
+        RasporedVM raspored = new RasporedVM();
         private async void frmDetaljiRaspored_Load(object sender, EventArgs e)
         {
             await LoadZaposleni();
@@ -50,7 +50,7 @@ namespace PoliklinikaDesktop.Forms.Raspored
 
             if (int.TryParse(idObj.ToString(), out int osobID))
             {
-                pregled.OsobljeID = osobID;
+                raspored.OsobljeID = osobID;
             }
         }
 
@@ -59,6 +59,11 @@ namespace PoliklinikaDesktop.Forms.Raspored
             string ime = ((OsobljeVM)e.ListItem).Ime;
             string prezime = ((OsobljeVM)e.ListItem).Prezime;
             e.Value = ime + " " + prezime;
+        }
+
+        private void btnSacuvaj_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
