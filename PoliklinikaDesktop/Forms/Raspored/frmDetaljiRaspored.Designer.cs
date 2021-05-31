@@ -30,7 +30,7 @@ namespace PoliklinikaDesktop.Forms.Raspored
         private void InitializeComponent()
         {
             this.btnSacuvaj = new System.Windows.Forms.Button();
-            this.cmbOsoblje = new System.Windows.Forms.ComboBox();
+            this.cmbDoktor = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblDatum = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@ namespace PoliklinikaDesktop.Forms.Raspored
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpPocetak = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTehnicar = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -55,16 +55,14 @@ namespace PoliklinikaDesktop.Forms.Raspored
             this.btnSacuvaj.UseVisualStyleBackColor = true;
             this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
-            // cmbOsoblje
+            // cmbDoktor
             // 
-            this.cmbOsoblje.FormattingEnabled = true;
-            this.cmbOsoblje.Location = new System.Drawing.Point(408, 189);
-            this.cmbOsoblje.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbOsoblje.Name = "cmbOsoblje";
-            this.cmbOsoblje.Size = new System.Drawing.Size(228, 28);
-            this.cmbOsoblje.TabIndex = 43;
-            this.cmbOsoblje.SelectedIndexChanged += new System.EventHandler(this.cmbOsoblje_SelectedIndexChanged);
-            this.cmbOsoblje.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbOsoblje_Format);
+            this.cmbDoktor.FormattingEnabled = true;
+            this.cmbDoktor.Location = new System.Drawing.Point(408, 189);
+            this.cmbDoktor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbDoktor.Name = "cmbDoktor";
+            this.cmbDoktor.Size = new System.Drawing.Size(228, 28);
+            this.cmbDoktor.TabIndex = 43;
             // 
             // label4
             // 
@@ -150,14 +148,16 @@ namespace PoliklinikaDesktop.Forms.Raspored
             this.dtpPocetak.Size = new System.Drawing.Size(228, 27);
             this.dtpPocetak.TabIndex = 35;
             // 
-            // comboBox1
+            // cmbTehnicar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(408, 291);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(228, 28);
-            this.comboBox1.TabIndex = 46;
+            this.cmbTehnicar.FormattingEnabled = true;
+            this.cmbTehnicar.Location = new System.Drawing.Point(408, 291);
+            this.cmbTehnicar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbTehnicar.Name = "cmbTehnicar";
+            this.cmbTehnicar.Size = new System.Drawing.Size(228, 28);
+            this.cmbTehnicar.TabIndex = 46;
+            this.cmbTehnicar.SelectedIndexChanged += new System.EventHandler(this.cmbTehnicar_SelectedIndexChanged);
+            this.cmbTehnicar.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbTehnicar_Format);
             // 
             // label5
             // 
@@ -175,10 +175,10 @@ namespace PoliklinikaDesktop.Forms.Raspored
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(689, 456);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbTehnicar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSacuvaj);
-            this.Controls.Add(this.cmbOsoblje);
+            this.Controls.Add(this.cmbDoktor);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblDatum);
             this.Controls.Add(this.label3);
@@ -200,7 +200,7 @@ namespace PoliklinikaDesktop.Forms.Raspored
         #endregion
 
         private System.Windows.Forms.Button btnSacuvaj;
-        private System.Windows.Forms.ComboBox cmbOsoblje;
+        private System.Windows.Forms.ComboBox cmbDoktor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblDatum;
         private System.Windows.Forms.Label label3;
@@ -211,5 +211,6 @@ namespace PoliklinikaDesktop.Forms.Raspored
         private System.Windows.Forms.DateTimePicker dtpPocetak;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbTehnicar;
     }
 }
