@@ -11,7 +11,7 @@ namespace Poliklinika.Model
         [Key]
         public int ID { get; set; }
         [ForeignKey("Doktor")]
-        public int DoktorID { get; set; }
+        public int? DoktorID { get; set; }
         public Doktor Doktor { get; set; }
         [ForeignKey("Korisnik")]
         public int KorisnikID { get; set; }
@@ -22,7 +22,7 @@ namespace Poliklinika.Model
         public int OdjelID { get; set; }
         public Odjel Odjel { get; set; }
         [ForeignKey("Tehnicar")]
-        public int TehnicarID { get; set; }
+        public int? TehnicarID { get; set; }
         public Tehnicar Tehnicar { get; set; }
     }
 }
