@@ -120,10 +120,10 @@ namespace PoliklinikaAPI.Services
 
         public async void UpdatePassword(UpdatePasswordVM update)
         {
-            var user = await _userManager.FindByIdAsync(update.UserId.ToString());
-            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-
-            await _userManager.ResetPasswordAsync(user, token, update.password);
+            var user = _db.User.Find(update.UserId);
+            user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, update.password);
+            _db.User.Update(user);
+            _db.SaveChanges();
         }
     }
 }

@@ -55,5 +55,12 @@ namespace PoliklinikaDesktop
 
             return await result.DeleteAsync().ReceiveJson<T>();
         }
+
+        public async void UpdatePassword<T>(object request)
+        {
+            var result = $"{Properties.Settings.Default.APIurl}/{_route}/update-password";
+
+            await result.PostJsonAsync(request);
+        }
     }
 }
