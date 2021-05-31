@@ -19,9 +19,7 @@ namespace PoliklinikaAPI.Data
         public DbSet<Nalaz> Nalaz { get; set; }
         public DbSet<Osoblje> Osoblje { get; set; }
         public DbSet<Pregled> Pregled { get; set; }
-        public DbSet<PregledTehnicar> PregledTehnicar { get; set; }
         public DbSet<Raspored> Raspored { get; set; }
-        public DbSet<RasporedOsoblje> RasporedOsoblje { get; set; }
         public DbSet<Tehnicar> Tehnicar { get; set; }
         public DbSet<Uplata> Uplata { get; set; }
         public DbSet<User> User { get; set; }
