@@ -36,7 +36,7 @@ namespace PoliklinikaDesktop.Forms
                     var update = new UpdatePasswordVM
                     {
                         password = txtPassword.Text,
-                        UserId =  doc.Id
+                        UserId =  doc.ID
                     };
                     _doktor.UpdatePassword<UpdatePasswordVM>(update);
                 }

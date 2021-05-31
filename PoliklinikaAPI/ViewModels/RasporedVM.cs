@@ -9,8 +9,9 @@ namespace PoliklinikaAPI.ViewModels
     {
         public int ID { get; set; }
         public DateTime Datum { get; set; }
-        public TimeSpan Vrijeme { get; set; }
-        public int OsobljeID { get; set; }
+        public string Vrijeme { get; set; }
+        public int DoktorID { get; set; }
+        public int TehnicarID { get; set; }
         public int PregledID { get; set; }
     }
 }

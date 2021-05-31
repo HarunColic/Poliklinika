@@ -14,7 +14,10 @@ namespace PoliklinikaDesktop.Forms.Raspored
     {
         private readonly int? _id;
         private readonly APIService _pregled = new APIService("Pregled");
-        private readonly APIService _osoblje = new APIService("Osoblje");
+        private readonly APIService _doktor = new APIService("Doktor");
+        private readonly APIService _tehnicar = new APIService("Tehnicar");
+        private readonly APIService _raspored = new APIService("Raspored");
+        
         public frmDetaljiRaspored(int? rasporedid)
         {
             InitializeComponent();
@@ -24,46 +27,75 @@ namespace PoliklinikaDesktop.Forms.Raspored
         RasporedVM raspored = new RasporedVM();
         private async void frmDetaljiRaspored_Load(object sender, EventArgs e)
         {
-            await LoadZaposleni();
+            await LoadDoktori();
+            await LoadTehnicari();
 
-            if (_id.HasValue)
-            {
-                pregled = await _pregled.GetById<PregledVM>(_id);
-                lblDatum.Text = pregled.Datum.ToString();
-                
-            }
+            pregled = await _pregled.GetById<PregledVM>(_id);
+            dtpPocetak.Text = pregled.Datum.TimeOfDay.ToString();
+            dtpPocetak.Enabled = false;
+            lblDatum.Text = pregled.Datum.Date.ToString();
             dtpKraj.Format = DateTimePickerFormat.Custom;
             dtpKraj.CustomFormat = "HH:mm";
         }
-        private async Task LoadZaposleni()
+        private async Task LoadDoktori()
         {
-            var result = await _osoblje.Get<List<OsobljeVM>>(null);
-            result.Insert(0, new OsobljeVM());
-            cmbOsoblje.DisplayMember = "Ime";
-            cmbOsoblje.ValueMember = "ID";
-            cmbOsoblje.DataSource = result;
+            var result = await _doktor.Get<List<DoktorVM>>(null);
+            result.Insert(0, new DoktorVM());
+            cmbDoktor.DisplayMember = "Ime";
+            cmbDoktor.ValueMember = "ID";
+            cmbDoktor.DataSource = result;
         }
 
-        private void cmbOsoblje_SelectedIndexChanged(object sender, EventArgs e)
+        private async Task LoadTehnicari()
         {
-            var idObj = cmbOsoblje.SelectedValue;
+            var result2 = await _tehnicar.Get<List<TehnicarVM>>(null);
+            result2.Insert(0, new TehnicarVM());
+            cmbTehnicar.DisplayMember = "Ime";
+            cmbTehnicar.ValueMember = "ID";
+            cmbTehnicar.DataSource = result2;
+        }
 
-            if (int.TryParse(idObj.ToString(), out int osobID))
+        private void cmbDoktor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var idDok = cmbDoktor.SelectedValue;
+
+            if (int.TryParse(idDok.ToString(), out int dokID))
             {
-                raspored.OsobljeID = osobID;
+                raspored.DoktorID = dokID;
+                pregled.DoktorID = dokID;
             }
         }
 
-        private void cmbOsoblje_Format(object sender, ListControlConvertEventArgs e)
+        private void cmbTehnicar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string ime = ((OsobljeVM)e.ListItem).Ime;
-            string prezime = ((OsobljeVM)e.ListItem).Prezime;
+            var idTeh = cmbTehnicar.SelectedValue;
+
+            if (int.TryParse(idTeh.ToString(), out int tehID))
+            {
+                raspored.TehnicarID = tehID;
+                pregled.TehnicarID = tehID;
+            }
+        }
+        private void cmbDoktor_Format(object sender, ListControlConvertEventArgs e)
+        {
+            string ime = ((DoktorVM)e.ListItem).Ime;
+            string prezime = ((DoktorVM)e.ListItem).Prezime;
             e.Value = ime + " " + prezime;
         }
 
-        private void btnSacuvaj_Click(object sender, EventArgs e)
+        private void cmbTehnicar_Format(object sender, ListControlConvertEventArgs e)
         {
+            string ime = ((TehnicarVM)e.ListItem).Ime;
+            string prezime = ((TehnicarVM)e.ListItem).Prezime;
+            e.Value = ime + " " + prezime;
+        }
 
+        private async void btnSacuvaj_Click(object sender, EventArgs e)
+        {
+            raspored.Vrijeme = $"{dtpPocetak.Text} - {dtpKraj.Text}";
+
+            await _pregled.Update<PregledVM>(pregled);
+            await _raspored.Insert<RasporedVM>(raspored);
         }
     }
 }
