@@ -29,6 +29,7 @@ namespace PoliklinikaAPI.Services
             
             if (!_context.HttpContext.Request.QueryString.HasValue)
             {
+                preglediLista=preglediLista.Where(x => x.DoktorID == null && x.TehnicarID == null).ToList();
                 return _mapper.Map<List<PregledVM>>(preglediLista);
             }
             else

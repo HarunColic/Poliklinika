@@ -1,4 +1,5 @@
 ﻿
+using PoliklinikaAPI.ViewModels;
 using PoliklinikaDesktop.Forms.Raspored;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace PoliklinikaDesktop.Forms.Administrator
 {
     public partial class frmOdabirTerminaAdmin : Form
     {
+        private readonly APIService _service = new APIService("Pregled");
+        private readonly APIService _odjel = new APIService("Odjel");
         public frmOdabirTerminaAdmin()
         {
             InitializeComponent();
@@ -30,4 +33,23 @@ namespace PoliklinikaDesktop.Forms.Administrator
                 doktor.Show();
             }
         }
+
+        private async void frmOdabirTerminaAdmin_Load(object sender, EventArgs e)
+        {
+            var result = await _service.Get<List<PregledVM>>(null);
+            dgvPregledi.AutoGenerateColumns = false;
+            dgvPregledi.DataSource = result;
+
+            if (result != null)
+            {
+                foreach (DataGridViewRow i in dgvPregledi.Rows)
+                {
+                    var prid = await _service.GetById<PregledVM>(result[i.Index].ID);
+                    var odjel = await _odjel.GetById<OdjelVM>(prid.OdjelID);
+                    i.Cells[2].Value = odjel.Naziv;
+                    
+                }
+            }
+        }
     }
+}

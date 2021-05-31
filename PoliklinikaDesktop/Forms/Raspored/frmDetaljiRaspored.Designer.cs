@@ -58,6 +58,8 @@ namespace PoliklinikaDesktop.Forms.Raspored
             this.cmbOsoblje.Name = "cmbOsoblje";
             this.cmbOsoblje.Size = new System.Drawing.Size(200, 23);
             this.cmbOsoblje.TabIndex = 43;
+            this.cmbOsoblje.SelectedIndexChanged += new System.EventHandler(this.cmbOsoblje_SelectedIndexChanged);
+            this.cmbOsoblje.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbOsoblje_Format);
             // 
             // label4
             // 
