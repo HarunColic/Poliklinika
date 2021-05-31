@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblTrenutniUser = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picNalaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picObaveza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIzvjestaj)).BeginInit();
@@ -120,6 +121,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label4
             // 
@@ -154,12 +156,25 @@
             this.lblTrenutniUser.Text = "label5";
             this.lblTrenutniUser.Click += new System.EventHandler(this.TrenutniUser_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label6.Location = new System.Drawing.Point(1062, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 28);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Logout";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // frmIndexDoktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1251, 739);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblTrenutniUser);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label4);
@@ -197,5 +212,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label TrenutniUser;
         private System.Windows.Forms.Label lblTrenutniUser;
+        private System.Windows.Forms.Label label6;
     }
 }

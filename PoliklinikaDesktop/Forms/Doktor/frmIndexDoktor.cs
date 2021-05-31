@@ -1,5 +1,6 @@
 ﻿using PoliklinikaDesktop.Forms.Nalaz;
 using PoliklinikaDesktop.Forms.Obaveza;
+using PoliklinikaDesktop.Forms.Raspored;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,21 @@ namespace PoliklinikaDesktop.Forms.Doktor
             frmIndexIzvjestajaDoktor izv = new frmIndexIzvjestajaDoktor();
             izv.Show();
 
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            frmIndexRaspored raspored = new frmIndexRaspored();
+            raspored.Show();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            CurrentUser.User = null;
+            CurrentUser.Role = null;
+            CurrentUser.JWT = null;
+
+            Application.Exit();
         }
     }
 }

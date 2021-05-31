@@ -59,5 +59,14 @@ namespace PoliklinikaDesktop.Forms.Administrator
             frmOdabirTerminaAdmin raspored = new frmOdabirTerminaAdmin();
             raspored.Show();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            CurrentUser.User = null;
+            CurrentUser.Role = null;
+            CurrentUser.JWT = null;
+
+            Application.Exit();
+        }
     }
 }
