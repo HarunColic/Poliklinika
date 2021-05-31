@@ -12,13 +12,13 @@ namespace PoliklinikaDesktop.Forms.Raspored
 {
     public partial class frmDetaljiRaspored : Form
     {
-        private readonly int? _id;
+        private readonly int _id;
         private readonly APIService _pregled = new APIService("Pregled");
         private readonly APIService _doktor = new APIService("Doktor");
         private readonly APIService _tehnicar = new APIService("Tehnicar");
         private readonly APIService _raspored = new APIService("Raspored");
         
-        public frmDetaljiRaspored(int? rasporedid)
+        public frmDetaljiRaspored(int rasporedid)
         {
             InitializeComponent();
             _id = rasporedid;
@@ -93,6 +93,8 @@ namespace PoliklinikaDesktop.Forms.Raspored
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
             raspored.Vrijeme = $"{dtpPocetak.Text} - {dtpKraj.Text}";
+            raspored.PregledID = _id;
+            raspored.Datum = pregled.Datum;
 
             await _pregled.Update<PregledVM>(pregled);
             await _raspored.Insert<RasporedVM>(raspored);

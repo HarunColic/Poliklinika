@@ -64,6 +64,12 @@
     <Compile Update="Forms\Raspored\frmDetaljiRaspored.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Raspored\frmIndexRaspored.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Raspored\frmPregledRaspored.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Tehnicar\frmDetaljiTehnicar.cs">
       <SubType>Form</SubType>
     </Compile>

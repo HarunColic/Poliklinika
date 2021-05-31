@@ -66,6 +66,8 @@ namespace PoliklinikaAPI
             services.AddScoped<BaseInterface<Izvjestaj, IzvjestajVM>, IzvjestajService>();
             services.AddScoped<BaseInterface<ChatObaveza, ChatObavezaVM>, BaseService<ChatObaveza, ChatObavezaVM>>();
             services.AddScoped<BaseInterface<ChatPoruka, ChatPorukaVM>, ChatService>();
+            services.AddScoped<BaseInterface<Raspored, RasporedVM>, RasporedService>();
+
 
             services.AddIdentity<User, Role>()
                     .AddEntityFrameworkStores<DBContext>()

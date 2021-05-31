@@ -32,10 +32,10 @@ namespace PoliklinikaDesktop.Forms.Raspored
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvRaspored = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detalji = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRaspored)).BeginInit();
@@ -44,9 +44,10 @@ namespace PoliklinikaDesktop.Forms.Raspored
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(14, 16);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(282, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(322, 67);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 38;
             this.pictureBox2.TabStop = false;
@@ -54,9 +55,11 @@ namespace PoliklinikaDesktop.Forms.Raspored
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvRaspored);
-            this.groupBox1.Location = new System.Drawing.Point(12, 160);
+            this.groupBox1.Location = new System.Drawing.Point(14, 213);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 287);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(887, 383);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             // 
@@ -71,55 +74,65 @@ namespace PoliklinikaDesktop.Forms.Raspored
             this.Datum,
             this.Detalji});
             this.dgvRaspored.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRaspored.Location = new System.Drawing.Point(3, 19);
+            this.dgvRaspored.Location = new System.Drawing.Point(3, 24);
+            this.dgvRaspored.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvRaspored.Name = "dgvRaspored";
             this.dgvRaspored.ReadOnly = true;
+            this.dgvRaspored.RowHeadersWidth = 51;
             this.dgvRaspored.RowTemplate.Height = 25;
-            this.dgvRaspored.Size = new System.Drawing.Size(770, 265);
+            this.dgvRaspored.Size = new System.Drawing.Size(881, 355);
             this.dgvRaspored.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(15, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 30);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Pregled rasporeda";
+            this.dgvRaspored.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRaspored_CellClick);
             // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
+            this.ID.Width = 125;
             // 
             // Datum
             // 
             this.Datum.DataPropertyName = "Datum";
             this.Datum.HeaderText = "Datum";
+            this.Datum.MinimumWidth = 6;
             this.Datum.Name = "Datum";
             this.Datum.ReadOnly = true;
+            this.Datum.Width = 125;
             // 
             // Detalji
             // 
             this.Detalji.HeaderText = "Detalji";
             this.Detalji.Image = global::PoliklinikaDesktop.Properties.Resources.detalji;
             this.Detalji.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Detalji.MinimumWidth = 6;
             this.Detalji.Name = "Detalji";
             this.Detalji.ReadOnly = true;
+            this.Detalji.Width = 125;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(17, 128);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(234, 37);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Pregled rasporeda";
             // 
             // frmIndexRaspored
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox2);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmIndexRaspored";
             this.Text = "frmIndexRaspored";
             this.Load += new System.EventHandler(this.frmIndexRaspored_Load);
