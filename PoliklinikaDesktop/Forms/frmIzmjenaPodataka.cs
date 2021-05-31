@@ -33,24 +33,57 @@ namespace PoliklinikaDesktop.Forms
 
                 if(txtPassword.Text != null && txtPassword.Text != "")
                 {
-
+                    var update = new UpdatePasswordVM
+                    {
+                        password = txtPassword.Text,
+                        UserId =  doc.Id
+                    };
+                    _doktor.UpdatePassword<UpdatePasswordVM>(update);
                 }
 
                 await _doktor.Update<DoktorVM>(doc);
             }
             else if(CurrentUser.Role == "Tehnicar")
             {
+                var teh = await _tehnicar.GetById<TehnicarVM>(CurrentUser.User.Id);
 
+                if (txtEmail.Text != null && txtEmail.Text != "")
+                    teh.Email = txtEmail.Text;
+
+
+                if (txtPassword.Text != null && txtPassword.Text != "")
+                {
+                    var update = new UpdatePasswordVM
+                    {
+                        password = txtPassword.Text,
+                        UserId = teh.ID
+                    };
+                    _tehnicar.UpdatePassword<UpdatePasswordVM>(update);
+                }
+
+                await _tehnicar.Update<DoktorVM>(teh);
             }
             else
             {
+                var admin = await _admin.GetById<Admin>(CurrentUser.User.Id);
 
+                if (txtEmail.Text != null && txtEmail.Text != "")
+                    admin.Email = txtEmail.Text;
+
+
+                if (txtPassword.Text != null && txtPassword.Text != "")
+                {
+                    var update = new UpdatePasswordVM
+                    {
+                        password = txtPassword.Text,
+                        UserId = admin.Id
+                    };
+
+                    _admin.UpdatePassword<UpdatePasswordVM>(update);
+                }
+
+                await _doktor.Update<DoktorVM>(admin);
             }
-        }
-
-        private async void UpdatePassword(string password, User user)
-        {
-
         }
     }
 }

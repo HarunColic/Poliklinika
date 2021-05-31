@@ -40,5 +40,11 @@ namespace PoliklinikaAPI.Controllers
         {
             return _userInterface.Get(id);
         }
+
+        [HttpPost("update-password")]
+        public void UpdatePassword(UpdatePasswordVM update)
+        {
+            _userInterface.UpdatePassword(update);
+        }
     }
 }
