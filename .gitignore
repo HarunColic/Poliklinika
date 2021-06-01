@@ -14,4 +14,8 @@ PoliklinikaDesktop/obj/**
 PoliklinikaDesktop/bin/**
 PoliklinikaAndroid/bin/**
 PoliklinikaAndroid/obj/**
-
+Poliklinika.Mobile.Android.csproj
+Poliklinika.Mobile.Android/obk/**
+Poliklinika.Mobile.iOS.csproj
+Poliklinika.Mobile.iOS/obj/**
+Poliklinika.Mobile/obj/**
