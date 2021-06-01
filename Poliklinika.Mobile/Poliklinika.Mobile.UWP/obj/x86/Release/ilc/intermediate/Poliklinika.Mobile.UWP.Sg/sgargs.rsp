@@ -1,0 +1,12 @@
+﻿/ref:"C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Release\ilc\intermediate\PreMergeILTransformed"
+/ref:"C:\Users\Dada\.nuget\packages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-29722-00\tools\SharedLibrary\ret\AnalysisILToc"
+/ref:"C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Release\ilc\intermediate\PreMergeILTransformed"
+/ref:"C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Release\ilc\in\\"
+/ref:"C:\Users\Dada\.nuget\packages\runtime.win10-x86.microsoft.net.native.compiler\2.2.10-rel-29722-00\tools\x86\ilc\lib\Private\\"
+/ref:"C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Release\ilc\in"
+/ref:"C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Release\ilc\in\WinMetadata"
+/ca:System.Private.CoreLib
+/cscpath:"C:\Users\Dada\.nuget\packages\microsoft.net.native.compiler\2.2.10-rel-29722-00\tools\csc"
+/out:"C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Release\ilc\intermediate\SgGenerated\\"
+/int:"C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Release\ilc\intermediate\Poliklinika.Mobile.UWP.Sg"
+"@C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Release\ilc\intermediate\Poliklinika.Mobile.UWP.Sg\ComputedSerializationInput.txt"
