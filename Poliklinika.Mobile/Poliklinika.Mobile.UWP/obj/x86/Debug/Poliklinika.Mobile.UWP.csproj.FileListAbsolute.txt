@@ -1,0 +1,13 @@
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\Poliklinika.Mobile.UWP.csprojAssemblyReference.cache
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\App.g.i.cs
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\App.g.cs
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\MainPage.g.cs
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\App.xaml
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\MainPage.xaml
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\App.xbf
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\MainPage.xbf
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\Poliklinika.Mobile.UWP.exe
+C:\Users\Dada\Desktop\rs2-Seminarski\Poliklinika\Poliklinika.Mobile\Poliklinika.Mobile.UWP\obj\x86\Debug\Poliklinika.Mobile.UWP.pdb
