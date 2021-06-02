@@ -1,24 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jT4YGa4+QsVHJi1G4VQ1vd+twQsWLv8RqBJ87Pupj9k4D/q/xmNG/mPd/4JuOStQYXoQWNOio67NsXOmDcTqQA==",
+  "dgSpecHash": "Ogla//ebpErABQAuHkFj7tqXSNg6Z2C23bXZOGf5Du/tpsV8AjTxwUV/WggghMw7JZqcOTaTAGsgr5OI69Bxxw==",
   "success": false,
   "projectFilePath": "C:\\Users\\Dada\\Desktop\\rs2-Seminarski\\Poliklinika\\Poliklinika.Mobile\\Poliklinika.Mobile.UWP\\Poliklinika.Mobile.UWP.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dada\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\Dada\\.nuget\\packages\\flurl\\3.0.2\\flurl.3.0.2.nupkg.sha512",
     "C:\\Users\\Dada\\.nuget\\packages\\flurl.http\\3.2.0\\flurl.http.3.2.0.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.6\\microsoft.aspnetcore.cryptography.internal.5.0.6.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.6\\microsoft.aspnetcore.cryptography.keyderivation.5.0.6.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.extensions.identity.core\\5.0.6\\microsoft.extensions.identity.core.5.0.6.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.extensions.identity.stores\\5.0.6\\microsoft.extensions.identity.stores.5.0.6.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\Dada\\.nuget\\packages\\microsoft.net.native.compiler\\2.2.10-rel-29722-00\\microsoft.net.native.compiler.2.2.10-rel-29722-00.nupkg.sha512",
     "C:\\Users\\Dada\\.nuget\\packages\\microsoft.net.uwpcoreruntimesdk\\2.2.12\\microsoft.net.uwpcoreruntimesdk.2.2.12.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
@@ -44,12 +31,8 @@
     "C:\\Users\\Dada\\.nuget\\packages\\runtime.win10-x86.microsoft.net.native.sharedlibrary\\2.2.8-rel-29722-00\\runtime.win10-x86.microsoft.net.native.sharedlibrary.2.2.8-rel-29722-00.nupkg.sha512",
     "C:\\Users\\Dada\\.nuget\\packages\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\\2.2.12\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.2.2.12.nupkg.sha512",
     "C:\\Users\\Dada\\.nuget\\packages\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\\6.2.12\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform.6.2.12.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\Dada\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Users\\Dada\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
-    "C:\\Users\\Dada\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Dada\\.nuget\\packages\\win2d.uwp\\1.20.0\\win2d.uwp.1.20.0.nupkg.sha512",
     "C:\\Users\\Dada\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Users\\Dada\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
@@ -67,26 +50,8 @@
     {
       "code": "NU1201",
       "level": "Error",
-      "message": "Project PoliklinikaDesktop is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299). Project PoliklinikaDesktop supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
-      "libraryId": "PoliklinikaDesktop",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
       "message": "Project PoliklinikaAPI is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-arm. Project PoliklinikaAPI supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
       "libraryId": "PoliklinikaAPI",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299/win10-arm"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project PoliklinikaDesktop is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-arm. Project PoliklinikaDesktop supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
-      "libraryId": "PoliklinikaDesktop",
       "targetGraphs": [
         "UAP,Version=v10.0.16299/win10-arm"
       ]
@@ -103,26 +68,8 @@
     {
       "code": "NU1201",
       "level": "Error",
-      "message": "Project PoliklinikaDesktop is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-arm-aot. Project PoliklinikaDesktop supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
-      "libraryId": "PoliklinikaDesktop",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299/win10-arm-aot"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
       "message": "Project PoliklinikaAPI is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-arm64-aot. Project PoliklinikaAPI supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
       "libraryId": "PoliklinikaAPI",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299/win10-arm64-aot"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project PoliklinikaDesktop is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-arm64-aot. Project PoliklinikaDesktop supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
-      "libraryId": "PoliklinikaDesktop",
       "targetGraphs": [
         "UAP,Version=v10.0.16299/win10-arm64-aot"
       ]
@@ -139,26 +86,8 @@
     {
       "code": "NU1201",
       "level": "Error",
-      "message": "Project PoliklinikaDesktop is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-x64. Project PoliklinikaDesktop supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
-      "libraryId": "PoliklinikaDesktop",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299/win10-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
       "message": "Project PoliklinikaAPI is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-x64-aot. Project PoliklinikaAPI supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
       "libraryId": "PoliklinikaAPI",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299/win10-x64-aot"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project PoliklinikaDesktop is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-x64-aot. Project PoliklinikaDesktop supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
-      "libraryId": "PoliklinikaDesktop",
       "targetGraphs": [
         "UAP,Version=v10.0.16299/win10-x64-aot"
       ]
@@ -175,26 +104,8 @@
     {
       "code": "NU1201",
       "level": "Error",
-      "message": "Project PoliklinikaDesktop is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-x86. Project PoliklinikaDesktop supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
-      "libraryId": "PoliklinikaDesktop",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299/win10-x86"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
       "message": "Project PoliklinikaAPI is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-x86-aot. Project PoliklinikaAPI supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
       "libraryId": "PoliklinikaAPI",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299/win10-x86-aot"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project PoliklinikaDesktop is not compatible with uap10.0.16299 (UAP,Version=v10.0.16299) / win10-x86-aot. Project PoliklinikaDesktop supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
-      "libraryId": "PoliklinikaDesktop",
       "targetGraphs": [
         "UAP,Version=v10.0.16299/win10-x86-aot"
       ]
