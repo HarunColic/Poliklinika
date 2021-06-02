@@ -1,26 +1,34 @@
-.git
-appsettings.json
-.vs/**
-.vs/RazvojSoftvera2/v16/.suo
-PoliklinikaAPI/appsettings.json
-PoliklinikaAPI/obj/Debug/netcoreapp3.1/PoliklinikaAPI.csprojAssemblyReference.cache
-PoliklinikaDesktop/obj/Debug/netcoreapp3.1/PoliklinikaDesktop.csprojAssemblyReference.cache
-UpgradeLog.htm
-Poliklinika.Model/obj/**
-Poliklinika.Model/bin/**
-PoliklinikaAPI/obj/**
-PoliklinikaAPI/bin/**
-PoliklinikaDesktop/obj/**
-PoliklinikaDesktop/bin/**
-PoliklinikaAndroid/bin/**
-PoliklinikaAndroid/obj/**
-Poliklinika.Mobile.Android/obj/**
-Poliklinika.Mobile/Poliklinika.Mobile.iOS/obj/**
-Poliklinika.Mobile.iOS/obj/**
-Poliklinika.Mobile/obj/**
-Poliklinika.Mobile/Poliklinika.Mobile/obj/**
-Poliklinika.Mobile/Poliklinika.Mobile.Android/obj/**
-Poliklinika.Mobile/Poliklinika.Mobile.UWP/obj/**
-Poliklinika.Mobile/Poliklinika.Mobile.UWP/bin/**
-Poliklinika.Mobile.UWP/obj/**
-Poliklinika.Mobile.UWP/bin/**
+# From .NET Core 3.0 you can use the command: `dotnet new gitignore` to generate a customizable .gitignore file
+
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+
+# Visual Studio Code
+.vscode
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio 2015
+.vs/
