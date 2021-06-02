@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poliklinika.Mobile.iOS", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poliklinika.Mobile", "Poliklinika.Mobile\Poliklinika.Mobile\Poliklinika.Mobile.csproj", "{68B7CE92-1947-4262-A6D0-D54E2EBB548D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{AEFBDD04-F56E-47D7-9D68-6F950D06F74A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -210,6 +212,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0BD9182-C9A5-4988-80B7-B3BA48484B5E} = {AEFBDD04-F56E-47D7-9D68-6F950D06F74A}
+		{57CF8599-DC1D-4A2D-BE3A-66E890943AE7} = {AEFBDD04-F56E-47D7-9D68-6F950D06F74A}
+		{5D5CFF2E-F514-4417-A113-CBF229E1E2EB} = {AEFBDD04-F56E-47D7-9D68-6F950D06F74A}
+		{68B7CE92-1947-4262-A6D0-D54E2EBB548D} = {AEFBDD04-F56E-47D7-9D68-6F950D06F74A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E84A9AB-2086-498F-B84C-8BC83735DA49}
