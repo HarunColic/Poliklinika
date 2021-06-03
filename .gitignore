@@ -31,7 +31,10 @@ msbuild.err
 msbuild.wrn
 
 appsettings.json
+
+
 RazvojSoftvera2.sln
+
 
 # Visual Studio 2015
 .vs/
