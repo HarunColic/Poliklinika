@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Poliklinika.Mobile.ViewModels"
              x:Class="Poliklinika.Mobile.Views.Register">
+    <ContentPage.BindingContext>
+        <vm:RegisterVM></vm:RegisterVM>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
             <Label Text="Email" />
-            <Entry Placeholder="" />
+            <Entry Text="{Binding Username}"  Placeholder="" />
             <Label Text="Šifra" />
-            <Entry Placeholder="" />
+            <Entry Text="{Binding Password}"  Placeholder="" IsPassword="True" />
             <Button VerticalOptions="Center" Text="Kreiraj" Command="{Binding RegisterCommand}"/>
         </StackLayout>
     </ContentPage.Content>

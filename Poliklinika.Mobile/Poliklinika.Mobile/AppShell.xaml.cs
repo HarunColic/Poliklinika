@@ -8,12 +8,47 @@ namespace Poliklinika.Mobile
 {
     public partial class AppShell : Xamarin.Forms.Shell
     {
+
+        public FlyoutItem _profil;
+        public FlyoutItem _poruke;
+        public FlyoutItem _prijava;
+        public FlyoutItem _odjava;
+        public FlyoutItem _register;
+
         public AppShell()
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(Register), typeof(Register));
+
+            _profil = Profil;
+            _poruke = Poruke;
+            _prijava = Prijava;
+            _odjava = Odjava;
+            _register = Register;
+        }
+
+        protected override void OnAppearing()
+        {
+            if (CurrentUser.IsLogedIn())
+            {
+                _profil.IsVisible = true;
+                _poruke.IsVisible = true;
+                _prijava.IsVisible = false;
+                _odjava.IsVisible = true;
+                _register.IsVisible = false;
+            }
+            else
+            {
+                _profil.IsVisible = false;
+                _poruke.IsVisible = false;
+                _prijava.IsVisible = true;
+                _odjava.IsVisible = false;
+                _register.IsVisible = true;
+            }
+
+            base.OnAppearing();
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
@@ -24,14 +59,6 @@ namespace Poliklinika.Mobile
         private async void Register_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("//Register");
-        }
-
-        private async void Logout_Clicked(object sender, EventArgs e)
-        {
-            CurrentUser.User = null;
-            CurrentUser.JWT = null;
-
-            await Shell.Current.GoToAsync("//AboutPage");
         }
     }
 }
