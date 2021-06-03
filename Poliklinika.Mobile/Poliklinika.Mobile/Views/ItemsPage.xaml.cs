@@ -14,19 +14,20 @@ namespace Poliklinika.Mobile.Views
 {
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel _viewModel;
+        private ItemsViewModel model=null;
 
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = _viewModel = new ItemsViewModel();
+            BindingContext = model = new ItemsViewModel();
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
+            await model.Init();
             base.OnAppearing();
-            _viewModel.OnAppearing();
+            
         }
     }
 }

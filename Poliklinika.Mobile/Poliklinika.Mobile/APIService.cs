@@ -16,7 +16,7 @@ namespace Poliklinika.Mobile
             _route = route;
         }
 #if DEBUG
-        private string _apiUrl = "https://localhost:44381/api";
+        private string _apiUrl = "http://localhost:53943/api";
 #endif
 #if RELEASE
         private string _apiUrl = "https://mywebsite.com/api/";
