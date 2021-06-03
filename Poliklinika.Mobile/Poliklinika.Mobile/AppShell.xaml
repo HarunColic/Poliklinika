@@ -4,7 +4,7 @@
        xmlns:local="clr-namespace:Poliklinika.Mobile.Views"
        Title="Poliklinika.Mobile"
        x:Class="Poliklinika.Mobile.AppShell">
-
+  
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
     
