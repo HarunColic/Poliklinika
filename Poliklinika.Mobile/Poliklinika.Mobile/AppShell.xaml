@@ -4,7 +4,7 @@
        xmlns:local="clr-namespace:Poliklinika.Mobile.Views"
        Title="Poliklinika.Mobile"
        x:Class="Poliklinika.Mobile.AppShell">
-
+  
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
     
@@ -78,17 +78,24 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-    <FlyoutItem Title="About" Icon="icon_about.png">
+    <FlyoutItem Title="Početna" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Browse" Icon="icon_feed.png">
+    <FlyoutItem Title="Odjeli" Icon="icon_feed.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Prijava">
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Kreiraj korisnički račun">
+        <ShellContent Route="Register" ContentTemplate="{DataTemplate local:Register}" />
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
-    <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
-    </MenuItem>
 
+    <MenuItem Text="Odjava" StyleClass="MenuItemLayoutStyle" Clicked="Logout_Clicked">
+    </MenuItem>
+    
     <!--
         TabBar lets you define content that won't show up in a flyout menu. When this content is active
         the flyout menu won't be available. This is useful for creating areas of the application where 
@@ -96,8 +103,8 @@
         content you can do so by calling 
         await Shell.Current.GoToAsync("//LoginPage");
     -->
+
     <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </TabBar>
 
     <!-- Optional Templates 
