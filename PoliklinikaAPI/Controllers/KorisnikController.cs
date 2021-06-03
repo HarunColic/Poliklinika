@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Poliklinika.Model;
+using PoliklinikaAPI.Data;
 using PoliklinikaAPI.Interfaces;
 using PoliklinikaAPI.ViewModels;
 
@@ -15,10 +16,12 @@ namespace PoliklinikaAPI.Controllers
     public class KorisnikController : ControllerBase
     {
         protected UserBaseInterface<Korisnik, KorisnikVM, SignUpKorisnikVM> _userInterface;
+        private readonly DBContext _db;
 
-        public KorisnikController(UserBaseInterface<Korisnik, KorisnikVM, SignUpKorisnikVM> userInterface)
+        public KorisnikController(UserBaseInterface<Korisnik, KorisnikVM, SignUpKorisnikVM> userInterface, DBContext db)
         {
             _userInterface = userInterface;
+            _db = db;
         }
 
 
@@ -29,9 +32,9 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public KorisnikVM Get(int id)
+        public Korisnik Get(int id)
         {
-            return _userInterface.Get(id);
+            return _db.Korisnik.Find(id);
         }
 
         [HttpPost]
