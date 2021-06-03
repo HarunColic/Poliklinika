@@ -11,5 +11,13 @@ namespace Poliklinika.Mobile.Views
         {
             InitializeComponent();
         }
+
+        private void UserLogedIn()
+        {
+            if (CurrentUser.User != null && CurrentUser.JWT != null)
+            {
+                
+            }
+        }
     }
 }
