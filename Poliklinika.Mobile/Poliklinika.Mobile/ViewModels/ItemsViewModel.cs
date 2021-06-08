@@ -21,6 +21,7 @@ namespace Poliklinika.Mobile.ViewModels
 
         public ObservableCollection<OdjelVM> OdjeliLista { get; set; } = new ObservableCollection<OdjelVM>();
         public ICommand InitCommand { get; }
+    
 
         public async Task Init()
         {

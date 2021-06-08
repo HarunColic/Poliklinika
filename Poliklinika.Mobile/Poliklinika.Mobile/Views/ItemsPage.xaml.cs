@@ -29,5 +29,12 @@ namespace Poliklinika.Mobile.Views
             base.OnAppearing();
             
         }
+
+        private async void  ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var odjel = (ItemsViewModel.OdjelVM)e.SelectedItem;
+            
+            await Navigation.PushAsync(new PrikazOdjela(odjel.ID));
+        }
     }
 }
