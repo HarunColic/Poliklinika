@@ -15,7 +15,7 @@
             <Label Text="Odjeli" FontSize="Header"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand"/>
-            <ListView ItemsSource="{Binding OdjeliLista}">
+            <ListView ItemsSource="{Binding OdjeliLista}" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
