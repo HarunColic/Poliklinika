@@ -75,7 +75,7 @@ namespace PoliklinikaAPI.Services
 
             var mail = user.GetType().GetProperty("Email").GetValue(user, null);
             signupUser.GetType().GetProperty("UserName").SetValue(signupUser, mail);
-            if(typeof(TCreateVM) != typeof(SignupAdminVM))
+            if(typeof(TCreateVM) != typeof(SignupAdminVM) && signupUser.Spol != null)
                 signupUser.Spol = user.GetType().GetProperty("Spol").GetValue(user, null).ToString();
 
             var userCreateResult = await _userManager.CreateAsync(signupUser, user.GetType().GetProperty("Password").GetValue(user, null).ToString());
