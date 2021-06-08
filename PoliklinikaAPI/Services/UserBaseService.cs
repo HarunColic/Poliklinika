@@ -111,7 +111,7 @@ namespace PoliklinikaAPI.Services
 
         public TVM Update(TVM user)
         {
-            var entity = _db.Set<T>().Find(int.Parse(user.GetType().GetProperty("Id").GetValue(user, null).ToString()));
+            var entity = _db.Set<T>().Find(int.Parse(user.GetType().GetProperty("ID").GetValue(user, null).ToString()));
             var map = _mapper.Map(user, entity);
             map.GetType().GetProperty("UserName").SetValue(map, user.GetType().GetProperty("Email").GetValue(user, null).ToString());
             _db.SaveChanges();
