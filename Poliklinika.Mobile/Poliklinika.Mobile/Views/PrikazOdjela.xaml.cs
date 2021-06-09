@@ -27,6 +27,8 @@ namespace Poliklinika.Mobile.Views
 
             naziv.Text = odjel.Naziv;
             opis.Text = odjel.Opis;
+        
+            
 
             base.OnAppearing();
         }
