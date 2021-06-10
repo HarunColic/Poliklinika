@@ -21,7 +21,7 @@ namespace Poliklinika.Mobile.ViewModels
             get { return _odjelID; }
             set { SetProperty(ref _odjelID, value); }
         }
-
+        
         DateTime _datum;
         public DateTime Datum
         {
@@ -36,18 +36,25 @@ namespace Poliklinika.Mobile.ViewModels
                 }
             }
         }
-
+        
         int _korisnikID = CurrentUser.User.Id;
         public int KorisnikID
         {
             get { return _korisnikID; }
         }
-
+        
         public List<string> _termini;
         public List<string> Termini
         {
             get { return _termini; }
             set { SetProperty(ref _termini, value); }
+        }
+        
+        object _selectedTermin;
+        public object SelectedTermin
+        {
+            get { return _selectedTermin; }
+            set { SetProperty(ref _selectedTermin, value); }
         }
         #endregion
 
@@ -121,7 +128,27 @@ namespace Poliklinika.Mobile.ViewModels
 
         private async void OnZakaziClicked(object obj)
         {
+            var datum = this.Datum;
+            var hours = int.Parse(SelectedTermin.ToString().Split(':')[0]);
+            var minutes = int.Parse(SelectedTermin.ToString().Split(':')[1]);
+            TimeSpan ts = new TimeSpan(hours, minutes, 0);
+            datum = datum.Date + ts;
 
+            var pregled = new Pregled
+            {
+                Datum = datum,
+                KorisnikID = CurrentUser.User.Id,
+                OdjelID = _odjelID
+            };
+
+            await _pregled.Insert<Pregled>(pregled);
+        }
+
+        public class Pregled
+        {
+            public int KorisnikID { get; set; }
+            public DateTime Datum { get; set; }
+            public int OdjelID { get; set; }
         }
 
         public class Termin

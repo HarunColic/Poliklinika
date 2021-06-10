@@ -16,6 +16,7 @@ namespace Poliklinika.Mobile.Views
     {
         private readonly int _odjelID;
         private readonly APIService _odjel = new APIService("Odjel");
+        private readonly APIService _pregled = new APIService("Pregled");
         ItemsViewModel.OdjelVM odjel;
         PregledVM model = null;
 
@@ -36,6 +37,27 @@ namespace Poliklinika.Mobile.Views
             OdjelID.Text = _odjelID.ToString();
 
             base.OnAppearing();
+        }
+
+        private async void zakazi_Clicked(object sender, EventArgs e)
+        {
+
+            var datum = Datum;
+            var selectedTermin = Termini.Items[Termini.SelectedIndex];
+            var hours = int.Parse(selectedTermin.Split(':')[0]);
+            var minutes = int.Parse(selectedTermin.Split(':')[1]);
+            TimeSpan ts = new TimeSpan(hours, minutes, 0);
+            var stringDate = datum.Date.ToString();
+            var newDatum = DateTime.Parse(stringDate) + ts;
+
+            var pregled = new PregledVM.Pregled
+            {
+                Datum = newDatum,
+                KorisnikID = CurrentUser.User.Id,
+                OdjelID = _odjelID
+            };
+
+            await _pregled.Insert<PregledVM.Pregled>(pregled);
         }
     }
 }
