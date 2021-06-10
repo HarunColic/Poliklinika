@@ -30,7 +30,10 @@ namespace Poliklinika.Mobile.ViewModels
             foreach (var pregledi in list)
             {
                 if (pregledi.KorisnikID == CurrentUser.User.Id)
+                {
+                    pregledi.odjel = await _odjel.GetById<Odjel>(pregledi.OdjelID);
                     PreglediLista.Add(pregledi);
+                }
             }
         }
         public class PreglediVM
@@ -38,10 +41,7 @@ namespace Poliklinika.Mobile.ViewModels
             public int KorisnikID { get; set; }
             public DateTime Datum { get; set; }
             public int OdjelID { get; set; }
-            public Odjel odjel
-            {
-               
-            }
+            public Odjel odjel { get; set; }
 
         }
         public class Odjel
