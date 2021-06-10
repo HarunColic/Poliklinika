@@ -14,6 +14,7 @@ namespace Poliklinika.Mobile
         public FlyoutItem _prijava;
         public FlyoutItem _odjava;
         public FlyoutItem _register;
+        public FlyoutItem _pregledi;
 
         public AppShell()
         {
@@ -27,6 +28,7 @@ namespace Poliklinika.Mobile
             _prijava = Prijava;
             _odjava = Odjava;
             _register = Register;
+            _pregledi = Pregled;
         }
 
         protected override void OnAppearing()
@@ -38,6 +40,7 @@ namespace Poliklinika.Mobile
                 _prijava.IsVisible = false;
                 _odjava.IsVisible = true;
                 _register.IsVisible = false;
+                _pregledi.IsVisible = true;
             }
             else
             {
@@ -46,6 +49,7 @@ namespace Poliklinika.Mobile
                 _prijava.IsVisible = true;
                 _odjava.IsVisible = false;
                 _register.IsVisible = true;
+                _pregledi.IsVisible = false;
             }
 
             base.OnAppearing();
