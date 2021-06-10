@@ -40,8 +40,22 @@ namespace PoliklinikaAPI.Services
             else if (TehnicarID != "0" && TehnicarID != null)
                 rasporedi = rasporedi.Where(x => x.TehnicarID == int.Parse(TehnicarID)).ToList();
             else
-                rasporedi = rasporedi.Where(x => x.Datum.Date.ToString() == Datum.Split(" ")[0] && 
+            {
+                var datum = Datum.Split(" ")[0].Replace('-', '.');
+                rasporedi = rasporedi.Where(x => x.Datum.Date.ToString("yyyy.MM.dd") == datum &&
                 x.Pregled.OdjelID == int.Parse(OdjelID)).ToList();
+            }
+            var rasp = _db.Raspored.OrderBy(x => x.ID).Last();
+
+            var datumRasp = rasp.Datum.Date.ToString("yyyy.MM.dd");
+            var dt = Datum.Split(" ")[0].Replace('-', '.');
+
+            string real;
+
+            if (datumRasp == dt)
+                real = dt;
+            else
+                real = datumRasp;
 
             return _mapper.Map<List<RasporedVM>>(rasporedi);
         }

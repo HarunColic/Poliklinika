@@ -47,6 +47,7 @@ namespace Poliklinika.Mobile.ViewModels
         public List<string> Termini
         {
             get { return _termini; }
+            set { SetProperty(ref _termini, value); }
         }
         #endregion
 
@@ -55,7 +56,6 @@ namespace Poliklinika.Mobile.ViewModels
             ZakaziCommand = new Command(OnZakaziClicked);
             _termini = SetTermini();
             _odjelID = id;
-            
         }
 
         public List<string> SetTermini()
@@ -98,7 +98,6 @@ namespace Poliklinika.Mobile.ViewModels
                     DoktoriOdjel++;
             }
 
-
             foreach (var r in rasporedi)
             {
                 int brojac = 0;
@@ -114,8 +113,8 @@ namespace Poliklinika.Mobile.ViewModels
                 if (brojac >= DoktoriOdjel)
                 {
                     var zauzet = new List<string>();
-                    zauzet.Add(r.Vrijeme);
-                    _termini = (List<string>)_termini.Except(zauzet);
+                    zauzet.Add(r.Vrijeme.Substring(0,5));
+                    Termini = _termini.Except(zauzet).ToList();
                 }
             }
         }
