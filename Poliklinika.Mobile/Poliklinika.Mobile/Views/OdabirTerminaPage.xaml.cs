@@ -12,31 +12,30 @@ using Xamarin.Forms.Xaml;
 namespace Poliklinika.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PrikazOdjela : ContentPage
+    public partial class OdabirTerminaPage : ContentPage
     {
+        private readonly int _odjelID;
         private readonly APIService _odjel = new APIService("Odjel");
-        int _id;
-        public PrikazOdjela(int id)
+        ItemsViewModel.OdjelVM odjel;
+        PregledVM model = null;
+
+        public OdabirTerminaPage(int OdjelID)
         {
-            _id = id;
+            _odjelID = OdjelID;
+            BindingContext  = model = new PregledVM(OdjelID);
+
             InitializeComponent();
         }
 
         protected override async void OnAppearing()
         {
-            var odjel = await _odjel.GetById<OdjelViewModel>(_id);
+            odjel = await _odjel.GetById<ItemsViewModel.OdjelVM>(_odjelID);
 
             naziv.Text = odjel.Naziv;
-            opis.Text = odjel.Opis;
             slika.Source = ImageSource.FromStream(() => new MemoryStream(odjel.Slika));
+            OdjelID.Text = _odjelID.ToString();
 
             base.OnAppearing();
-        }
-
-        private async void termin_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new OdabirTerminaPage(_id));
-
         }
     }
 }

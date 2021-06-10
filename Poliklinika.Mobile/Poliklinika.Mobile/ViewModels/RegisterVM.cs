@@ -3,8 +3,7 @@ using Poliklinika.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Windows.UI.Popups;
-using Windows.UI.Xaml.Controls;
+
 using Xamarin.Forms;
 
 namespace Poliklinika.Mobile.ViewModels
