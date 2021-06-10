@@ -15,16 +15,19 @@ namespace Poliklinika.Mobile.Views
         private readonly int _odjelID;
         private readonly APIService _odjel = new APIService("Odjel");
         private readonly APIService _doktori = new APIService("Doktor");
+        private DoktorVM model = null;
         public OdabirSavjetnikaPage(int OdjelID)
         {
             _odjelID = OdjelID;
             InitializeComponent();
+            BindingContext = model = new DoktorVM();
         }
         protected override async void OnAppearing()
         {
             var doktori = await _doktori.Get<List<DoktorVM>>(null);
             var lista = doktori.Where(x => x.OdjelID == _odjelID).ToList();
             picker.ItemsSource = lista;
+           
 
             base.OnAppearing();
         }
