@@ -36,6 +36,8 @@ namespace PoliklinikaAPI.Mappers
             CreateMap<ChatObaveza, ChatObavezaVM>().ReverseMap();
             CreateMap<ChatPoruka, ChatPorukaVM>().ReverseMap();
             CreateMap<Raspored, RasporedVM>().ReverseMap();
+            CreateMap<Konsultacije, KonsultacijeVM>().ReverseMap();
+            CreateMap<KonsultacijePoruka, KonsultacijePorukaVM>().ReverseMap();
         }
     }
 }

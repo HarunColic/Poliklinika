@@ -31,8 +31,21 @@ namespace Poliklinika.Mobile.Views
                 Container.Children.Add(new Label { Text = p.Poruka });
             }
             
-            Container.Children.Add(new Entry { Placeholder = "Vasa poruka" });
-            Container.Children.Add(new Button { Text = "Posalji"});
+            Container.Children.Add(new Entry { Placeholder = "Vasa poruka", AutomationId = "Entry" });
+            var entry = (Entry)Container.Children.FirstOrDefault(x => x.AutomationId == "Entry");
+            var resp = new response
+            {
+                KonsultacijeID = _id,
+                Poruka = entry.Text,
+                UserID = CurrentUser.User.Id
+            };
+
+            Container.Children.Add(new Button { Text = "Posalji",
+                Command = new Command( async () =>
+                {
+                    await _konsultacijePoruka.Insert<OdabirSavjetnikaPage.KonsPoruka>(resp);
+                })
+            });
             base.OnAppearing();
         }
 
