@@ -27,8 +27,8 @@ namespace PoliklinikaAPI.Data
         public DbSet<Admin> Admin { get; set; }
         public DbSet<ChatObaveza> ChatObaveza { get; set; }
         public DbSet<ChatPoruka> ChatPoruka { get; set; }
-
-
+        public DbSet<Konsultacije> Konsultacije { get; set; }
+        public DbSet<KonsultacijePoruka> KonsultacijePoruka { get; set; }
 
         public DBContext(DbContextOptions<DBContext> options) : base(options)
         { }

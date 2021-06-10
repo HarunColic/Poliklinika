@@ -35,8 +35,19 @@ namespace Poliklinika.Mobile.Views
 
         private async void termin_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new OdabirTerminaPage(_id));
+            if (CurrentUser.IsLogedIn())
+                await Navigation.PushAsync(new OdabirTerminaPage(_id));
+            else
+                await Navigation.PushAsync(new Register());
 
+        }
+
+        private async void savjet_Clicked(object sender, EventArgs e)
+        {
+            if (CurrentUser.IsLogedIn())
+                await Navigation.PushAsync(new OdabirSavjetnikaPage(_id));
+            else
+                await Navigation.PushAsync(new Register());
         }
     }
 }

@@ -26,7 +26,8 @@ namespace Poliklinika.Mobile.Views
                 (Shell.Current as AppShell)._poruke.IsVisible = true;
                 (Shell.Current as AppShell)._prijava.IsVisible = false;
                 (Shell.Current as AppShell)._odjava.IsVisible = true;
-                (Shell.Current as AppShell)._register.IsVisible = false;
+                (Shell.Current as AppShell)._register.IsVisible = false;  
+                (Shell.Current as AppShell)._pregledi.IsVisible = true;  
                 _login.IsVisible = false;
                 _register.IsVisible = false;
             }
@@ -37,6 +38,7 @@ namespace Poliklinika.Mobile.Views
                 (Shell.Current as AppShell)._prijava.IsVisible = true;
                 (Shell.Current as AppShell)._odjava.IsVisible = false;
                 (Shell.Current as AppShell)._register.IsVisible = true;
+                (Shell.Current as AppShell)._pregledi.IsVisible = false;
                 _login.IsVisible = true;
                 _register.IsVisible = true;
             }
