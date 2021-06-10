@@ -11,6 +11,7 @@ namespace Poliklinika.Mobile.ViewModels
     public class KorisnikPregled : BaseViewModel
     {
         private readonly APIService _pregled = new APIService("Pregled");
+        private readonly APIService _odjel = new APIService("Odjel");
         public KorisnikPregled()
         {
             InitCommand = new Command(async () => await Init());
@@ -28,8 +29,8 @@ namespace Poliklinika.Mobile.ViewModels
 
             foreach (var pregledi in list)
             {
-                if(pregledi.KorisnikID==CurrentUser.User.Id)
-                PreglediLista.Add(pregledi);
+                if (pregledi.KorisnikID == CurrentUser.User.Id)
+                    PreglediLista.Add(pregledi);
             }
         }
         public class PreglediVM
@@ -37,6 +38,16 @@ namespace Poliklinika.Mobile.ViewModels
             public int KorisnikID { get; set; }
             public DateTime Datum { get; set; }
             public int OdjelID { get; set; }
+            public Odjel odjel
+            {
+               
+            }
+
+        }
+        public class Odjel
+        {
+            public int ID { get; set; }
+            public string Naziv { get; set; }
         }
     }
 }

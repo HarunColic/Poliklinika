@@ -9,20 +9,20 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Odjeli" FontSize="Header"
+            <Label Text="Moji pregledi" FontSize="Header"
                    VerticalOptions="StartAndExpand"
                    HorizontalOptions="StartAndExpand"/>
             <ListView ItemsSource="{Binding PreglediLista}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10" Orientation="Horizontal">
+                            <StackLayout Padding="10" Margin="0,20,0,0" Orientation="Horizontal">
 
                                 <Label Text="{Binding Datum}" 
                                            LineBreakMode="NoWrap" 
                                            Style="{DynamicResource ListItemTextStyle}" 
-                                           FontSize="30"
-                                           HorizontalOptions="CenterAndExpand"/>
+                                           FontSize="20"
+                                           HorizontalOptions="StartAndExpand"/>
 
                             </StackLayout>
                         </ViewCell>
