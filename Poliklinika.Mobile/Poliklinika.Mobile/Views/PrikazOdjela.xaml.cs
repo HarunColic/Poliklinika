@@ -1,6 +1,7 @@
 ﻿using Poliklinika.Mobile.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,10 +28,15 @@ namespace Poliklinika.Mobile.Views
 
             naziv.Text = odjel.Naziv;
             opis.Text = odjel.Opis;
-        
-            
+            slika.Source = ImageSource.FromStream(() => new MemoryStream(odjel.Slika));
 
             base.OnAppearing();
+        }
+
+        private async void termin_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new OdabirTerminaPage(_id));
+
         }
     }
 }

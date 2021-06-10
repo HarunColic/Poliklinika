@@ -14,8 +14,8 @@ namespace Poliklinika.Mobile
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            //MainPage = new AppShell();
-            MainPage = new OdabirTerminaPage();
+            MainPage = new AppShell();
+            //MainPage = new OdabirTerminaPage();
 
         }
 

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Poliklinika.Mobile.ViewModels
 {
     public class OdjelViewModel:BaseViewModel
     {
+        #region atributi
         int _ID;
         public int ID
         {
@@ -32,5 +34,7 @@ namespace Poliklinika.Mobile.ViewModels
             get { return _Slika; }
             set { SetProperty(ref _Slika, value); }
         }
+        #endregion
+
     }
 }
