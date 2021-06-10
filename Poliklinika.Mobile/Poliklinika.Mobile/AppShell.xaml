@@ -105,6 +105,9 @@
     <FlyoutItem x:Name="Odjava" IsVisible="{Binding LogedIn}" Title="Odjava">
         <ShellContent Route="Odjava" ContentTemplate="{DataTemplate local:Odjava}" />
     </FlyoutItem>
+    <FlyoutItem x:Name="Pregled" IsVisible="{Binding LogedIn}" Title="Moji pregledi">
+        <ShellContent Route="Pregled"     />
+    </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
 
