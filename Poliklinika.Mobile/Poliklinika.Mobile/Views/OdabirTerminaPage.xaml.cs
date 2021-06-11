@@ -57,7 +57,7 @@ namespace Poliklinika.Mobile.Views
                 OdjelID = _odjelID
             };
 
-            await _pregled.Insert<PregledVM.Pregled>(pregled);
+            await Navigation.PushAsync(new PlacanjePage(pregled));
         }
     }
 }

@@ -9,8 +9,8 @@
     <ContentPage.BindingContext>
         <local:ItemsViewModel></local:ItemsViewModel>
     </ContentPage.BindingContext>
-    <ContentPage.Content>
 
+    <ContentPage.Content>
         <StackLayout>
             <Label Text="Odjeli" FontSize="Header"
                    VerticalOptions="CenterAndExpand"

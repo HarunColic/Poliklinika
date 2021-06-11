@@ -7,7 +7,12 @@
         <vm:RegisterVM></vm:RegisterVM>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+        <StackLayout VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" >
+            <Label Text="Unesi email i šifru. Pritiskom na dugme Kreiraj, napravi svoj profil"
+                   FontSize="Medium" Padding="0,30,0,0" TextColor="Orchid"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"/>
             <Label Text="Email" />
             <Entry Text="{Binding Username}"  Placeholder="" />
             <Label Text="Šifra" />
