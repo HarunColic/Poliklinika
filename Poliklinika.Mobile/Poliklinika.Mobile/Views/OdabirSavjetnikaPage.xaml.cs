@@ -16,6 +16,8 @@ namespace Poliklinika.Mobile.Views
         private readonly APIService _odjel = new APIService("Odjel");
         private readonly APIService _doktori = new APIService("Doktor");
         private readonly APIService _konsultacije = new APIService("Konsultacije");
+        private readonly APIService _konsultacijePoruka = new APIService("KonsultacijePoruka");
+
 
         List<DoktorVM> doktori;
         public OdabirSavjetnikaPage(int OdjelID)
@@ -61,7 +63,22 @@ namespace Poliklinika.Mobile.Views
                 konsultacija = await _konsultacije.Insert<response>(req);
             }
 
+            var poruka = new KonsPoruka
+            {
+                KonsultacijeID = konsultacija.ID,
+                UserID = CurrentUser.User.Id,
+                Poruka = Poruka.Text
+            };
+            await _konsultacijePoruka.Insert<KonsPoruka>(poruka);
+
             await Navigation.PushAsync(new ChatPage(konsultacija.ID));
+        }
+
+        public class KonsPoruka 
+        { 
+            public int KonsultacijeID { get; set; }
+            public int UserID { get; set; }
+            public string Poruka { get; set; }
         }
 
         public class request
