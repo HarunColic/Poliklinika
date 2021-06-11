@@ -94,7 +94,7 @@
         <ShellContent Route="Profil" ContentTemplate="{DataTemplate local:Profil}" />
     </FlyoutItem>
     <FlyoutItem x:Name="Poruke" IsVisible="{Binding LogedIn}" Title="Poruke">
-        <ShellContent Route="Poruke" ContentTemplate="{DataTemplate local:Poruke}" />
+        <ShellContent Route="Poruke" ContentTemplate="{DataTemplate local:PrikazChatovaPage}" />
     </FlyoutItem>
     <FlyoutItem x:Name="Prijava" IsVisible="{Binding NotLogedIn}" Title="Prijava">
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />

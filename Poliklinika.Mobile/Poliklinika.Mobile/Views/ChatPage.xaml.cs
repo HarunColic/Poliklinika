@@ -43,7 +43,7 @@ namespace Poliklinika.Mobile.Views
             Container.Children.Add(new Button { Text = "Posalji",
                 Command = new Command( async () =>
                 {
-                    await _konsultacijePoruka.Insert<OdabirSavjetnikaPage.KonsPoruka>(resp);
+                    await _konsultacijePoruka.Insert<response>(resp);
                 })
             });
             base.OnAppearing();
