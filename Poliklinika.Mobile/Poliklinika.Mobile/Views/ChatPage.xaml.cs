@@ -23,30 +23,35 @@ namespace Poliklinika.Mobile.Views
 
         protected override async void OnAppearing()
         {
+
             var svePoruke = await _konsultacijePoruka.Get<List<response>>(null);
             var poruke = svePoruke.Where(x => x.KonsultacijeID == _id);
 
             foreach (var p in poruke) 
             {
-                Container.Children.Add(new Label { Text = p.Poruka });
+                if(p.UserID == CurrentUser.User.Id)
+                    Container.Children.Add(new Label { Text = p.Poruka, HorizontalOptions = LayoutOptions.EndAndExpand });
+                else
+                    Container.Children.Add(new Label { Text = p.Poruka, HorizontalOptions = LayoutOptions.StartAndExpand });
             }
-            
-            Container.Children.Add(new Entry { Placeholder = "Vasa poruka", AutomationId = "Entry" });
-            var entry = (Entry)Container.Children.FirstOrDefault(x => x.AutomationId == "Entry");
+
+            base.OnAppearing();
+        }
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
             var resp = new response
             {
                 KonsultacijeID = _id,
-                Poruka = entry.Text,
+                Poruka = Poruka.Text,
                 UserID = CurrentUser.User.Id
             };
 
-            Container.Children.Add(new Button { Text = "Posalji",
-                Command = new Command( async () =>
-                {
-                    await _konsultacijePoruka.Insert<response>(resp);
-                })
-            });
-            base.OnAppearing();
+            if (!string.IsNullOrWhiteSpace(resp.Poruka))
+            {
+                Poruka.Text = " ";
+                Container.Children.Add(new Label { Text = resp.Poruka, HorizontalOptions = LayoutOptions.EndAndExpand });
+                await _konsultacijePoruka.Insert<response>(resp);
+            }
         }
 
         public class response
