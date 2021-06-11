@@ -146,9 +146,11 @@ namespace Poliklinika.Mobile.ViewModels
 
         public class Pregled
         {
+            public int ID { get; set; }
             public int KorisnikID { get; set; }
             public DateTime Datum { get; set; }
             public int OdjelID { get; set; }
+            public string OdjelNaziv { get; set; }
         }
 
         public class Termin

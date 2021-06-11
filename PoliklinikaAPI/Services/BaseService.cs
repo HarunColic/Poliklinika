@@ -60,7 +60,7 @@ namespace PoliklinikaAPI.Services
 
             _db.Set<T>().Add(m);
             _db.SaveChanges();
-
+            model.GetType().GetProperty("ID").SetValue(model, m.GetType().GetProperty("ID").GetValue(m, null));
             return model;
         }
 
