@@ -12,8 +12,10 @@ namespace Poliklinika.Mobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PrikazNalazaPage : ContentPage
     {
-        public PrikazNalazaPage()
+        private readonly int _id;
+        public PrikazNalazaPage(int id)
         {
+            _id = id;
             InitializeComponent();
         }
     }

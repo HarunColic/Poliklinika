@@ -38,6 +38,7 @@ namespace Poliklinika.Mobile.ViewModels
         }
         public class PreglediVM
         {
+            public int ID { get; set; }
             public int KorisnikID { get; set; }
             public DateTime Datum { get; set; }
             public int OdjelID { get; set; }

@@ -227,7 +227,11 @@ namespace Poliklinika.Mobile.ViewModels
             {
                 if (IsTransectionSuccess)
                 {
-                    var preg = await _pregledServis.Insert<PregledVM.Pregled>(_pregled);
+                    PregledVM.Pregled preg;
+                    if (_pregled.ID != 0)
+                        preg = await _pregledServis.Insert<PregledVM.Pregled>(_pregled);
+                    else
+                        preg = _pregled;
                     
                     var uplata = new Uplata
                     {

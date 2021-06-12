@@ -14,6 +14,8 @@ namespace Poliklinika.Mobile.Views
     public partial class PrikazPregledaPage : ContentPage
     {
         private KorisnikPregled model = null;
+        private readonly APIService _uplate = new APIService("Uplata");
+        private readonly APIService _nalaz = new APIService("Nalaz");
         public PrikazPregledaPage()
         {
             InitializeComponent();
@@ -26,9 +28,35 @@ namespace Poliklinika.Mobile.Views
 
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            await Navigation.PushAsync(new PrikazNalazaPage());
+            var pregled = (PregledVM.Pregled)e.SelectedItem;
+            var uplate = await _uplate.Get<List<PaymentVM.Uplata>>(null);
+            uplate = uplate.Where(x => x.PregledID == pregled.ID).ToList();
+            var nalazLista = await _nalaz.Get<List<NalazVM>>(null);
+            var nalaz= nalazLista.Where(x => x.PregledID == pregled.ID).FirstOrDefault();
+
+            if (nalaz == null)
+            {
+                await Application.Current.MainPage.DisplayAlert
+                   ("Greška", "Pregled još nije izvršen", "OK");
+            }
+
+            else if (uplate.Count()==1)
+            {
+                await Application.Current.MainPage.DisplayAlert
+                   ("Greška", "Morate uplatiti ostatak iznosa cijene pregleda", "OK");
+                await Navigation.PushAsync(new PlacanjePage(pregled));
+            }
+
+            await Navigation.PushAsync(new PrikazNalazaPage(pregled.ID));
+        }
+        public class NalazVM
+        {
+            public int ID { get; set; }
+            public int PregledID { get; set; }
+            public string Opis { get; set; }
         }
     }
 }
