@@ -39,13 +39,6 @@ namespace Poliklinika.Mobile.ViewModels
             SubmitCommand = new Command(async () => await Submit());
             Navigation = navigation;
             _pregled = pregled;
-            GetOdjelNaziv();
-        }
-
-        private async void GetOdjelNaziv()
-        {
-            var odjel = await _odjel.GetById<Odjel>(_pregled.OdjelID);
-            _pregled.odjel.Naziv = odjel.Naziv;
         }
 
         public class Odjel
