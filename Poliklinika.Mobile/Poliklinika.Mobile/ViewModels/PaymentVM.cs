@@ -62,7 +62,7 @@ namespace Poliklinika.Mobile.ViewModels
             public DateTime DatumUplate { get; set; }
         }
 
-        private string StripeTestApiKey = "pk_test_51ITsWFJhqfSL3GBcw3lQq0WwQqPGbri16hs24aIootbfGr4U2bHqzpNCc5oexs9hOf7wxVusWxr70YDc06xvlDdL00CejvATXy";
+        private string StripeTestApiKey = "pk_test_51J1IB4IQ7S2NMYmSbUrGE6zUl3kHJEPxOv2BwCSYTER8YOLHb6Yt0WBGBAGmCg9ZzgKqbV9BxPrWSYIWqXilBmjG00TAnSOOZC";
 
         private CreditCard _creditCardModel;
         private TokenService Tokenservice;
@@ -132,11 +132,11 @@ namespace Poliklinika.Mobile.ViewModels
                         ExpMonth = CreditCardModel.ExpMonth,
                         Cvc = CreditCardModel.Cvc,
                         Name = user.Ime + " " + user.Prezime,
-                        AddressLine1 = "Orašje L21",
-                        AddressLine2 = "11",
-                        AddressCity = "Konjic",
-                        AddressZip = "88400",
-                        AddressState = "Konjic12",
+                        AddressLine1 = "Vukovarska 3",
+                        AddressLine2 = "",
+                        AddressCity = "Tuzla",
+                        AddressZip = "75000",
+                        AddressState = "Tuzla12",
                         AddressCountry = "Bosna i Hercegovina",
                         Currency = "usd",
                     }
@@ -155,7 +155,7 @@ namespace Poliklinika.Mobile.ViewModels
         {
             try
             {
-                StripeConfiguration.ApiKey = "sk_test_51ITsWFJhqfSL3GBcXqWrUGofCVqfLCVWlzB12obhiSRf50cr6HkFhs8pFMKw19AXwPqy1MxTmWpTHffMZLCYFQGI00dP6lZAJl";
+                StripeConfiguration.ApiKey = "sk_test_51J1IB4IQ7S2NMYmSGWTIRBAKKqvPZpSitCGEo736TcDuervfaFBsGoEmbtSNXYWEkqoAJwj8X4uIj8owhHc9ep5I00zDFICA8d";
 
                 var options = new ChargeCreateOptions();
 
