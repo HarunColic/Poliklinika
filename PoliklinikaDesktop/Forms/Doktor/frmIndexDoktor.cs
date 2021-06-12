@@ -62,5 +62,11 @@ namespace PoliklinikaDesktop.Forms.Doktor
 
             Application.Exit();
         }
+
+        private void picPoruke_Click(object sender, EventArgs e)
+        {
+            frmChatIndex raspored = new frmChatIndex();
+            raspored.Show();
+        }
     }
 }
