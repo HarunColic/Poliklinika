@@ -1,4 +1,5 @@
-﻿using Poliklinika.Mobile.Views;
+﻿using Acr.UserDialogs;
+using Poliklinika.Mobile.Views;
 using Poliklinika.Model;
 using System;
 using System.Collections.Generic;
@@ -49,10 +50,17 @@ namespace Poliklinika.Mobile.ViewModels
                     password = this.Password
                 };
 
-                var signup = await _korisnik.Insert<response>(req);
-
+                try
+                {
+                    var signup = await _korisnik.Insert<response>(req);
+                    if(signup != null)
+                        await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+                }
+                catch
+                {
+                    UserDialogs.Instance.Alert("Pogrešan Email ili Password format (Password mora sadržavati slova, brojeve i znakove)", null, "OK");
+                }
                 // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-                await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
             }
 
         }
