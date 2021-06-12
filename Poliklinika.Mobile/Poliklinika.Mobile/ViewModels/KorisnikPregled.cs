@@ -23,17 +23,18 @@ namespace Poliklinika.Mobile.ViewModels
 
         public async Task Init()
         {
-
-            var list = await _pregled.Get<IEnumerable<PreglediVM>>(null);
+            TrenutniKorisnik trenutni = new TrenutniKorisnik
+            {
+                korisnikID = CurrentUser.User.Id
+            };
+               
+            var list = await _pregled.Get<IEnumerable<PreglediVM>>(trenutni);
             PreglediLista.Clear();
 
             foreach (var pregledi in list)
             {
-                if (pregledi.KorisnikID == CurrentUser.User.Id)
-                {
-                    pregledi.odjel = await _odjel.GetById<Odjel>(pregledi.OdjelID);
-                    PreglediLista.Add(pregledi);
-                }
+                 PreglediLista.Add(pregledi);
+                
             }
         }
         public class PreglediVM
@@ -49,6 +50,10 @@ namespace Poliklinika.Mobile.ViewModels
         {
             public int ID { get; set; }
             public string Naziv { get; set; }
+        }
+        public class TrenutniKorisnik
+        {
+            public int korisnikID { get; set; }
         }
     }
 }
