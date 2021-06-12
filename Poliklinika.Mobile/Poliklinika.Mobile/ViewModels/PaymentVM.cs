@@ -20,8 +20,8 @@ namespace Poliklinika.Mobile.ViewModels
 
         INavigation Navigation;
 
-        public PregledVM.Pregled _pregled;
-        public PregledVM.Pregled Pregled { get { return _pregled; } }
+        public KorisnikPregled.PreglediVM _pregled;
+        public KorisnikPregled.PreglediVM Pregled { get { return _pregled; } }
         public string NazivOdjela { get; set; }
         bool IsDigitsOnly(string str)
         {
@@ -34,7 +34,7 @@ namespace Poliklinika.Mobile.ViewModels
             return true;
         }
 
-        public PaymentVM(PregledVM.Pregled pregled, INavigation navigation)
+        public PaymentVM(KorisnikPregled.PreglediVM pregled, INavigation navigation)
         {
             SubmitCommand = new Command(async () => await Submit());
             Navigation = navigation;
@@ -45,7 +45,7 @@ namespace Poliklinika.Mobile.ViewModels
         private async void GetOdjelNaziv()
         {
             var odjel = await _odjel.GetById<Odjel>(_pregled.OdjelID);
-            _pregled.OdjelNaziv = odjel.Naziv;
+            _pregled.odjel.Naziv = odjel.Naziv;
         }
 
         public class Odjel
@@ -227,9 +227,9 @@ namespace Poliklinika.Mobile.ViewModels
             {
                 if (IsTransectionSuccess)
                 {
-                    PregledVM.Pregled preg;
-                    if (_pregled.ID != 0)
-                        preg = await _pregledServis.Insert<PregledVM.Pregled>(_pregled);
+                    KorisnikPregled.PreglediVM preg;
+                    if (_pregled.ID == 0)
+                        preg = await _pregledServis.Insert<KorisnikPregled.PreglediVM>(_pregled);
                     else
                         preg = _pregled;
                     

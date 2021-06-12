@@ -45,17 +45,7 @@ namespace PoliklinikaAPI.Services
                 rasporedi = rasporedi.Where(x => x.Datum.Date.ToString("yyyy.MM.dd") == datum &&
                 x.Pregled.OdjelID == int.Parse(OdjelID)).ToList();
             }
-            var rasp = _db.Raspored.OrderBy(x => x.ID).Last();
-
-            var datumRasp = rasp.Datum.Date.ToString("yyyy.MM.dd");
-            var dt = Datum.Split(" ")[0].Replace('-', '.');
-
-            string real;
-
-            if (datumRasp == dt)
-                real = dt;
-            else
-                real = datumRasp;
+            
 
             return _mapper.Map<List<RasporedVM>>(rasporedi);
         }

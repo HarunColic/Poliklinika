@@ -31,7 +31,7 @@ namespace Poliklinika.Mobile.Views
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var pregled = (PregledVM.Pregled)e.SelectedItem;
+            var pregled = (KorisnikPregled.PreglediVM)e.SelectedItem;
             var uplate = await _uplate.Get<List<PaymentVM.Uplata>>(null);
             uplate = uplate.Where(x => x.PregledID == pregled.ID).ToList();
             var nalazLista = await _nalaz.Get<List<NalazVM>>(null);
@@ -41,6 +41,7 @@ namespace Poliklinika.Mobile.Views
             {
                 await Application.Current.MainPage.DisplayAlert
                    ("Greška", "Pregled još nije izvršen", "OK");
+                
             }
 
             else if (uplate.Count()==1)
@@ -49,7 +50,7 @@ namespace Poliklinika.Mobile.Views
                    ("Greška", "Morate uplatiti ostatak iznosa cijene pregleda", "OK");
                 await Navigation.PushAsync(new PlacanjePage(pregled));
             }
-
+            else
             await Navigation.PushAsync(new PrikazNalazaPage(pregled.ID));
         }
         public class NalazVM
