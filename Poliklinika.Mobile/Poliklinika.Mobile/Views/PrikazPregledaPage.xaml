@@ -12,7 +12,7 @@
             <Label Text="Moji pregledi" FontSize="Header"
                    VerticalOptions="StartAndExpand"
                    HorizontalOptions="StartAndExpand"/>
-            <ListView ItemsSource="{Binding PreglediLista}">
+            <ListView ItemsSource="{Binding PreglediLista}" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -29,7 +29,7 @@
                                         </MultiBinding>
                                     </Label.Text>
                                 </Label>
-                                <Button Text="Pregled nalaza" Clicked="Button_Clicked" />
+                                
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

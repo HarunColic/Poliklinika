@@ -25,9 +25,9 @@ namespace Poliklinika.Mobile.Views
 
             return true;
         }
-        PregledVM.Pregled _pregled;
+        KorisnikPregled.PreglediVM _pregled;
 
-        public PlacanjePage(PregledVM.Pregled pregled)
+        public PlacanjePage(KorisnikPregled.PreglediVM pregled)
         {
             InitializeComponent();
             _pregled = pregled;

@@ -50,7 +50,7 @@ namespace Poliklinika.Mobile.Views
             var stringDate = datum.Date.ToString();
             var newDatum = DateTime.Parse(stringDate) + ts;
 
-            var pregled = new PregledVM.Pregled
+            var pregled = new KorisnikPregled.PreglediVM
             {
                 Datum = newDatum,
                 KorisnikID = CurrentUser.User.Id,

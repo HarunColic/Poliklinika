@@ -35,18 +35,28 @@ namespace Poliklinika.Mobile.ViewModels
 
         private async void OnLoginClicked(object obj)
         {
-            var req = new request
+            if (string.IsNullOrWhiteSpace(this.Username) ||
+               string.IsNullOrWhiteSpace(this.Password))
             {
-                email = this._username,
-                password = this._password
-            };
-            var usr = await _service.Insert<response>(req);
+                await Application.Current.MainPage.DisplayAlert
+                    ("Greška", "Unesite ispravne podatke", "OK");
+            }
+            else
+            {
 
-            CurrentUser.JWT = usr.Token;
-            CurrentUser.User = await _korisnik.GetById<Korisnik>(usr.Id);
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+                var req = new request
+                {
+                    email = this._username,
+                    password = this._password
+                };
+                var usr = await _service.Insert<response>(req);
 
-            await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+                CurrentUser.JWT = usr.Token;
+                CurrentUser.User = await _korisnik.GetById<Korisnik>(usr.Id);
+                // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+
+                await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+            }
         }
         private class request
         {

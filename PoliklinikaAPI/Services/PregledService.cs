@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Poliklinika.Model;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.ViewModels;
@@ -25,7 +26,7 @@ namespace PoliklinikaAPI.Services
         public override List<PregledVM> GetAll()
         {
 
-            var preglediLista = _db.Pregled.ToList();
+            var preglediLista = _db.Pregled.Include(x=>x.Odjel).ToList();
             
             if (!_context.HttpContext.Request.QueryString.HasValue)
             {
@@ -34,6 +35,14 @@ namespace PoliklinikaAPI.Services
             }
             else
             {
+                var KorisnikID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("korisnikID");
+               
+                if (KorisnikID != null)
+                {
+                    preglediLista = preglediLista.Where(x => x.KorisnikID == int.Parse(KorisnikID)).ToList();
+                    return _mapper.Map<List<PregledVM>>(preglediLista);
+                }
+
 
                 var DoktorID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("DoktorID");
 
