@@ -16,6 +16,7 @@ namespace Poliklinika.Mobile.Views
         Button _register;
         private readonly APIService _pregled = new APIService("Pregled");
         private readonly APIService _odjel = new APIService("Odjel");
+        private readonly APIService _korisnik = new APIService("Korisnik");
   
         public AboutPage()
         {
@@ -51,6 +52,7 @@ namespace Poliklinika.Mobile.Views
             }
             if (CurrentUser.IsLogedIn())
             {
+             preporukeContainer.Children.Clear();
                 TrenutniKorisnik trenutni = new TrenutniKorisnik
                 {
                     korisnikID = CurrentUser.User.Id
@@ -83,12 +85,37 @@ namespace Poliklinika.Mobile.Views
 
                 }
 
-                preporukeContainer.Children.Add(new Label
+                var pacijent = await _korisnik.GetById<K>(trenutni.korisnikID);
+                DateTime now = DateTime.Now;
+                int age = now.Year - pacijent.DatumRodjenja.Year;
+                if (age >= 65 && CurrentUser.User.Spol=="M")
                 {
-                    Text = "Na osnovu Vaše starosne dobi preporučujemo pregled na:",
-                    FontSize = 20
-                });
+                    preporukeContainer.Children.Add(new Label
+                    {
+                        Text = "Na osnovu Vaše starosne dobi preporučujemo pregled na:",
+                        FontSize = 20
+                    });
 
+                    preporukeContainer.Children.Add(new Label
+                    {
+                        Text = "Oko 60% slučajeva raka prostate je diagnosticirano " +
+                        "kod osoba starosne dobi od 65 ili više." +
+                        " Vi spadate u ovu grupu ljudi," +
+                        " s toga Vam preporučujemo pregled na odjelu: Urologija",
+                        FontSize = 20
+                    });
+                }
+                if (age >=50 && CurrentUser.User.Spol == "Ž")
+                {
+                    preporukeContainer.Children.Add(new Label
+                    {
+                        Text = "Rak maternice se najčesće pojavjuje kod žena " +
+                        "starosne dobi preko 50. Prosječna dob diagnosticiranih " +
+                        "slučajeva je 60. Vi spadate u ovu grupu, s toga Vam " +
+                        "preporučujemo pregled na odjelu: Ginekologija",
+                        FontSize = 20
+                    });
+                }
             }
             else
                 gridPreporuke.IsVisible = false;
@@ -106,6 +133,11 @@ namespace Poliklinika.Mobile.Views
             public int ID { get; set; }
             public string Naziv { get; set; }
         }
-
+        public class K
+        {
+            public string BrojTelefona { get; set; }
+            public DateTime DatumRodjenja { get; set; }
+            public string KrvnaGrupa { get; set; }
+        }
     }
 }
