@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Poliklinika.Mobile.ViewModels;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static Poliklinika.Mobile.ViewModels.KorisnikPregled;
 
 namespace Poliklinika.Mobile.Views
 {
@@ -10,7 +14,7 @@ namespace Poliklinika.Mobile.Views
 
         Button _login;
         Button _register;
-
+        private readonly APIService _pregled = new APIService("Pregled");
         public AboutPage()
         {
             InitializeComponent();
@@ -18,7 +22,7 @@ namespace Poliklinika.Mobile.Views
             _register = Register;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             if (CurrentUser.IsLogedIn())
             {
@@ -42,6 +46,25 @@ namespace Poliklinika.Mobile.Views
                 _login.IsVisible = true;
                 _register.IsVisible = true;
             }
+            if (CurrentUser.IsLogedIn())
+            {
+                TrenutniKorisnik trenutni = new TrenutniKorisnik
+                {
+                    korisnikID = CurrentUser.User.Id
+                };
+                preporukeView.IsVisible = true;
+                var pregledi = await _pregled.Get<List<KorisnikPregled.TrenutniKorisnik>>(trenutni);
+                
+                if (pregledi.Count() == 0 && string.IsNullOrEmpty(CurrentUser.User.Spol))
+                {
+                    preporukeView.IsVisible = false;
+                }
+                List<int> odjeliID = new List<int>();
+
+
+            }
+            else
+                preporukeView.IsVisible = false;
 
             base.OnAppearing();
         }

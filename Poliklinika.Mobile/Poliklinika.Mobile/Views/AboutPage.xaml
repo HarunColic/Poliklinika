@@ -44,6 +44,11 @@
                         TextColor="White" />
             </StackLayout>
         </ScrollView>
+        <ScrollView x:Name="preporukeView">
+            <StackLayout x:Name="preporukeContainer">
+                <Label Text="Preporuke:" TextColor="Red" FontSize="20"></Label>
+            </StackLayout>
+        </ScrollView>
     </Grid>
-
+    
 </ContentPage>
