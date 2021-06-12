@@ -1,4 +1,5 @@
-﻿using Android.Content.Res;
+﻿using Acr.UserDialogs;
+using Android.Content.Res;
 using Poliklinika.Mobile.Views;
 using Poliklinika.Model;
 using System;
@@ -49,13 +50,26 @@ namespace Poliklinika.Mobile.ViewModels
                     email = this._username,
                     password = this._password
                 };
-                var usr = await _service.Insert<response>(req);
 
-                CurrentUser.JWT = usr.Token;
-                CurrentUser.User = await _korisnik.GetById<Korisnik>(usr.Id);
+                try
+                {
+                    var usr = await _service.Insert<response>(req);
+
+                    if (usr != null)
+                    {
+                        CurrentUser.JWT = usr.Token;
+                        CurrentUser.User = await _korisnik.GetById<Korisnik>(usr.Id);
+                        await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+                    }
+                    else
+                        throw (new Exception("Pogrešan Email ili Password"));
+                }
+                catch(Exception e)
+                {
+                    UserDialogs.Instance.Alert(e.Message, null, "OK");
+
+                }
                 // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-
-                await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
             }
         }
         private class request
