@@ -52,9 +52,10 @@
             // picNalaz
             // 
             this.picNalaz.Image = global::PoliklinikaDesktop.Properties.Resources.nalaz;
-            this.picNalaz.Location = new System.Drawing.Point(771, 216);
+            this.picNalaz.Location = new System.Drawing.Point(881, 288);
+            this.picNalaz.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picNalaz.Name = "picNalaz";
-            this.picNalaz.Size = new System.Drawing.Size(210, 215);
+            this.picNalaz.Size = new System.Drawing.Size(240, 287);
             this.picNalaz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNalaz.TabIndex = 0;
             this.picNalaz.TabStop = false;
@@ -64,18 +65,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(789, 448);
+            this.label1.Location = new System.Drawing.Point(902, 597);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 30);
+            this.label1.Size = new System.Drawing.Size(227, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Izdaj recept/nalaz";
             // 
             // picObaveza
             // 
             this.picObaveza.Image = global::PoliklinikaDesktop.Properties.Resources.obaveze;
-            this.picObaveza.Location = new System.Drawing.Point(108, 216);
+            this.picObaveza.Location = new System.Drawing.Point(123, 288);
+            this.picObaveza.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picObaveza.Name = "picObaveza";
-            this.picObaveza.Size = new System.Drawing.Size(210, 215);
+            this.picObaveza.Size = new System.Drawing.Size(240, 287);
             this.picObaveza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picObaveza.TabIndex = 0;
             this.picObaveza.TabStop = false;
@@ -85,19 +87,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(125, 448);
+            this.label2.Location = new System.Drawing.Point(143, 597);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 30);
+            this.label2.Size = new System.Drawing.Size(214, 37);
             this.label2.TabIndex = 1;
             this.label2.Text = "Pregled obaveza";
             // 
             // picIzvjestaj
             // 
             this.picIzvjestaj.Image = global::PoliklinikaDesktop.Properties.Resources.report2;
-            this.picIzvjestaj.Location = new System.Drawing.Point(316, 500);
-            this.picIzvjestaj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picIzvjestaj.Location = new System.Drawing.Point(361, 667);
             this.picIzvjestaj.Name = "picIzvjestaj";
-            this.picIzvjestaj.Size = new System.Drawing.Size(210, 214);
+            this.picIzvjestaj.Size = new System.Drawing.Size(240, 285);
             this.picIzvjestaj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picIzvjestaj.TabIndex = 0;
             this.picIzvjestaj.TabStop = false;
@@ -107,18 +108,19 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(353, 728);
+            this.label3.Location = new System.Drawing.Point(403, 971);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 60);
+            this.label3.Size = new System.Drawing.Size(190, 74);
             this.label3.TabIndex = 1;
             this.label3.Text = "Dodaj izvještaj\r\n o pregledu";
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::PoliklinikaDesktop.Properties.Resources.poslovne3;
-            this.pictureBox4.Location = new System.Drawing.Point(440, 216);
+            this.pictureBox4.Location = new System.Drawing.Point(503, 288);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(210, 214);
+            this.pictureBox4.Size = new System.Drawing.Size(240, 285);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
@@ -128,18 +130,19 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(452, 448);
+            this.label4.Location = new System.Drawing.Point(517, 597);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(181, 30);
+            this.label4.Size = new System.Drawing.Size(234, 37);
             this.label4.TabIndex = 1;
             this.label4.Text = "Pregled rasporeda";
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
-            this.pictureBox5.Location = new System.Drawing.Point(225, 36);
+            this.pictureBox5.Location = new System.Drawing.Point(257, 48);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(605, 138);
+            this.pictureBox5.Size = new System.Drawing.Size(691, 184);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
@@ -149,9 +152,9 @@
             this.lblTrenutniUser.AutoSize = true;
             this.lblTrenutniUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTrenutniUser.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTrenutniUser.Location = new System.Drawing.Point(929, 15);
+            this.lblTrenutniUser.Location = new System.Drawing.Point(1062, 20);
             this.lblTrenutniUser.Name = "lblTrenutniUser";
-            this.lblTrenutniUser.Size = new System.Drawing.Size(52, 21);
+            this.lblTrenutniUser.Size = new System.Drawing.Size(65, 28);
             this.lblTrenutniUser.TabIndex = 5;
             this.lblTrenutniUser.Text = "label5";
             this.lblTrenutniUser.Click += new System.EventHandler(this.TrenutniUser_Click);
@@ -161,9 +164,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(929, 55);
+            this.label6.Location = new System.Drawing.Point(1062, 73);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 21);
+            this.label6.Size = new System.Drawing.Size(75, 28);
             this.label6.TabIndex = 8;
             this.label6.Text = "Logout";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -171,29 +174,31 @@
             // picPoruke
             // 
             this.picPoruke.Image = global::PoliklinikaDesktop.Properties.Resources.poruke;
-            this.picPoruke.Location = new System.Drawing.Point(586, 500);
+            this.picPoruke.Location = new System.Drawing.Point(670, 667);
+            this.picPoruke.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picPoruke.Name = "picPoruke";
-            this.picPoruke.Size = new System.Drawing.Size(210, 215);
+            this.picPoruke.Size = new System.Drawing.Size(240, 287);
             this.picPoruke.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPoruke.TabIndex = 9;
             this.picPoruke.TabStop = false;
+            this.picPoruke.Click += new System.EventHandler(this.picPoruke_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(605, 728);
+            this.label5.Location = new System.Drawing.Point(691, 971);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 30);
+            this.label5.Size = new System.Drawing.Size(210, 37);
             this.label5.TabIndex = 10;
             this.label5.Text = "Pitanja korisnika";
             // 
             // frmIndexDoktor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1095, 793);
+            this.ClientSize = new System.Drawing.Size(1251, 1055);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.picPoruke);
             this.Controls.Add(this.label6);
@@ -207,6 +212,7 @@
             this.Controls.Add(this.picObaveza);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picNalaz);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmIndexDoktor";
             this.Text = "frmIndexDoktor";
             this.Load += new System.EventHandler(this.frmIndexDoktor_Load);
