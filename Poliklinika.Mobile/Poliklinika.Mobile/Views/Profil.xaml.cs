@@ -27,11 +27,21 @@ namespace Poliklinika.Mobile.Views
             Ime.Text = user.Ime;
             Prezime.Text = user.Prezime;
             Email.Text = user.Email;
-            Spol.Text = user.Spol;
             KrvnaGrupa.Text = user.KrvnaGrupa;
             BrojTelefon.Text = user.BrojTelefona;
             DatumRodjenja.Date = user.DatumRodjenja;
-
+            
+            List<string> listSpol = new List<string>()
+                {
+                    "M",
+                    "Ž"
+                };
+            picker.ItemsSource=listSpol;
+            if (user.Spol == "M")
+                picker.SelectedIndex = 0;
+            else
+                picker.SelectedIndex = 1;
+           
             base.OnAppearing();
         }
     }
