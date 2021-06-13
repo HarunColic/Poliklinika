@@ -22,7 +22,7 @@ namespace Poliklinika.Mobile.ViewModels
             set { SetProperty(ref _odjelID, value); }
         }
         
-        DateTime _datum;
+        DateTime _datum=DateTime.Now;
         public DateTime Datum
         {
             get { return _datum; }
