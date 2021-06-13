@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Poliklinika.Model;
 using PoliklinikaAPI.Interfaces;
@@ -12,6 +13,7 @@ namespace PoliklinikaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     public class TehnicarController : ControllerBase
     {
         private UserBaseInterface<Tehnicar, TehnicarVM, CreateTehnicarVM> _userInterface;
@@ -33,12 +35,14 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<TehnicarVM> Insert(CreateTehnicarVM tehnicar)
         {
             return await _userInterface.Insert(tehnicar);
         }
 
         [HttpPut]
+        [Authorize(Roles = "Tehnicar")]
         public TehnicarVM Update(int id, TehnicarVM tehnicar)
         {
             return _userInterface.Update(tehnicar);
@@ -50,6 +54,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost("update-password")]
+        [Authorize(Roles = "Tehnicar")]
         public void UpdatePassword(UpdatePasswordVM update)
         {
             _userInterface.UpdatePassword(update);

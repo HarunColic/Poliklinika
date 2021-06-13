@@ -13,6 +13,7 @@ namespace PoliklinikaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     public class OdjelController : ControllerBase
     {
         protected BaseInterface<Odjel, OdjelVM> _odjelInterface;
@@ -35,17 +36,20 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public OdjelVM Insert(OdjelVM odjel)
         {
             return _odjelInterface.Insert(odjel);
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public OdjelVM Update(OdjelVM odjel)
         {
             return _odjelInterface.Update(odjel);
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public void Delete(int id)
         {
              _odjelInterface.Delete(id);

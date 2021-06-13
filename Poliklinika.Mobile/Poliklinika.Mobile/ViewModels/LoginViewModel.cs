@@ -45,6 +45,9 @@ namespace Poliklinika.Mobile.ViewModels
             else
             {
 
+                APIService.Username = Username;
+                APIService.Password = Password;
+
                 var req = new request
                 {
                     email = this._username,

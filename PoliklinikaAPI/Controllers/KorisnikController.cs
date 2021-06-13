@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Poliklinika.Model;
@@ -13,6 +14,7 @@ namespace PoliklinikaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     public class KorisnikController : ControllerBase
     {
         protected UserBaseInterface<Korisnik, KorisnikVM, SignUpKorisnikVM> _userInterface;
@@ -44,6 +46,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Korisnik")]
         public KorisnikVM Update(KorisnikVM korisnik)
         {
             return _userInterface.Update(korisnik);
@@ -55,6 +58,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost("update-password")]
+        [Authorize(Roles = "Korisnik")]
         public void UpdatePassword(UpdatePasswordVM update)
         {
             _userInterface.UpdatePassword(update);

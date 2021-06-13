@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Poliklinika.Model;
 using PoliklinikaAPI.Interfaces;
@@ -12,6 +13,7 @@ namespace PoliklinikaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     public class PregledController : ControllerBase
     {
         private BaseInterface<Pregled, PregledVM> _baseInterface;
@@ -34,17 +36,20 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Korisnik")]
         public PregledVM Insert(PregledVM model)
         {
             return _baseInterface.Insert(model);
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public PregledVM Update(PregledVM model)
         {
             return _baseInterface.Update(model);
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin, Korisnik")]
         public void Delete(int id)
         {
             _baseInterface.Delete(id);

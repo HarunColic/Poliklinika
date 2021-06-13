@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,13 +14,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Poliklinika.Model;
+using PoliklinikaApi.Helpers;
 using PoliklinikaAPI.Data;
 using PoliklinikaAPI.Helpers;
 using PoliklinikaAPI.Interfaces;
 using PoliklinikaAPI.Mappers;
 using PoliklinikaAPI.Services;
 using PoliklinikaAPI.ViewModels;
+using AuthenticationService = PoliklinikaAPI.Services.AuthenticationService;
 
 namespace PoliklinikaAPI
 {
@@ -40,7 +44,35 @@ namespace PoliklinikaAPI
             services.AddHttpContextAccessor();
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "eCourse API", Version = "v1" });
+                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "basic",
+                    In = ParameterLocation.Header
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                          new OpenApiSecurityScheme
+                          {
+                              Reference = new OpenApiReference
+                              {
+                                  Type = ReferenceType.SecurityScheme,
+                                  Id = "basic"
+                              }
+                          },
+                          new string[] {}
+                    }
+                });
+            });
+
+            services.AddAuthentication("BasicAuthentication")
+             .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
             services.AddDbContext<DBContext>(
             options => options.UseSqlServer("name=cs1"),
             ServiceLifetime.Transient);
@@ -102,14 +134,11 @@ namespace PoliklinikaAPI
 
             app.UseAuthorization();
 
-
             app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 
-            app.UseMiddleware<JwtMiddleware>();
-            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

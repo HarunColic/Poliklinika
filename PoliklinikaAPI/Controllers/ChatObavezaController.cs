@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Poliklinika.Model;
 using PoliklinikaAPI.Interfaces;
@@ -12,6 +13,7 @@ namespace PoliklinikaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     public class ChatObavezaController : ControllerBase
     {
         private BaseInterface<ChatObaveza, ChatObavezaVM> _baseInterface;
@@ -21,12 +23,14 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin, Doktor")]
         public ChatObavezaVM Get(int id)
         {
             return _baseInterface.GetById(id);
         }
 
         [HttpPost]
+        [Authorize(Roles = "Doktor")]
         public ChatObavezaVM Insert(ChatObavezaVM model)
         {
             return _baseInterface.Insert(model);

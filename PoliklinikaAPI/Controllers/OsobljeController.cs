@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Poliklinika.Model;
 using PoliklinikaAPI.Interfaces;
@@ -12,6 +13,7 @@ namespace PoliklinikaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     public class OsobljeController : ControllerBase
     {
         private BaseInterface<Osoblje, OsobljeVM> _baseInterface;
@@ -33,6 +35,7 @@ namespace PoliklinikaAPI.Controllers
             return _baseInterface.GetAll();
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public void Delete(int id)
         {
             _baseInterface.Delete(id);
