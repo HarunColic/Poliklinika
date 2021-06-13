@@ -21,7 +21,7 @@
             <Label Text="Broj Telefona" />
             <Entry x:Name="BrojTelefon" Text="{Binding BrojTelefona}"  Placeholder="" />
             <Label Text="Spol" />
-            <Entry x:Name="Spol" Text="{Binding Spol}"  Placeholder="" />
+            <Picker x:Name="picker" SelectedItem="{Binding Spol}" />
             <Label Text="Krvna Grupa" />
             <Entry x:Name="KrvnaGrupa" Text="{Binding KrvnaGrupa}"  Placeholder="" />
             <Label Text="Datum Rodjenja" />
