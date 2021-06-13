@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Poliklinika.Model;
 using PoliklinikaAPI.Interfaces;
@@ -12,6 +13,7 @@ namespace PoliklinikaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     public class UplataController : ControllerBase
     {
         private BaseInterface<Uplata, UplataVM> _baseInterface;
@@ -34,6 +36,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Korisnik")]
         public UplataVM Insert(UplataVM model)
         {
             return _baseInterface.Insert(model);

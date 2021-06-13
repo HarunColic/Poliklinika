@@ -18,7 +18,7 @@ namespace PoliklinikaAPI.ViewModels
         public string Role { get; set; }
         public string Token { get; set; }
 
-        public AuthenticateResponse(User user, string token)
+        public AuthenticateResponse(User user)
         {
             if (user != null)
             {
@@ -27,7 +27,7 @@ namespace PoliklinikaAPI.ViewModels
                 Prezime = user.Prezime;
                 Email = user.Email;
                 Role = user.GetType().Name;
-                Token = token;
+                Token = "";
             }
         }
     }

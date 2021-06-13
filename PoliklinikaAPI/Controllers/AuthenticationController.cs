@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Poliklinika.Model;
 using PoliklinikaAPI.Interfaces;
 using PoliklinikaAPI.Services;
 using PoliklinikaAPI.ViewModels;

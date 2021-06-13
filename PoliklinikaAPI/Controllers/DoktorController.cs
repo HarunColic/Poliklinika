@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Poliklinika.Model;
@@ -12,6 +13,7 @@ namespace PoliklinikaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     public class DoktorController : ControllerBase
     {
         protected UserBaseInterface<Doktor, DoktorVM, CreateDoktorVM> _userInterface;
@@ -21,6 +23,7 @@ namespace PoliklinikaAPI.Controllers
             _userInterface = userInterface;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IList<DoktorVM> GetAll()
         {
@@ -34,23 +37,27 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public Task<DoktorVM> Insert(CreateDoktorVM doktor)
         {
             return _userInterface.Insert(doktor);
         }
 
         [HttpPut]
+        [Authorize(Roles = "Doktor")]
         public DoktorVM Update(DoktorVM doktor)
         {
             return _userInterface.Update(doktor);
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public void Delete(int id)
         {
             _userInterface.Delete(id);
         }
 
         [HttpPost("update-password")]
+        [Authorize(Roles = "Doktor")]
         public void UpdatePassword(UpdatePasswordVM update)
         {
             _userInterface.UpdatePassword(update);

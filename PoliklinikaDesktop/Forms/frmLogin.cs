@@ -36,6 +36,9 @@ namespace PoliklinikaDesktop.Forms
                 request.Email = textEmail.Text;
                 request.Password = textPassword.Text;
 
+                APIService.Username = textEmail.Text;
+                APIService.Username = textPassword.Text;
+
                 AuthenticateResponse result = null;
 
                 try

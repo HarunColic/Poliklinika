@@ -10,6 +10,9 @@ namespace Poliklinika.Mobile
 {
     class APIService
     {
+        public static string Username { get; set; }
+        public static string Password { get; set; }
+
         private string _route = null;
         public APIService(string route)
         {
@@ -31,41 +34,40 @@ namespace Poliklinika.Mobile
                 result += "?";
                 result += await search.ToQueryString();
             }
-
-            return await result.GetJsonAsync<T>();
+            return await result.WithBasicAuth(Username, Password).GetJsonAsync<T>();
 
         }
         public async Task<T> GetById<T>(object id)
         {
             var result = $"{_apiUrl}/{_route}/{id}";
 
-            return await result.GetJsonAsync<T>();
+            return await result.WithBasicAuth(Username, Password).GetJsonAsync<T>();
         }
 
         public async Task<T> Insert<T>(object request)
         {
             var result = $"{_apiUrl}/{_route}";
 
-            return await result.PostJsonAsync(request).ReceiveJson<T>();
+            return await result.WithBasicAuth(Username, Password).PostJsonAsync(request).ReceiveJson<T>();
         }
         public async Task<T> Update<T>(object request)
         {
             var result = $"{_apiUrl}/{_route}";
 
-            return await result.PutJsonAsync(request).ReceiveJson<T>();
+            return await result.WithBasicAuth(Username, Password).PutJsonAsync(request).ReceiveJson<T>();
         }
         public async Task<T> Delete<T>(object id)
         {
             var result = $"{_apiUrl}/{_route}/{id}";
 
-            return await result.DeleteAsync().ReceiveJson<T>();
+            return await result.WithBasicAuth(Username, Password).DeleteAsync().ReceiveJson<T>();
         }
 
         public async void UpdatePassword<T>(object request)
         {
             var result = $"{_apiUrl}/{_route}/update-password";
 
-            await result.PostJsonAsync(request);
+            await result.WithBasicAuth(Username, Password).PostJsonAsync(request);
         }
     }
 }
