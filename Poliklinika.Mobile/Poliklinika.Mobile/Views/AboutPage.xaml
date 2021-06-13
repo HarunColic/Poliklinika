@@ -17,7 +17,7 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition  />
             
         </Grid.RowDefinitions>
         <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
@@ -46,7 +46,7 @@
         </ScrollView>
         <Grid x:Name="gridPreporuke">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
+                <RowDefinition />
                 
             </Grid.RowDefinitions>
             <ScrollView Grid.Row="2" >
