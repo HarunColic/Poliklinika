@@ -50,22 +50,25 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // tblChat
             // 
             this.tblChat.AutoScroll = true;
+            this.tblChat.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tblChat.ColumnCount = 1;
             this.tblChat.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblChat.Location = new System.Drawing.Point(12, 12);
+            this.tblChat.Location = new System.Drawing.Point(10, 9);
+            this.tblChat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tblChat.Name = "tblChat";
             this.tblChat.RowCount = 1;
             this.tblChat.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblChat.Size = new System.Drawing.Size(881, 456);
+            this.tblChat.Size = new System.Drawing.Size(771, 342);
             this.tblChat.TabIndex = 6;
             // 
             // btnPosalji
             // 
             this.btnPosalji.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnPosalji.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPosalji.Location = new System.Drawing.Point(792, 500);
+            this.btnPosalji.Location = new System.Drawing.Point(693, 375);
+            this.btnPosalji.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPosalji.Name = "btnPosalji";
-            this.btnPosalji.Size = new System.Drawing.Size(101, 40);
+            this.btnPosalji.Size = new System.Drawing.Size(88, 30);
             this.btnPosalji.TabIndex = 5;
             this.btnPosalji.Text = "Pošalji";
             this.btnPosalji.UseVisualStyleBackColor = false;
@@ -73,20 +76,22 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             // txtPoruka
             // 
-            this.txtPoruka.Location = new System.Drawing.Point(12, 492);
+            this.txtPoruka.Location = new System.Drawing.Point(10, 369);
+            this.txtPoruka.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPoruka.Name = "txtPoruka";
-            this.txtPoruka.Size = new System.Drawing.Size(751, 62);
+            this.txtPoruka.Size = new System.Drawing.Size(658, 48);
             this.txtPoruka.TabIndex = 4;
             this.txtPoruka.Text = "";
             // 
             // FrmChat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 581);
+            this.ClientSize = new System.Drawing.Size(802, 436);
             this.Controls.Add(this.tblChat);
             this.Controls.Add(this.btnPosalji);
             this.Controls.Add(this.txtPoruka);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmChat";
             this.Text = "FrmChat";
             this.Load += new System.EventHandler(this.FrmChat_Load);

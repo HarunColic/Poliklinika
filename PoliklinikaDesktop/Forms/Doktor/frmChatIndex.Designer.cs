@@ -32,12 +32,12 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvPoruke = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoruke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -47,9 +47,9 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 107);
+            this.label2.Location = new System.Drawing.Point(10, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 37);
+            this.label2.Size = new System.Drawing.Size(125, 30);
             this.label2.TabIndex = 10;
             this.label2.Text = "Vaše poruke";
             // 
@@ -57,11 +57,9 @@ namespace PoliklinikaDesktop.Forms.Doktor
             // 
             this.groupBox1.Controls.Add(this.dgvPoruke);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(4, 186);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(4, 140);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(775, 251);
+            this.groupBox1.Size = new System.Drawing.Size(678, 188);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
@@ -77,35 +75,14 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.Ime,
             this.dataGridViewTextBoxColumn2});
             this.dgvPoruke.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPoruke.Location = new System.Drawing.Point(3, 39);
-            this.dgvPoruke.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvPoruke.Location = new System.Drawing.Point(3, 31);
             this.dgvPoruke.Name = "dgvPoruke";
             this.dgvPoruke.ReadOnly = true;
             this.dgvPoruke.RowHeadersWidth = 51;
             this.dgvPoruke.RowTemplate.Height = 25;
-            this.dgvPoruke.Size = new System.Drawing.Size(769, 208);
+            this.dgvPoruke.Size = new System.Drawing.Size(672, 154);
             this.dgvPoruke.TabIndex = 0;
             this.dgvPoruke.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPoruke_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(-44, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 37);
-            this.label1.TabIndex = 8;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 13);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(322, 67);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -148,15 +125,36 @@ namespace PoliklinikaDesktop.Forms.Doktor
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(-38, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 30);
+            this.label1.TabIndex = 8;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(282, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmChatIndex
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 442);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(689, 332);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmChatIndex";
             this.Text = "frmChatIndex";
             this.Load += new System.EventHandler(this.frmChatIndex_Load);
