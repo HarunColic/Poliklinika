@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Poliklinika.Mobile.Views.AboutPage"
-             xmlns:vm="clr-namespace:Poliklinika.Mobile.ViewModels"
-             Title="{Binding Title}">
+             xmlns:vm="clr-namespace:Poliklinika.Mobile.ViewModels">
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
@@ -23,8 +22,8 @@
         </Grid.RowDefinitions>
         <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,0" VerticalOptions="FillAndExpand">
-                    <Image Source="logo.JPG" VerticalOptions="Center" HeightRequest="123" />
+                <ContentView  VerticalOptions="FillAndExpand">
+                    <Image Source="logo.JPG" Margin="0,30,0,0" VerticalOptions="Center" HeightRequest="123" />
                 </ContentView>
             </StackLayout>
         </StackLayout>
@@ -46,9 +45,13 @@
            
         </ScrollView>
         <Grid x:Name="gridPreporuke">
-            
-        <ScrollView Grid.Row="2" >
-            <StackLayout x:Name="preporukeContainer">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="2" >
+                <StackLayout Orientation="Vertical"
+                             x:Name="preporukeContainer">
                 
             </StackLayout>
         </ScrollView>
