@@ -52,6 +52,8 @@ namespace PoliklinikaDesktop.Forms.Odjel
                 }
                 else
                 {
+                    var user = CurrentUser.User;
+                    var role = CurrentUser.Role;
                     await _service.Insert<OdjelVM>(request);
                 }
                 MessageBox.Show("Operacija uspješna");

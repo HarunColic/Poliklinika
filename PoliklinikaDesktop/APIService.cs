@@ -18,6 +18,12 @@ namespace PoliklinikaDesktop
         public APIService(string route)
         {
             _route = route;
+
+            if(string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(Password))
+            {
+                Username = "";
+                Password = "";
+            }
         }
         public async Task<T> Get<T>(object search)
         {
