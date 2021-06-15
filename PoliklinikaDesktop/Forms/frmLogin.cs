@@ -33,16 +33,16 @@ namespace PoliklinikaDesktop.Forms
             if(this.ValidateChildren())
             {
 
-                request.Email = textEmail.Text;
-                request.Password = textPassword.Text;
-
-                APIService.Username = textEmail.Text;
-                APIService.Username = textPassword.Text;
-
                 AuthenticateResponse result = null;
 
                 try
                 {
+                    request.Email = textEmail.Text;
+                    request.Password = textPassword.Text;
+
+                    APIService.Username = textEmail.Text;
+                    APIService.Password = textPassword.Text;
+
                     result = await _service.Insert<AuthenticateResponse>(request);
 
                     if (result == null)
