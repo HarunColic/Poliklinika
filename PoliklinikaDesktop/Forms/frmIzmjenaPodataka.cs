@@ -82,7 +82,7 @@ namespace PoliklinikaDesktop.Forms
                     _admin.UpdatePassword<UpdatePasswordVM>(update);
                 }
 
-                await _admin.Update<Admin>(admin);
+                await _admin.Update< Admin>(admin);
             }
         }
     }
