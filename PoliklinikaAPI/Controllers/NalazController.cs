@@ -22,14 +22,14 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Doktor, Korisnik")]
+        [Authorize(Roles = "Doktor")]
         public NalazVM Insert(NalazVM nalaz)
         {
             return _nalazInterface.Insert(nalaz);
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin, Doktor")]
+        [Authorize(Roles = "Admin, Doktor, Korisnik")]
         public List<NalazVM> GetAll()
         {
             return _nalazInterface.GetAll();

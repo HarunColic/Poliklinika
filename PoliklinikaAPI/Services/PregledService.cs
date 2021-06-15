@@ -37,7 +37,7 @@ namespace PoliklinikaAPI.Services
             {
                 var KorisnikID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("korisnikID");
                
-                if (KorisnikID != null)
+                if (KorisnikID != null && KorisnikID != "0")
                 {
                     preglediLista = preglediLista.Where(x => x.KorisnikID == int.Parse(KorisnikID)).ToList();
                     return _mapper.Map<List<PregledVM>>(preglediLista);
