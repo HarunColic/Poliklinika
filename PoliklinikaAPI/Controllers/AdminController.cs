@@ -47,6 +47,13 @@ namespace PoliklinikaAPI.Controllers
             return _userInterface.Get(id);
         }
 
+        [HttpPut]
+        [Authorize(Roles = "Admin")]
+        public Admin Update(Admin admin)
+        {
+            return _userInterface.Update(admin);
+        }
+
         [HttpPost("update-password")]
         [Authorize(Roles = "Admin")]
         public void UpdatePassword(UpdatePasswordVM update)
