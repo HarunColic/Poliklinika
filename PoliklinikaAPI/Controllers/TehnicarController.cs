@@ -23,12 +23,14 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IList<TehnicarVM> GetAll()
         {
             return _userInterface.GetAll();
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public TehnicarVM Get(int id)
         {
             return _userInterface.Get(id);
@@ -48,6 +50,7 @@ namespace PoliklinikaAPI.Controllers
             return _userInterface.Update(tehnicar);
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Tehnicar")]
         public void Delete(int id)
         {
             _userInterface.Delete(id);
