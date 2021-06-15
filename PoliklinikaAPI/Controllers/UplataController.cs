@@ -24,12 +24,14 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public List<UplataVM> GetAll()
         {
             return _baseInterface.GetAll();
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public UplataVM Get(int id)
         {
             return _baseInterface.GetById(id);
@@ -43,11 +45,13 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPut]
+        [AllowAnonymous]
         public UplataVM Update(UplataVM model)
         {
             return _baseInterface.Update(model);
         }
         [HttpDelete("{id}")]
+        [AllowAnonymous]
         public void Delete(int id)
         {
             _baseInterface.Delete(id);

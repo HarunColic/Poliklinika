@@ -74,9 +74,15 @@ namespace Poliklinika.Mobile.ViewModels
 
                 try
                 {
+
                     var signup = await _korisnik.Insert<response>(req);
                     if(signup != null)
+                    {
+                        await Application.Current.MainPage.DisplayAlert
+                           ("Uspješna registracija", "Molimo ulogujte se", "OK");
+                        
                         await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+                    }
                 }
                 catch
                 {

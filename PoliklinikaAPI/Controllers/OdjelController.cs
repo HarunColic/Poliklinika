@@ -24,6 +24,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public List<OdjelVM> GetAll()
         {
             return _odjelInterface.GetAll();

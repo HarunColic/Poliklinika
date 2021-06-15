@@ -28,12 +28,14 @@ namespace PoliklinikaAPI.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
         public IList<KorisnikVM> GetAll()
         {
             return _userInterface.GetAll();
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public Korisnik Get(int id)
         {
             return _db.Korisnik.Find(id);
@@ -53,6 +55,7 @@ namespace PoliklinikaAPI.Controllers
             return _userInterface.Update(korisnik);
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Korisnik")]
         public void Delete(int id)
         {
             _userInterface.Delete(id);

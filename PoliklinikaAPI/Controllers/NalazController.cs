@@ -36,7 +36,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin, Doktor")]
+        [Authorize(Roles = "Admin, Doktor, Korisnik")]
         public NalazVM Get(int id)
         {
             return _nalazInterface.GetById(id);
