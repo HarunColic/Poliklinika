@@ -83,7 +83,6 @@ namespace PoliklinikaAPI.Services
             string role = null;
 
             var rlResult = await _roleManager.FindByNameAsync(roleName);
-            role = rlResult.Name;
 
             if (role == null || role == "")
             {
@@ -92,6 +91,8 @@ namespace PoliklinikaAPI.Services
                 var roleResult = await _roleManager.FindByNameAsync(roleName);
                 role = roleResult.Name;
             }
+            else
+                role = rlResult.Name;
 
             if (userCreateResult.Succeeded)
             {
