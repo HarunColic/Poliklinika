@@ -40,6 +40,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<KorisnikVM> Insert(SignUpKorisnikVM korisnik)
         {
             return await _userInterface.Insert(korisnik);

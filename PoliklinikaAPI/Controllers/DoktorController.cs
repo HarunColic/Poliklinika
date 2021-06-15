@@ -23,7 +23,6 @@ namespace PoliklinikaAPI.Controllers
             _userInterface = userInterface;
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IList<DoktorVM> GetAll()
         {
