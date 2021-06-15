@@ -24,7 +24,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin, Doktor, Tehnicar")]
+        [Authorize]
         public List<RasporedVM> Index()
         {
             return _baseInterface.GetAll();
