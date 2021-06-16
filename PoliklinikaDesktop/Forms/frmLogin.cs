@@ -46,11 +46,11 @@ namespace PoliklinikaDesktop.Forms
                     result = await _service.Insert<AuthenticateResponse>(request);
 
                     if (result == null)
-                        throw new Exception("Netacan Email ili sifra");
+                        throw new Exception("Netačan email ili šifra");
                 }
                 catch(Exception exc)
                 {
-                    MessageBox.Show(exc.Message, "Neuspjesan login",
+                    MessageBox.Show(exc.Message, "Neuspješan login",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -82,7 +82,7 @@ namespace PoliklinikaDesktop.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Korisnika nije moguce ulogovati", "Neuspjesan login",
+                    MessageBox.Show("Korisnika nije moguće ulogovati", "Neuspješan login",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
