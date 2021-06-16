@@ -42,6 +42,7 @@ namespace PoliklinikaDesktop.Forms.Odjel
             {
                 var id = dgvOdjeli.SelectedRows[0].Cells[0].Value;
                 await _apiService.Delete<object>(id);
+                MessageBox.Show("Operacija uspješna");
             }
            
         }
