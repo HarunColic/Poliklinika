@@ -30,6 +30,7 @@ namespace PoliklinikaAPI.Controllers
         [AllowAnonymous]
         public Admin Index()
         {
+          
             return _db.Admin.FirstOrDefault();
         }
 
@@ -37,7 +38,11 @@ namespace PoliklinikaAPI.Controllers
         [AllowAnonymous]
         public async Task<Admin> Insert(SignupAdminVM korisnik)
         {
-            return await _userInterface.Insert(korisnik);
+            var list = _db.Admin.ToList().Count();
+            if (list == 0)
+                return await _userInterface.Insert(korisnik);
+            else
+                throw (new Exception("Administrator već postoji!"));
         }
 
         [HttpGet("{id}")]
