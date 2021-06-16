@@ -60,6 +60,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
                 }
                 else
                 {
+                    request.Aktivna = true;
                     await _service.Insert<ObavezaVM>(request);
                 }
                 MessageBox.Show("Operacija uspješna");

@@ -45,7 +45,15 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
                 {
                     request.Password = txtPassword.Text;
                     request.Email = txtEmail.Text;
-                    await _service.Insert<TehnicarVM>( request);
+                    try
+                    {
+
+                        await _service.Insert<TehnicarVM>( request);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("");
+                    }
                 }
                 MessageBox.Show("Operacija uspješna");
             }
