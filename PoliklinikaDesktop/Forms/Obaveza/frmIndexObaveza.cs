@@ -46,7 +46,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             if (columnIndex == 3)
             {
                 var id = dgvObaveze.CurrentRow.Cells[0].Value;
-                frmDetaljiOsobljeObaveza detalji = new frmDetaljiOsobljeObaveza
+                frmDetaljiObaveza detalji = new frmDetaljiObaveza
                     (int.Parse(id.ToString()));
                 detalji.Show();
             }
@@ -54,17 +54,17 @@ namespace PoliklinikaDesktop.Forms.Obaveza
 
         private async void dgvAktivne_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int columnIndex = dgvObaveze.CurrentCell.ColumnIndex;
+            int columnIndex = dgvAktivne.CurrentCell.ColumnIndex;
             if (columnIndex == 3)
             {
-                var id = dgvObaveze.CurrentRow.Cells[0].Value;
-                frmDetaljiObaveza detalji = new frmDetaljiObaveza
+                var id = dgvAktivne.CurrentRow.Cells[0].Value;
+                frmDetaljiOsobljeObaveza detalji = new frmDetaljiOsobljeObaveza
                     (int.Parse(id.ToString()));
                 detalji.Show();
             }
             else if(columnIndex == 4)
             {
-                var id = dgvObaveze.CurrentRow.Cells[0].Value;
+                var id = dgvAktivne.CurrentRow.Cells[0].Value;
                 await _service.Delete<object>(id);
             }
         }

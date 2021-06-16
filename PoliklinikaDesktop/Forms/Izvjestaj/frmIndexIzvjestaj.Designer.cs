@@ -106,6 +106,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             // 
             this.dgvIzvjestaj.AllowUserToAddRows = false;
             this.dgvIzvjestaj.AllowUserToDeleteRows = false;
+            this.dgvIzvjestaj.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvIzvjestaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIzvjestaj.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
