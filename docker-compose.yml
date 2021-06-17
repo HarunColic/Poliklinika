@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=poliklinika
+      - SA_PASSWORD=Poliklinika-123
       - MSSQL_PID=Developer
     ports:
       - 1401:1433
