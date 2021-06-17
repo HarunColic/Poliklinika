@@ -43,7 +43,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             dgvIzvrsene.DataSource = result2;
         }
 
-        private async void dgvAktivne_CellClick(object sender, DataGridViewCellEventArgs e)
+        private  void dgvAktivne_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int columnIndex = dgvAktivne.CurrentCell.ColumnIndex;
             if (columnIndex == 3)
@@ -51,6 +51,18 @@ namespace PoliklinikaDesktop.Forms.Obaveza
                 var id = int.Parse(dgvAktivne.CurrentRow.Cells[0].Value.ToString());
                 
                 frmDetaljiOsobljeObaveza detalji = new frmDetaljiOsobljeObaveza(id);
+                detalji.Show();
+            }
+        }
+
+        private void dgvIzvrsene_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int columnIndex = dgvIzvrsene.CurrentCell.ColumnIndex;
+            if (columnIndex == 3)
+            {
+                var id = int.Parse(dgvIzvrsene.CurrentRow.Cells[0].Value.ToString());
+
+                frmDetaljiObaveza detalji = new frmDetaljiObaveza(id);
                 detalji.Show();
             }
         }

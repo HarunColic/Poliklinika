@@ -40,7 +40,9 @@ namespace PoliklinikaDesktop.Forms.Obaveza
                 cmbZaposlenik.Enabled = false;
 
                 dtpDatum.Value = obaveza.Datum;
+                dtpDatum.Enabled = false;
                 txtOpis.Text = obaveza.Opis;
+                txtOpis.Enabled = false;
             }
         }
 
