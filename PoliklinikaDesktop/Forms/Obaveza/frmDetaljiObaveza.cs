@@ -33,7 +33,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             {
                 obaveza = await _service.GetById<ObavezaVM>(_id);
 
-                cmbOdjel.SelectedValue = obaveza.ID;
+                cmbOdjel.SelectedValue = obaveza.OdjelID;
                 cmbOdjel.Enabled = false;
 
                 cmbZaposlenik.SelectedValue = obaveza.OsobljeID;
@@ -43,6 +43,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
                 dtpDatum.Enabled = false;
                 txtOpis.Text = obaveza.Opis;
                 txtOpis.Enabled = false;
+                btnSacuvaj.Visible = false;
             }
         }
 
