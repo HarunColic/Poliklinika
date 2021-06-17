@@ -33,7 +33,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtOpisIzvjestaja = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.lblKorisnik = new System.Windows.Forms.Label();
             this.lblDatum = new System.Windows.Forms.Label();
             this.lblOdjel = new System.Windows.Forms.Label();
-            this.lblOpisPregled = new System.Windows.Forms.Label();
             this.txtpregledID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -62,7 +60,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(386, 366);
+            this.btnSacuvaj.Location = new System.Drawing.Point(498, 294);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(124, 42);
             this.btnSacuvaj.TabIndex = 27;
@@ -74,25 +72,15 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(386, 196);
+            this.label4.Location = new System.Drawing.Point(406, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 20);
             this.label4.TabIndex = 25;
             this.label4.Text = "Opis izvještaja";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(387, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 20);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Opis pregleda";
-            // 
             // txtOpisIzvjestaja
             // 
-            this.txtOpisIzvjestaja.Location = new System.Drawing.Point(387, 219);
+            this.txtOpisIzvjestaja.Location = new System.Drawing.Point(397, 128);
             this.txtOpisIzvjestaja.Multiline = true;
             this.txtOpisIzvjestaja.Name = "txtOpisIzvjestaja";
             this.txtOpisIzvjestaja.Size = new System.Drawing.Size(334, 87);
@@ -173,17 +161,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.lblOdjel.TabIndex = 35;
             this.lblOdjel.Text = "label6";
             // 
-            // lblOpisPregled
-            // 
-            this.lblOpisPregled.AutoSize = true;
-            this.lblOpisPregled.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOpisPregled.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblOpisPregled.Location = new System.Drawing.Point(387, 123);
-            this.lblOpisPregled.Name = "lblOpisPregled";
-            this.lblOpisPregled.Size = new System.Drawing.Size(68, 30);
-            this.lblOpisPregled.TabIndex = 36;
-            this.lblOpisPregled.Text = "label6";
-            // 
             // txtpregledID
             // 
             this.txtpregledID.Location = new System.Drawing.Point(498, 32);
@@ -214,7 +191,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.ClientSize = new System.Drawing.Size(733, 450);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtpregledID);
-            this.Controls.Add(this.lblOpisPregled);
             this.Controls.Add(this.lblOdjel);
             this.Controls.Add(this.lblDatum);
             this.Controls.Add(this.lblKorisnik);
@@ -222,7 +198,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtOpisIzvjestaja);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -242,7 +217,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtOpisIzvjestaja;
         private System.Windows.Forms.Label label3;
         
@@ -252,7 +226,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         private System.Windows.Forms.Label lblKorisnik;
         private System.Windows.Forms.Label lblDatum;
         private System.Windows.Forms.Label lblOdjel;
-        private System.Windows.Forms.Label lblOpisPregled;
         private System.Windows.Forms.TextBox txtpregledID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ErrorProvider errorProvider;
