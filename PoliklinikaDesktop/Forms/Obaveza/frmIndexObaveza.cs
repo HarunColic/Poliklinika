@@ -89,7 +89,18 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             else if(columnIndex == 4)
             {
                 var id = dgvAktivne.CurrentRow.Cells[0].Value;
-                await _service.Delete<object>(id);
+                try
+                {
+                    await _service.Delete<object>(id);
+
+                    MessageBox.Show("Operacija uspješna");
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Operacija nije uspješna");
+                }
+                
             }
         }
 
