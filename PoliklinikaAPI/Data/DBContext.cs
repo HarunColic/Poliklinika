@@ -8,7 +8,7 @@ using Poliklinika.Model;
 
 namespace PoliklinikaAPI.Data
 {
-    public class DBContext : IdentityDbContext<User, Role, int>
+    public partial class DBContext : IdentityDbContext<User, Role, int>
     {
 
         public DbSet<Odjel> Odjel { get; set; }
@@ -37,5 +37,7 @@ namespace PoliklinikaAPI.Data
         {
             base.OnModelCreating(builder);
         }
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

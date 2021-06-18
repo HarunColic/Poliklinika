@@ -31,6 +31,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public OdjelVM Get(int id)
         {
             return _odjelInterface.GetById(id);
