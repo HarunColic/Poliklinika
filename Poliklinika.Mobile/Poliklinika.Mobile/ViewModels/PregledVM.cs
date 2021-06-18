@@ -131,7 +131,7 @@ namespace Poliklinika.Mobile.ViewModels
             var datum = this.Datum;
             var hours = int.Parse(SelectedTermin.ToString().Split(':')[0]);
             var minutes = int.Parse(SelectedTermin.ToString().Split(':')[1]);
-            TimeSpan ts = new TimeSpan(hours, minutes, 0);
+            TimeSpan ts = new TimeSpan(hours, 0, 0);
             datum = datum.Date + ts;
 
             var pregled = new Pregled

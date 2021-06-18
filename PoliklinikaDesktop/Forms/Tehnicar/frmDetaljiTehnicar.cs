@@ -40,16 +40,24 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
                     tehnicar.StrucnaSprema = txtstrucna.Text;
 
                     await _service.Update<TehnicarVM>(request);
+                    MessageBox.Show("Operacija uspješna");
                 }
                 else
                 {
-                    request.Password = txtPassword.Text;
-                    request.Email = txtEmail.Text;
-                    await _service.Insert<TehnicarVM>( request);
-                }
-                MessageBox.Show("Operacija uspješna");
-            }
+                    try
+                    {
+                        request.Password = txtPassword.Text;
+                        request.Email = txtEmail.Text;
+                        await _service.Insert<TehnicarVM>(request);
 
+                        MessageBox.Show("Operacija uspješna");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Email ili Password format nije ispravan\n(Password mora imati slova, brojeve i znakove)");
+                    }
+                }
+            }
         }
 
         private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)

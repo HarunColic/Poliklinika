@@ -1,6 +1,5 @@
 version: '3'
 services:
-#mssql docker
   poliklinika-sql:
     image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
     restart: unless-stopped
@@ -20,7 +19,7 @@ services:
     environment:
       - ConnectionStrings:poliklinika=Server=poliklinika-sql,1433;Database=Poliklinika;User=sa;Password=poliklinika;ConnectRetryCount=0
     ports:
-      - 5000:5050
+      - 5000:5000
     networks:
       - poliklinikanet
     links:
@@ -30,4 +29,4 @@ services:
       
 networks:
   poliklinikanet:
-    driver: bridge      
+    driver: bridge

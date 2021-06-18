@@ -52,14 +52,18 @@ namespace PoliklinikaDesktop.Forms.Doktor
                 {
                     request.Email = txtEmail.Text;
                     request.Password = txtPassword.Text;
-                    await _service.Insert<DoktorVM>(request);
-                }
-                MessageBox.Show("Operacija uspješna");
-            }
 
-           
-           
-           
+                    try
+                    {
+                        await _service.Insert<DoktorVM>(request);
+                        MessageBox.Show("Operacija uspješna");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Email ili Password format nije ispravan\n (Password mora imati slova, brojeve i znakove)");
+                    }
+                }
+            }
         }
         private async Task LoadOdjel()
         {
