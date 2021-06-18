@@ -57,7 +57,9 @@ namespace PoliklinikaDesktop.Forms.Nalaz
                 lblDatum.Text = Prid.Datum.ToString();
                 lblImeKosrisnik.Text = $"{korisnik.Ime} { korisnik.Prezime}";
                 txtOpis.Text = nalaz.Opis;
+                txtOpis.Enabled = false;
                 lblOdjel.Text = odjel.Naziv;
+                btnSacuvaj.Visible = false;
 
 
             }

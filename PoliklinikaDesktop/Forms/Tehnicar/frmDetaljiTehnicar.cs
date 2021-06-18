@@ -39,13 +39,21 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
                     tehnicar.BrojRadneKnjizice = txtBrRadneKnjizice.Text;
                     tehnicar.StrucnaSprema = txtstrucna.Text;
 
-                    await _service.Update<TehnicarVM>(request);
+                    await _service.Update<TehnicarVM>(tehnicar);
                 }
                 else
                 {
                     request.Password = txtPassword.Text;
                     request.Email = txtEmail.Text;
-                    await _service.Insert<TehnicarVM>( request);
+                    try
+                    {
+
+                        await _service.Insert<TehnicarVM>( request);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("");
+                    }
                 }
                 MessageBox.Show("Operacija uspješna");
             }
@@ -108,14 +116,20 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
-            var _validator = new Validatori(sender, e, errorProvider);
-            _validator.ValidacijaPraznogStringa(txtEmail);
+            if (_id == null)
+            {
+                var _validator = new Validatori(sender, e, errorProvider);
+                _validator.ValidacijaPraznogStringa(txtEmail);
+            }
         }
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
         {
-            var _validator = new Validatori(sender, e, errorProvider);
-            _validator.ValidacijaPraznogStringa(txtPassword);
+            if (_id == null)
+            {
+                var _validator = new Validatori(sender, e, errorProvider);
+                _validator.ValidacijaPraznogStringa(txtPassword);
+            }
         }
     }
 }

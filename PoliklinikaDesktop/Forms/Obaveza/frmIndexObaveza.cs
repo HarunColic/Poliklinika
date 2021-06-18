@@ -12,6 +12,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
     public partial class frmIndexObaveza : Form
     {
         private readonly APIService _service = new APIService("Obaveza");
+        private readonly APIService _odjel = new APIService("Odjel");
         public frmIndexObaveza()
         {
             InitializeComponent();
@@ -32,6 +33,29 @@ namespace PoliklinikaDesktop.Forms.Obaveza
 
             dgvAktivne.DataSource = request;
             dgvObaveze.DataSource = request2;
+
+
+            if (request2 != null)
+            {
+                foreach (DataGridViewRow i in dgvObaveze.Rows)
+                {
+                    var prid = await _odjel.GetById<OdjelVM>(request2[i.Index].OdjelID);
+                    i.Cells[2].Value = prid.Naziv;
+                 
+                }
+            }
+
+            if (request != null)
+            {
+                foreach (DataGridViewRow i in dgvAktivne.Rows)
+                {
+                    var prid = await _odjel.GetById<OdjelVM>(request[i.Index].OdjelID);
+                    i.Cells[2].Value = prid.Naziv;
+
+                }
+            }
+
+
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -46,7 +70,7 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             if (columnIndex == 3)
             {
                 var id = dgvObaveze.CurrentRow.Cells[0].Value;
-                frmDetaljiOsobljeObaveza detalji = new frmDetaljiOsobljeObaveza
+                frmDetaljiObaveza detalji = new frmDetaljiObaveza
                     (int.Parse(id.ToString()));
                 detalji.Show();
             }
@@ -54,18 +78,29 @@ namespace PoliklinikaDesktop.Forms.Obaveza
 
         private async void dgvAktivne_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int columnIndex = dgvObaveze.CurrentCell.ColumnIndex;
+            int columnIndex = dgvAktivne.CurrentCell.ColumnIndex;
             if (columnIndex == 3)
             {
-                var id = dgvObaveze.CurrentRow.Cells[0].Value;
-                frmDetaljiObaveza detalji = new frmDetaljiObaveza
+                var id = dgvAktivne.CurrentRow.Cells[0].Value;
+                frmDetaljiOsobljeObaveza detalji = new frmDetaljiOsobljeObaveza
                     (int.Parse(id.ToString()));
                 detalji.Show();
             }
             else if(columnIndex == 4)
             {
-                var id = dgvObaveze.CurrentRow.Cells[0].Value;
-                await _service.Delete<object>(id);
+                var id = dgvAktivne.CurrentRow.Cells[0].Value;
+                try
+                {
+                    await _service.Delete<object>(id);
+
+                    MessageBox.Show("Operacija uspješna");
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Operacija nije uspješna");
+                }
+                
             }
         }
 

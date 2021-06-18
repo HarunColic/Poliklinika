@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,16 +31,20 @@ namespace PoliklinikaDesktop.Forms.Raspored
             await LoadDoktori();
             await LoadTehnicari();
 
-            pregled = await _pregled.GetById<PregledVM>(_id);
-            dtpPocetak.Text = pregled.Datum.TimeOfDay.ToString();
-            dtpPocetak.Enabled = false;
-            lblDatum.Text = pregled.Datum.Date.ToString();
-            dtpKraj.Format = DateTimePickerFormat.Custom;
-            dtpKraj.CustomFormat = "HH:mm";
+                pregled = await _pregled.GetById<PregledVM>(_id);
+                dtpPocetak.Text = pregled.Datum.TimeOfDay.ToString();
+                dtpPocetak.Enabled = false;
+                lblDatum.Text = pregled.Datum.Date.ToString();
+                dtpKraj.Format = DateTimePickerFormat.Custom;
+                dtpKraj.CustomFormat = "HH:mm";
+            
+             
         }
         private async Task LoadDoktori()
         {
+            pregled = await _pregled.GetById<PregledVM>(_id);
             var result = await _doktor.Get<List<DoktorVM>>(null);
+            result = result.Where(x => x.OdjelID == pregled.OdjelID).ToList();
             result.Insert(0, new DoktorVM());
             cmbDoktor.DisplayMember = "Ime";
             cmbDoktor.ValueMember = "ID";
@@ -96,8 +101,26 @@ namespace PoliklinikaDesktop.Forms.Raspored
             raspored.PregledID = _id;
             raspored.Datum = pregled.Datum;
 
-            await _pregled.Update<PregledVM>(pregled);
-            await _raspored.Insert<RasporedVM>(raspored);
+            if (this.ValidateChildren())
+            {
+                await _pregled.Update<PregledVM>(pregled);
+                await _raspored.Insert<RasporedVM>(raspored);
+
+                MessageBox.Show("Operacija uspješna");
+            }
+        }
+
+        private void cmbDoktor_Validating(object sender, CancelEventArgs e)
+        {
+                var _validator = new Validatori(sender, e, errorProvider);
+                _validator.ValidacijaPraznogStringacmb(cmbDoktor);
+        
+        }
+
+        private void cmbTehnicar_Validating(object sender, CancelEventArgs e)
+        {
+            var _validator = new Validatori(sender, e, errorProvider);
+            _validator.ValidacijaPraznogStringacmb(cmbTehnicar);
         }
     }
 }

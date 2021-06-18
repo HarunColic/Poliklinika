@@ -45,7 +45,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPut]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Doktor, Tehnicar")]
         public ObavezaVM Update(ObavezaVM model)
         {
             return _baseInterface.Update(model);

@@ -106,6 +106,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             // 
             this.dgvIzvjestaj.AllowUserToAddRows = false;
             this.dgvIzvjestaj.AllowUserToDeleteRows = false;
+            this.dgvIzvjestaj.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvIzvjestaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIzvjestaj.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -118,6 +119,7 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             this.dgvIzvjestaj.RowTemplate.Height = 25;
             this.dgvIzvjestaj.Size = new System.Drawing.Size(795, 211);
             this.dgvIzvjestaj.TabIndex = 0;
+            this.dgvIzvjestaj.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIzvjestaj_CellClick);
             // 
             // ID
             // 
