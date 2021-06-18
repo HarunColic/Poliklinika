@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,7 +42,9 @@ namespace PoliklinikaDesktop.Forms.Raspored
         }
         private async Task LoadDoktori()
         {
+            pregled = await _pregled.GetById<PregledVM>(_id);
             var result = await _doktor.Get<List<DoktorVM>>(null);
+            result = result.Where(x => x.OdjelID == pregled.OdjelID).ToList();
             result.Insert(0, new DoktorVM());
             cmbDoktor.DisplayMember = "Ime";
             cmbDoktor.ValueMember = "ID";

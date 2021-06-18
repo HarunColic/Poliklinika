@@ -27,7 +27,8 @@ namespace PoliklinikaAPI.Services
         {
 
             var preglediLista = _db.Pregled.Include(x=>x.Odjel).ToList();
-            
+           
+
             if (!_context.HttpContext.Request.QueryString.HasValue)
             {
                 preglediLista=preglediLista.Where(x => x.DoktorID == null && x.TehnicarID == null).ToList();
@@ -44,9 +45,18 @@ namespace PoliklinikaAPI.Services
                 }
 
 
-                var DoktorID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("DoktorID");
+                var OdjelID= HttpUtility.ParseQueryString(_parametri.ToString()).Get("OdjelID");
+                if (OdjelID != null && OdjelID != "0")
+                {
+                    preglediLista = preglediLista.Where(x => x.OdjelID == int.Parse(OdjelID)).ToList();
+                    return _mapper.Map<List<PregledVM>>(preglediLista);
+                }
 
+
+                var DoktorID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("DoktorID");
+                if(DoktorID != null && DoktorID != "0")
                 preglediLista = preglediLista.Where(x => x.DoktorID == int.Parse(DoktorID)).ToList();
+
 
                 List<Pregled> nova = new List<Pregled>();
 

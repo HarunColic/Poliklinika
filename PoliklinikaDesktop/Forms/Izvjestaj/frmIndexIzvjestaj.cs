@@ -37,8 +37,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
 
         }
 
- 
-
         private async void cmbOdjel_SelectedIndexChanged(object sender, EventArgs e)
         {
             var idObj = cmbOdjel.SelectedValue;
@@ -51,8 +49,12 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
         }
         private async Task LoadIzvjestaj(int OdjelID)
         {
-            var pregledi = await _pregled.Get<List<PregledVM>>(null);
-            pregledi = pregledi.Where(x => x.OdjelID == OdjelID).ToList();
+            var odjel = new PregledVM
+            {
+                OdjelID = OdjelID
+            };
+            var pregledi = await _pregled.Get<List<PregledVM>>(odjel);
+           
             var izvjestaj = await _izvjestaj.Get<List<IzvjestajVM>>(null);
             List<IzvjestajVM> result = new List<IzvjestajVM>();
             foreach (var i in izvjestaj)
@@ -69,6 +71,16 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
             dgvIzvjestaj.DataSource = result;
         }
 
-       
+        private void dgvIzvjestaj_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int columnIndex = dgvIzvjestaj.CurrentCell.ColumnIndex;
+            if (columnIndex == 1)
+            {
+                var id = dgvIzvjestaj.CurrentRow.Cells[0].Value;
+                frmDetaljiIzvjestaj detalji = 
+                    new frmDetaljiIzvjestaj("izvjestaj", int.Parse(id.ToString()));
+                detalji.Show();
+            }
+        }
     }
 }
