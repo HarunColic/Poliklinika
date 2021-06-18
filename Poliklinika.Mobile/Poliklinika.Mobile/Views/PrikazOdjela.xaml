@@ -17,7 +17,10 @@
     <ContentView> 
 
         <StackLayout>
-            <Image x:Name="slika" Source="{Binding Slika, Converter={StaticResource imgConv}}"></Image>
+            <Image x:Name="slika" Source="{Binding Slika, Converter={StaticResource imgConv}}"
+               
+                 VerticalOptions="FillAndExpand" Aspect="AspectFit"
+                   HorizontalOptions="Center"></Image>
             <Label x:Name="naziv"  Margin="0,10,0,0" Text="{Binding Naziv}" FontSize="Header" HorizontalOptions="CenterAndExpand" />
             <Label x:Name="opis"  Margin="0,10,0,0" Text="{Binding Opis}" FontSize="Medium" HorizontalOptions="CenterAndExpand" />
             <Label x:Name="id" Text="{Binding ID}" IsVisible="false" />
