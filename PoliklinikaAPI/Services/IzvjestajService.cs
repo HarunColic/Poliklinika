@@ -32,9 +32,9 @@ namespace PoliklinikaAPI.Services
                 var OdjelID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("OdjelID");
                 var DoktorID = HttpUtility.ParseQueryString(_parametri.ToString()).Get("DoktorID");
 
-                if(OdjelID != null && OdjelID != "")
+                if(OdjelID != null && OdjelID != "" && OdjelID != "0")
                     query = query.Where(x => x.Pregled.Doktor.OdjelID == int.Parse(OdjelID));
-                if(DoktorID != null && DoktorID != "")
+                if(DoktorID != null && DoktorID != "" && DoktorID != "0")
                     query = query.Where(x => x.Pregled.DoktorID == int.Parse(DoktorID));
             }
             

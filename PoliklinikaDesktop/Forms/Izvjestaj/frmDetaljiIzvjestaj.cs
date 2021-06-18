@@ -57,6 +57,8 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
                 lblDatum.Text = Prid.Datum.ToString();
                 lblOdjel.Text = odjel.Naziv;
                 txtOpisIzvjestaja.Text = izvjestaj.Opis;
+                txtOpisIzvjestaja.Enabled = false;
+                btnSacuvaj.Visible = false;
             }
         }
         private async void btnSacuvaj_Click(object sender, EventArgs e)
