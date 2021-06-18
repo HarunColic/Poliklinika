@@ -40,7 +40,6 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
                 lblKorisnik.Text = $"{korisnik.Ime} {korisnik.Prezime}";
                 lblDatum.Text = prid.Datum.ToString();
                 lblOdjel.Text = odjel.Naziv;
-                lblOpisPregled.Text = prid.Opis;
                 txtpregledID.Text = prid.ID.ToString();
 
 
@@ -57,8 +56,9 @@ namespace PoliklinikaDesktop.Forms.Izvjestaj
                 lblKorisnik.Text = $"{korisnik.Ime} { korisnik.Prezime}";
                 lblDatum.Text = Prid.Datum.ToString();
                 lblOdjel.Text = odjel.Naziv;
-                lblOpisPregled.Text = Prid.Opis;
                 txtOpisIzvjestaja.Text = izvjestaj.Opis;
+                txtOpisIzvjestaja.Enabled = false;
+                btnSacuvaj.Visible = false;
             }
         }
         private async void btnSacuvaj_Click(object sender, EventArgs e)

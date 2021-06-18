@@ -19,7 +19,6 @@ namespace PoliklinikaAPI.ViewModels
         [Required(AllowEmptyStrings = false)]
         public string Password { get; set; }
         [Required(AllowEmptyStrings = false)]
-        [StringLength(6)]
         public string BrojRadneKnjizice { get; set; }
         [Required(AllowEmptyStrings = false)]
         public string StrucnaSprema { get; set; }

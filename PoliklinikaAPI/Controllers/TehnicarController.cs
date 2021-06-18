@@ -44,7 +44,7 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpPut]
-        [Authorize(Roles = "Tehnicar")]
+        [Authorize(Roles = "Tehnicar, Admin")]
         public TehnicarVM Update(int id, TehnicarVM tehnicar)
         {
             return _userInterface.Update(tehnicar);

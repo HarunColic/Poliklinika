@@ -116,14 +116,20 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
-            var _validator = new Validatori(sender, e, errorProvider);
-            _validator.ValidacijaPraznogStringa(txtEmail);
+            if (_id == null)
+            {
+                var _validator = new Validatori(sender, e, errorProvider);
+                _validator.ValidacijaPraznogStringa(txtEmail);
+            }
         }
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
         {
-            var _validator = new Validatori(sender, e, errorProvider);
-            _validator.ValidacijaPraznogStringa(txtPassword);
+            if (_id == null)
+            {
+                var _validator = new Validatori(sender, e, errorProvider);
+                _validator.ValidacijaPraznogStringa(txtPassword);
+            }
         }
     }
 }

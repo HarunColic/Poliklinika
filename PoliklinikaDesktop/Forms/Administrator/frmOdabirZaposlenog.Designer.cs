@@ -117,7 +117,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
             // 
             this.dgvOsoblje.AllowUserToAddRows = false;
             this.dgvOsoblje.AllowUserToDeleteRows = false;
-            this.dgvOsoblje.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.dgvOsoblje.BackgroundColor = System.Drawing.Color.White;
             this.dgvOsoblje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOsoblje.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,

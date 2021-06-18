@@ -54,11 +54,9 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             this.groupBox1.Controls.Add(this.dgvAktivne);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(40, 216);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(35, 162);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(912, 251);
+            this.groupBox1.Size = new System.Drawing.Size(798, 188);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Aktivne obaveze";
@@ -75,13 +73,12 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.Odjel,
             this.dataGridViewImageColumn1});
             this.dgvAktivne.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAktivne.Location = new System.Drawing.Point(3, 39);
-            this.dgvAktivne.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvAktivne.Location = new System.Drawing.Point(3, 31);
             this.dgvAktivne.Name = "dgvAktivne";
             this.dgvAktivne.ReadOnly = true;
             this.dgvAktivne.RowHeadersWidth = 51;
             this.dgvAktivne.RowTemplate.Height = 25;
-            this.dgvAktivne.Size = new System.Drawing.Size(906, 208);
+            this.dgvAktivne.Size = new System.Drawing.Size(792, 154);
             this.dgvAktivne.TabIndex = 0;
             this.dgvAktivne.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAktivne_CellClick);
             // 
@@ -128,19 +125,18 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(46, 133);
+            this.label2.Location = new System.Drawing.Point(40, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 37);
+            this.label2.Size = new System.Drawing.Size(158, 30);
             this.label2.TabIndex = 11;
             this.label2.Text = "Pregle Obaveze";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PoliklinikaDesktop.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 13);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 10);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(322, 67);
+            this.pictureBox2.Size = new System.Drawing.Size(282, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -149,14 +145,12 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             this.groupBox2.Controls.Add(this.dgvIzvrsene);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(43, 528);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Location = new System.Drawing.Point(38, 396);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(912, 317);
+            this.groupBox2.Size = new System.Drawing.Size(798, 238);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Izvrsene obaveze";
+            this.groupBox2.Text = "Izvršene obaveze";
             // 
             // dgvIzvrsene
             // 
@@ -170,14 +164,14 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.dataGridViewTextBoxColumn3,
             this.Detalji});
             this.dgvIzvrsene.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvIzvrsene.Location = new System.Drawing.Point(3, 39);
-            this.dgvIzvrsene.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvIzvrsene.Location = new System.Drawing.Point(3, 31);
             this.dgvIzvrsene.Name = "dgvIzvrsene";
             this.dgvIzvrsene.ReadOnly = true;
             this.dgvIzvrsene.RowHeadersWidth = 51;
             this.dgvIzvrsene.RowTemplate.Height = 25;
-            this.dgvIzvrsene.Size = new System.Drawing.Size(906, 274);
+            this.dgvIzvrsene.Size = new System.Drawing.Size(792, 204);
             this.dgvIzvrsene.TabIndex = 0;
+            this.dgvIzvrsene.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIzvrsene_CellClick);
             // 
             // ID
             // 
@@ -220,14 +214,15 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             // 
             // frmIndexOsobljeObaveza
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(994, 860);
+            this.ClientSize = new System.Drawing.Size(870, 645);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmIndexOsobljeObaveza";
             this.Text = "frmIndexOsobljeObaveza";
             this.Load += new System.EventHandler(this.frmIndexOsobljeObaveza_Load);

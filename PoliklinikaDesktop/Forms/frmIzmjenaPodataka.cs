@@ -61,7 +61,7 @@ namespace PoliklinikaDesktop.Forms
                     _tehnicar.UpdatePassword<UpdatePasswordVM>(update);
                 }
 
-                await _tehnicar.Update<DoktorVM>(teh);
+                await _tehnicar.Update<TehnicarVM>(teh);
             }
             else
             {
@@ -82,7 +82,7 @@ namespace PoliklinikaDesktop.Forms
                     _admin.UpdatePassword<UpdatePasswordVM>(update);
                 }
 
-                await _doktor.Update<DoktorVM>(admin);
+                await _admin.Update< Admin>(admin);
             }
         }
     }
