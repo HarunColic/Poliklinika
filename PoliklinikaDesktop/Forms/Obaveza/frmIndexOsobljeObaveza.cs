@@ -64,15 +64,26 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             }
         }
 
-        private  void dgvAktivne_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvAktivne_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int columnIndex = dgvAktivne.CurrentCell.ColumnIndex;
             if (columnIndex == 3)
             {
+
                 var id = int.Parse(dgvAktivne.CurrentRow.Cells[0].Value.ToString());
-                
-                frmDetaljiOsobljeObaveza detalji = new frmDetaljiOsobljeObaveza(id);
-                detalji.Show();
+
+                var obaveza = await _service.GetById<ObavezaVM>(id);
+                if (obaveza.Aktivna == false)
+                {
+                    MessageBox.Show("Obaveza je završena!");
+                }
+                else
+                {
+
+                    frmDetaljiOsobljeObaveza detalji = new frmDetaljiOsobljeObaveza(id);
+                    detalji.Show();
+                }
+
             }
         }
 

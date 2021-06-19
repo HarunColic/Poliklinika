@@ -127,9 +127,9 @@ namespace PoliklinikaDesktop.Forms.Obaveza
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(40, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 30);
+            this.label2.Size = new System.Drawing.Size(166, 30);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Pregle Obaveze";
+            this.label2.Text = "Pregled obaveza";
             // 
             // pictureBox2
             // 
