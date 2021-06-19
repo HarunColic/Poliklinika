@@ -15,6 +15,10 @@ namespace PoliklinikaAPI.Data
     {
         public static void Seed(DBContext context, UserManager<User> userManager, RoleManager<Role> roleManager, IWebHostEnvironment host)
         {
+
+            if (context.Database.CanConnect())
+                return;
+
             context.Database.Migrate();
 
             #region Roles
