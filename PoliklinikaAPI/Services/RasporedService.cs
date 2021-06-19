@@ -26,7 +26,7 @@ namespace PoliklinikaAPI.Services
         public override List<RasporedVM> GetAll()
         {
             var rasporedi = _db.Raspored.Include(x => x.Pregled).ToList();
-
+            
             if (!_parametri.HasValue)
                 return _mapper.Map<List<RasporedVM>>(rasporedi);
 
@@ -45,7 +45,6 @@ namespace PoliklinikaAPI.Services
                 rasporedi = rasporedi.Where(x => x.Datum.Date.ToString("yyyy.MM.dd") == datum &&
                 x.Pregled.OdjelID == int.Parse(OdjelID)).ToList();
             }
-            
 
             return _mapper.Map<List<RasporedVM>>(rasporedi);
         }
