@@ -17,6 +17,7 @@ namespace PoliklinikaAPI.Data
         {
             context.Database.Migrate();
 
+            #region Roles
             var AdminRole = new Role { Name = "Admin" };
             var DoktorRole = new Role { Name = "Doktor" };
             var TehnicarRole = new Role { Name = "Tehnicar" };
@@ -26,7 +27,7 @@ namespace PoliklinikaAPI.Data
             roleManager.CreateAsync(DoktorRole).GetAwaiter().GetResult();
             roleManager.CreateAsync(TehnicarRole).GetAwaiter().GetResult();
             roleManager.CreateAsync(KorisnkRole).GetAwaiter().GetResult();
-
+            #endregion
 
             #region Odjeli
             var folderPath = host.ContentRootPath;
@@ -321,7 +322,7 @@ namespace PoliklinikaAPI.Data
             {
                 new Pregled
                 {
-                    Datum = DateTime.Now,
+                    Datum = DateTime.Now.Date + new TimeSpan(10, 0, 0),
                     DoktorID = psihijatar.Id,
                     KorisnikID = korisnik.Id,
                     OdjelID = psih.ID,
@@ -330,7 +331,7 @@ namespace PoliklinikaAPI.Data
 
                 new Pregled
                 {
-                    Datum = DateTime.Now,
+                    Datum = DateTime.Now.Date + new TimeSpan(10, 0, 0),
                     DoktorID = psihijatar.Id,
                     KorisnikID = korisnik.Id,
                     OdjelID = psih.ID,
@@ -339,14 +340,14 @@ namespace PoliklinikaAPI.Data
 
                 new Pregled
                 {
-                    Datum = DateTime.Now,
+                    Datum = DateTime.Now.Date + new TimeSpan(10, 0, 0),
                     KorisnikID = korisnik.Id,
                     OdjelID = psih.ID,
                 },
 
                 new Pregled
                 {
-                    Datum = DateTime.Now,
+                    Datum = DateTime.Now.Date + new TimeSpan(10, 0, 0),
                     DoktorID = zubar.Id,
                     KorisnikID = korisnica.Id,
                     OdjelID = stom.ID,
@@ -355,7 +356,7 @@ namespace PoliklinikaAPI.Data
 
                 new Pregled
                 {
-                    Datum = DateTime.Now,
+                    Datum = DateTime.Now.Date + new TimeSpan(10, 0, 0),
                     DoktorID = zubar.Id,
                     KorisnikID = korisnica.Id,
                     OdjelID = stom.ID,
@@ -363,7 +364,7 @@ namespace PoliklinikaAPI.Data
                 },
                 new Pregled
                 {
-                    Datum = DateTime.Now,
+                    Datum = DateTime.Now.Date + new TimeSpan(10, 0, 0),
                     KorisnikID = korisnica.Id,
                     OdjelID = stom.ID,
                 }
@@ -513,6 +514,27 @@ namespace PoliklinikaAPI.Data
             }
             context.SaveChanges();
 
+            #endregion
+
+            #region Rasporedi
+            var pr = context.Pregled.Where(x => x.DoktorID != null && x.TehnicarID != null).ToList();
+
+            foreach (var p in pr)
+            {
+
+                var rasp = new Raspored
+                {
+                    PregledID = p.ID,
+                    TehnicarID = int.Parse(p.TehnicarID.ToString()),
+                    DoktorID = int.Parse(p.DoktorID.ToString()),
+                    Vrijeme = "10:00-11:00",
+                    Datum = DateTime.Now.Date + new TimeSpan(0, 0, 0)
+                };
+
+                context.Raspored.Add(rasp);
+            }
+
+            context.SaveChanges();
             #endregion
 
             #region Obaveza
