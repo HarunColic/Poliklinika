@@ -21,16 +21,26 @@ namespace PoliklinikaDesktop.Forms.Administrator
         }
 
 
-        private void dgvPregledi_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvPregledi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int columnindex = dgvPregledi.CurrentCell.ColumnIndex;
 
             if (columnindex == 3)
             {
                 var id = dgvPregledi.CurrentRow.Cells[0].Value;
+                var raspored = await _service.GetById<PregledVM>(id);
+                if (raspored.DoktorID != null && raspored.TehnicarID !=null)
+                {
+                    MessageBox.Show("Raspored za ovaj pregled je već kreiran.");
 
-                frmDetaljiRaspored doktor = new frmDetaljiRaspored(int.Parse(id.ToString()));
-                doktor.Show();
+                }
+                else
+                {
+                    frmDetaljiRaspored doktor = new frmDetaljiRaspored(int.Parse(id.ToString()));
+                    doktor.Show();
+
+                }
+
             }
         }
 
