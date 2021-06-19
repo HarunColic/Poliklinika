@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -62,15 +63,28 @@ namespace PoliklinikaDesktop.Forms.Doktor
             }
         }
 
-        private void dgvPregled_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvPregled_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int columnIndex = dgvPregled.CurrentCell.ColumnIndex;
+
             if (columnIndex == 3)
             {
                 var id = dgvPregled.CurrentRow.Cells[0].Value;
-                frmDetaljiIzvjestaj detalji =
-                    new frmDetaljiIzvjestaj("pregled", int.Parse(id.ToString()));
-                detalji.Show();
+
+                var pregled = await _pregled.GetById<PregledVM>(id);
+                var izvjestaj = await _service.Get<List<NalazVM>>(null);
+
+                izvjestaj = izvjestaj.Where(x => x.PregledID == int.Parse(id.ToString())).ToList();
+                if (izvjestaj.Count != 0)
+                {
+                    MessageBox.Show("Izvještaj za ovaj pregled je već kreiran.");
+                }
+                else
+                {
+                    frmDetaljiIzvjestaj detalji =
+                        new frmDetaljiIzvjestaj("pregled", int.Parse(id.ToString()));
+                    detalji.Show();
+                }
             }
         }
 

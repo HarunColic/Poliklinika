@@ -28,17 +28,16 @@ namespace PoliklinikaDesktop.Forms.Raspored
         RasporedVM raspored = new RasporedVM();
         private async void frmDetaljiRaspored_Load(object sender, EventArgs e)
         {
-            await LoadDoktori();
-            await LoadTehnicari();
+                    await LoadDoktori();
+                    await LoadTehnicari();
 
-                pregled = await _pregled.GetById<PregledVM>(_id);
-                dtpPocetak.Text = pregled.Datum.TimeOfDay.ToString();
-                dtpPocetak.Enabled = false;
-                lblDatum.Text = pregled.Datum.Date.ToString();
-                dtpKraj.Format = DateTimePickerFormat.Custom;
-                dtpKraj.CustomFormat = "HH:mm";
-            
-             
+                    pregled = await _pregled.GetById<PregledVM>(_id);
+                    dtpPocetak.Text = pregled.Datum.TimeOfDay.ToString();
+                    dtpPocetak.Enabled = false;
+                    lblDatum.Text = pregled.Datum.Date.ToString();
+                    dtpKraj.Format = DateTimePickerFormat.Custom;
+                    dtpKraj.CustomFormat = "HH:mm";
+
         }
         private async Task LoadDoktori()
         {

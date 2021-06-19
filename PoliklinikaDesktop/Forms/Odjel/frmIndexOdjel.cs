@@ -37,6 +37,7 @@ namespace PoliklinikaDesktop.Forms.Odjel
                 var id = dgvOdjeli.SelectedRows[0].Cells[0].Value;
                 frmDetaljiOdjel detalji = new frmDetaljiOdjel(int.Parse(id.ToString()));
                 detalji.Show();
+                dgvOdjeli.Refresh();
             }
             else if (columnIndex == 3)
             {
