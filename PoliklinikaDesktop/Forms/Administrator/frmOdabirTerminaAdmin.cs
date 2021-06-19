@@ -28,8 +28,9 @@ namespace PoliklinikaDesktop.Forms.Administrator
             if (columnindex == 3)
             {
                 var id = dgvPregledi.CurrentRow.Cells[0].Value;
-                var raspored = await _service.GetById<PregledVM>(id);
-                if (raspored.DoktorID != null && raspored.TehnicarID !=null)
+
+                var Pregled = await _service.GetById<PregledVM>(id);
+                if (Pregled.DoktorID != null && Pregled.TehnicarID !=null)
                 {
                     MessageBox.Show("Raspored za ovaj pregled je već kreiran.");
 
