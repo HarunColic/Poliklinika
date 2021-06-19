@@ -16,12 +16,7 @@ namespace Poliklinika.Mobile.ViewModels
 
         #region atributi
         int _odjelID;
-        public int OdjelID
-        {
-            get { return _odjelID; }
-            set { SetProperty(ref _odjelID, value); }
-        }
-        
+       
         DateTime _datum=DateTime.Now;
         public DateTime Datum
         {
@@ -60,9 +55,10 @@ namespace Poliklinika.Mobile.ViewModels
 
         public PregledVM(int id)
         {
+            _odjelID = id;
             ZakaziCommand = new Command(OnZakaziClicked);
             _termini = SetTermini();
-            _odjelID = id;
+            GetTermini();
         }
 
         public List<string> SetTermini()
@@ -131,7 +127,7 @@ namespace Poliklinika.Mobile.ViewModels
             var datum = this.Datum;
             var hours = int.Parse(SelectedTermin.ToString().Split(':')[0]);
             var minutes = int.Parse(SelectedTermin.ToString().Split(':')[1]);
-            TimeSpan ts = new TimeSpan(hours, minutes, 0);
+            TimeSpan ts = new TimeSpan(hours, 0, 0);
             datum = datum.Date + ts;
 
             var pregled = new Pregled

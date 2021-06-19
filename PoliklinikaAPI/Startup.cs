@@ -46,7 +46,7 @@ namespace PoliklinikaAPI
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "eCourse API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Poliklinika API", Version = "v1" });
                 c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -73,6 +73,7 @@ namespace PoliklinikaAPI
             services.AddAuthentication("BasicAuthentication")
              .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
+            var connection = Configuration.GetConnectionString("poliklinika");
             services.AddDbContext<DBContext>(
             options => options.UseSqlServer("name=cs1"),
             ServiceLifetime.Transient);

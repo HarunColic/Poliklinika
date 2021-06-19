@@ -39,25 +39,25 @@ namespace PoliklinikaDesktop.Forms.Tehnicar
                     tehnicar.BrojRadneKnjizice = txtBrRadneKnjizice.Text;
                     tehnicar.StrucnaSprema = txtstrucna.Text;
 
-                    await _service.Update<TehnicarVM>(tehnicar);
+                    await _service.Update<TehnicarVM>(request);
+                    MessageBox.Show("Operacija uspješna");
                 }
                 else
                 {
-                    request.Password = txtPassword.Text;
-                    request.Email = txtEmail.Text;
                     try
                     {
+                        request.Password = txtPassword.Text;
+                        request.Email = txtEmail.Text;
+                        await _service.Insert<TehnicarVM>(request);
 
-                        await _service.Insert<TehnicarVM>( request);
+                        MessageBox.Show("Operacija uspješna");
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        MessageBox.Show("");
+                        MessageBox.Show("Email ili Password format nije ispravan\n(Password mora imati slova, brojeve i znakove)");
                     }
                 }
-                MessageBox.Show("Operacija uspješna");
             }
-
         }
 
         private void cmbSpol_SelectedIndexChanged(object sender, EventArgs e)
