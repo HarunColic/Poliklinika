@@ -17,7 +17,7 @@ services:
     build:
       context: .
     environment:
-      - ConnectionStrings:poliklinika=Server=poliklinika-sql,1433;Database=Poliklinika;User=sa;Password=poliklinika;ConnectRetryCount=0
+      - ConnectionStrings:poliklinika=Server=poliklinika-sql,1401;Database=Poliklinika;User=sa;Password=Poliklinika-123;ConnectRetryCount=0
     ports:
       - 5000:5000
     networks:

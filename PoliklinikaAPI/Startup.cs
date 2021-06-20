@@ -75,7 +75,7 @@ namespace PoliklinikaAPI
 
             var connection = Configuration.GetConnectionString("poliklinika");
             services.AddDbContext<DBContext>(
-            options => options.UseSqlServer("name=cs1"),
+            options => options.UseSqlServer(connection),
             ServiceLifetime.Transient);
 
             var mapperConfig = new MapperConfiguration(mc =>
