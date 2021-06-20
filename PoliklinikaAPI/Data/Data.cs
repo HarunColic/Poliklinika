@@ -42,49 +42,49 @@ namespace PoliklinikaAPI.Data
                 new Odjel{
                     Naziv = "Stomatologija",
                     Opis = "Odjel stomatologije",
-                    Slika =  ImageToStream($"{folderPath}\\OdjeliSlike\\Stomatologija.jpg")
+                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Stomatologija.jpg")
                 },
 
                 new Odjel{
                     Naziv = "Urologija",
                     Opis = "Odjel Urologije",
-                    Slika =  ImageToStream($"{folderPath}\\OdjeliSlike\\Urologija.jpg")
+                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Urologija.jpg")
                 },
 
                 new Odjel{
                     Naziv = "Ginekologija",
                     Opis = "Odjel ginekologije",
-                    Slika =  ImageToStream($"{folderPath}\\OdjeliSlike\\ginekologija.png")
+                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/ginekologija.png")
                 },
 
                 new Odjel{
                     Naziv = "Psihijatrija",
                     Opis = "Odjel psihijatrije",
-                    Slika =  ImageToStream($"{folderPath}\\OdjeliSlike\\Psihijatrija.png")
+                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Psihijatrija.png")
                 },
 
                 new Odjel{
                     Naziv = "Kardiologija",
                     Opis = "Odjel kardiologije",
-                    Slika =  ImageToStream($"{folderPath}\\OdjeliSlike\\Kardiologija.jpg")
+                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Kardiologija.jpg")
                 },
 
                 new Odjel{
                     Naziv = "Neurologija",
                     Opis = "Odjel neurologije",
-                    Slika =  ImageToStream($"{folderPath}\\OdjeliSlike\\Neurologija.png")
+                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Neurologija.png")
                 },
 
                 new Odjel{
                     Naziv = "Dermatologija",
                     Opis = "Odjel dermatologije",
-                    Slika =  ImageToStream($"{folderPath}\\OdjeliSlike\\Dermatologija.jpg")
+                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Dermatologija.jpg")
                 },
 
                 new Odjel{
                     Naziv = "Otorinolaringologija",
                     Opis = "Odjel otorinolaringologije",
-                    Slika =  ImageToStream($"{folderPath}\\OdjeliSlike\\otorinolaringologija.png")
+                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/otorinolaringologija.png")
                 },
             };
 
@@ -311,8 +311,8 @@ namespace PoliklinikaAPI.Data
                 Prezime = "Zekotic",
                 BrojTelefona = "06288634",
                 DatumRodjenja = new DateTime(1997, 6, 28),
-                Email = "dada@hotmail.com",
-                UserName = "dada@hotmail.com",
+                Email = "fahrizada@hotmail.com",
+                UserName = "fahrizada@hotmail.com",
                 KrvnaGrupa = "A+",
                 Spol = "Ž"
             };
@@ -489,25 +489,25 @@ namespace PoliklinikaAPI.Data
             {
                 new Izvjestaj
                 {
-                    PregledID = korisnikPregledi[0].ID,
-                    Opis = "Opis izvjestaja"
-                },
-
-                new Izvjestaj
-                {
                     PregledID = korisnikPregledi[1].ID,
                     Opis = "Opis izvjestaja"
                 },
 
                 new Izvjestaj
                 {
-                    PregledID = korisnicaPregledi[0].ID,
+                    PregledID = korisnikPregledi[2].ID,
                     Opis = "Opis izvjestaja"
                 },
 
                 new Izvjestaj
                 {
                     PregledID = korisnicaPregledi[1].ID,
+                    Opis = "Opis izvjestaja"
+                },
+
+                new Izvjestaj
+                {
+                    PregledID = korisnicaPregledi[2].ID,
                     Opis = "Opis izvjestaja"
                 },
             };
@@ -550,7 +550,8 @@ namespace PoliklinikaAPI.Data
                     Datum = DateTime.Now,
                     Aktivna = true,
                     OdjelID = psih.ID,
-                    OsobljeID = psihijatar.OdjelID
+                    OsobljeID = psihijatar.OdjelID,
+                    Opis = "Opis obaveze"
                 },
 
                 new Obaveza
@@ -558,7 +559,8 @@ namespace PoliklinikaAPI.Data
                     Datum = DateTime.Now,
                     Aktivna = false,
                     OdjelID = psih.ID,
-                    OsobljeID = psihijatar.OdjelID
+                    OsobljeID = psihijatar.OdjelID,
+                    Opis = "Opis obaveze"
                 },
 
                 new Obaveza
@@ -566,7 +568,8 @@ namespace PoliklinikaAPI.Data
                     Datum = DateTime.Now,
                     Aktivna = true,
                     OdjelID = stom.ID,
-                    OsobljeID = zubar.OdjelID
+                    OsobljeID = zubar.OdjelID,
+                    Opis = "Opis obaveze"
                 },
 
                 new Obaveza
@@ -574,7 +577,8 @@ namespace PoliklinikaAPI.Data
                     Datum = DateTime.Now,
                     Aktivna = false,
                     OdjelID = stom.ID,
-                    OsobljeID = zubar.OdjelID
+                    OsobljeID = zubar.OdjelID,
+                    Opis = "Opis obaveze"
                 },
 
                 new Obaveza
@@ -582,7 +586,8 @@ namespace PoliklinikaAPI.Data
                     Datum = DateTime.Now,
                     Aktivna = true,
                     OdjelID = otorina.ID,
-                    OsobljeID = otorinolaringolog.OdjelID
+                    OsobljeID = otorinolaringolog.OdjelID,
+                    Opis = "Opis obaveze"
                 },
 
                 new Obaveza
@@ -590,7 +595,8 @@ namespace PoliklinikaAPI.Data
                     Datum = DateTime.Now,
                     Aktivna = false,
                     OdjelID = otorina.ID,
-                    OsobljeID = otorinolaringolog.OdjelID
+                    OsobljeID = otorinolaringolog.OdjelID,
+                    Opis = "Opis obaveze"
                 },
             };
 
