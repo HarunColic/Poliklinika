@@ -13,5 +13,6 @@ RUN dotnet publish "PoliklinikaAPI" -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
+ADD ./PoliklinikaAPI/OdjeliSlike ./OdjeliSlike
 
 ENTRYPOINT ["dotnet", "PoliklinikaAPI.dll"]

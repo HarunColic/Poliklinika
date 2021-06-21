@@ -41,50 +41,42 @@ namespace PoliklinikaAPI.Data
 
                 new Odjel{
                     Naziv = "Stomatologija",
-                    Opis = "Odjel stomatologije",
-                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Stomatologija.jpg")
+                    Opis = "Odjel stomatologije"
                 },
 
                 new Odjel{
                     Naziv = "Urologija",
-                    Opis = "Odjel Urologije",
-                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Urologija.jpg")
+                    Opis = "Odjel Urologije"
                 },
 
                 new Odjel{
                     Naziv = "Ginekologija",
-                    Opis = "Odjel ginekologije",
-                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/ginekologija.png")
+                    Opis = "Odjel ginekologije"
                 },
 
                 new Odjel{
                     Naziv = "Psihijatrija",
-                    Opis = "Odjel psihijatrije",
-                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Psihijatrija.png")
+                    Opis = "Odjel psihijatrije"
                 },
 
                 new Odjel{
                     Naziv = "Kardiologija",
-                    Opis = "Odjel kardiologije",
-                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Kardiologija.jpg")
+                    Opis = "Odjel kardiologije"
                 },
 
                 new Odjel{
                     Naziv = "Neurologija",
-                    Opis = "Odjel neurologije",
-                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Neurologija.png")
+                    Opis = "Odjel neurologije"
                 },
 
                 new Odjel{
                     Naziv = "Dermatologija",
-                    Opis = "Odjel dermatologije",
-                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/Dermatologija.jpg")
+                    Opis = "Odjel dermatologije"
                 },
 
                 new Odjel{
                     Naziv = "Otorinolaringologija",
-                    Opis = "Odjel otorinolaringologije",
-                    Slika =  ImageToStream($"{folderPath}/OdjeliSlike/otorinolaringologija.png")
+                    Opis = "Odjel otorinolaringologije"
                 },
             };
 
