@@ -23,14 +23,14 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize]
         public IList<TehnicarVM> GetAll()
         {
             return _userInterface.GetAll();
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous]
+        [Authorize]
         public TehnicarVM Get(int id)
         {
             return _userInterface.Get(id);

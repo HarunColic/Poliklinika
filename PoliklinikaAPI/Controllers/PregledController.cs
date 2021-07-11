@@ -24,14 +24,14 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize]
         public List<PregledVM> GetAll()
         {
             return _baseInterface.GetAll();
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous]
+        [Authorize]
         public PregledVM Get(int id)
         {
             return _baseInterface.GetById(id);

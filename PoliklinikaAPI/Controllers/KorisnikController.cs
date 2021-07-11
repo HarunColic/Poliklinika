@@ -28,14 +28,14 @@ namespace PoliklinikaAPI.Controllers
 
 
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize]
         public IList<KorisnikVM> GetAll()
         {
             return _userInterface.GetAll();
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous]
+        [Authorize]
         public Korisnik Get(int id)
         {
             return _db.Korisnik.Find(id);

@@ -24,14 +24,14 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize]
         public IList<DoktorVM> GetAll()
         {
             return _userInterface.GetAll();
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous]
+        [Authorize]
         public DoktorVM Get(int id)
         {
             return _userInterface.Get(id);

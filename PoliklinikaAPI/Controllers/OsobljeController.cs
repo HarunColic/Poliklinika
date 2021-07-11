@@ -24,13 +24,14 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous]
+        [Authorize]
         public OsobljeVM GetById(int id)
         {
             return _baseInterface.GetById(id);
         }
 
         [HttpGet]
+        [Authorize]
         public List<OsobljeVM> GetAll()
         {
             return _baseInterface.GetAll();
