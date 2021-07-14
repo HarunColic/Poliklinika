@@ -47,7 +47,8 @@ namespace Poliklinika.Mobile.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var selectedDoktor = doktori[picker.SelectedIndex];
+            var lista = doktori.Where(x => x.OdjelID == _odjelID).ToList();
+            var selectedDoktor = lista[picker.SelectedIndex];
 
             var req = new request
             {

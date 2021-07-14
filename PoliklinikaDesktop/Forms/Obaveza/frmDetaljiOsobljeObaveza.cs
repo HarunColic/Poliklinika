@@ -51,6 +51,11 @@ namespace PoliklinikaDesktop.Forms.Obaveza
 
             if (chat == null)
             {
+                if (CurrentUser.Role == "Admin")
+                {
+                    MessageBox.Show("Poruke za ovu obavezu ne postoje.");
+                    return;
+                }
                 chat = await _chat.Insert<ChatObavezaVM>(new ChatObavezaVM
                 {
                     OsobljeID = CurrentUser.User.Id,

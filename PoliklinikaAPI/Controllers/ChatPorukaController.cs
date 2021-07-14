@@ -23,14 +23,14 @@ namespace PoliklinikaAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin, Doktor")]
+        [Authorize(Roles = "Admin, Doktor, Tehnicar")]
         public List<ChatPorukaVM> Index()
         {
             return _baseInterface.GetAll();
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin, Doktor")]
+        [Authorize(Roles = "Admin, Doktor, Tehnicar")]
         public ChatPorukaVM Insert(ChatPorukaVM model)
         {
             return _baseInterface.Insert(model);

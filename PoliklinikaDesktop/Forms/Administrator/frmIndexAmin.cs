@@ -49,11 +49,6 @@ namespace PoliklinikaDesktop.Forms.Administrator
             profil.Show();
         }
 
-        private void frmIndexAmin_Load(object sender, EventArgs e)
-        {
-            lblTrenutniUser.Text = $"{ CurrentUser.User.Ime} {CurrentUser.User.Prezime}";
-        }
-
         private void picDodajRaspored_Click(object sender, EventArgs e)
         {
             frmOdabirTerminaAdmin raspored = new frmOdabirTerminaAdmin();
@@ -68,5 +63,7 @@ namespace PoliklinikaDesktop.Forms.Administrator
 
             Application.Exit();
         }
+
+        
     }
 }
